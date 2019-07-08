@@ -1,0 +1,14 @@
+<li-side-nav sticky>
+  <a routerLink="/docs">Getting Started</a>
+  <a routerLink="/docs/icons">Icons</a>
+  <a routerLink="/docs/modal">Modal</a>
+  <a routerLink="/docs/side-nav">Side Nav</a>
+  <a routerLink="/docs/nav-bar">Nav Bar</a>
+  <a routerLink="/docs/tabs">Tabs</a>
+  <a routerLink="/docs/loading-spinner">Loading Spinner</a>
+  <a routerLink="/docs/progress-bar">Progress Bar</a>
+</li-side-nav>
+
+<div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" class="docs-content">
+  <router-outlet #o="outlet"></router-outlet>
+</div>

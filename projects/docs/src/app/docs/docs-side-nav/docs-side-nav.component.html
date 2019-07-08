@@ -1,0 +1,19 @@
+<h1>Side Nav</h1>
+
+<li-tabs>
+  <li-tab title="Example">
+    <h2>Example</h2>
+    <button (click)="open = !open">Toggle Side Nav</button>
+
+    <li-side-nav [open]="open" (openChange)="open = $event.detail">
+      <a routerLink="/docs">Getting Started</a>
+      <a routerLink="/docs/modal">Modal</a>
+    </li-side-nav>
+  </li-tab>
+  <li-tab title="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab title="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

@@ -1,0 +1,54 @@
+<h1>Reference API</h1>
+
+<label for="search">Search</label><br />
+<input [formControl]="search" id="search" />
+<br /><br />
+
+<ul bp="grid 4@md" class="class-list">
+  <li *ngFor="let class of classResults" class="class">
+      <h2>{{class.name}}</h2>
+      <p *ngIf="class?.comment?.shortText">
+        {{class.comment.shortText}}
+      </p>
+
+      <h3>CSS Custom Properties</h3>
+      <ul>
+        <ng-container *ngFor="let tag of class?.comment?.tags">
+          <li *ngIf="tag.tag === 'cssprop'">
+            <p>{{tag.text}}</p>
+          </li>
+        </ng-container>
+      </ul>
+
+      <h3>Content Slots</h3>
+      <ul>
+        <ng-container *ngFor="let tag of class?.comment?.tags">
+          <li *ngIf="tag.tag === 'slot'">
+            <p>{{tag.text}}</p>
+          </li>
+        </ng-container>
+      </ul>
+
+      <h3>Properties</h3>
+      <ul>
+        <ng-container *ngFor="let child of class.children">
+          <li *ngIf="child.kindString === 'Property' && !child.inheritedFrom">
+            <h4>{{child.name}}</h4>
+            <p *ngIf="child.comment">{{child.comment.shortText}}</p>
+          </li>
+        </ng-container>
+      </ul>
+
+      <h3>Methods</h3>
+      <ul>
+        <ng-container *ngFor="let child of class.children">
+          <li *ngIf="child.kindString === 'Method' && !child.inheritedFrom && child.name !== 'render'">
+            <h4>{{child.name}}</h4>
+            <p *ngIf="child.signatures[0]">
+              {{child.signatures[0].comment?.shortText}}
+            </p>
+          </li>
+        </ng-container>
+      </ul>
+  </li>
+</ul>

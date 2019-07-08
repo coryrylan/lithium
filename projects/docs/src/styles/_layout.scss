@@ -1,0 +1,9 @@
+.layout-page main {
+  padding: 60px 30px;
+}
+
+router-outlet ~ * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

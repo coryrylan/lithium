@@ -1,0 +1,25 @@
+<h1>Icons</h1>
+
+<p>
+  To use import the icon component and the icons you would like to use.
+  By explicitly importing the icons you want to use your application will
+  only bundle the icons necessary improving performance.
+</p>
+
+<li-icon></li-icon>
+<li-icon name="close"></li-icon>
+<li-icon name="menu" id="menu"></li-icon>
+
+<br /><br />
+
+<li-code-example [code]="codeExample"></li-code-example>
+
+<li-code-example language="html" [code]="codeExample2"></li-code-example>
+
+<p>
+  You can also add specific groups of icons or all the icons provided in one statement.
+  While convenient it is not recommended for performance as your application will load
+  icons it may not be using.
+</p>
+
+<li-code-example [code]="codeExample3"></li-code-example>

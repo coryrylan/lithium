@@ -1,0 +1,33 @@
+<h1>Modal</h1>
+
+<li-tabs>
+  <li-tab title="Example">
+    <h2>Example</h2>
+    <p>Open: {{openModal}}</p>
+    <button (click)="openModal = !openModal">toggle modal</button>
+    
+    <li-modal [open]="openModal" (openChange)="openModal = $event.detail">
+      <h1 slot="header">Hello World Header</h1>
+      <p>Hello World</p>
+      <div slot="footer">Hello World Footer</div>
+    </li-modal>
+    
+    
+    <button (click)="formsModal = !formsModal">toggle forms modal</button>
+    
+    <li-modal [open]="formsModal" (openChange)="formsModal = $event.detail">
+      <h3 slot="header">Angular Form in Modal</h3>
+      <input [formControl]="input"/>
+      <p>{{input.value}}</p>
+    </li-modal>
+
+    <br /><br />
+    <li-code-example language="html" [code]="codeExample"></li-code-example>
+  </li-tab>
+  <li-tab title="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab title="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

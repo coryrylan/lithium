@@ -1,0 +1,12 @@
+{
+  "mode": "file",
+  "out": "api",
+  "excludeExternals": true,
+  "excludeProtected": true,
+  "excludePrivate": true,
+  "excludeNotExported": true,
+  "excludeInherited": true,
+  "includeDeclarations": true,
+  "exclude":"**/*+(index|.spec|.e2e).ts",
+  "json": "projects/docs/src/assets/api.json"
+}
