@@ -20,6 +20,15 @@
         </ng-container>
       </ul>
 
+      <h3>Style Attributes</h3>
+      <ul>
+        <ng-container *ngFor="let tag of class?.comment?.tags">
+          <li *ngIf="tag.tag === 'styleattr'">
+            <p>{{tag.text}}</p>
+          </li>
+        </ng-container>
+      </ul>
+
       <h3>Content Slots</h3>
       <ul>
         <ng-container *ngFor="let tag of class?.comment?.tags">

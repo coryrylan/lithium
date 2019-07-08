@@ -1,6 +1,10 @@
 import { css } from 'lit-element';
 
 export const styles = css`
+  :host([large]) .li-modal {
+    max-width: 700px;
+  }
+
   .li-modal-wrapper {
     position: absolute;
     top: 0;
@@ -15,8 +19,8 @@ export const styles = css`
     padding: 12px;
     background-color: #fff;
     color: #2d2d2d;
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
     margin: 24px auto;
     position: relative;
     z-index: 302;

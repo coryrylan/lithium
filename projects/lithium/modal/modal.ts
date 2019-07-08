@@ -13,9 +13,10 @@ IconService.addIcons(closeIcon);
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer
- * @cssprop `--max-width` - Max container width.
- * @cssprop `--max-height` - Max container height.
+ * @cssProp `--max-width` - Max container width.
+ * @cssProp `--max-height` - Max container height.
  * @customEvent `openChange` - Notify when the modal has been opened or closed.
+ * @styleAttr `large` - Set modal size to large breakpoint
  */
 // @dynamic
 export class LithiumModal extends LitElement {

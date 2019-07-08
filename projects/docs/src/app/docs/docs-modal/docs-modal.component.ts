@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 export class DocsModalComponent implements OnInit {
   openModal = false;
   formsModal = false;
+  largeModal = false;
   input = new FormControl('Hello World Content');
 
   codeExample = `
