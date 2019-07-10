@@ -4,7 +4,7 @@ import { styles } from './tab.styles';
 
 // @dynamic
 export class LithiumTab extends LitElement {
-  @property({ type: String }) title = '';
+  @property({ type: String }) name = '';
   static get styles() { return styles; }
 
   render() {

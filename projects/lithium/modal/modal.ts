@@ -20,10 +20,21 @@ IconService.addIcons(closeIcon);
  */
 // @dynamic
 export class LithiumModal extends LitElement {
-  /** Toggle if modal should be open or closed. */
-  @property({ type: Boolean }) open = false;
+  private _open = false;
+  get open() { return this._open; }
 
-  /** Option to set if modal can be closed by clicking the. */
+  /** Toggle if modal should be open or closed. */
+  @property({ type: Boolean })
+  set open(value) {
+    if (value !== this._open) {
+      const old = this._open;
+      this._open = value;
+      this.requestUpdate('open', old);
+      this.openChange();
+    }
+  }
+
+  /** Option to set if modal can be closed by clicking the modal backdrop */
   @property({ type: Boolean }) backdropClosable = true;
 
   static get styles() {
@@ -61,24 +72,15 @@ export class LithiumModal extends LitElement {
   /** Toggles if the modal should be open or closed */
   toggle() {
     this.open = !this.open;
-    this.openChange();
-  }
-
-  protected updated(changedProperties: Map<string, any>) {
-    if (this.open && this.open !== changedProperties.get('open')) {
-      // setup focus trap
-    }
   }
 
   private close() {
     this.open = !this.open;
-    this.openChange();
   }
 
   private backdropClose() {
     if (this.backdropClosable) {
       this.close();
-      this.openChange();
     }
   }
 

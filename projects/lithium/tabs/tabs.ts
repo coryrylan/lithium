@@ -16,7 +16,7 @@ export class LithiumTabs extends LitElement {
       <div class="li-tabs">
         <div class="li-tabs-nav">
           ${this.tabs.map((t, i) => html`
-            <button className=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>${t.title}</button>
+            <button className=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>${t.name}</button>
           `)}
         </div>
         <slot></slot>
