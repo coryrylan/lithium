@@ -1,0 +1,88 @@
+body {
+  --global-color-white-100: #fff;
+  --global-color-gray-100: #f3f3f3;
+  --global-color-gray-200: #e4e4e4;
+  --global-color-gray-300: #ccc;
+  --global-color-gray-400: #414141;
+  --global-color-gray-500: #2d2d2d;
+  --global-color-gray-600: #292929;
+  --global-color-gray-700: #1f1f1f;
+}
+
+body {
+  --global-primary-color: var(--global-color-gray-100);
+  --global-secondary-color: var(--global-color-gray-200);
+  --global-border-color: var(--global-color-gray-200);
+  --global-text-color: var(--global-color-gray-500);
+  --global-background-color: var(--global-color-white-100);
+
+  li-nav-bar {
+    --background-color: var(--global-primary-color);
+    --text-color: var(--global-text-color);
+  }
+
+  li-side-nav {
+    --header-background-color: var(--global-color-gray-100);
+    --nav-background-color: var(--global-color-white-100);
+    --nav-border-color: var(--global-border-color);
+    --text-color: var(--global-text-color);
+  }
+
+  li-icon {
+    --color: var(--global-text-color);
+  }
+
+  li-progress-bar {
+    --background-color: var(--global-color-gray-100);
+    --inset-color: var(--global-color-gray-200);
+    --text-color: var(--global-text-color);
+  }
+}
+
+body.dark-theme {
+  --global-primary-color: var(--global-color-gray-500);
+  --global-secondary-color: var(--global-color-gray-400);
+  --global-border-color: var(--global-color-gray-500);
+  --global-text-color: var(--global-color-white-100);
+  --global-background-color: var(--global-color-gray-400);
+
+  li-nav-bar {
+    --background-color: var(--global-primary-color);
+    --text-color: var(--global-text-color);
+  }
+
+  li-side-nav {
+    --header-background-color: var(--global-color-gray-700);
+    --nav-background-color: var(--global-color-gray-600);
+    --nav-border-color: var(--global-border-color);
+    --text-color: var(--global-text-color);
+  }
+
+  li-icon {
+    --color: var(--global-text-color);
+  }
+
+  li-progress-bar {
+    --background-color: var(--global-color-gray-500);
+    --inset-color: var(--global-color-gray-700);
+    --text-color: var(--global-text-color);
+  }
+
+  li-code-example {
+    --token-1: #b3d4fc;
+    --token-2: var(--global-color-gray-500);;
+    --token-3: slategray;
+    --token-4: #d1d1d1;
+    --token-5: #ff008c;
+    --token-6: #8ed400;
+    --token-7: #e6a659;
+    --token-8: #019ee2;
+    --token-9: #fb5677;
+    --token-10: #e90;
+    --token-11: transparent;
+    --token-12: var(--global-color-gray-500);
+    --token-13: var(--global-color-gray-600);
+    --token-14: none;
+    --token-15: var(--global-color-white-100);
+  }
+}

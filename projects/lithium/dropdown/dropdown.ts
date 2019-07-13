@@ -5,16 +5,10 @@ import { styles } from './dropdown.styles';
 
 // @dynamic
 export class XDropdown extends LitElement {
-  @property() visible = false;
-  @property() title = 'dropdown';
+  @property({ type: Boolean }) visible = false;
+  @property({ type: String }) title = 'dropdown';
 
   static get styles() { return styles; }
-
-  constructor() {
-    super();
-    this.visible = false;
-    this.title = 'dropdown';
-  }
 
   render() {
     return html`
@@ -32,7 +26,7 @@ export class XDropdown extends LitElement {
 
   toggle() {
     this.visible = !this.visible;
-    this.dispatchEvent(new CustomEvent('visibleChange', { detail: this.visible }))
+    this.dispatchEvent(new CustomEvent('visibleChange', { detail: this.visible }));
   }
 }
 

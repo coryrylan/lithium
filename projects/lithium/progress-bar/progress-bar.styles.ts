@@ -3,15 +3,15 @@ import { css } from 'lit-element';
 export const styles = css`
   :host {
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --off-white: #f5f5f5;
-    --primary-color: #e4e4e4;
+    --background-color: #f3f3f3;
+    --inset-color: #e4e4e4;
     --text-color: #2d2d2d;
   }
 
   .li-progress-bar {
     width: 100%;
     height: 20px;
-    background: var(--off-white);
+    background: var(--background-color);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
@@ -25,7 +25,7 @@ export const styles = css`
   .li-progress-bar-inner {
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
+    background: var(--inset-color);
     position: absolute;
     top: 0;
     left: -100%;

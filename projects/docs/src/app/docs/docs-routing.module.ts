@@ -10,6 +10,7 @@ import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
 import { DocsTabsComponent } from './docs-tabs/docs-tabs.component';
 import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading-spinner.component';
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
+import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 import { Layout } from '../common/enums';
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
       { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },
       { path: 'tabs', component: DocsTabsComponent, data: { title: 'Lithium Tabs Web Component - Documentation', layout: Layout.Docs } },
       { path: 'loading-spinner', component: DocsLoadingSpinnerComponent, data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'progress-bar', component: DocsProgressBarComponent, data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs } }
+      { path: 'progress-bar', component: DocsProgressBarComponent, data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'themes', component: DocsThemesComponent, data: { title: 'Lithium Progress Themes - Documentation', layout: Layout.Docs } }
     ]
   }
 ];

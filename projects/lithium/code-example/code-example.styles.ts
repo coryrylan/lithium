@@ -9,9 +9,9 @@ export const styles = css`
 
   code[class*="language-"],
   pre[class*="language-"] {
-    color: black;
+    color: var(--token-15);
     background: none;
-    text-shadow: 0 1px white;
+    text-shadow: 0 1px var(--token-14);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 1em;
     text-align: left;
@@ -34,13 +34,13 @@ export const styles = css`
   pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
   code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
     text-shadow: none;
-    background: #b3d4fc;
+    background: var(--token-1);
   }
 
   pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
   code[class*="language-"]::selection, code[class*="language-"] ::selection {
     text-shadow: none;
-    background: #b3d4fc;
+    background: var(--token-1);
   }
 
   @media print {
@@ -59,7 +59,7 @@ export const styles = css`
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: #f5f2f0;
+    background: var(--token-2);
   }
 
   /* Inline code */
@@ -73,11 +73,11 @@ export const styles = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: slategray;
+    color: var(--token-3);
   }
 
   .token.punctuation {
-    color: #999;
+    color: var(--token-4);
   }
 
   .namespace {
@@ -91,7 +91,7 @@ export const styles = css`
   .token.constant,
   .token.symbol,
   .token.deleted {
-    color: #905;
+    color: var(--token-5);
   }
 
   .token.selector,
@@ -100,7 +100,7 @@ export const styles = css`
   .token.char,
   .token.builtin,
   .token.inserted {
-    color: #690;
+    color: var(--token-6);
   }
 
   .token.operator,
@@ -108,25 +108,25 @@ export const styles = css`
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    color: #9a6e3a;
-    background: hsla(0, 0%, 100%, .5);
+    color: var(--token-7);
+    background: var(--token-11);
   }
 
   .token.atrule,
   .token.attr-value,
   .token.keyword {
-    color: #07a;
+    color: var(--token-8);
   }
 
   .token.function,
   .token.class-name {
-    color: #DD4A68;
+    color: var(--token-9);
   }
 
   .token.regex,
   .token.important,
   .token.variable {
-    color: #e90;
+    color: var(--token-10);
   }
 
   .token.important,
@@ -145,6 +145,21 @@ export const styles = css`
   :host {
     display: block;
     margin-bottom: 48px;
+    --token-1: #b3d4fc;
+    --token-2: #f3f3f3;
+    --token-3: slategray;
+    --token-4: #999;
+    --token-5: #905;
+    --token-6: #690;
+    --token-7: #9a6e3a;
+    --token-8: #07a;
+    --token-9: #DD4A68;
+    --token-10: #e90;
+    --token-11: hsla(0, 0%, 100%, .5);
+    --token-12: #f3f3f3;
+    --token-13: #e4e4e4;
+    --token-14: white;
+    --token-15: black;
   }
 
   pre {
@@ -158,8 +173,8 @@ export const styles = css`
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: #f3f3f3;
-    border-left: 8px solid #e4e4e4;
+    background: var(token-11);
+    border-left: 8px solid var(--token-13);
     padding-top: 38px;
   }
 `;

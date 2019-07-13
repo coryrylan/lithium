@@ -2,9 +2,9 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --color-primary: #2d2d2d;
+    --text-color: inherit;
+    --background-color: inherit;
     --border-color: #ccc;
-    --tab-background-color: #fff;
     --breakpoint: 480px;
   }
 
@@ -39,18 +39,19 @@ export const styles = css`
     transition: all 0.3s;
     font-weight: 500;
     font-size: 14px;
+    color: var(--text-color);
   }
 
   .li-tabs-nav > button.active,
   .li-tabs-nav > button.active:hover,
   .li-tabs-nav > button.active:focus {
     cursor: default;
-    color: var(--color-primary);
+    color: var(--text-color);
   }
 
   .li-tabs-nav > button:focus,
   .li-tabs-nav > button:hover {
-    color: var(--color-primary);
+    color: var(--text-color);
   }
 
   .li-tabs-nav > button:nth-child(-n + 3) {
@@ -79,7 +80,7 @@ export const styles = css`
     }
 
     .li-tabs-nav > button.active {
-      background-color: var(--tab-background-color);
+      background-color: var(--background-color);
       border: 1px solid var(--border-color);
       border-bottom: 3px solid transparent;
     }

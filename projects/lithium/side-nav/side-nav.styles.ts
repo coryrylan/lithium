@@ -2,14 +2,13 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --header-background-color: #f2f2f2;
-    --header-text-color: #2d2d2d;
-    --nav-top: 0;
-    --nav-border-color: #f2f2f2;
+    --text-color: #2d2d2d;
+    --nav-border-color: #f3f3f3;
     --nav-background-color: #fff;
-    --nav-text-color: #2d2d2d;
+    --nav-top: 0;
     --nav-width: 280px;
     --transition-speed: 250ms;
+    --header-background-color: #f3f3f3;
   }
 
   .li-side-nav {
@@ -40,7 +39,7 @@ export const styles = css`
     height: 50px;
     overflow: hidden;
     background-color: var(--header-background-color);
-    color: var(--header-text-color);
+    color: var(--text-color);
   }
 
   .li-menu-heading-text {
@@ -59,7 +58,12 @@ export const styles = css`
     right: 0;
     background-color: transparent;
     cursor: pointer;
-    color: var(--header-text-color);
+    color: var(--text-color);
+
+  }
+
+  .li-menu-close-icon {
+    --color: var(--text-color);
   }
 
   .li-side-nav-slot::slotted(a), .li-side-nav-slot::slotted(button) {

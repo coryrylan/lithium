@@ -11,6 +11,7 @@ import { DocsTabsComponent } from './docs-tabs/docs-tabs.component';
 import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading-spinner.component';
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
 import { DocsIconsComponent } from './docs-icons/docs-icons.component';
+import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -23,7 +24,8 @@ import { DocsIconsComponent } from './docs-icons/docs-icons.component';
     DocsNavBarComponent,
     DocsTabsComponent,
     DocsLoadingSpinnerComponent,
-    DocsProgressBarComponent
+    DocsProgressBarComponent,
+    DocsThemesComponent
   ],
   imports: [
     CommonModule,

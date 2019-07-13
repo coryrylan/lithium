@@ -2,10 +2,11 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --li-header-background-color: #f3f3f3;
-    box-sizing: border-box;
+    --background-color: #f3f3f3;
+    --text-color: #2d2d2d;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin-bottom: 12px;
-    background-color: var(--li-header-background-color);
     display: flex;
     width: 100%;
     overflow: hidden;

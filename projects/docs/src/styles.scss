@@ -1,5 +1,6 @@
 @import '~normalize.css/normalize';
 @import '~blueprint-css/src/blueprint';
+@import './styles/theme';
 @import './styles/typography';
-@import './styles/_layout';
-@import './styles/_buttons';
+@import './styles/layout';
+@import './styles/buttons';

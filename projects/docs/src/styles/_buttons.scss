@@ -1,7 +1,8 @@
 // temp
-button, .btn {
-  border: 1px solid #ccc;
-  background: #fff;
+.btn {
+  border: 1px solid var(--global-color-gray-100);
+  background: var(--global-color-gray-100);
+  color: var(--global-text-color);
   border-radius: 3px;
   padding: 10px 24px;
   font-size: 16px;
@@ -10,6 +11,17 @@ button, .btn {
   cursor: pointer;
 
   &:hover {
-    background-color: lighten(#ccc, 17%);
+    background-color: var(--global-color-gray-200);
+  }
+}
+
+body.dark-theme {
+  .btn {
+    background: var(--global-color-gray-500);
+    border-color: var(--global-color-gray-500);
+
+    &:hover {
+      background-color: var(--global-color-gray-600);
+    }
   }
 }
