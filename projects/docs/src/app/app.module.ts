@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import 'lithium-ui'; // imports all components
+import 'lithium-ui/card';
 import 'lithium-ui/dropdown';
 import 'lithium-ui/modal';
 import 'lithium-ui/side-nav';

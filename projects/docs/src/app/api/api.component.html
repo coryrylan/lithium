@@ -4,8 +4,8 @@
 <input [formControl]="search" id="search" />
 <br /><br />
 
-<ul bp="grid 4@md" class="class-list">
-  <li *ngFor="let class of classResults" class="class">
+<div bp="grid 4@md">
+  <li-card *ngFor="let class of classResults">
       <h2>{{class.name}}</h2>
       <p *ngIf="class?.comment?.shortText">
         {{class.comment.shortText}}
@@ -59,5 +59,5 @@
           </li>
         </ng-container>
       </ul>
-  </li>
-</ul>
+  </li-card>
+</div>

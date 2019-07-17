@@ -16,4 +16,8 @@ export class AppComponent {
     this.routerMetaDataService.init().subscribe();
     this.themeService.init();
   }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
 }

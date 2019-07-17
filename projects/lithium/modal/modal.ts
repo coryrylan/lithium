@@ -1,7 +1,7 @@
 import { LitElement, html, property } from 'lit-element';
 import '@a11y/focus-trap';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { registerElementSafely, IntlService } from 'lithium-ui/common';
 import { IconService, closeIcon } from 'lithium-ui/icons';
 import { styles } from './modal.styles';
 IconService.addIcons(closeIcon);
@@ -50,7 +50,7 @@ export class LithiumModal extends LitElement {
               <focus-trap>
                 <div class="li-modal-header">
                   <slot name="header"></slot>
-                  <button @click="${() => this.close()}" type="button" aria-label="close modal" class="li-modal-close-btn">
+                  <button @click="${() => this.close()}" type="button" aria-label="${IntlService.registry.close}" class="li-modal-close-btn">
                     <li-icon name="close"></li-icon>
                   </button>
                 </div>

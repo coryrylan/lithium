@@ -3,7 +3,7 @@ body {
   --global-color-gray-100: #f3f3f3;
   --global-color-gray-200: #e4e4e4;
   --global-color-gray-300: #ccc;
-  --global-color-gray-400: #414141;
+  --global-color-gray-400: #3d3d3d;
   --global-color-gray-500: #2d2d2d;
   --global-color-gray-600: #292929;
   --global-color-gray-700: #1f1f1f;
@@ -17,7 +17,7 @@ body {
   --global-background-color: var(--global-color-white-100);
 
   li-nav-bar {
-    --background-color: var(--global-primary-color);
+    --background-color: var(--global-color-gray-100);
     --text-color: var(--global-text-color);
   }
 
@@ -26,6 +26,11 @@ body {
     --nav-background-color: var(--global-color-white-100);
     --nav-border-color: var(--global-border-color);
     --text-color: var(--global-text-color);
+  }
+
+  li-card {
+    --background-color: var(--global-color-gray-100);
+    --border-color: var(--global-color-gray-200);
   }
 
   li-icon {
@@ -40,6 +45,10 @@ body {
 }
 
 body.dark-theme {
+  code {
+    background: var(--global-color-gray-600);
+  }
+
   --global-primary-color: var(--global-color-gray-500);
   --global-secondary-color: var(--global-color-gray-400);
   --global-border-color: var(--global-color-gray-500);
@@ -47,7 +56,7 @@ body.dark-theme {
   --global-background-color: var(--global-color-gray-400);
 
   li-nav-bar {
-    --background-color: var(--global-primary-color);
+    --background-color: var(--global-color-gray-500);
     --text-color: var(--global-text-color);
   }
 
@@ -56,6 +65,11 @@ body.dark-theme {
     --nav-background-color: var(--global-color-gray-600);
     --nav-border-color: var(--global-border-color);
     --text-color: var(--global-text-color);
+  }
+
+  li-card {
+    --background-color: var(--global-color-gray-500);
+    --border-color: var(--global-color-gray-600);
   }
 
   li-icon {

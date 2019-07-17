@@ -1,0 +1,16 @@
+<h1>Internationalization (i18n)</h1>
+
+<p>
+  To change the underlying language within components use the <code>IntlService</code>.
+  This is important for the underlying internal accessibility and aria labels.
+</p>
+
+<li-code-example [code]="codeExample"></li-code-example>
+
+<button (click)="setEnglish()" class="btn">English</button>
+<button (click)="setFrench()" class="btn">French</button>
+
+<h2>Registry Values</h2>
+<pre>
+{{IntlService.registry | json}}
+</pre>

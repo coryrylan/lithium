@@ -144,7 +144,7 @@ export const styles = css`
   /* CUSTOM */
   :host {
     display: block;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     --token-1: #b3d4fc;
     --token-2: #f3f3f3;
     --token-3: slategray;

@@ -7,6 +7,12 @@ import { ThemeService } from '../../common/services/theme.service';
   templateUrl: './docs-themes.component.html'
 })
 export class DocsThemesComponent implements OnInit {
+  codeExample = `
+    li-card {
+      --background-color: #ccc;
+      --border-color: #2d2d2d;
+    }
+  `;
 
   constructor(private themeService: ThemeService) { }
 

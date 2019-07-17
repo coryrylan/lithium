@@ -1,0 +1,46 @@
+<h1>Card</h1>
+
+<li-tabs>
+  <li-tab name="Example">
+    <h2>Example</h2>
+    <li-card>
+      <h2>Hello World</h2>
+      <p>
+        Cards can be useful for grouping related content and actions.
+      </p>
+    </li-card>
+
+    <li-code-example [code]="codeExample" language="html"></li-code-example>
+
+    <h3>Layout</h3>
+
+    <p>
+      Cards can be layed out in grid systems.
+    </p>
+
+    <div bp="grid 6">
+      <li-card>
+        <h2>Card 1</h2>
+        <p>
+          Cards can be useful for grouping related content and actions.
+        </p>
+
+        <div slot="footer">
+          <!-- <button class="btn">Action</button> -->
+        </div>
+      </li-card>
+      <li-card>
+        <h2>Card 2</h2>
+        <p>
+          Cards can be useful for grouping related content and actions.
+        </p>
+      </li-card>
+    </div>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab name="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

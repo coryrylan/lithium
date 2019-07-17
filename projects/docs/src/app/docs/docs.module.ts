@@ -12,12 +12,15 @@ import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
 import { DocsIconsComponent } from './docs-icons/docs-icons.component';
 import { DocsThemesComponent } from './docs-themes/docs-themes.component';
+import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
+import { DocsCardComponent } from './docs-card/docs-card.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     DocsComponent,
     DocsHomeComponent,
+    DocsCardComponent,
     DocsIconsComponent,
     DocsModalComponent,
     DocsSideNavComponent,
@@ -25,7 +28,8 @@ import { DocsThemesComponent } from './docs-themes/docs-themes.component';
     DocsTabsComponent,
     DocsLoadingSpinnerComponent,
     DocsProgressBarComponent,
-    DocsThemesComponent
+    DocsThemesComponent,
+    DocsI18nComponent
   ],
   imports: [
     CommonModule,

@@ -1,12 +1,18 @@
 // temp
+button, a {
+  line-height: 1.5rem;
+}
+
 .btn {
   border: 1px solid var(--global-color-gray-100);
   background: var(--global-color-gray-100);
   color: var(--global-text-color);
   border-radius: 3px;
   padding: 10px 24px;
+  margin: 0 4px 24px 0;
   font-size: 16px;
   text-decoration: none;
+  line-height: 1.5rem;
   display: inline-block;
   cursor: pointer;
 
@@ -17,11 +23,11 @@
 
 body.dark-theme {
   .btn {
-    background: var(--global-color-gray-500);
-    border-color: var(--global-color-gray-500);
+    background: var(--global-color-gray-600);
+    border-color: var(--global-color-gray-600);
 
     &:hover {
-      background-color: var(--global-color-gray-600);
+      background-color: var(--global-color-gray-700);
     }
   }
 }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DocsComponent } from './docs/docs.component';
+import { DocsThemesComponent } from './docs-themes/docs-themes.component';
+import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsIconsComponent } from './docs-icons/docs-icons.component';
 import { DocsModalComponent } from './docs-modal/docs-modal.component';
@@ -10,13 +12,16 @@ import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
 import { DocsTabsComponent } from './docs-tabs/docs-tabs.component';
 import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading-spinner.component';
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
-import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 import { Layout } from '../common/enums';
+import { DocsCardComponent } from './docs-card/docs-card.component';
 
 const routes: Routes = [
   {
     path: '', component: DocsComponent, children: [
       { path: '', component: DocsHomeComponent, data: { title: 'Lithium Web Components - Documentation', layout: Layout.Docs } },
+      { path: 'themes', component: DocsThemesComponent, data: { title: 'Lithium Progress Themes - Documentation', layout: Layout.Docs } },
+      { path: 'internationalization', component: DocsI18nComponent, data: { title: 'Lithium Internationalization (i18n) - Documentation', layout: Layout.Docs } },
+      { path: 'card', component: DocsCardComponent, data: { title: 'Lithium Card Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },
       { path: 'side-nav', component: DocsSideNavComponent, data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs } },
@@ -24,7 +29,6 @@ const routes: Routes = [
       { path: 'tabs', component: DocsTabsComponent, data: { title: 'Lithium Tabs Web Component - Documentation', layout: Layout.Docs } },
       { path: 'loading-spinner', component: DocsLoadingSpinnerComponent, data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs } },
       { path: 'progress-bar', component: DocsProgressBarComponent, data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'themes', component: DocsThemesComponent, data: { title: 'Lithium Progress Themes - Documentation', layout: Layout.Docs } }
     ]
   }
 ];
