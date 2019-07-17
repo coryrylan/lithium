@@ -16,13 +16,14 @@ export const styles = css`
 
   .li-modal {
     border: 1px solid #ccc;
-    padding: 12px;
+    padding: 1rem;
     background-color: #fff;
     color: #2d2d2d;
     width: 100%;
     max-width: 600px;
     margin: 24px auto;
     position: relative;
+    border-radius: 4px;
     z-index: 302;
   }
 

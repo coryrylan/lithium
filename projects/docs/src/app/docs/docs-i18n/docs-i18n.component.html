@@ -7,10 +7,16 @@
 
 <li-code-example [code]="codeExample"></li-code-example>
 
-<button (click)="setEnglish()" class="btn">English</button>
-<button (click)="setFrench()" class="btn">French</button>
-
-<h2>Registry Values</h2>
-<pre>
+<div bp="grid 6@md">
+  <li-card>
+    <h2>Registry Values</h2>
+    <pre>
 {{IntlService.registry | json}}
-</pre>
+    </pre>
+  </li-card>
+  <div>
+    <button (click)="setEnglish()" class="btn">English</button>
+    <button (click)="setFrench()" class="btn">French</button>
+  </div>
+</div>
+
