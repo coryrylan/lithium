@@ -1,18 +1,11 @@
 import { css } from 'lit-element';
 
 export const styles = css`
-  :host {
-    --primary-color: #ccc;
-  }
-
   .li-spinner {
     animation: rotation 1.4s linear infinite;
     stroke: #ccc;
     will-change: transform, animation;
-  }
-
-  .li-spinner--light .spinner {
-    stroke: var(--primary-color);
+    stroke: var(--li-spinner-color, #ccc);
   }
 
   @keyframes rotation

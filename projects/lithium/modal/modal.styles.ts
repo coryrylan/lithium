@@ -42,6 +42,10 @@ export const styles = css`
     cursor: pointer;
   }
 
+  li-icon {
+    --li-icon-color: #2d2d2d;
+  }
+
   .li-modal-backdrop {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;

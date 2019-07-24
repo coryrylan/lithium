@@ -9,9 +9,9 @@ export const styles = css`
 
   code[class*="language-"],
   pre[class*="language-"] {
-    color: var(--token-15);
+    color: var(--li-code-example-token-14, black);
     background: none;
-    text-shadow: 0 1px var(--token-14);
+    text-shadow: 0 1px var(--li-code-example-token-13, white);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 1em;
     text-align: left;
@@ -34,13 +34,13 @@ export const styles = css`
   pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
   code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
     text-shadow: none;
-    background: var(--token-1);
+    background: var(--li-code-example-token-1, #b3d4fc);
   }
 
   pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
   code[class*="language-"]::selection, code[class*="language-"] ::selection {
     text-shadow: none;
-    background: var(--token-1);
+    background: var(--li-code-example-token-1, #b3d4fc);
   }
 
   @media print {
@@ -59,7 +59,7 @@ export const styles = css`
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: var(--token-2);
+    background: var(--li-code-example-token-2, #fff);
   }
 
   /* Inline code */
@@ -73,11 +73,11 @@ export const styles = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: var(--token-3);
+    color: var(--li-code-example-token-3, slategray);
   }
 
   .token.punctuation {
-    color: var(--token-4);
+    color: var(--li-code-example-token-4, #999);
   }
 
   .namespace {
@@ -91,7 +91,7 @@ export const styles = css`
   .token.constant,
   .token.symbol,
   .token.deleted {
-    color: var(--token-5);
+    color: var(--li-code-example-token-5, #905);
   }
 
   .token.selector,
@@ -100,7 +100,7 @@ export const styles = css`
   .token.char,
   .token.builtin,
   .token.inserted {
-    color: var(--token-6);
+    color: var(--li-code-example-token-6, #690);
   }
 
   .token.operator,
@@ -108,25 +108,25 @@ export const styles = css`
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    color: var(--token-7);
-    background: var(--token-11);
+    color: var(--li-code-example-token-7, #9a6e3a);
+    background: var(--li-code-example-token-11, hsla(0, 0%, 100%, .5));
   }
 
   .token.atrule,
   .token.attr-value,
   .token.keyword {
-    color: var(--token-8);
+    color: var(--li-code-example-token-8, #07a);
   }
 
   .token.function,
   .token.class-name {
-    color: var(--token-9);
+    color: var(--li-code-example-token-9, #DD4A68);
   }
 
   .token.regex,
   .token.important,
   .token.variable {
-    color: var(--token-10);
+    color: var(--li-code-example-token-10, #e90);
   }
 
   .token.important,
@@ -145,23 +145,6 @@ export const styles = css`
   :host {
     display: block;
     margin-bottom: 24px;
-    --border-color: #e4e4e4;
-    --border-radius: 4px;
-    --token-1: #b3d4fc;
-    --token-2: #fff;
-    --token-3: slategray;
-    --token-4: #999;
-    --token-5: #905;
-    --token-6: #690;
-    --token-7: #9a6e3a;
-    --token-8: #07a;
-    --token-9: #DD4A68;
-    --token-10: #e90;
-    --token-11: hsla(0, 0%, 100%, .5);
-    --token-12: #f3f3f3;
-    --token-13: #e4e4e4;
-    --token-14: white;
-    --token-15: black;
   }
 
   pre {
@@ -176,9 +159,9 @@ export const styles = css`
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
     background: var(token-11);
-    border-left: 8px solid var(--token-13);
+    border-left: 8px solid var(--li-code-example-token-12, #e4e4e4);
     padding-top: 38px;
-    border-radius: var(--border-radius);
-    border-bottom: 2px solid var(--border-color);
+    border-radius: var(--li-code-example-border-radius, 4px);
+    border-bottom: 2px solid var(--li-code-example-border-color, #e4e4e4);
   }
 `;

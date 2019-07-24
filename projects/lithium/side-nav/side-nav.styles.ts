@@ -1,32 +1,22 @@
 import { css } from 'lit-element';
 
 export const styles = css`
-  :host {
-    --text-color: #2d2d2d;
-    --nav-border-color: #f3f3f3;
-    --nav-background-color: #fff;
-    --nav-top: 0;
-    --nav-width: 280px;
-    --transition-speed: 250ms;
-    --header-background-color: #f3f3f3;
-  }
-
   .li-side-nav {
     position: fixed;
     left: -400px;
-    top: var(--nav-top);
+    top: var(--li-side-nav-top, 0);
     bottom: 0;
     width: 80%;
-    max-width: var(--nav-width);
+    max-width: var(--li-side-nav-width, 280px);
     z-index: 201;
-    background-color: var(--nav-background-color);
+    background-color: var(--li-side-nav-background-color, #fff);
     overflow: hidden;
     will-change: left;
-    transition: left var(--transition-speed) ease-in;
+    transition: left var(--li-side-nav-transition-speed, 250ms) ease-in;
   }
 
   :host([sticky]) .li-side-nav {
-    border-right: 1px solid var(--nav-border-color);
+    border-right: 1px solid var(--li-side-nav-border-color, #f3f3f3);
   }
 
   .li-side-nav-open .li-side-nav {
@@ -38,8 +28,8 @@ export const styles = css`
     position: relative;
     height: 50px;
     overflow: hidden;
-    background-color: var(--header-background-color);
-    color: var(--text-color);
+    background-color: var(--li-side-nav-header-background-color, #f3f3f3);
+    color: var(--li-side-nav-color, #2d2d2d);
   }
 
   .li-menu-heading-text {
@@ -58,12 +48,12 @@ export const styles = css`
     right: 0;
     background-color: transparent;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--li-side-nav-color, #2d2d2d);
 
   }
 
   .li-menu-close-icon {
-    --color: var(--text-color);
+    --color: var(--li-side-nav-color, #2d2d2d);
   }
 
   .li-side-nav-slot::slotted(a), .li-side-nav-slot::slotted(button) {

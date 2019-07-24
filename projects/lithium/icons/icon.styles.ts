@@ -2,15 +2,12 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --width: 24px;
-    --height: 24px;
-    --color: #2d2d2d;
-    width: var(--width);
-    height: var(--height);
+    width: var(--li-icon-width, 24px);
+    height: var(--li-icon-height, 24px);
     display: inline-block;
   }
 
   svg {
-    fill: var(--color);
+    fill: var(--li-icon-color, #2d2d2d);
   }
 `;

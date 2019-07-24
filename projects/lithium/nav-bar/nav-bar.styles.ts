@@ -2,11 +2,9 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --background-color: #fff;
-    --text-color: #2d2d2d;
-    background-color: var(--background-color);
+    background-color: var(--li-nav-bar-background-color, #fff);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
-    color: var(--text-color);
+    color: var(--li-nav-bar-color, #2d2d2d);
     margin-bottom: 12px;
     display: flex;
     width: 100%;
@@ -26,7 +24,7 @@ export const styles = css`
     padding: 16px;
     background-color: transparent;
     border: 0;
-    color: var(--text-color);
+    color: var(--li-nav-bar-color, #2d2d2d);
     text-decoration: none;
     line-height: 1.5rem;
     cursor: pointer;

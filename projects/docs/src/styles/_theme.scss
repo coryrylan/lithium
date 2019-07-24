@@ -1,4 +1,4 @@
-body {
+:root {
   --global-color-white-100: #fff;
   --global-color-gray-50: #f7f7f7;
   --global-color-gray-100: #f3f3f3;
@@ -13,63 +13,42 @@ body {
   --global-border-color: var(--global-color-gray-200);
   --global-text-color: var(--global-color-gray-500);
   --global-background-color: var(--global-color-gray-50);
+  --global-code-background-color: var(--global-color-gray-100);
 }
 
-body.dark-theme {
-  code {
-    background: var(--global-color-gray-600);
-  }
-
+:root .dark-theme {
   --global-primary-color: var(--global-color-gray-500);
   --global-secondary-color: var(--global-color-gray-400);
   --global-border-color: var(--global-color-gray-500);
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
-
-  li-nav-bar {
-    --background-color: var(--global-color-gray-500);
-    --text-color: var(--global-text-color);
-  }
-
-  li-side-nav {
-    --header-background-color: var(--global-color-gray-700);
-    --nav-background-color: var(--global-color-gray-600);
-    --nav-border-color: var(--global-border-color);
-    --text-color: var(--global-text-color);
-  }
-
-  li-card {
-    --background-color: var(--global-color-gray-500);
-    --border-color: var(--global-color-gray-600);
-  }
-
-  li-icon {
-    --color: var(--global-text-color);
-  }
-
-  li-progress-bar {
-    --background-color: var(--global-color-gray-500);
-    --inset-color: var(--global-color-gray-700);
-    --text-color: var(--global-text-color);
-  }
-
-  li-code-example {
-    --background-color: var(--global-color-gray-500);
-    --border-color: var(--global-color-gray-600);
-    --token-1: #b3d4fc;
-    --token-2: var(--global-color-gray-500);;
-    --token-3: slategray;
-    --token-4: #d1d1d1;
-    --token-5: #ff008c;
-    --token-6: #8ed400;
-    --token-7: #e6a659;
-    --token-8: #019ee2;
-    --token-9: #fb5677;
-    --token-10: #e90;
-    --token-11: transparent;
-    --token-12: var(--global-color-gray-500);
-    --token-13: var(--global-color-gray-600);
-    --token-14: none;
-    --token-15: var(--global-color-white-100);
-  }
+  --global-code-background-color: var(--global-color-gray-600);
+  --li-card-background-color: var(--global-color-gray-500);
+  --li-card-border-color: var(--global-color-gray-600);
+  --li-nav-bar-background-color: var(--global-color-gray-500);
+  --li-nav-bar-color: var(--global-text-color);
+  --li-side-nav-color: var(--global-text-color);
+  --li-side-nav-header-background-color: var(--global-color-gray-700);
+  --li-side-nav-background-color: var(--global-color-gray-600);
+  --li-side-nav-border-color: var(--global-border-color);
+  --li-icon-color: var(--global-text-color);
+  --li-progress-bar-background-color: var(--global-color-gray-500);
+  --li-progress-bar-inset-background-color: var(--global-color-gray-700);
+  --li-progress-bar-color: var(--global-text-color);
+  --li-code-example-background-color: var(--global-color-gray-500);
+  --li-code-example-border-color: var(--global-color-gray-600);
+  --li-code-example-token-1: #b3d4fc;
+  --li-code-example-token-2: var(--global-color-gray-500);;
+  --li-code-example-token-3: slategray;
+  --li-code-example-token-4: #d1d1d1;
+  --li-code-example-token-5: #ff008c;
+  --li-code-example-token-6: #8ed400;
+  --li-code-example-token-7: #e6a659;
+  --li-code-example-token-8: #019ee2;
+  --li-code-example-token-9: #fb5677;
+  --li-code-example-token-10: #e90;
+  --li-code-example-token-11: transparent;
+  --li-code-example-token-12: var(--global-color-gray-600);
+  --li-code-example-token-13: none;
+  --li-code-example-token-14: var(--global-color-white-100);
 }

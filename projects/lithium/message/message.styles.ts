@@ -2,21 +2,10 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --background-color: #2974ca;
-    --border-radius: 4px;
-    --border: 0;
-    --warning-background-color: #c69b20;
-    --error-background-color: #b31d1d;
-    --success-background-color: #3d9b3d;
-    --icon-color: #fff;
-    --success-icon-color: #fff;
-    --warning-icon-color: #fff;
-    --error-icon-color: #fff;
-    --color: #fff;
-    color: var(--color);
-    background-color: var(--background-color);
-    border: var(--border);
-    border-radius: var(--border-radius);
+    color: var(--li-message-color, #fff);
+    background-color: var(--li-message-background-color, #2974ca);
+    border: var(--li-message-border, 0);
+    border-radius: var(--li-message-border-radius, 4px);
     display: block;
     padding: 1rem 1rem 1rem 3rem;
     font-size: 1 rem;
@@ -25,27 +14,27 @@ export const styles = css`
   }
 
   :host([type='success']) {
-    background-color: var(--success-background-color);
+    background-color: var(--li-message-success-background-color, #3d9b3d);
   }
 
   :host([type='warning']) {
-    background-color: var(--warning-background-color);
+    background-color: var(--li-message-warning-background-color, #c69b20);
   }
 
   :host([type='error']) {
-    background-color: var(--error-background-color);
+    background-color: var(--li-message-error-background-color, #b31d1d);
   }
 
   :host([type='success']) li-icon {
-    color: var(--success-icon-color);
+    color: var(--li-message-success-icon-color, #fff);
   }
 
   :host([type='warning']) li-icon {
-    color: var(--warning-icon-color);
+    color: var(--li-message-warning-icon-color, #fff);
   }
 
   :host([type='error']) li-icon {
-    color: var(--error-icon-color);
+    color: var(--li-message-error-icon-color, #fff);
   }
 
   ::slotted(p) {
@@ -55,7 +44,7 @@ export const styles = css`
   li-icon {
     --width: 20px;
     --height: 20px;
-    color: var(--icon-color);
+    color: var(--li-message-icon-color, #fff);
     line-height: 1.5rem;
     position: absolute;
     top: 18px;

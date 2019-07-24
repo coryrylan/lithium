@@ -3,9 +3,9 @@
   max-width: 1300px;
 }
 
-li-side-nav {
-  --nav-top: 56px;
-  --nav-width: 280px;
+.docs-nav {
+  --li-side-nav-top: 56px;
+  --li-side-nav-width: 280px;
   position: absolute;
   z-index: 99;
 }

@@ -1,23 +1,16 @@
 import { css } from 'lit-element';
 
 export const styles = css`
-  :host {
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --background-color: #f3f3f3;
-    --inset-color: #e4e4e4;
-    --text-color: #2d2d2d;
-  }
-
   .li-progress-bar {
     width: 100%;
     height: 20px;
-    background: var(--background-color);
+    background: var(--li-progress-bar-background-color, #f3f3f3);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    -webkit-box-shadow: inset 0 1px 2px var(--shadow-color);
-    box-shadow: inset 0 1px 2px var(--shadow-color);
+    -webkit-box-shadow: inset 0 1px 2px var(--li-progress-bar-shadow-color, rgba(0, 0, 0, 0.1));
+    box-shadow: inset 0 1px 2px var(--li-progress-bar-shadow-color, rgba(0, 0, 0, 0.1));
     padding: 2px;
     margin-bottom: 4px;
   }
@@ -25,7 +18,7 @@ export const styles = css`
   .li-progress-bar-inner {
     width: 100%;
     height: 100%;
-    background: var(--inset-color);
+    background: var(--li-progress-bar-inset-background-color, #e4e4e4);
     position: absolute;
     top: 0;
     left: -100%;
@@ -37,7 +30,7 @@ export const styles = css`
   }
 
   .li-progress-bar-value {
-    color: var(--text-color);
+    color: var(--li-progress-bar-color, #2d2d2d);
     z-index: 2;
     position: absolute;
     text-align: center;
