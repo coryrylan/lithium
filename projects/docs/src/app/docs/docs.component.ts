@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { fadeAnimation } from '../../common/animations';
+import { fadeAnimation } from '../common/animations';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-docs',
@@ -9,6 +10,7 @@ import { fadeAnimation } from '../../common/animations';
   animations: [fadeAnimation]
 })
 export class DocsComponent implements OnInit {
+  version = environment.version;
 
   constructor() { }
 

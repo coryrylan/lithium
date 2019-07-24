@@ -3,12 +3,15 @@
 <p>
   To use import the icon component and the icons you would like to use.
   By explicitly importing the icons you want to use your application will
-  only bundle the icons necessary improving performance.
+  only bundle the icons necessary improving performance. <small>(Demo icons provided by Clarity Design System and Font Awesome)</small>
 </p>
 
 <li-icon></li-icon>
 <li-icon name="close"></li-icon>
-<li-icon name="menu" id="menu"></li-icon>
+<li-icon name="menu"></li-icon>
+<li-icon name="info"></li-icon>
+<li-icon name="warning"></li-icon>
+<li-icon name="error"></li-icon>
 
 <br /><br />
 
@@ -16,10 +19,24 @@
 
 <li-code-example language="html" [code]="codeExample2"></li-code-example>
 
+<h2>Icon Collections</h2>
+
 <p>
-  You can also add specific groups of icons or all the icons provided in one statement.
+  You can also add specific collections of icons or all the icons provided in one statement.
   While convenient it is not recommended for performance as your application will load
   icons it may not be using.
 </p>
 
 <li-code-example [code]="codeExample3"></li-code-example>
+
+<h2>Custom Icons</h2>
+
+<p>
+  Using the same API to select icons you can add your own custom SVG icons.
+  If you provide an icon with the same existing name as another icon in the
+  registry it will be overridden.
+</p>
+
+<li-icon name="circle"></li-icon>
+
+<li-code-example [code]="codeExample4"></li-code-example>

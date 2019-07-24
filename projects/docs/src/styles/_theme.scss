@@ -1,5 +1,6 @@
 body {
   --global-color-white-100: #fff;
+  --global-color-gray-50: #f7f7f7;
   --global-color-gray-100: #f3f3f3;
   --global-color-gray-200: #e4e4e4;
   --global-color-gray-300: #ccc;
@@ -7,41 +8,11 @@ body {
   --global-color-gray-500: #2d2d2d;
   --global-color-gray-600: #292929;
   --global-color-gray-700: #1f1f1f;
-}
-
-body {
   --global-primary-color: var(--global-color-gray-100);
   --global-secondary-color: var(--global-color-gray-200);
   --global-border-color: var(--global-color-gray-200);
   --global-text-color: var(--global-color-gray-500);
-  --global-background-color: var(--global-color-white-100);
-
-  li-nav-bar {
-    --background-color: var(--global-color-gray-100);
-    --text-color: var(--global-text-color);
-  }
-
-  li-side-nav {
-    --header-background-color: var(--global-color-gray-100);
-    --nav-background-color: var(--global-color-white-100);
-    --nav-border-color: var(--global-border-color);
-    --text-color: var(--global-text-color);
-  }
-
-  li-card {
-    --background-color: var(--global-color-gray-100);
-    --border-color: var(--global-color-gray-200);
-  }
-
-  li-icon {
-    --color: var(--global-text-color);
-  }
-
-  li-progress-bar {
-    --background-color: var(--global-color-gray-100);
-    --inset-color: var(--global-color-gray-200);
-    --text-color: var(--global-text-color);
-  }
+  --global-background-color: var(--global-color-gray-50);
 }
 
 body.dark-theme {
@@ -83,6 +54,8 @@ body.dark-theme {
   }
 
   li-code-example {
+    --background-color: var(--global-color-gray-500);
+    --border-color: var(--global-color-gray-600);
     --token-1: #b3d4fc;
     --token-2: var(--global-color-gray-500);;
     --token-3: slategray;

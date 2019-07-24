@@ -4,10 +4,10 @@ button, a {
 }
 
 .btn {
-  border: 1px solid var(--global-color-gray-100);
-  background: var(--global-color-gray-100);
-  color: var(--global-text-color);
-  border-radius: 3px;
+  background: #2974ca;
+  color: #fff;
+  border-radius: 4px;
+  border: 0;
   padding: 10px 24px;
   margin: 0 4px 24px 0;
   font-size: 16px;
@@ -17,17 +17,17 @@ button, a {
   cursor: pointer;
 
   &:hover {
-    background-color: var(--global-color-gray-200);
+    opacity: 0.9;
   }
 }
 
-body.dark-theme {
-  .btn {
-    background: var(--global-color-gray-600);
-    border-color: var(--global-color-gray-600);
+// body.dark-theme {
+//   .btn {
+//     background: var(--global-color-gray-600);
+//     border-color: var(--global-color-gray-600);
 
-    &:hover {
-      background-color: var(--global-color-gray-700);
-    }
-  }
-}
+//     &:hover {
+//       background-color: var(--global-color-gray-700);
+//     }
+//   }
+// }

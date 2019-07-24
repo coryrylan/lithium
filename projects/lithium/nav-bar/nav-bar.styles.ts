@@ -2,7 +2,7 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --background-color: #f3f3f3;
+    --background-color: #fff;
     --text-color: #2d2d2d;
     background-color: var(--background-color);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);

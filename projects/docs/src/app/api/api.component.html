@@ -4,7 +4,7 @@
 <input [formControl]="search" id="search" />
 <br /><br />
 
-<div bp="grid 4@md">
+<div bp="grid 4@md 3@lg">
   <li-card *ngFor="let class of classResults">
       <h2>{{class.name}}</h2>
       <p *ngIf="class?.comment?.shortText">

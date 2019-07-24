@@ -10,6 +10,7 @@ import 'lithium-ui/side-nav';
 import 'lithium-ui/nav-bar';
 import 'lithium-ui/tabs';
 import 'lithium-ui/loading-spinner';
+import 'lithium-ui/message';
 import 'lithium-ui/progress-bar';
 import 'lithium-ui/code-example';
 

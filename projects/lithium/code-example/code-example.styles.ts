@@ -145,8 +145,10 @@ export const styles = css`
   :host {
     display: block;
     margin-bottom: 24px;
+    --border-color: #e4e4e4;
+    --border-radius: 4px;
     --token-1: #b3d4fc;
-    --token-2: #f3f3f3;
+    --token-2: #fff;
     --token-3: slategray;
     --token-4: #999;
     --token-5: #905;
@@ -176,5 +178,7 @@ export const styles = css`
     background: var(token-11);
     border-left: 8px solid var(--token-13);
     padding-top: 38px;
+    border-radius: var(--border-radius);
+    border-bottom: 2px solid var(--border-color);
   }
 `;

@@ -81,8 +81,7 @@ export const styles = css`
 
     .li-tabs-nav > button.active {
       background-color: var(--background-color);
-      border: 1px solid var(--border-color);
-      border-bottom: 3px solid transparent;
+      border-bottom: 3px solid var(--border-color);
     }
   }
 

@@ -2,7 +2,7 @@ import { css } from 'lit-element';
 
 export const styles = css`
   :host {
-    --background-color: #f3f3f3;
+    --background-color: #fff;
     --border-color: #e4e4e4;
     --border-radius: 4px;
     background-color: var(--background-color);
@@ -12,5 +12,6 @@ export const styles = css`
     padding: 1.5rem;
     margin-bottom: 1rem;
     display: block;
+    color: inherit;
   }
 `;

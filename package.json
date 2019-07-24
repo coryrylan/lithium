@@ -5,12 +5,14 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lib:start": "ng build lithium --watch",
     "lib:build": "ng build lithium",
-    "lib:api": "typedoc ./projects/lithium"
+    "lib:api": "typedoc ./projects/lithium",
+    "deploy": "npm run lib:build && npm run build:prod && firebase deploy"
   },
   "private": true,
   "dependencies": {

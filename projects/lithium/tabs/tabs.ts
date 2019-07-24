@@ -1,4 +1,5 @@
 import { LitElement, html, property } from 'lit-element';
+import { classMap } from 'lit-html/directives/class-map.js';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { LithiumTab } from './tab';
@@ -16,7 +17,7 @@ export class LithiumTabs extends LitElement {
       <div class="li-tabs">
         <div class="li-tabs-nav">
           ${this.tabs.map((t, i) => html`
-            <button className=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>${t.name}</button>
+            <button class=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>${t.name}</button>
           `)}
         </div>
         <slot></slot>
@@ -32,6 +33,7 @@ export class LithiumTabs extends LitElement {
 
   private tabClick(index: number) {
     this.index = index;
+    this.requestUpdate('index');
     this.showTab();
   }
 

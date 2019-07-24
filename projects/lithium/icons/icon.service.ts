@@ -1,4 +1,4 @@
-import { SVGIcon, unknownIcon, SVGIconGroup } from './svg';
+import { SVGIcon, unknownIcon, SVGIconCollection } from './svg';
 
 export const registry = {
   [unknownIcon.name]: unknownIcon.svg
@@ -9,8 +9,8 @@ export class IconService {
     svgIcons.forEach(icon => registry[icon.name] = icon.svg);
   }
 
-  static addIconGroups(...svgIconGroups: SVGIconGroup[]) {
-    svgIconGroups.forEach(group => {
+  static addIconCollection(...svgIconCollection: SVGIconCollection[]) {
+    svgIconCollection.forEach(group => {
       group.icons.forEach(icon => registry[icon.name] = icon.svg);
     });
   }

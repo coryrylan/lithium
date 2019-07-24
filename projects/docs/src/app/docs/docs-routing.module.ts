@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DocsComponent } from './docs/docs.component';
+import { DocsComponent } from './docs.component';
 import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
@@ -11,6 +11,7 @@ import { DocsSideNavComponent } from './docs-side-nav/docs-side-nav.component';
 import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
 import { DocsTabsComponent } from './docs-tabs/docs-tabs.component';
 import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading-spinner.component';
+import { DocsMessageComponent } from './docs-message/docs-message.component';
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
 import { Layout } from '../common/enums';
 import { DocsCardComponent } from './docs-card/docs-card.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },
       { path: 'tabs', component: DocsTabsComponent, data: { title: 'Lithium Tabs Web Component - Documentation', layout: Layout.Docs } },
       { path: 'loading-spinner', component: DocsLoadingSpinnerComponent, data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'message', component: DocsMessageComponent, data: { title: 'Lithium Message Web Component - Documentation', layout: Layout.Docs } },
       { path: 'progress-bar', component: DocsProgressBarComponent, data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs } },
     ]
   }
