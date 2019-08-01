@@ -15,6 +15,7 @@ import { DocsIconsComponent } from './docs-icons/docs-icons.component';
 import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsCardComponent } from './docs-card/docs-card.component';
+import { SharedModule } from '../common/shared.module';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -35,6 +36,7 @@ import { DocsCardComponent } from './docs-card/docs-card.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     DocsRoutingModule,
     ReactiveFormsModule
   ]

@@ -1,10 +1,17 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+export const componentStyles = css`
   .li-tab-content {
     padding-top: 1rem;
     overflow: visible;
     min-height: 225px;
-    border-top: 1px solid var(--li-tabs-border-color, #ccc);
+    border-top: 1px solid var(--li-tabs-border-color, var(--li-common-color-gray-300));
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

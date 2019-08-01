@@ -1,6 +1,8 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+const componentStyles = css`
   :host {
     width: var(--li-icon-width, 24px);
     height: var(--li-icon-height, 24px);
@@ -8,6 +10,11 @@ export const styles = css`
   }
 
   svg {
-    fill: var(--li-icon-color, #2d2d2d);
+    fill: var(--li-icon-color, var(--li-common-color-gray-500));
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

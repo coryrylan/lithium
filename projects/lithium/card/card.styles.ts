@@ -1,14 +1,22 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+const componentStyles = css`
   :host {
-    background-color: var(--li-card-background-color, #fff);
-    border-color: var(--li-card-border-color, #e4e4e4);
-    border-bottom: 2px solid var(--li-card-border-color, #e4e4e4);
-    border-radius: var(--li-card-border-radius, 4px);
-    padding: 1.5rem;
+    background-color: var(--li-card-background-color, var(--li-common-color-white-100));
+    border-color: var(--li-card-border-color, var(--li-common-color-gray-200));
+    border-bottom: 2px solid var(--li-card-border-color, var(--li-common-color-gray-200));
+    border-radius: var(--li-card-border-radius, var(--li-common-border-radius));
+    color: var(--li-card-color, inherit);
+    padding: var(--li-card-padding, var(--li-common-padding-md));
     margin-bottom: 1rem;
     display: block;
-    color: inherit;
+    font-size: inherit;
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

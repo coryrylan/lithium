@@ -1,10 +1,12 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+export const componentStyles = css`
   :host {
-    background-color: var(--li-nav-bar-background-color, #fff);
+    background-color: var(--li-nav-bar-background-color, var(--li-common-color-white-100));
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
-    color: var(--li-nav-bar-color, #2d2d2d);
+    color: var(--li-nav-bar-color, var(--li-common-color-gray-500));
     margin-bottom: 12px;
     display: flex;
     width: 100%;
@@ -24,7 +26,7 @@ export const styles = css`
     padding: 16px;
     background-color: transparent;
     border: 0;
-    color: var(--li-nav-bar-color, #2d2d2d);
+    color: var(--li-nav-bar-color, var(--li-common-color-gray-500));
     text-decoration: none;
     line-height: 1.5rem;
     cursor: pointer;
@@ -34,3 +36,8 @@ export const styles = css`
     margin-left: auto;
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

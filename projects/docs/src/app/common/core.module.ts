@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouterMetaDataService } from './services/router-metadata.service';
 import { ThemeService } from './services/theme.service';
@@ -8,7 +9,8 @@ import { ThemeService } from './services/theme.service';
 @NgModule({
   imports: [
     BrowserModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     RouterMetaDataService,

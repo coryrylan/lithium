@@ -1,11 +1,13 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+const componentStyles = css`
   .li-spinner {
     animation: rotation 1.4s linear infinite;
-    stroke: #ccc;
+    stroke: var(--li-common-color-gray-300);
     will-change: transform, animation;
-    stroke: var(--li-spinner-color, #ccc);
+    stroke: var(--li-spinner-color, var(--li-common-color-gray-300));
   }
 
   @keyframes rotation
@@ -40,3 +42,8 @@ export const styles = css`
     }
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

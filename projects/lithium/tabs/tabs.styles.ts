@@ -1,10 +1,11 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+export const componentStyles = css`
   :host {
     --text-color: inherit;
     --background-color: inherit;
-    --border-color: #ccc;
     --breakpoint: 480px;
   }
 
@@ -55,11 +56,11 @@ export const styles = css`
   }
 
   .li-tabs-nav > button:nth-child(-n + 3) {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--li-common-color-gray-300);
   }
 
   .li-tabs-nav > button:nth-child(even) {
-    border-right: 1px solid var(--border-color);
+    border-right: 1px solid var(--li-common-color-gray-300);
   }
 
   @media (min-width: 300px) {
@@ -81,7 +82,7 @@ export const styles = css`
 
     .li-tabs-nav > button.active {
       background-color: var(--background-color);
-      border-bottom: 3px solid var(--border-color);
+      border-bottom: 3px solid var(--li-common-color-gray-300);
     }
   }
 
@@ -91,3 +92,8 @@ export const styles = css`
     }
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

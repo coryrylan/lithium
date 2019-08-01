@@ -1,10 +1,12 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+export const componentStyles = css`
   .li-progress-bar {
     width: 100%;
     height: 20px;
-    background: var(--li-progress-bar-background-color, #f3f3f3);
+    background: var(--li-progress-bar-background-color, var(--li-common-color-gray-100));
     border-radius: 2px;
     position: relative;
     overflow: hidden;
@@ -18,7 +20,7 @@ export const styles = css`
   .li-progress-bar-inner {
     width: 100%;
     height: 100%;
-    background: var(--li-progress-bar-inset-background-color, #e4e4e4);
+    background: var(--li-progress-bar-inset-background-color, var(--li-common-color-gray-200));
     position: absolute;
     top: 0;
     left: -100%;
@@ -30,7 +32,7 @@ export const styles = css`
   }
 
   .li-progress-bar-value {
-    color: var(--li-progress-bar-color, #2d2d2d);
+    color: var(--li-progress-bar-color, var(--li-common-color-gray-500));
     z-index: 2;
     position: absolute;
     text-align: center;
@@ -39,3 +41,8 @@ export const styles = css`
     top: 0;
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

@@ -1,6 +1,8 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+export const componentStyles = css`
   .li-side-nav {
     position: fixed;
     left: -400px;
@@ -9,14 +11,14 @@ export const styles = css`
     width: 80%;
     max-width: var(--li-side-nav-width, 280px);
     z-index: 201;
-    background-color: var(--li-side-nav-background-color, #fff);
+    background-color: var(--li-side-nav-background-color, var(--li-common-color-white-100));
     overflow: hidden;
     will-change: left;
     transition: left var(--li-side-nav-transition-speed, 250ms) ease-in;
   }
 
   :host([sticky]) .li-side-nav {
-    border-right: 1px solid var(--li-side-nav-border-color, #f3f3f3);
+    border-right: 1px solid var(--li-side-nav-border-color, var(--li-common-color-gray-100));
   }
 
   .li-side-nav-open .li-side-nav {
@@ -28,7 +30,7 @@ export const styles = css`
     position: relative;
     height: 50px;
     overflow: hidden;
-    background-color: var(--li-side-nav-header-background-color, #f3f3f3);
+    background-color: var(--li-side-nav-header-background-color, var(--li-common-color-gray-100));
     color: var(--li-side-nav-color, #2d2d2d);
   }
 
@@ -48,12 +50,12 @@ export const styles = css`
     right: 0;
     background-color: transparent;
     cursor: pointer;
-    color: var(--li-side-nav-color, #2d2d2d);
+    color: var(--li-side-nav-color, var(--li-common-color-gray-500));
 
   }
 
   .li-menu-close-icon {
-    --color: var(--li-side-nav-color, #2d2d2d);
+    --color: var(--li-side-nav-color, var(--li-common-color-gray-500));
   }
 
   .li-side-nav-slot::slotted(a), .li-side-nav-slot::slotted(button) {
@@ -85,3 +87,8 @@ export const styles = css`
     background: rgba(0,0,0,.5);
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

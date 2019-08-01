@@ -1,12 +1,9 @@
 import { css } from 'lit-element';
 
-export const styles = css`
-  /**
-    * prism.js default theme for JavaScript, CSS and HTML
-    * Based on dabblet (http://dabblet.com)
-    * @author Lea Verou
-    */
+import { styleVariables } from 'lithium-ui/common';
 
+const componentStyles = css`
+  /* prism.js modified theme */
   code[class*="language-"],
   pre[class*="language-"] {
     color: var(--li-code-example-token-14, black);
@@ -59,7 +56,7 @@ export const styles = css`
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: var(--li-code-example-token-2, #fff);
+    background: var(--li-code-example-token-2, var(--li-common-color-white-100));
   }
 
   /* Inline code */
@@ -159,9 +156,14 @@ export const styles = css`
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
     background: var(token-11);
-    border-left: 8px solid var(--li-code-example-token-12, #e4e4e4);
+    border-left: 8px solid var(--li-code-example-token-12, var(--li-common-color-gray-200));
     padding-top: 38px;
     border-radius: var(--li-code-example-border-radius, 4px);
-    border-bottom: 2px solid var(--li-code-example-border-color, #e4e4e4);
+    border-bottom: 2px solid var(--li-code-example-border-color, var(--li-common-color-gray-200));
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];

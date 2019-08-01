@@ -1,6 +1,8 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+import { styleVariables } from 'lithium-ui/common';
+
+export const componentStyles = css`
   :host([large]) .li-modal {
     max-width: 700px;
   }
@@ -15,10 +17,10 @@ export const styles = css`
   }
 
   .li-modal {
-    border: 1px solid #ccc;
+    border: 1px solid var(--li-common-color-gray-300);
     padding: 1rem;
-    background-color: #fff;
-    color: #2d2d2d;
+    background-color: var(--li-common-color-white-100);
+    color: var(--li-common-color-gray-500);
     width: 100%;
     max-width: 600px;
     margin: 24px auto;
@@ -43,7 +45,7 @@ export const styles = css`
   }
 
   li-icon {
-    --li-icon-color: #2d2d2d;
+    --li-icon-color: var(--li-common-color-gray-500);
   }
 
   .li-modal-backdrop {
@@ -56,3 +58,8 @@ export const styles = css`
     z-index: 301;
   }
 `;
+
+export const styles = [
+  styleVariables,
+  componentStyles
+];
