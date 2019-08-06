@@ -5,11 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ApiComponent } from './api.component';
 import { ApiRoutingModule } from './api-routing.module';
+import { SharedModule } from '../common/shared.module';
 
 @NgModule({
   declarations: [ApiComponent],
   imports: [
     CommonModule,
+    SharedModule,
     HttpClientModule,
     ReactiveFormsModule,
     ApiRoutingModule
