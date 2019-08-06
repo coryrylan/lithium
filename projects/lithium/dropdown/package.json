@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "dropdown.ts"
+      "entryFile": "dropdown.element.ts"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "message.ts"
+      "entryFile": "message.element.ts"
     }
   }
 }

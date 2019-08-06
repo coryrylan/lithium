@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "loading-spinner.ts"
+      "entryFile": "loading-spinner.element.ts"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "progress-bar.ts"
+      "entryFile": "progress-bar.element.ts"
     }
   }
 }

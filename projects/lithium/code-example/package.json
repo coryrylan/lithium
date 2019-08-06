@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "code-example.ts"
+      "entryFile": "code-example.element.ts"
     }
   }
 }

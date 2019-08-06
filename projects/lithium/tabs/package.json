@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "tabs.ts"
+      "entryFile": "tabs.element.ts"
     }
   }
 }
