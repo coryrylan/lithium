@@ -1,0 +1,58 @@
+<h1>Button</h1>
+
+<li-tabs>
+  <li-tab name="Example">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <h2>Example Types</h2>
+      <li-button (click)="log()" type="button">click</li-button>
+      
+      <li-button type="submit">submit</li-button>
+      
+      <li-button disabled>disabled</li-button>
+
+      <li-button>
+        <a href="/about">link</a>
+      </li-button>
+
+      <li-code-example [code]="codeExampleTypes" language="html"></li-code-example>
+
+      <h2>Styles</h2>
+
+      <li-button>default</li-button>
+      <li-button outline>outline</li-button>
+      <li-button flat>flat</li-button>
+      
+      <li-code-example [code]="codeExampleStyles" language="html"></li-code-example>
+
+      <h2>Colors</h2>
+      <li-button>default</li-button>
+      <li-button success>success</li-button>
+      <li-button warning>warning</li-button>
+      <li-button danger>danger</li-button>
+      <li-button class="purple">custom color</li-button>
+
+      <li-code-example [code]="codeExampleColors" language="html"></li-code-example>
+
+
+      <!-- <br /><br />
+    
+      <label for="firstName">First Name</label>
+      <input formControlName="firstName" id="firstName" />
+    
+      <label for="email">Email</label>
+      <input formControlName="email" id="email" />
+    
+      <div *ngIf="email.touched && email.hasError('required')" class="error">
+        email is required
+      </div>
+    
+      <button>Submit</button> -->
+    </form>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab name="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

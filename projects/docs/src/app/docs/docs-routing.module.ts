@@ -15,6 +15,7 @@ import { DocsMessageComponent } from './docs-message/docs-message.component';
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
 import { Layout } from '../common/enums';
 import { DocsCardComponent } from './docs-card/docs-card.component';
+import { DocsButtonComponent } from './docs-button/docs-button.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: '', component: DocsHomeComponent, data: { title: 'Lithium Web Components - Documentation', layout: Layout.Docs } },
       { path: 'themes', component: DocsThemesComponent, data: { title: 'Lithium Progress Themes - Documentation', layout: Layout.Docs } },
       { path: 'internationalization', component: DocsI18nComponent, data: { title: 'Lithium Internationalization (i18n) - Documentation', layout: Layout.Docs } },
+      { path: 'button', component: DocsButtonComponent, data: { title: 'Lithium Button Web Component - Documentation', layout: Layout.Docs } },
       { path: 'card', component: DocsCardComponent, data: { title: 'Lithium Card Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },

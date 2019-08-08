@@ -16,12 +16,14 @@ import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsCardComponent } from './docs-card/docs-card.component';
 import { SharedModule } from '../common/shared.module';
+import { DocsButtonComponent } from './docs-button/docs-button.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     DocsComponent,
     DocsHomeComponent,
+    DocsButtonComponent,
     DocsCardComponent,
     DocsIconsComponent,
     DocsModalComponent,
@@ -37,8 +39,8 @@ import { SharedModule } from '../common/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     DocsRoutingModule,
-    ReactiveFormsModule
   ]
 })
 export class DocsModule { }

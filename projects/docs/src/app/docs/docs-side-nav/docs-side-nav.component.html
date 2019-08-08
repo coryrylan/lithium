@@ -3,7 +3,7 @@
 <li-tabs>
   <li-tab name="Example">
     <h2>Example</h2>
-    <button (click)="open = !open" class="btn">Toggle Side Nav</button>
+    <li-button (click)="open = !open">Toggle Side Nav</li-button>
 
     <li-side-nav [open]="open" (openChange)="open = $event.detail">
       <a routerLink="/docs">Getting Started</a>

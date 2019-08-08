@@ -4,6 +4,7 @@
   "sideEffects": [
     "./esm5/**/*.element.js",
     "./esm2015/**/*.element.js",
+    "./**/lithium-ui-button.js",
     "./**/lithium-ui-card.js",
     "./**/lithium-ui-code-example.js",
     "./**/lithium-ui-dropdown.js",

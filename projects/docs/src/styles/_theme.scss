@@ -8,6 +8,9 @@
   --global-color-gray-500: #2d2d2d;
   --global-color-gray-600: #292929;
   --global-color-gray-700: #1f1f1f;
+  --global-color-purple-100: #7c0799;
+  --global-color-blue-100: #2974ca;
+  --global-color-blue-200: #1f5a9e;
   --global-primary-color: var(--global-color-gray-100);
   --global-secondary-color: var(--global-color-gray-200);
   --global-border-color: var(--global-color-gray-200);
@@ -23,6 +26,10 @@
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
   --global-code-background-color: var(--global-color-gray-600);
+  --li-button-outline-border-color: var(--global-color-white-100);
+  --li-button-outline-color: var(--global-color-white-100);
+  --li-button-outline-hover-background-color: var(--global-color-gray-500);
+  --li-button-disabled-background: var(--global-color-blue-200);
   --li-card-background-color: var(--global-color-gray-500);
   --li-card-border-color: var(--global-color-gray-600);
   --li-nav-bar-background-color: var(--global-color-gray-500);
@@ -51,4 +58,9 @@
   --li-code-example-token-12: var(--global-color-gray-600);
   --li-code-example-token-13: none;
   --li-code-example-token-14: var(--global-color-white-100);
+}
+
+li-button.purple {
+  --li-button-background-color: var(--global-color-purple-100);
+  --li-button-color: var(--global-color-white-100);
 }
