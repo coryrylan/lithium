@@ -26,7 +26,15 @@ export class BaseButton extends LitElement {
   render() {
     return html`
       <slot></slot>
-      ${this.renderHiddenButtonForForms()}
+      <button
+        aria-hidden="true"
+        ?disabled="${this.disabled}"
+        tabindex="-1"
+				style="display: none"
+				value="${ifDefined(this.value)}"
+				name="${ifDefined(this.name)}"
+				type="${this.type}">
+			</button>
     `;
   }
 
@@ -66,19 +74,5 @@ export class BaseButton extends LitElement {
       this.click();
       stopEvent(e);
     }
-  }
-
-  protected renderHiddenButtonForForms() {
-    return html`
-			<button
-        aria-hidden="true"
-        ?disabled="${this.disabled}"
-        tabindex="-1"
-				style="display: none"
-				value="${ifDefined(this.value)}"
-				name="${ifDefined(this.name)}"
-				type="${this.type}">
-			</button>
-		`;
   }
 }
