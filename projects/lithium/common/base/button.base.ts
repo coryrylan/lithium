@@ -32,11 +32,8 @@ export class BaseButton extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    if (this.isButton) {
-      this.addEventListener('click', e => this.onClick(e));
-      this.addEventListener('keydown', e => this.onKeyDown(e));
-    }
+    this.addEventListener('click', e => this.onClick(e));
+    this.addEventListener('keydown', e => this.onKeyDown(e));
   }
 
   protected firstUpdated(props) {
@@ -59,13 +56,13 @@ export class BaseButton extends LitElement {
       return;
     }
 
-    if (event.target === this && !event.defaultPrevented) {
+    if (this.isButton && event.target === this && !event.defaultPrevented) {
       this.$hiddenButton.dispatchEvent(new MouseEvent('click', { relatedTarget: this, composed: true }));
     }
   }
 
   protected onKeyDown(e: KeyboardEvent) {
-    if (e.key === KeyCodes.Enter || e.code === KeyCodes.Space) {
+    if (this.isButton && e.key === KeyCodes.Enter || e.code === KeyCodes.Space) {
       this.click();
       stopEvent(e);
     }
