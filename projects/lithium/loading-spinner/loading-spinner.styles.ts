@@ -3,11 +3,19 @@ import { css } from 'lit-element';
 import { styleVariables } from 'lithium-ui/common';
 
 const componentStyles = css`
+  :host {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 0;
+  }
+
   .li-spinner {
     animation: rotation 1.4s linear infinite;
     stroke: var(--li-common-color-gray-300);
     will-change: transform, animation;
     stroke: var(--li-spinner-color, var(--li-common-color-gray-300));
+    width: 60px;
+    height: 60px;
   }
 
   @keyframes rotation
@@ -40,6 +48,16 @@ const componentStyles = css`
       stroke-dashoffset: 187;
       transform: rotate(450deg);
     }
+  }
+
+  :host([small]) .li-spinner{
+    width: 20px;
+    height: 20px;
+  }
+
+  :host([large]) .li-spinner {
+    width: 80px;
+    height: 80px;
   }
 `;
 

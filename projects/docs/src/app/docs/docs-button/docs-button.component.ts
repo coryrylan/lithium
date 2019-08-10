@@ -7,13 +7,10 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class DocsButtonComponent {
   codeExampleTypes = `
-    <li-button>click</li-button>
     <li-button type="submit">submit</li-button>
     <li-button disabled>disabled</li-button>
-
-    <li-button>
-      <a href="/about">link</a>
-    </li-button>
+    <li-button><a href="/about">link</a></li-button>
+    <li-button loading>loading...</li-button>
   `;
 
   codeExampleStyles = `
@@ -37,8 +34,15 @@ export class DocsButtonComponent {
     </style>
   `;
 
+  codeExampleLoading = `
+    <li-button loading>
+      click for loading
+    </li-button>
+  `;
+
 
   form: FormGroup;
+  showLoading = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -57,5 +61,13 @@ export class DocsButtonComponent {
 
   log() {
     console.log('click');
+  }
+
+  toggleLoading() {
+    this.showLoading = true;
+
+    setTimeout(() => {
+      this.showLoading = false;
+    }, 2000);
   }
 }

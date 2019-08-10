@@ -13,6 +13,7 @@ const componentStyles = css`
     margin: 0 4px 24px 0;
     font-size: 16px;
     text-decoration: none;
+    text-align: center;
     line-height: 1.5rem;
     display: inline-block;
     cursor: pointer;
@@ -28,6 +29,7 @@ const componentStyles = css`
     cursor: default;
     background: var(--li-button-disabled-background, var(--li-common-color-gray-300));
     border: 2px solid var(--li-button-disabled-background, var(--li-common-color-gray-300));
+    outline: 0;
   }
 
   :host([role="presentation"]) {
@@ -74,6 +76,10 @@ const componentStyles = css`
   :host([danger]) {
     background-color: var(--li-button-success-color, var(--li-common-color-red-100));
     border-color: var(--li-button-success-color, var(--li-common-color-red-100));
+  }
+
+  li-loading-spinner {
+    margin-bottom: -3px;
   }
 `;
 

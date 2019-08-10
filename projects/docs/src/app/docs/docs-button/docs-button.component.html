@@ -4,15 +4,10 @@
   <li-tab name="Example">
     <form [formGroup]="form" (ngSubmit)="submit()">
       <h2>Example Types</h2>
-      <li-button (click)="log()" type="button">click</li-button>
-      
       <li-button type="submit">submit</li-button>
-      
       <li-button disabled>disabled</li-button>
-
-      <li-button>
-        <a href="/about">link</a>
-      </li-button>
+      <li-button><a href="/about">link</a></li-button>
+      <li-button loading>loading</li-button>
 
       <li-code-example [code]="codeExampleTypes" language="html"></li-code-example>
 
@@ -33,6 +28,13 @@
 
       <li-code-example [code]="codeExampleColors" language="html"></li-code-example>
 
+      <h2>Loading Button</h2>
+
+      <li-button [loading]="showLoading" (click)="toggleLoading()" type="button">
+        click for loading
+      </li-button>
+
+      <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
 
       <!-- <br /><br />
     
