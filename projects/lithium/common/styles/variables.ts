@@ -1,6 +1,10 @@
 import { css } from 'lit-element';
 
 export const styleVariables = css`
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
   :host {
     /* colors */
     --li-common-color-white-100: #fff;

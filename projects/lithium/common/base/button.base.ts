@@ -4,12 +4,23 @@ import { ifDefined } from 'lit-html/directives/if-defined';
 import { AriaRole, KeyCodes } from './../utils/enums';
 import { stopEvent } from './../utils/events';
 
+export const hiddenButtonTemplate = (disabled: boolean, value: string, name: string, type: 'button' | 'submit' | 'reset' | 'menu') => html`
+  <button
+    aria-hidden="true"
+    ?disabled="${disabled}"
+    tabindex="-1"
+    style="display: none"
+    value="${ifDefined(value)}"
+    name="${ifDefined(name)}"
+    type="${type}">
+  </button>
+`;
+
 // @dynamic
 export class BaseButton extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: String, reflect: true }) type: 'button' | 'submit' = 'submit';
   @property({ type: String, reflect: true }) role = 'button';
-  @property({ type: String, reflect: true }) tabindex = '0';
   @property({ type: String, reflect: true }) name: string;
   @property({ type: String, reflect: true }) value: string;
 
@@ -26,20 +37,13 @@ export class BaseButton extends LitElement {
   render() {
     return html`
       <slot></slot>
-      <button
-        aria-hidden="true"
-        ?disabled="${this.disabled}"
-        tabindex="-1"
-				style="display: none"
-				value="${ifDefined(this.value)}"
-				name="${ifDefined(this.name)}"
-				type="${this.type}">
-			</button>
+      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
     `;
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.tabIndex = 0;
     this.addEventListener('click', e => this.onClick(e));
     this.addEventListener('keydown', e => this.onKeyDown(e));
   }
@@ -50,11 +54,21 @@ export class BaseButton extends LitElement {
     if (this.isAnchor) {
       this.role = AriaRole.Presentation;
       this.type = null;
-      this.tabindex = null;
+      this.removeAttribute('tabindex');
     } else {
       // append $hiddenButton to light DOM to interface with forms
       this.$hiddenButton = this.shadowRoot.querySelector('button');
       this.appendChild(this.$hiddenButton);
+    }
+
+    if (this.disabled) {
+      this.removeAttribute('tabindex');
+    }
+  }
+
+  protected updated(props: Map<string, any>) {
+    if (props.get('disabled') && !this.isAnchor) {
+      this.tabIndex = this.disabled ? -1 : 0;
     }
   }
 
