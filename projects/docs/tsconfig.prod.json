@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "paths": {
+      "lithium-ui": [
+        "dist/lithium"
+      ],
+      "lithium-ui/*": [
+        "dist/lithium/*"
+      ]
+    }
+  }
+}
