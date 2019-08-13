@@ -1,7 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
+import { Subscription, Subject } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { IconService, menuIcon } from 'lithium-ui/icons';
+IconService.addIcons(menuIcon);
+
 import { RouterMetaDataService } from './common/services/router-metadata.service';
 import { fadeAnimation } from './common/animations';
 import { ThemeService } from './common/services/theme.service';
+import { environment } from '../environments/environment';
+
+declare var ResizeObserver;
 
 @Component({
   selector: 'app-root',
@@ -9,8 +17,14 @@ import { ThemeService } from './common/services/theme.service';
   styleUrls: ['./app.component.scss'],
   animations: [fadeAnimation]
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+  version = environment.version;
+  sticky = false;
+  openMenu = false;
+  subscriptions: Subscription[] = [];
+
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private routerMetaDataService: RouterMetaDataService,
     private themeService: ThemeService) {
     this.routerMetaDataService.init().subscribe();
@@ -19,5 +33,27 @@ export class AppComponent {
 
   toggleTheme() {
     this.themeService.toggleTheme();
+  }
+
+  toggleMenu() {
+    this.openMenu = !this.openMenu;
+  }
+
+  ngOnInit() {
+    const sizeUpdate = new Subject<boolean>();
+    const resizeObserver = new ResizeObserver(entries => sizeUpdate.next(entries[0].contentRect.width > 1024));
+
+    this.subscriptions.push(sizeUpdate.pipe(
+      distinctUntilChanged()
+    ).subscribe(largeLayout => {
+      this.sticky = largeLayout;
+      this.changeDetectorRef.detectChanges();
+    }));
+
+    resizeObserver.observe(document.body);
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 }

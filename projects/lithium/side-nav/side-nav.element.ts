@@ -23,7 +23,7 @@ IconService.addIcons(closeIcon);
 // @dynamic
 export class LithiumSideNav extends LitElement {
   @property({ type: Boolean }) open = false;
-  @property({ type: Boolean }) sticky = false;
+  @property({ type: Boolean, reflect: true }) sticky = false;
   @property({ type: Boolean }) closeOnInnerClick = true;
 
   static get styles() {

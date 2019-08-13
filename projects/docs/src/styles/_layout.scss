@@ -27,3 +27,9 @@ router-outlet ~ * {
     background-color: var(--global-color-white-100);
   }
 }
+
+.layout-page .docs-nav {
+  @media (min-width: 1024px) {
+    display: none !important;
+  }
+}

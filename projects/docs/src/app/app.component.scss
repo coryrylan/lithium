@@ -6,3 +6,28 @@ footer {
   padding: 12px;
   margin-top:12px;
 }
+
+li-nav-bar a, li-nav-bar button {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+}
+
+.mobile-only {
+  display: flex !important;
+
+  @media (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+.docs-nav {
+  @media (min-width: 1024px) {
+    --li-side-nav-top: 56px;
+    --li-side-nav-width: 280px;
+    position: absolute;
+    z-index: 99;
+  }
+}

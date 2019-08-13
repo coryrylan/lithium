@@ -12,7 +12,8 @@ export const componentStyles = css`
     max-width: var(--li-side-nav-width, 280px);
     z-index: 201;
     background-color: var(--li-side-nav-background-color, var(--li-common-color-white-100));
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     will-change: left;
     transition: left var(--li-side-nav-transition-speed, 250ms) ease-in;
   }

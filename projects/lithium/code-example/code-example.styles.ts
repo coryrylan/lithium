@@ -158,6 +158,7 @@ const componentStyles = css`
     background: var(token-11);
     border-left: 8px solid var(--li-code-example-token-12, var(--li-common-color-gray-200));
     padding-top: 38px;
+    padding-left: 0;
     border-radius: var(--li-code-example-border-radius, 4px);
     border-bottom: 2px solid var(--li-code-example-border-color, var(--li-common-color-gray-200));
   }

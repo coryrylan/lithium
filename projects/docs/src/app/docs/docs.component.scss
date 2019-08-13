@@ -1,11 +1,8 @@
 .docs-content {
-  padding: 78px 24px 24px 315px;
-  max-width: 1300px;
-}
+  padding: 64px 12px;
 
-.docs-nav {
-  --li-side-nav-top: 56px;
-  --li-side-nav-width: 280px;
-  position: absolute;
-  z-index: 99;
+  @media (min-width: 1024px) {
+    padding: 78px 24px 24px 315px;
+    max-width: 1300px;
+  }
 }

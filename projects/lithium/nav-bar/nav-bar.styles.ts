@@ -28,12 +28,12 @@ export const componentStyles = css`
     border: 0;
     color: var(--li-nav-bar-color, var(--li-common-color-gray-500));
     text-decoration: none;
-    line-height: 1.5rem;
+    line-height: 1.5rem !important;
     cursor: pointer;
   }
 
   ::slotted([li-nav-bar-right]) {
-    margin-left: auto;
+    margin-left: auto !important;
   }
 `;
 

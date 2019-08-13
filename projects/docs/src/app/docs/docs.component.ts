@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { fadeAnimation } from '../common/animations';
-import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-docs',
@@ -9,12 +8,4 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./docs.component.scss'],
   animations: [fadeAnimation]
 })
-export class DocsComponent implements OnInit {
-  version = environment.version;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class DocsComponent { }

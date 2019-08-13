@@ -21,10 +21,10 @@
     ],
     "paths": {
       "lithium-ui": [
-        "dist/lithium"
+        "projects/lithium"
       ],
       "lithium-ui/*": [
-        "dist/lithium/*"
+        "projects/lithium/*"
       ]
     }
   }

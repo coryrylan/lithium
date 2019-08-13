@@ -1,7 +1,11 @@
 h1 {
   font-size: 36px;
-  margin-top: 30vh;
+  margin-top: 20vh;
   margin-bottom: 12px;
+
+  @media (min-width: 1024px) {
+    margin-top: 30vh;
+  }
 }
 
 h2 {
