@@ -18,7 +18,8 @@ export class DocsI18nComponent {
     IntlService.setRegistry({
       open: 'Ouvrir',
       close: 'Fermer',
-      menu: 'Menu'
+      menu: 'Menu',
+      error: 'Erreur'
     });
 
     IntlService.registry.open; // 'Ouvrir'
@@ -32,7 +33,11 @@ export class DocsI18nComponent {
     IntlService.setRegistry({
       open: 'Ouvrir',
       close: 'Fermer',
-      menu: 'Menu'
+      menu: 'Menu',
+      error: 'Erreur',
+      warning: 'Avertissement',
+      success: 'Succès',
+      info: 'Information'
     });
   }
 }

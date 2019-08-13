@@ -1,6 +1,6 @@
 import { LitElement, html, property } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { registerElementSafely, IntlService } from 'lithium-ui/common';
 import { IconService, infoIcon, errorIcon, warningIcon, checkIcon, closeIcon } from 'lithium-ui/icons';
 import { styles } from './message.styles';
 
@@ -55,15 +55,15 @@ export class LithiumMessage extends LitElement {
       ${this.close ? '' : html`
         <div class="li-message">
           <div class="type-icon">
-            ${this.type === LithiumMessageType.Default ? html`<li-icon name="info" aria-label="info"></li-icon>` : ''}
-            ${this.type === LithiumMessageType.Warning ? html`<li-icon name="warning" aria-label="warning"></li-icon>` : ''}
-            ${this.type === LithiumMessageType.Error ? html`<li-icon name="error" aria-label="error"></li-icon>` : ''}
-            ${this.type === LithiumMessageType.Success ? html`<li-icon name="check" aria-label="success"></li-icon>` : ''}
+            ${this.type === LithiumMessageType.Default ? html`<li-icon name="info" aria-label="${IntlService.registry.info}"></li-icon>` : ''}
+            ${this.type === LithiumMessageType.Warning ? html`<li-icon name="warning" aria-label="${IntlService.registry.warning}"></li-icon>` : ''}
+            ${this.type === LithiumMessageType.Error ? html`<li-icon name="error" aria-label="${IntlService.registry.error}"></li-icon>` : ''}
+            ${this.type === LithiumMessageType.Success ? html`<li-icon name="check" aria-label="${IntlService.registry.success}"></li-icon>` : ''}
           </div>
           <slot></slot>
 
           ${this.closable ? html`
-            <button @click="${() => this.closeMessage()}" type="button" class="close-btn" data-dismiss="alert" aria-label="Close Message">
+            <button @click="${() => this.closeMessage()}" type="button" class="close-btn" data-dismiss="alert" aria-label="${IntlService.registry.close}">
               <li-icon name="close"></li-icon>
             </button>
           ` : ''}
