@@ -5,6 +5,21 @@ import { IconService, closeIcon } from 'lithium-ui/icons';
 import { styles } from './side-nav.styles';
 IconService.addIcons(closeIcon);
 
+/**
+ * Side Nav, a slide out nav for navigation menus
+ *
+ * @noInheritDoc
+ * @slot `default` - Content slot for nav elements
+ * @customEvent `openChange` - Notify when the side nav has been opened or closed.
+ * @styleAttr `sticky` - Set nav to remain open on left side
+ * @cssProp `--li-side-nav-top`
+ * @cssProp `--li-side-nav-width`
+ * @cssProp `--li-side-nav-background-color`
+ * @cssProp `--li-side-nav-transition-speed`
+ * @cssProp `--li-side-nav-border-color`
+ * @cssProp `--li-side-nav-header-background-color`
+ * @cssProp `--li-side-nav-color`
+ */
 // @dynamic
 export class LithiumSideNav extends LitElement {
   @property({ type: Boolean }) open = false;
@@ -38,14 +53,18 @@ export class LithiumSideNav extends LitElement {
 
   close() {
     this.open = false;
-    this.dispatchEvent(new CustomEvent('openChange', { detail: this.open }));
+    this.openChange();
   }
 
   navClose() {
     if (this.closeOnInnerClick && !this.sticky) {
       this.open = false;
-      this.dispatchEvent(new CustomEvent('openChange', { detail: this.open }));
+      this.openChange();
     }
+  }
+
+  private openChange() {
+    this.dispatchEvent(new CustomEvent('openChange', { detail: this.open }));
   }
 }
 

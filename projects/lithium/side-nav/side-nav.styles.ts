@@ -79,7 +79,7 @@ export const componentStyles = css`
     background: transparent;
     pointer-events: none;
     will-change: background;
-    transition: background var(--transition-speed) ease-in;
+    transition: background var(--li-side-nav-transition-speed) ease-in;
   }
 
   .li-side-nav-open .li-side-nav-backdrop {

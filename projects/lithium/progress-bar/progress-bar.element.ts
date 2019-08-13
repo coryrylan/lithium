@@ -3,9 +3,21 @@ import { LitElement, html, property } from 'lit-element';
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './progress-bar.styles';
 
+/**
+ * Progress Bar, display the current state or progress of a running task
+ *
+ * @noInheritDoc
+ * @cssProp `--li-progress-bar-background-color`
+ * @cssProp `--li-progress-bar-shadow-color`
+ * @cssProp `--li-progress-bar-inset-background-color`
+ * @cssProp `--li-progress-bar-color`
+ */
 // @dynamic
 export class LithiumProgressBar extends LitElement {
+  /** Current progress value (out of 100) */
   @property({ type: Number }) value = 0;
+
+  /** Display value in progress bar */
   @property({ type: Boolean }) showValue = true;
 
   static get styles() {

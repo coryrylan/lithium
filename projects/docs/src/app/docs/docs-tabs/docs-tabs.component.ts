@@ -4,11 +4,22 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-docs-tabs',
   templateUrl: './docs-tabs.component.html'
 })
-export class DocsTabsComponent implements OnInit {
+export class DocsTabsComponent {
+  codeExampleImport = `
+    import 'lithium-ui/tabs';
+  `;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  codeExampleTypes = `
+    <li-tabs>
+      <li-tab name="Tab Button 1">
+        <h2>Tab 1</h2>
+      </li-tab>
+      <li-tab name="Tab Button 2">
+        <h2>Tab 2</h2>
+      </li-tab>
+      <li-tab name="Tab Button 3">
+        <h2>Tab 3</h2>
+      </li-tab>
+    </li-tabs>
+  `;
 }

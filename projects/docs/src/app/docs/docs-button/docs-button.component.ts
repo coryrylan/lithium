@@ -6,6 +6,10 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   templateUrl: './docs-button.component.html'
 })
 export class DocsButtonComponent {
+  codeExampleImport = `
+    import 'lithium-ui/button';
+  `;
+
   codeExampleTypes = `
     <li-button type="submit">submit</li-button>
     <li-button disabled>disabled</li-button>

@@ -69,13 +69,13 @@ const componentStyles = css`
   }
 
   :host([warning]) {
-    background-color: var(--li-button-success-color, var(--li-common-color-orange-100));
-    border-color: var(--li-button-success-color, var(--li-common-color-orange-100));
+    background-color: var(--li-button-warning-color, var(--li-common-color-orange-100));
+    border-color: var(--li-button-warning-color, var(--li-common-color-orange-100));
   }
 
   :host([danger]) {
-    background-color: var(--li-button-success-color, var(--li-common-color-red-100));
-    border-color: var(--li-button-success-color, var(--li-common-color-red-100));
+    background-color: var(--li-button-danger-color, var(--li-common-color-red-100));
+    border-color: var(--li-button-danger-color, var(--li-common-color-red-100));
   }
 
   li-loading-spinner {

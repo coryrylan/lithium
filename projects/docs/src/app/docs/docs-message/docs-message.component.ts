@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './docs-message.component.html'
 })
 export class DocsMessageComponent implements OnInit {
-  codeExample = `
-<li-message>Default Message</li-message>
-<li-message type="success">Success Message</li-message>
-<li-message type="warning">Warning Message</li-message>
-<li-message type="error">Error Message</li-message>
+  codeExampleImport = `
+    import 'lithium-ui/message';
+  `;
+
+  codeExampleHtml = `
+    <li-message>Default Message</li-message>
+    <li-message type="success">Success Message</li-message>
+    <li-message type="warning">Warning Message</li-message>
+    <li-message type="error">Error Message</li-message>
   `;
   constructor() { }
 

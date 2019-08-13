@@ -3,6 +3,14 @@ import { LitElement, html } from 'lit-element';
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './loading-spinner.styles';
 
+/**
+ * Loading Spinner, display a indeterminate task that is processing
+ *
+ * @noInheritDoc
+ * @styleAttr `small` - small sized spinner
+ * @styleAttr `large` - large sized spinner
+ * @cssProp `--li-spinner-color`
+ */
 // @dynamic
 export class LithiumLoadingSpinner extends LitElement {
   static get styles() {

@@ -3,12 +3,6 @@ import { css } from 'lit-element';
 import { styleVariables } from 'lithium-ui/common';
 
 export const componentStyles = css`
-  :host {
-    --text-color: inherit;
-    --background-color: inherit;
-    --breakpoint: 480px;
-  }
-
   .li-tabs {
     display: block;
   }
@@ -40,27 +34,27 @@ export const componentStyles = css`
     transition: all 0.3s;
     font-weight: 500;
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--li-tabs-text-color, inherit);
   }
 
   .li-tabs-nav > button.active,
   .li-tabs-nav > button.active:hover,
   .li-tabs-nav > button.active:focus {
     cursor: default;
-    color: var(--text-color);
+    color: var(--li-tabs-text-color, inherit);
   }
 
   .li-tabs-nav > button:focus,
   .li-tabs-nav > button:hover {
-    color: var(--text-color);
+    color: var(--li-tabs-text-color, inherit);
   }
 
   .li-tabs-nav > button:nth-child(-n + 3) {
-    border-bottom: 1px solid var(--li-common-color-gray-300);
+    border-bottom: 1px solid var(--li-tabs-border-color, var(--li-common-color-gray-300));
   }
 
   .li-tabs-nav > button:nth-child(even) {
-    border-right: 1px solid var(--li-common-color-gray-300);
+    border-right: 1px solid var(--li-tabs-border-color, var(--li-common-color-gray-300));
   }
 
   @media (min-width: 300px) {
@@ -81,8 +75,9 @@ export const componentStyles = css`
     }
 
     .li-tabs-nav > button.active {
-      background-color: var(--background-color);
-      border-bottom: 3px solid var(--li-common-color-gray-300);
+      background-color: var(--li-tabs-button-background-color, inherit);
+      border-bottom: 3px solid;
+      border-bottom-color: var(--li-tabs-button-selected-border-color, var(--li-common-color-blue-100))
     }
   }
 

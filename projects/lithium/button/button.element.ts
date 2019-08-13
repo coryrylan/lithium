@@ -3,21 +3,46 @@ import { registerElementSafely, BaseButton, hiddenButtonTemplate } from 'lithium
 import { styles } from './button.styles';
 import 'lithium-ui/loading-spinner';
 
+/**
+ * Button, action button with multiple states and loading spinner
+ *
+ * @noInheritDoc
+ * @slot `default` - Content slot for modal body
+ * @slot `header` - Content slot for modal header
+ * @slot `footer` - Content slot for modal footer
+ * @styleAttr `outline` - Apply outline style.
+ * @styleAttr `flat` - Apply flat style.
+ * @styleAttr `success` - Apply success style.
+ * @styleAttr `warning` - Apply warning style.
+ * @styleAttr `danger` - Apply danger style.
+ * @cssProp `--li-button-background-color`
+ * @cssProp `--li-button-color`
+ * @cssProp `--li-button-border-radius`
+ * @cssProp `--li-button-disabled-background`
+ * @cssProp `--li-button-outline-color`
+ * @cssProp `--li-button-outline-border-color`
+ * @cssProp `--li-button-outline-hover-background-color`
+ * @cssProp `--li-button-outline-hover-color`
+ * @cssProp `--li-button-success-color`
+ * @cssProp `--li-button-warning-color`
+ * @cssProp `--li-button-danger-color`
+ */
 // @dynamic
 export class LithiumButton extends BaseButton {
+  /** Loading property to determine if loading spinner should be visible. */
   @property({ type: Boolean, reflect: true }) loading = false;
   private initialWidth: number;
 
   static get styles() { return styles; }
 
-  render() {
+  protected render() {
     return html`
       ${this.loading ? html`<li-loading-spinner small></li-loading-spinner>` : html`<slot></slot>`}
       ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
     `;
   }
 
-  firstUpdated(props: Map<string, any>) {
+  protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
     this.initialWidth = this.getBoundingClientRect().width;
   }

@@ -5,9 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './docs-card.component.html'
 })
 export class DocsCardComponent {
-  codeExample = `
-  <li-card>
-    <h2>Hello World</h2>
-  </li-card>
+  codeExampleImport = `
+    import 'lithium-ui/card';
+  `;
+
+  codeExampleHtml = `
+    <li-card>
+      <h2>Hello World</h2>
+    </li-card>
   `;
 }

@@ -22,7 +22,8 @@ export const componentStyles = css`
     background-color: var(--li-common-color-white-100);
     color: var(--li-common-color-gray-500);
     width: 100%;
-    max-width: 600px;
+    max-width: var(--li-modal-max-width, 600px);
+    max-height: var(--li-modal-max-height, initial);
     margin: 24px auto;
     position: relative;
     border-radius: 4px;

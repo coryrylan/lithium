@@ -10,11 +10,11 @@ import { styles } from './card.styles';
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer
- * @cssProp `--li-card-background-color` - Background color for Card.
- * @cssProp `--li-card-border-color` - Border color for Card.
- * @cssProp `--li-card-border-radius` - Border radius for Card.
- * @cssProp `--li-card-color` - Text color for Card.
- * @cssProp `--li-card-padding` - Padding for Card.
+ * @cssProp `--li-card-background-color`
+ * @cssProp `--li-card-border-color`
+ * @cssProp `--li-card-border-radius`
+ * @cssProp `--li-card-color`
+ * @cssProp `--li-card-padding`
  */
 // @dynamic
 export class LithiumCard extends LitElement {

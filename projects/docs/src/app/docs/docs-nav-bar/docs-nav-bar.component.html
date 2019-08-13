@@ -3,12 +3,18 @@
 <li-tabs>
   <li-tab name="Example">
     <h2>Example</h2>
+    
     <li-nav-bar>
       <a routerLink="/">Lithium</a>
       <a routerLink="docs" li-nav-bar-right>Docs</a>
       <a routerLink="about">About</a>
       <a routerLink="support">Support</a>
     </li-nav-bar>
+
+    <br />
+
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab name="API">
     <h2>API</h2>

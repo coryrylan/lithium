@@ -36,6 +36,7 @@ export const componentStyles = css`
     z-index: 2;
     position: absolute;
     text-align: center;
+    line-height: 1.1rem;
     left: 0;
     right: 0;
     top: 0;

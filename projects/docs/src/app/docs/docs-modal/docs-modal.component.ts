@@ -11,12 +11,16 @@ export class DocsModalComponent implements OnInit {
   largeModal = false;
   input = new FormControl('Hello World Content');
 
-  codeExample = `
-<li-modal>
-  <h1 slot="header">Hello World Header</h1>
-  <p>Hello World</p>
-  <div slot="footer">Hello World Footer</div>
-</li-modal>
+  codeExampleImport = `
+    import 'lithium-ui/modal';
+  `;
+
+  codeExampleHtml = `
+    <li-modal>
+      <h1 slot="header">Hello World Header</h1>
+      <p>Hello World</p>
+      <div slot="footer">Hello World Footer</div>
+    </li-modal>
   `;
 
   constructor() { }

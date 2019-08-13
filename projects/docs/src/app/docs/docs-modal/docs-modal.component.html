@@ -12,6 +12,9 @@
       <div slot="footer">Hello World Footer</div>
     </li-modal>
 
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+
     <!-- <li-button (click)="formsModal = !formsModal">toggle forms modal {{formsModal}}</li-button>
     <li-modal [open]="formsModal" (openChange)="formsModal = $event.detail">
       <h3 slot="header">Angular Form in Modal</h3>
@@ -32,9 +35,6 @@
       <p>Modal opened using Angular's Template Ref syntax</p>
       <div slot="footer">Hello World Footer</div>
     </li-modal> -->
-
-    <br /><br />
-    <li-code-example language="html" [code]="codeExample"></li-code-example>
   </li-tab>
   <li-tab name="API">
     <h2>API</h2>
