@@ -6,6 +6,7 @@
     "./esm2015/**/*.element.js",
     "./**/lithium-ui-button.js",
     "./**/lithium-ui-card.js",
+    "./**/lithium-ui-checkbox.js",
     "./**/lithium-ui-code-example.js",
     "./**/lithium-ui-dropdown.js",
     "./**/lithium-ui-icons.js",
@@ -15,8 +16,10 @@
     "./**/lithium-ui-modal.js",
     "./**/lithium-ui-nav-bar.js",
     "./**/lithium-ui-progress-bar.js",
+    "./**/lithium-ui-select.js",
     "./**/lithium-ui-side-nav.js",
-    "./**/lithium-ui-tabs.js"
+    "./**/lithium-ui-tabs.js",
+    "./**/lithium-ui-textarea.js"
   ],
   "peerDependencies": {
     "lit-element": "^2.2.0",

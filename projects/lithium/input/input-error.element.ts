@@ -25,5 +25,3 @@ export class LithiumInputError extends LitElement {
     this.setAttribute('aria-live', 'polite');
   }
 }
-
-registerElementSafely('li-input-error', LithiumInputError);

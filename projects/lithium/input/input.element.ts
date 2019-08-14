@@ -70,6 +70,5 @@ export class LithiumInput extends LitElement {
 }
 
 registerElementSafely('li-input', LithiumInput);
-
-export class LithiumSelect extends LithiumInput { }
-registerElementSafely('li-select', LithiumSelect);
+registerElementSafely('li-input-error', LithiumInputError);
+registerElementSafely('li-input-message', LithiumInputMessage);
