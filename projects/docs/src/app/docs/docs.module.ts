@@ -17,6 +17,7 @@ import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsCardComponent } from './docs-card/docs-card.component';
 import { SharedModule } from '../common/shared.module';
 import { DocsButtonComponent } from './docs-button/docs-button.component';
+import { DocsInputComponent } from './docs-input/docs-input.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -26,6 +27,7 @@ import { DocsButtonComponent } from './docs-button/docs-button.component';
     DocsButtonComponent,
     DocsCardComponent,
     DocsIconsComponent,
+    DocsInputComponent,
     DocsModalComponent,
     DocsSideNavComponent,
     DocsNavBarComponent,

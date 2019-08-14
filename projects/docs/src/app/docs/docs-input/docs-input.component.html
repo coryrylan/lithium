@@ -1,0 +1,42 @@
+<h1>Input</h1>
+
+<p>
+  The <code>li-input</code> component provides default styles and utilities to input type
+  elements. This includes built in accessibility (a11y) with proper labeling and
+  error messages.
+</p>
+
+<li-tabs>
+  <li-tab name="Example">
+    <h2>Example</h2>
+    
+    <li-input>
+      <label>Email</label>
+      <input type="email" />
+      <li-input-message>Must be a active account.</li-input-message>
+      <li-input-error>Invalid</li-input-error>
+    </li-input>
+
+    <li-input error>
+      <label>Age</label>
+      <input type="number" />
+      <li-input-message>Must be 18 years or older.</li-input-message>
+      <li-input-error>Required</li-input-error>
+    </li-input>
+
+    <li-textarea>
+      <label>Description</label>
+      <textarea></textarea>
+      <li-input-message>Maximum of 100 characters.</li-input-message>
+    </li-textarea>
+
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab name="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

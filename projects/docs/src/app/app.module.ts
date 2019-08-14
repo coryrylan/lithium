@@ -14,6 +14,7 @@ import 'lithium-ui/loading-spinner';
 import 'lithium-ui/message';
 import 'lithium-ui/progress-bar';
 import 'lithium-ui/code-example';
+import 'lithium-ui/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

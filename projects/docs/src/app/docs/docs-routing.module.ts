@@ -16,6 +16,7 @@ import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.
 import { Layout } from '../common/enums';
 import { DocsCardComponent } from './docs-card/docs-card.component';
 import { DocsButtonComponent } from './docs-button/docs-button.component';
+import { DocsInputComponent } from './docs-input/docs-input.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'button', component: DocsButtonComponent, data: { title: 'Lithium Button Web Component - Documentation', layout: Layout.Docs } },
       { path: 'card', component: DocsCardComponent, data: { title: 'Lithium Card Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'input', component: DocsInputComponent, data: { title: 'Lithium Input Web Component - Documentation', layout: Layout.Docs } },
       { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },
       { path: 'side-nav', component: DocsSideNavComponent, data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs } },
       { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },

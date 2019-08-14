@@ -19,10 +19,14 @@ export const styleVariables = css`
     --li-common-color-blue-100: #2974ca;
     --li-common-color-green-100: #3d9b3d;
     --li-common-color-orange-100: #c69b20;
+    --li-common-color-red-50: #e30f0f;
     --li-common-color-red-100: #b31d1d;
 
     /* shape */
     --li-common-padding-md: 1.5rem;
     --li-common-border-radius: 4px;
+
+    /* base font */
+    font-size: 16px;
   }
 `;
