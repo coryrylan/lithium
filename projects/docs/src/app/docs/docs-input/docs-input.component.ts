@@ -24,11 +24,10 @@ export class DocsInputComponent {
       <li-input-error>Required</li-input-error>
     </li-input>
 
-    <li-textarea>
-      <label>Description</label>
-      <textarea></textarea>
-      <li-input-message>Maximum of 100 characters.</li-input-message>
-    </li-textarea>
+    <li-input>
+      <label>Disabled</label>
+      <input disabled />
+    </li-input>
   `;
 }
 

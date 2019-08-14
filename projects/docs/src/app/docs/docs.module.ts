@@ -18,6 +18,8 @@ import { DocsCardComponent } from './docs-card/docs-card.component';
 import { SharedModule } from '../common/shared.module';
 import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsInputComponent } from './docs-input/docs-input.component';
+import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
+import { DocsSelectComponent } from './docs-select/docs-select.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -31,7 +33,9 @@ import { DocsInputComponent } from './docs-input/docs-input.component';
     DocsModalComponent,
     DocsSideNavComponent,
     DocsNavBarComponent,
+    DocsSelectComponent,
     DocsTabsComponent,
+    DocsTextareaComponent,
     DocsLoadingSpinnerComponent,
     DocsMessageComponent,
     DocsProgressBarComponent,

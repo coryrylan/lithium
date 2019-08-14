@@ -1,0 +1,50 @@
+<h1>Select</h1>
+
+<p>
+  The <code>li-select</code> component provides default styles and utilities to select
+  elements. This includes built in accessibility (a11y) with proper labeling and
+  error messages.
+</p>
+
+<li-tabs>
+  <li-tab name="Example">
+    <h2>Example</h2>
+
+    <li-select>
+      <label>Select an Option</label>
+      <select>
+        <option>Option One</option>
+        <option>Option Two</option>
+        <option>Option Three</option>
+      </select>
+    </li-select>
+
+    <li-select error>
+      <label>Select an Option</label>
+      <select>
+        <option>Option One</option>
+        <option>Option Two</option>
+        <option>Option Three</option>
+      </select>
+      <li-input-error>At least one must be selected.</li-input-error>
+    </li-select>
+
+    <li-select>
+      <label>Disabled</label>
+      <select disabled>
+        <option>Option One</option>
+        <option>Option Two</option>
+        <option>Option Three</option>
+      </select>
+    </li-select>
+
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab name="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

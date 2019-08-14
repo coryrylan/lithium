@@ -15,6 +15,8 @@ import 'lithium-ui/message';
 import 'lithium-ui/progress-bar';
 import 'lithium-ui/code-example';
 import 'lithium-ui/input';
+import 'lithium-ui/textarea';
+import 'lithium-ui/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

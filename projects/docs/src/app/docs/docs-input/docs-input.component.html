@@ -24,13 +24,12 @@
       <li-input-error>Required</li-input-error>
     </li-input>
 
-    <li-textarea>
-      <label>Description</label>
-      <textarea></textarea>
-      <li-input-message>Maximum of 100 characters.</li-input-message>
-    </li-textarea>
+    <li-input>
+      <label>Disabled</label>
+      <input disabled />
+    </li-input>
 
-    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleImport" language="javascript" bp="margin-top--lg"></li-code-example>
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab name="API">

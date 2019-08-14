@@ -17,6 +17,8 @@ import { Layout } from '../common/enums';
 import { DocsCardComponent } from './docs-card/docs-card.component';
 import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsInputComponent } from './docs-input/docs-input.component';
+import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
+import { DocsSelectComponent } from './docs-select/docs-select.component';
 
 const routes: Routes = [
   {
@@ -31,7 +33,9 @@ const routes: Routes = [
       { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },
       { path: 'side-nav', component: DocsSideNavComponent, data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs } },
       { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'select', component: DocsSelectComponent, data: { title: 'Lithium Select Web Component - Documentation', layout: Layout.Docs } },
       { path: 'tabs', component: DocsTabsComponent, data: { title: 'Lithium Tabs Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'textarea', component: DocsTextareaComponent, data: { title: 'Lithium Textarea Web Component - Documentation', layout: Layout.Docs } },
       { path: 'loading-spinner', component: DocsLoadingSpinnerComponent, data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs } },
       { path: 'message', component: DocsMessageComponent, data: { title: 'Lithium Message Web Component - Documentation', layout: Layout.Docs } },
       { path: 'progress-bar', component: DocsProgressBarComponent, data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs } },

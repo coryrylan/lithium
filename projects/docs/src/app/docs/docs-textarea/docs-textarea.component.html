@@ -1,0 +1,41 @@
+<h1>Textarea</h1>
+
+<p>
+  The <code>li-textarea</code> component provides default styles and utilities to textarea
+  elements. This includes built in accessibility (a11y) with proper labeling and
+  error messages.
+</p>
+
+<li-tabs>
+  <li-tab name="Example">
+    <h2>Example</h2>
+
+    <li-textarea>
+      <label>Description</label>
+      <textarea></textarea>
+      <li-input-message>Maximum of 100 characters.</li-input-message>
+      <li-input-error>Required</li-input-error>
+    </li-textarea>
+
+    <li-textarea error>
+      <label>Description</label>
+      <textarea></textarea>
+      <li-input-message>Maximum of 100 characters.</li-input-message>
+      <li-input-error>Required</li-input-error>
+    </li-textarea>
+
+    <li-textarea>
+      <label>Disabled</label>
+      <textarea disabled></textarea>
+    </li-textarea>
+
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab name="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

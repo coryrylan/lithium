@@ -1,4 +1,4 @@
-import { LitElement, html, query } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './input.styles';
@@ -29,8 +29,12 @@ export class LithiumInput extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
+    const input = this.querySelector('input');
+    const textarea = this.querySelector('textarea');
+    const select = this.querySelector('select');
+    this.input = input ? input : textarea ? textarea : select;
+
     this.label = this.querySelector('label');
-    this.input = this.querySelector('input') ? this.querySelector('input') : this.querySelector('textarea');
     this.message = this.querySelector('li-input-message');
     this.error = this.querySelector('li-input-error');
 
@@ -54,5 +58,5 @@ export class LithiumInput extends LitElement {
 
 registerElementSafely('li-input', LithiumInput);
 
-export class LithiumTextArea extends LithiumInput { }
-registerElementSafely('li-textarea', LithiumTextArea);
+export class LithiumSelect extends LithiumInput { }
+registerElementSafely('li-select', LithiumSelect);
