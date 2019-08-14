@@ -18,6 +18,7 @@ IconService.addIcons(closeIcon);
  * @cssProp `--li-side-nav-transition-speed`
  * @cssProp `--li-side-nav-border-color`
  * @cssProp `--li-side-nav-header-background-color`
+ * @cssProp `--li-side-nav-hover-background-color`
  * @cssProp `--li-side-nav-color`
  */
 // @dynamic

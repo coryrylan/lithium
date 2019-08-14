@@ -12,7 +12,18 @@ const componentStyles = css`
     -moz-appearance: none;
 	  -webkit-appearance: none;
     display: block;
-    background: var(--li-input-background, var(--li-common-color-white-100));
+    color: var(--li-input-color, var(--li-common-color-gray-500)) !important;
+    background: var(--li-input-background, var(--li-common-color-white-100)) !important;
+    border: 1px solid var(--li-input-border-color, var(--li-common-color-gray-300));
+    border-radius: var(--li-input-border-radius, var(--li-common-border-radius));
+    padding: 0.6rem 0.8rem !important;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  ::slotted(label) {
+    display: inline-block;
+    margin-bottom: 0.25rem;
   }
 
   :host([error]) ::slotted(label) {
@@ -38,14 +49,6 @@ const componentStyles = css`
 
   :host([error]) ::slotted(li-input-error) {
     display: block;
-  }
-
-  ::slotted(input), ::slotted(textarea), ::slotted(select) {
-    border: 1px solid var(--li-input-border-color, var(--li-common-color-gray-300));
-    border-radius: var(--li-input-border-radius, var(--li-common-border-radius));
-    padding: 0.4rem 0.5rem;
-    font-size: 1rem;
-    width: 100%;
   }
 
   ::slotted(textarea) {

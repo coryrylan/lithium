@@ -4,6 +4,7 @@
   --global-color-gray-100: #f3f3f3;
   --global-color-gray-200: #e4e4e4;
   --global-color-gray-300: #ccc;
+  --global-color-gray-350: #555555;
   --global-color-gray-400: #3d3d3d;
   --global-color-gray-500: #2d2d2d;
   --global-color-gray-600: #292929;
@@ -11,6 +12,7 @@
   --global-color-purple-100: #7c0799;
   --global-color-blue-100: #2974ca;
   --global-color-blue-200: #1f5a9e;
+  --global-color-red-50: #d00505;
   --global-primary-color: var(--global-color-gray-100);
   --global-secondary-color: var(--global-color-gray-200);
   --global-border-color: var(--global-color-gray-200);
@@ -34,14 +36,21 @@
   --li-card-border-color: var(--global-color-gray-600);
   --li-nav-bar-background-color: var(--global-color-gray-500);
   --li-nav-bar-color: var(--global-text-color);
+  --li-nav-bar-hover-background-color: var(--global-color-gray-700);
   --li-side-nav-color: var(--global-text-color);
   --li-side-nav-header-background-color: var(--global-color-gray-700);
   --li-side-nav-background-color: var(--global-color-gray-600);
+  --li-side-nav-hover-background-color: var(--global-color-gray-700);
   --li-side-nav-border-color: var(--global-border-color);
   --li-icon-color: var(--global-text-color);
   --li-progress-bar-background-color: var(--global-color-gray-500);
   --li-progress-bar-inset-background-color: var(--global-color-gray-700);
   --li-progress-bar-color: var(--global-text-color);
+  --li-input-color: var(--global-color-white-100);
+  --li-input-background: var(--global-color-gray-350);
+  --li-input-border-color: var(--global-color-gray-350);
+  --li-input-error-color: var(--global-color-red-50);
+  --li-input-disabled-background: var(--global-color-gray-400);
   --li-code-example-background-color: var(--global-color-gray-500);
   --li-code-example-border-color: var(--global-color-gray-600);
   --li-code-example-token-1: #b3d4fc;

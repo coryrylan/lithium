@@ -33,7 +33,7 @@ export const componentStyles = css`
   }
 
   ::slotted(a:hover), ::slotted(button:hover) {
-    background-color: var(--li-nav-bar-hover-background, var(--li-common-color-gray-100)) !important;
+    background-color: var(--li-nav-bar-hover-background-color, var(--li-common-color-gray-100)) !important;
   }
 
   ::slotted([li-nav-bar-right]) {
