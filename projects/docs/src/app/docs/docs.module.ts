@@ -20,6 +20,7 @@ import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsInputComponent } from './docs-input/docs-input.component';
 import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
 import { DocsSelectComponent } from './docs-select/docs-select.component';
+import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -28,6 +29,7 @@ import { DocsSelectComponent } from './docs-select/docs-select.component';
     DocsHomeComponent,
     DocsButtonComponent,
     DocsCardComponent,
+    DocsCheckboxComponent,
     DocsIconsComponent,
     DocsInputComponent,
     DocsModalComponent,

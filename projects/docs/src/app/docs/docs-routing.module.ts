@@ -19,6 +19,7 @@ import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsInputComponent } from './docs-input/docs-input.component';
 import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
 import { DocsSelectComponent } from './docs-select/docs-select.component';
+import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'internationalization', component: DocsI18nComponent, data: { title: 'Lithium Internationalization (i18n) - Documentation', layout: Layout.Docs } },
       { path: 'button', component: DocsButtonComponent, data: { title: 'Lithium Button Web Component - Documentation', layout: Layout.Docs } },
       { path: 'card', component: DocsCardComponent, data: { title: 'Lithium Card Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'checkbox', component: DocsCheckboxComponent, data: { title: 'Lithium Checkbox Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'input', component: DocsInputComponent, data: { title: 'Lithium Input Web Component - Documentation', layout: Layout.Docs } },
       { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },

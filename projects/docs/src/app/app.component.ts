@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
+import ResizeObserver from 'resize-observer-polyfill';
 import { IconService, menuIcon } from 'lithium-ui/icons';
 IconService.addIcons(menuIcon);
 
@@ -8,8 +9,6 @@ import { RouterMetaDataService } from './common/services/router-metadata.service
 import { fadeAnimation } from './common/animations';
 import { ThemeService } from './common/services/theme.service';
 import { environment } from '../environments/environment';
-
-declare var ResizeObserver;
 
 @Component({
   selector: 'app-root',

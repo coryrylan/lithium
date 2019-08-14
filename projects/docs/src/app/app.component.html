@@ -9,7 +9,7 @@
 
   <a routerLink="/" class="mobile-only">Lithium</a>
   <button (click)="toggleTheme()" li-nav-bar-right class="mobile-only">Theme <div class="theme-btn"></div></button>
-  <button (click)="toggleMenu()" class="mobile-only">
+  <button (click)="toggleMenu()" class="mobile-only" aria-label="Menu">
     <li-icon name="menu"></li-icon>
   </button>
 </li-nav-bar>
@@ -26,6 +26,7 @@
   <a routerLink="/docs/button">Button</a>
   <a routerLink="/docs/modal">Modal</a>
   <a routerLink="/docs/card">Card</a>
+  <a routerLink="/docs/checkbox">Checkbox</a>
   <a routerLink="/docs/message">Message</a>
   <a routerLink="/docs/side-nav">Side Nav</a>
   <a routerLink="/docs/nav-bar">Nav Bar</a>
