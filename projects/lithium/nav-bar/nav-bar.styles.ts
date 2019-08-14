@@ -32,6 +32,10 @@ export const componentStyles = css`
     cursor: pointer;
   }
 
+  ::slotted(a:hover), ::slotted(button:hover) {
+    background-color: var(--li-nav-bar-hover-background, var(--li-common-color-gray-100)) !important;
+  }
+
   ::slotted([li-nav-bar-right]) {
     margin-left: auto !important;
   }

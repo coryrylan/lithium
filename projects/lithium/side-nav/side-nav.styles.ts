@@ -70,6 +70,10 @@ export const componentStyles = css`
     cursor: pointer;
   }
 
+  .li-side-nav-slot::slotted(a:hover), .li-side-nav-slot::slotted(button:hover) {
+    background-color: var(--li-nav-bar-hover-background, var(--li-common-color-gray-100)) !important;
+  }
+
   .li-side-nav-backdrop {
     position: fixed;
     top: 0;

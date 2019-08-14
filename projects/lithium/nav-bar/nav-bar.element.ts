@@ -12,6 +12,7 @@ import { styles } from './nav-bar.styles';
  * @styleAttr `li-nav-bar-right` - Align nav links to right
  * @cssProp `--li-nav-bar-background-color`
  * @cssProp `--li-nav-bar-color`
+ * @cssProp `--li-nav-bar-hover-background`
  */
 // @dynamic
 export class LithiumNavBar extends LitElement {
