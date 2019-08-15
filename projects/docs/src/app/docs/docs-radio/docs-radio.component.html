@@ -12,6 +12,7 @@
 
     <form [formGroup]="form">
       <li-radio-group name="region">
+        <legend>Choose a Country</legend>
         <li-radio>
           <input type="radio" value="north-america" formControlName="region" />
           <label>North America</label>
@@ -32,6 +33,22 @@
     </form>
 
     <h4><strong>Selected Value</strong>: {{(value | async)?.region}}</h4>
+
+    <li-radio-group name="region" inline>
+      <legend>Choose a Country</legend>
+      <li-radio>
+        <input type="radio" value="north-america" checked />
+        <label>North America</label>
+      </li-radio>
+      <li-radio>
+        <input type="radio" value="south-america" />
+        <label>South America</label>
+      </li-radio>
+      <li-radio>
+        <input type="radio" value="europe" />
+        <label>Europe</label>
+      </li-radio>
+    </li-radio-group>
 
     <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>

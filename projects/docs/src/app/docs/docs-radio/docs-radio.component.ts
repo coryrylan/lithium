@@ -28,6 +28,7 @@ export class DocsRadioComponent {
 
   codeExampleHtml = `
     <li-radio-group name="region">
+      <legend>Choose a Country</legend>
       <li-radio>
         <input type="radio" value="north-america" />
         <label>North America</label>

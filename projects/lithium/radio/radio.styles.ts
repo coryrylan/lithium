@@ -5,12 +5,13 @@ import { styleVariables } from 'lithium-ui/common';
 const componentStyles = css`
   :host {
     display: block;
-    position: relative;
     margin-bottom: 1rem;
+    position: relative;
   }
 
   ::slotted(label) {
     margin-left: 1.8rem;
+    margin-right: 1rem;
     cursor: pointer;
   }
 
@@ -31,6 +32,12 @@ const componentStyles = css`
     border-radius: 50%;
   }
 
+  .circle-wrapper {
+    position: absolute;
+    display: inline-block;
+    top: 2px;
+  }
+
   .circle-fill {
     display: none;
     pointer-events: none;
@@ -42,8 +49,8 @@ const componentStyles = css`
     position: absolute;
     width: 14px;
     height: 14px;
-    top: 3.5px;
-    left: 3.5px;
+    top: 3px;
+    left: 3px;
     z-index: 99;
     border-radius: 50%;
   }

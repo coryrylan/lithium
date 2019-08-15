@@ -6,6 +6,7 @@ import { IconService, checkIcon } from 'lithium-ui/icons';
 IconService.addIcons(checkIcon);
 
 import { styles } from './radio.styles';
+import { LithiumRadioGroup } from './radio-group.element';
 
 /**
  * Radio, standard radio input with accessibility and error enhancements.
@@ -18,39 +19,6 @@ import { styles } from './radio.styles';
  * @cssProp `--li-radio-disabled-label-color`
  */
 // @dynamic
-export class LithiumRadioGroup extends LitElement {
-  /** Name provides the name for each radio and will automatically associate all radios in element */
-  @property({ type: String }) name = '';
-
-  liRadioElements: LithiumRadio[];
-  liRadioInputs: HTMLElement[];
-
-  render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    this.liRadioElements = Array.from(this.querySelectorAll('li-radio'));
-    this.liRadioInputs = this.liRadioElements.map(e => e.querySelector('input[type=radio]'));
-    this.liRadioInputs.forEach(radio => radio.setAttribute('name', this.name));
-  }
-
-  _clearRadios() {
-    this.liRadioElements.forEach(radio => radio.removeAttribute('checked'));
-  }
-}
-
-/**
- * Radio, standard radio input with accessibility and error enhancements.
- *
- * @noInheritDoc
- * @slot `default` - Content slot for modal body
- * @cssProp ``
- */
-// @dynamic
 export class LithiumRadio extends LithiumInput {
   static get styles() { return styles; }
 
@@ -58,9 +26,11 @@ export class LithiumRadio extends LithiumInput {
 
   render() {
     return html`
+      <div class="circle-wrapper">
+        <div class="circle"></div>
+        <div class="circle-fill"></div>
+      </div>
       <slot></slot>
-      <div class="circle"></div>
-      <div class="circle-fill"></div>
     `;
   }
 
