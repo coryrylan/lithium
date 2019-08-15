@@ -1,0 +1,72 @@
+<h1>Forms</h1>
+
+<li-tabs>
+  <li-tab name="Example">
+    <h2>Example</h2>
+
+    <div>
+      <li-input>
+        <label>Email</label>
+        <input type="email" />
+        <li-input-message>Must be a active account.</li-input-message>
+        <li-input-error>Invalid</li-input-error>
+      </li-input>
+
+      <li-textarea>
+        <label>Description</label>
+        <textarea></textarea>
+        <li-input-message>Maximum of 100 characters.</li-input-message>
+        <li-input-error>Required</li-input-error>
+      </li-textarea>
+
+      <li-select>
+        <label>Select an Option</label>
+        <select>
+          <option>Option One</option>
+          <option>Option Two</option>
+          <option>Option Three</option>
+        </select>
+      </li-select>
+
+      <div bp="grid 6@md">
+        <div>
+          <li-checkbox>
+            <input type="checkbox">
+            <label>Checkbox One</label>
+          </li-checkbox>
+          <li-checkbox>
+            <input type="checkbox">
+            <label>Checkbox Two</label>
+          </li-checkbox>
+        </div>
+  
+        <li-radio-group name="region" inline>
+          <legend>Choose a Country</legend>
+          <li-radio>
+            <input type="radio" value="north-america" checked />
+            <label>North America</label>
+          </li-radio>
+          <li-radio>
+            <input type="radio" value="south-america" />
+            <label>South America</label>
+          </li-radio>
+          <li-radio>
+            <input type="radio" value="europe" />
+            <label>Europe</label>
+          </li-radio>
+        </li-radio-group>
+      </div>
+
+      <li-button bp="float-right">Save</li-button>
+    </div>
+    <!-- <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example> -->
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+    <app-class-api></app-class-api>
+  </li-tab>
+  <li-tab name="Theme">
+    <app-theme-api></app-theme-api>
+  </li-tab>
+</li-tabs>

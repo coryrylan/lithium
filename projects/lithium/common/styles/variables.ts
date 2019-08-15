@@ -16,6 +16,7 @@ export const styleVariables = css`
     --li-common-color-gray-500: #2d2d2d;
     --li-common-color-gray-600: #292929;
     --li-common-color-gray-700: #1f1f1f;
+    --li-common-color-blue-50: #4191ed;
     --li-common-color-blue-100: #2974ca;
     --li-common-color-green-100: #3d9b3d;
     --li-common-color-orange-100: #c69b20;
@@ -25,6 +26,8 @@ export const styleVariables = css`
     /* shape */
     --li-common-padding-md: 1.5rem;
     --li-common-border-radius: 4px;
+    --li-common-outline: 1px solid var(--li-common-color-blue-50);
+    --li-common-outline-shadow: 0 0 6px 0 var(--li-common-color-blue-100);
 
     /* base font */
     font-size: 16px;

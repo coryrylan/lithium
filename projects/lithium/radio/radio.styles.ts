@@ -18,6 +18,8 @@ const componentStyles = css`
   ::slotted([type=radio]) {
     position: absolute;
     left: -9999px;
+    width: 0;
+    height: 0;
   }
 
   ::slotted(label)::before {
@@ -58,6 +60,11 @@ const componentStyles = css`
   :host([disabled]) ::slotted(label) {
     color: var(--li-radio-disabled-label-color, var(--li-common-color-gray-300)) !important;
     cursor: not-allowed;
+  }
+
+  :host([focused]) ::slotted(label) {
+    outline: var(--li-common-outline);
+    box-shadow: var(--li-common-outline-shadow);
   }
 `;
 

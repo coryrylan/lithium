@@ -21,6 +21,7 @@ import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
 import { DocsSelectComponent } from './docs-select/docs-select.component';
 import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
 import { DocsRadioComponent } from './docs-radio/docs-radio.component';
+import { DocsFormsComponent } from './docs-forms/docs-forms.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
       { path: 'button', component: DocsButtonComponent, data: { title: 'Lithium Button Web Component - Documentation', layout: Layout.Docs } },
       { path: 'card', component: DocsCardComponent, data: { title: 'Lithium Card Web Component - Documentation', layout: Layout.Docs } },
       { path: 'checkbox', component: DocsCheckboxComponent, data: { title: 'Lithium Checkbox Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'forms', component: DocsFormsComponent, data: { title: 'Lithium Forms Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'input', component: DocsInputComponent, data: { title: 'Lithium Input Web Component - Documentation', layout: Layout.Docs } },
       { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },

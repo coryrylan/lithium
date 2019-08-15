@@ -37,6 +37,8 @@ export class LithiumCheckbox extends LithiumInput {
     this.updateHostDisabled();
 
     this.checkbox.addEventListener('change', () => this.updateHostChecked());
+    this.checkbox.addEventListener('focusin', () => this.setAttribute('focused', ''));
+    this.checkbox.addEventListener('focusout', () => this.removeAttribute('focused'));
   }
 
   private updateHostChecked() {

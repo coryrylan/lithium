@@ -50,6 +50,11 @@ export const componentStyles = css`
     top: 3px;
     left: 3px;
   }
+
+  :host([focused]) ::slotted(label) {
+    outline: var(--li-common-outline);
+    box-shadow: var(--li-common-outline-shadow);
+  }
 `;
 
 export const styles = [

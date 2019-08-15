@@ -37,6 +37,8 @@ export class LithiumRadio extends LithiumInput {
     super.connectedCallback();
     this.radio = this.querySelector('input[type=radio]');
     this.radio.addEventListener('click', () => this.setHostCheckedAttribute());
+    this.radio.addEventListener('focusin', () => this.setAttribute('focused', ''));
+    this.radio.addEventListener('focusout', () => this.removeAttribute('focused'));
   }
 
   firstUpdated(props) {
