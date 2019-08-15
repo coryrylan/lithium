@@ -26,8 +26,7 @@ export class LithiumRadio extends LithiumInput {
 
   render() {
     return html`
-      <div class="circle-wrapper">
-        <div class="circle"></div>
+      <div class="circle">
         <div class="circle-fill"></div>
       </div>
       <slot></slot>

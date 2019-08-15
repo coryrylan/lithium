@@ -20,11 +20,11 @@ const componentStyles = css`
     left: -9999px;
   }
 
-  .circle {
+  ::slotted(label)::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
     width: 20px;
     height: 20px;
     border: 1px solid var(--li-radio-border-color, var(--li-common-color-gray-300));
@@ -32,7 +32,7 @@ const componentStyles = css`
     border-radius: 50%;
   }
 
-  .circle-wrapper {
+  .circle {
     position: absolute;
     display: inline-block;
     top: 2px;
