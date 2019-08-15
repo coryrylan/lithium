@@ -37,10 +37,6 @@ export const componentStyles = css`
     border-radius: 3px;
   }
 
-  ::slotted([type=checkbox]:checked + label) {
-    color: red;
-  }
-
   li-icon {
     display: none;
     pointer-events: none;

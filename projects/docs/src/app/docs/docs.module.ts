@@ -21,6 +21,7 @@ import { DocsInputComponent } from './docs-input/docs-input.component';
 import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
 import { DocsSelectComponent } from './docs-select/docs-select.component';
 import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
+import { DocsRadioComponent } from './docs-radio/docs-radio.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -36,6 +37,7 @@ import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
     DocsSideNavComponent,
     DocsNavBarComponent,
     DocsSelectComponent,
+    DocsRadioComponent,
     DocsTabsComponent,
     DocsTextareaComponent,
     DocsLoadingSpinnerComponent,

@@ -20,6 +20,7 @@ import { DocsInputComponent } from './docs-input/docs-input.component';
 import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
 import { DocsSelectComponent } from './docs-select/docs-select.component';
 import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
+import { DocsRadioComponent } from './docs-radio/docs-radio.component';
 
 const routes: Routes = [
   {
@@ -32,9 +33,10 @@ const routes: Routes = [
       { path: 'checkbox', component: DocsCheckboxComponent, data: { title: 'Lithium Checkbox Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'input', component: DocsInputComponent, data: { title: 'Lithium Input Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'side-nav', component: DocsSideNavComponent, data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs } },
       { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },
+      { path: 'radio', component: DocsRadioComponent, data: { title: 'Lithium Side Radio Component - Documentation', layout: Layout.Docs } },
+      { path: 'side-nav', component: DocsSideNavComponent, data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs } },
       { path: 'select', component: DocsSelectComponent, data: { title: 'Lithium Select Web Component - Documentation', layout: Layout.Docs } },
       { path: 'tabs', component: DocsTabsComponent, data: { title: 'Lithium Tabs Web Component - Documentation', layout: Layout.Docs } },
       { path: 'textarea', component: DocsTextareaComponent, data: { title: 'Lithium Textarea Web Component - Documentation', layout: Layout.Docs } },

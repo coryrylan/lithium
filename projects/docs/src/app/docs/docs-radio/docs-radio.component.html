@@ -1,0 +1,45 @@
+<h1>Radio</h1>
+
+<p>
+  The <code>li-radio</code> component provides default styles and utilities to radio input
+  elements. This includes built in accessibility (a11y) with proper labeling and
+  error messages.
+</p>
+
+<li-tabs>
+  <li-tab name="Example">
+    <h2>Example</h2>
+
+    <form [formGroup]="form">
+      <li-radio-group name="region">
+        <li-radio>
+          <input type="radio" value="north-america" formControlName="region" />
+          <label>North America</label>
+        </li-radio>
+        <li-radio>
+          <input type="radio" value="south-america" formControlName="region" />
+          <label>South America</label>
+        </li-radio>
+        <li-radio>
+          <input type="radio" value="europe" formControlName="region" />
+          <label>Europe</label>
+        </li-radio>
+        <li-radio>
+          <input type="radio" value="disabled" disabled formControlName="region" />
+          <label>Disabled</label>
+        </li-radio>
+      </li-radio-group>
+    </form>
+
+    <h4><strong>Selected Value</strong>: {{(value | async)?.region}}</h4>
+
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+  </li-tab>
+  <li-tab name="API">
+    <h2>API</h2>
+  </li-tab>
+  <li-tab name="Theme">
+    <h2>Theme</h2>
+  </li-tab>
+</li-tabs>

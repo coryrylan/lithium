@@ -16,6 +16,7 @@
     "./**/lithium-ui-modal.js",
     "./**/lithium-ui-nav-bar.js",
     "./**/lithium-ui-progress-bar.js",
+    "./**/lithium-ui-radio.js",
     "./**/lithium-ui-select.js",
     "./**/lithium-ui-side-nav.js",
     "./**/lithium-ui-tabs.js",
