@@ -1,9 +1,11 @@
 <h1>Reference API</h1>
 
-<label for="search">Search</label><br />
-<input [formControl]="search" id="search" />
+<li-input bp="6--max">
+  <label>Search</label>
+  <input [formControl]="search" />
+</li-input>
 <br /><br />
 
-<div bp="grid 4@md 3@lg">
+<div bp="grid 6@sm 4@md 3@lg">
   <app-class-api *ngFor="let class of classResults" [componentClass]="class"></app-class-api>
 </div>

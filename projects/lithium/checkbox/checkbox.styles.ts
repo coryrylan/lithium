@@ -6,13 +6,13 @@ export const componentStyles = css`
   :host {
     display: block;
     position: relative;
-    padding-left: 1.8rem;
     margin-bottom: 0.8rem;
   }
 
   ::slotted(label) {
     font-size: 1rem;
     cursor: pointer;
+    padding-left: 1.8rem;
   }
 
   ::slotted([type=checkbox]) {
@@ -25,9 +25,10 @@ export const componentStyles = css`
     cursor: not-allowed;
   }
 
-  ::slotted(label)::before {
+  .box {
     content: "";
     position: absolute;
+    pointer-events: none;
     left: 0;
     top: 2px;
     width: 20px;

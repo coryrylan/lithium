@@ -23,8 +23,8 @@ import 'lithium-ui/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { CoreModule } from './common/core.module';
-import { SharedModule } from './common/shared.module';
+import { CoreModule } from './common/core/core.module';
+import { SharedModule } from './common/shared/shared.module';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Class } from '../interfaces/api';
+import { Class } from '../../../interfaces/api';
 
 @Component({
   selector: 'app-class-api',

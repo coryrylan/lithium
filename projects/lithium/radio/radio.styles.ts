@@ -10,7 +10,7 @@ const componentStyles = css`
   }
 
   ::slotted(label) {
-    margin-left: 1.8rem;
+    padding-left: 1.8rem;
     margin-right: 1rem;
     cursor: pointer;
   }
@@ -22,8 +22,11 @@ const componentStyles = css`
     height: 0;
   }
 
-  ::slotted(label)::before {
-    content: "";
+  .circle {
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+    top: 2px;
     position: absolute;
     left: 0;
     top: 2px;
@@ -32,12 +35,6 @@ const componentStyles = css`
     border: 1px solid var(--li-radio-border-color, var(--li-common-color-gray-300));
     background: var(--li-radio-background-color, var(--li-common-color-white-100));
     border-radius: 50%;
-  }
-
-  .circle {
-    position: absolute;
-    display: inline-block;
-    top: 2px;
   }
 
   .circle-fill {
@@ -51,8 +48,8 @@ const componentStyles = css`
     position: absolute;
     width: 14px;
     height: 14px;
-    top: 3px;
-    left: 3px;
+    top: 2px;
+    left: 2px;
     z-index: 99;
     border-radius: 50%;
   }

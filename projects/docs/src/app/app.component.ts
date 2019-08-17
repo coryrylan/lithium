@@ -5,9 +5,9 @@ import ResizeObserver from 'resize-observer-polyfill';
 import { IconService, menuIcon } from 'lithium-ui/icons';
 IconService.addIcons(menuIcon);
 
-import { RouterMetaDataService } from './common/services/router-metadata.service';
+import { RouterMetaDataService } from './common/core/services/router-metadata.service';
 import { fadeAnimation } from './common/animations';
-import { ThemeService } from './common/services/theme.service';
+import { ThemeService } from './common/core/services/theme.service';
 import { environment } from '../environments/environment';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ThemeService } from '../../common/services/theme.service';
+import { ThemeService } from '../../common/core/services/theme.service';
 
 @Component({
   selector: 'app-docs-themes',

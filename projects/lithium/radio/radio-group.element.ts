@@ -17,8 +17,8 @@ export class LithiumRadioGroup extends LitElement {
   /** Name provides the name for each radio and will automatically associate all radios in element */
   @property({ type: String }) name = '';
 
-  liRadioElements: LithiumRadio[];
-  liRadioInputs: HTMLElement[];
+  private liRadioElements: LithiumRadio[];
+  private liRadioInputs: HTMLElement[];
 
   render() {
     return html`
@@ -35,6 +35,7 @@ export class LithiumRadioGroup extends LitElement {
     this.liRadioInputs.forEach(radio => radio.setAttribute('name', this.name));
   }
 
+  /** internal */
   _clearRadios() {
     this.liRadioElements.forEach(radio => radio.removeAttribute('checked'));
   }

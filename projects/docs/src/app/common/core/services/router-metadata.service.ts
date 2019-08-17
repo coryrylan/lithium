@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Router, RouterStateSnapshot, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
 import { tap, map, filter } from 'rxjs/operators';
 import { of, merge } from 'rxjs';
-import { Layout } from '../enums';
+import { Layout } from '../../enums';
 
 @Injectable({
   providedIn: 'root'

@@ -25,6 +25,7 @@ export class LithiumCheckbox extends LithiumInput {
   render() {
     return html`
       <slot></slot>
+      <div class="box"></div>
       <li-icon name="check"></li-icon>
     `;
   }

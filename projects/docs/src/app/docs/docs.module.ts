@@ -15,7 +15,7 @@ import { DocsIconsComponent } from './docs-icons/docs-icons.component';
 import { DocsThemesComponent } from './docs-themes/docs-themes.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsCardComponent } from './docs-card/docs-card.component';
-import { SharedModule } from '../common/shared.module';
+import { SharedModule } from '../common/shared/shared.module';
 import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsInputComponent } from './docs-input/docs-input.component';
 import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';

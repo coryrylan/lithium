@@ -42,7 +42,7 @@ export class DocsRadioComponent {
         <label>Europe</label>
       </li-radio>
       <li-radio>
-        <input type="radio" value="disabled" />
+        <input type="radio" value="disabled" disabled />
         <label>Disabled</label>
       </li-radio>
     </li-radio-group>

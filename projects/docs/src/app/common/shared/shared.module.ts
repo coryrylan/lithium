@@ -2,10 +2,12 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 // import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-import { ThemeAPIComponent } from './components/theme-api.component';
-import { ClassAPIComponent } from './components/class-api.component';
+import { ThemeAPIComponent } from './components/theme-api/theme-api.component';
+import { ClassAPIComponent } from './components/class-api/class-api.component';
+import { ComponentApiComponent } from './components/component-api/component-api.component';
 
 const components = [
+  ComponentApiComponent,
   ClassAPIComponent,
   ThemeAPIComponent
 ];
@@ -14,7 +16,8 @@ const components = [
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule],
   declarations: [
-    ...components
+    ...components,
+    ComponentApiComponent
   ],
   exports: [
     ...components
