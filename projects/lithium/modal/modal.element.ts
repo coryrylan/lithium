@@ -10,6 +10,7 @@ IconService.addIcons(closeIcon);
  * Modal, to intercept or pause user for a specific blocking task.
  *
  * @noInheritDoc
+ * @element `li-modal`
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer

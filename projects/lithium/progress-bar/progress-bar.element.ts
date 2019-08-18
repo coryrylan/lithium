@@ -7,6 +7,7 @@ import { styles } from './progress-bar.styles';
  * Progress Bar, display the current state or progress of a running task
  *
  * @noInheritDoc
+ * @element `li-progress-bar`
  * @cssProp `--li-progress-bar-background-color`
  * @cssProp `--li-progress-bar-shadow-color`
  * @cssProp `--li-progress-bar-inset-background-color`

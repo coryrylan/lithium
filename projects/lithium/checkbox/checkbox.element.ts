@@ -10,6 +10,7 @@ IconService.addIcons(checkIcon);
  * Checkbox, standard checkbox input with accessibility and error enhancements.
  *
  * @noInheritDoc
+ * @element `li-checkbox`
  * @slot `default` - Content slot for checkbox input
  * @styleAttr `error` - Set error styles
  * @cssProp `--li-checkbox-disabled-color`

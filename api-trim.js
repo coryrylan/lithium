@@ -1,40 +1,49 @@
-"use strict";
+'use strict';
 
-const fs = require("fs");
-const PATH = "./projects/docs/src/assets/api.json";
+const fs = require('fs');
+const PATH = './projects/docs/src/assets/api.json';
+const data = JSON.parse(fs.readFileSync(PATH));
+const elements = [];
 
-const classes = JSON.parse(fs.readFileSync(PATH));
-
-fs.writeFileSync(PATH, JSON.stringify(iterate(classes), null, 2));
+iterate(data.children);
+fs.writeFileSync(PATH, JSON.stringify(elements, null, 0));
 
 function iterate(obj) {
   Object.keys(obj).forEach(key => {
-    if (
-      key === 'originalName' ||
-      key === 'fileName' ||
-      key === 'inheritedFrom' ||
-      key === 'sources') {
+    const value = obj[key];
+
+    if (hasUnnecessaryMetaData(key)) {
       obj[key] = undefined;
-    } else if (Array.isArray(obj[key])) {
-      obj[key].forEach((o, k) => {
-        if (typeof o === 'object') {
-          iterate(o);
-        }
-      });
-    } else if (!Array.isArray(obj[key]) && typeof obj[key] === 'object') {
-      iterate(obj[key]);
+    } else if (Array.isArray(value)) {
+      const element = value.find(
+        o => o.comment && o.comment.tags && o.kind === 128
+      );
+
+      if (element) {
+        removeMarkdownInTags(element);
+        elements.push(element);
+      } else {
+        value.filter(o => typeof o === 'object').forEach(o => iterate(o));
+      }
+    } else if (valueIsObject(value)) {
+      iterate(value);
     }
   });
+}
 
-  return obj;
-};
+function hasUnnecessaryMetaData(key) {
+  return (
+    key === 'originalName' ||
+    key === 'fileName' ||
+    key === 'inheritedFrom' ||
+    key === 'sources'
+  );
+}
 
-function removeMarkdown(classes) {
-  classes
-    .filter(c => c.comment)
-    .forEach(c =>
-      c.comment.tags.forEach(t => (t.text = t.text.replace(/`/g, "")))
-    );
+function removeMarkdownInTags(element) {
+  element.comment.tags.forEach(t => (t.text = t.text.replace(/`/g, '')));
+}
 
-  return classes;
+function valueIsObject(value) {
+  return !Array.isArray(value) && typeof value === 'object';
 }

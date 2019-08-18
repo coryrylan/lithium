@@ -13,7 +13,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {
     this.api = this.httpClient.get<any>('/assets/api.json').pipe(
-      map(data => data.children),
+      map(data => data),
       // map(classes => this.removeMarkdown(classes)),
       shareReplay()
     );

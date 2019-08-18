@@ -11,6 +11,7 @@ let idCount = 0;
  * Input, standard text input with accessibility and error enhancements.
  *
  * @noInheritDoc
+ * @element `li-input`
  * @slot `default` - Content slot for modal body
  * @styleAttr `error` - Set error styles
  * @cssProp `--li-input-color`

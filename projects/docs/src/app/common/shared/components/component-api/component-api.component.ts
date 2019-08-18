@@ -16,7 +16,7 @@ export class ComponentApiComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.api.subscribe(classes => {
-      this.componentClass = classes.find(c => c.name.toLowerCase().includes(this.component.toLowerCase()));
+      this.componentClass = classes.find(c => c.name.toLowerCase() === this.component.toLowerCase());
     });
   }
 }

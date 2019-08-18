@@ -7,6 +7,7 @@ import { styles } from './input-error.styles';
  * Input error, display error validation messages related for inputs
  *
  * @noInheritDoc
+ * @element `li-input-error`
  * @slot `default` - Text content for message
  * @cssProp `--li-input-error-color`
  */

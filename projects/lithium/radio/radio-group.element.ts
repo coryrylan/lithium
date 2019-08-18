@@ -7,6 +7,7 @@ import { styles } from './radio-group.styles';
  * Radio Group, group element to associate a collection of radio inputs
  *
  * @noInheritDoc
+ * @element `li-radio`
  * @slot `default` - Content slot for radio input
  * @styleAttr `inline` - Display radio elements inline
  */

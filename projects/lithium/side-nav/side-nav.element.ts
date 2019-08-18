@@ -9,6 +9,7 @@ IconService.addIcons(closeIcon);
  * Side Nav, a slide out nav for navigation menus
  *
  * @noInheritDoc
+ * @element `li-side-nav`
  * @slot `default` - Content slot for nav elements
  * @customEvent `openChange` - Notify when the side nav has been opened or closed.
  * @styleAttr `sticky` - Set nav to remain open on left side

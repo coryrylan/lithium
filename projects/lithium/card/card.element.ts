@@ -7,6 +7,7 @@ import { styles } from './card.styles';
  * Card, to organize and group related content
  *
  * @noInheritDoc
+ * @element `li-card`
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer

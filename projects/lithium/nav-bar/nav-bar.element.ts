@@ -7,6 +7,7 @@ import { styles } from './nav-bar.styles';
  * Nav Bar, standard navigation bar with basic layout
  *
  * @noInheritDoc
+ * @element `li-nav-bar`
  * @slot `default` - Content slot for nav bar
  * @styleAttr `sticky` - Make nav bar sticky and position to top of page
  * @styleAttr `li-nav-bar-right` - Align nav links to right

@@ -7,6 +7,7 @@ import 'lithium-ui/loading-spinner';
  * Button, action button with multiple states and loading spinner
  *
  * @noInheritDoc
+ * @element `li-button`
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer

@@ -5,6 +5,7 @@ import { registerElementSafely } from 'lithium-ui/common';
  * Input, standard select input with accessibility and error enhancements.
  *
  * @noInheritDoc
+ * @element `li-select`
  * @slot `default` - Content slot select input
  * @styleAttr `error` - Set error styles
  * @cssProp `--li-input-color`

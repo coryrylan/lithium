@@ -17,6 +17,7 @@ export enum LithiumMessageType {
  * Message, display messages to user with varying importance.
  *
  * @noInheritDoc
+ * @element `li-message`
  * @slot `default` - Content slot for modal body
  * @customEvent `closeChange` - Notify when the message has been dismissed
  * @styleAttr `success` - Display success message

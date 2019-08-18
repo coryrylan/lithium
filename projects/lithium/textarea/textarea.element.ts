@@ -5,6 +5,7 @@ import { registerElementSafely } from 'lithium-ui/common';
  * Input, standard textarea with accessibility and error enhancements.
  *
  * @noInheritDoc
+ * @element `li-textarea`
  * @slot `default` - Content slot for modal body
  * @styleAttr `error` - Set error styles
  * @cssProp `--li-input-color`

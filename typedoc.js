@@ -1,5 +1,6 @@
 module.exports = {
-  json: './dist/docs/assets/api.json',
+  json: './projects/docs/src/assets/api.json',
+  // out: './projects/docs/src/assets/',
   readme: 'none',
   includes: [
     '/projects/lithium/**/*.ts'

@@ -9,6 +9,7 @@ import { unknownIcon } from './svg';
  * Icon
  *
  * @noInheritDoc
+ * @element `li-icon`
  * @cssProp `--li-icon-width` - Icon width.
  * @cssProp `--li-icon-height` - Icon height.
  * @cssProp `--li-icon-color` - Icon Color.

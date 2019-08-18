@@ -9,6 +9,7 @@ import { styles } from './tabs.styles';
  * Tabs, organize related groups into tab panels
  *
  * @noInheritDoc
+ * @element `li-tabs`
  * @slot `default` - Content slot for tab panels
  * @customEvent `openChange` - Notify when the modal has been opened or closed.
  * @cssProp `--li-tabs-text-color`

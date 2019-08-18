@@ -7,6 +7,7 @@ import { styles } from './loading-spinner.styles';
  * Loading Spinner, display a indeterminate task that is processing
  *
  * @noInheritDoc
+ * @element `li-loading-spinner`
  * @styleAttr `small` - small sized spinner
  * @styleAttr `large` - large sized spinner
  * @cssProp `--li-spinner-color`

@@ -7,6 +7,7 @@ import { styles } from './input-message.styles';
  * Input message, display messages related for inputs
  *
  * @noInheritDoc
+ * @element `li-input-message`
  * @slot `default` - Text content for message
  */
 // @dynamic
