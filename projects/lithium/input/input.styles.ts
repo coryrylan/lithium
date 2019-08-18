@@ -5,7 +5,7 @@ import { styleVariables } from 'lithium-ui/common';
 const componentStyles = css`
   :host {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: var(--li-common-margin-bottom-spacing);
   }
 
   ::slotted(input), ::slotted(textarea), ::slotted(select) {

@@ -141,7 +141,7 @@ const componentStyles = css`
   /* CUSTOM */
   :host {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: var(--li-common-margin-bottom-spacing);
   }
 
   pre {

@@ -12,6 +12,7 @@ import { LithiumRadioGroup } from './radio-group.element';
  * Radio, standard radio input with accessibility and error enhancements.
  *
  * @noInheritDoc
+ * @element `li-radio`
  * @slot `default` - Content slot for radio input
  * @cssProp `--li-radio-border-color`
  * @cssProp `--li-radio-background-color`

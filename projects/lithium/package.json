@@ -11,6 +11,7 @@
     "./**/lithium-ui-dropdown.js",
     "./**/lithium-ui-icons.js",
     "./**/lithium-ui-input.js",
+    "./**/lithium-ui-form.js",
     "./**/lithium-ui-loading-spinner.js",
     "./**/lithium-ui-message.js",
     "./**/lithium-ui-modal.js",

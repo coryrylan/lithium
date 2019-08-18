@@ -11,7 +11,7 @@ export const componentStyles = css`
     display: block;
     padding: 1rem 1rem 1rem 3.5rem;
     font-size: 1 rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--li-common-margin-bottom-spacing);
     position: relative;
   }
 

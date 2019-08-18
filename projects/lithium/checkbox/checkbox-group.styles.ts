@@ -7,7 +7,7 @@ const componentStyles = css`
     display: block;
   }
 
-  :host([inline]) ::slotted(li-radio) {
+  :host([inline]) ::slotted(li-checkbox) {
     display: inline-block !important;
   }
 

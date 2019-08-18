@@ -19,6 +19,24 @@
       <label>Disabled</label>
     </li-checkbox>
 
+    <li-checkbox-group inline bp="margin-top--lg">
+      <legend>Select at least one</legend>
+      <li-checkbox checked>
+        <input type="checkbox" checked>
+        <label>Check One</label>
+      </li-checkbox>
+
+      <li-checkbox checked>
+        <input type="checkbox">
+        <label>Check Two</label>
+      </li-checkbox>
+
+      <li-checkbox checked>
+        <input type="checkbox">
+        <label>Check Three</label>
+      </li-checkbox>
+    </li-checkbox-group>
+
     <li-code-example [code]="codeExampleImport" language="javascript" bp="margin-top--lg"></li-code-example>
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>

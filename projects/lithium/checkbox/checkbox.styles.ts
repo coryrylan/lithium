@@ -6,13 +6,14 @@ export const componentStyles = css`
   :host {
     display: block;
     position: relative;
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--li-common-margin-bottom-spacing);
   }
 
   ::slotted(label) {
     font-size: 1rem;
     cursor: pointer;
     padding-left: 1.8rem;
+    margin-right: 1rem;
   }
 
   ::slotted([type=checkbox]) {

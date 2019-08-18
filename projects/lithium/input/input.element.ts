@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './input.styles';
@@ -23,14 +23,16 @@ let idCount = 0;
  */
 // @dynamic
 export class LithiumInput extends LitElement {
+  @property({ type: Boolean, reflect: true }) error = false;
+
   private label: HTMLElement;
   private input: HTMLElement;
   private message: LithiumInputMessage;
-  private error: LithiumInputError;
+  private errorMessage: LithiumInputError;
 
   private inputId = `li-input-id-${idCount++}`;
   private messageId = `li-input-id-${idCount++}`;
-  private errorId = `li-input-id-${idCount++}`;
+  private errorMessageId = `li-input-id-${idCount++}`;
 
   static get styles() { return styles; }
 
@@ -50,7 +52,7 @@ export class LithiumInput extends LitElement {
 
     this.label = this.querySelector('label');
     this.message = this.querySelector('li-input-message');
-    this.error = this.querySelector('li-input-error');
+    this.errorMessage = this.querySelector('li-input-error');
 
     this.linkLabelIds();
   }
@@ -58,14 +60,14 @@ export class LithiumInput extends LitElement {
   private linkLabelIds() {
     this.input.id = this.inputId;
     this.label.setAttribute('for', this.inputId);
-    this.input.setAttribute('aria-describedby', `${this.messageId} ${this.errorId}`);
+    this.input.setAttribute('aria-describedby', `${this.messageId} ${this.errorMessageId}`);
 
     if (this.message) {
       this.message.id = this.messageId;
     }
 
-    if (this.error) {
-      this.error.id = this.errorId;
+    if (this.errorMessage) {
+      this.errorMessage.id = this.errorMessageId;
     }
   }
 }

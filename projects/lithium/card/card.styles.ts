@@ -10,7 +10,7 @@ const componentStyles = css`
     border-radius: var(--li-card-border-radius, var(--li-common-border-radius));
     color: var(--li-card-color, inherit);
     padding: var(--li-card-padding, var(--li-common-padding-md));
-    margin-bottom: 1rem;
+    margin-bottom: var(--li-common-margin-bottom-spacing);
     display: block;
     font-size: inherit;
   }

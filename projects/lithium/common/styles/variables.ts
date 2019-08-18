@@ -2,7 +2,7 @@ import { css } from 'lit-element';
 
 export const styleVariables = css`
   *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 
   :host {
@@ -28,6 +28,7 @@ export const styleVariables = css`
     --li-common-border-radius: 4px;
     --li-common-outline: 1px solid var(--li-common-color-blue-50);
     --li-common-outline-shadow: 0 0 6px 0 var(--li-common-color-blue-100);
+    --li-common-margin-bottom-spacing: 1.5rem;
 
     /* base font */
     font-size: 16px;
