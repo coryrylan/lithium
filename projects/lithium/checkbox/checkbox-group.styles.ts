@@ -19,9 +19,9 @@ const componentStyles = css`
 
   ::slotted(legend) {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--li-common-margin-bottom-spacing);
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: var(--li-common-font-size);
   }
 `;
 

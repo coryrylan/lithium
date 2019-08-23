@@ -9,8 +9,7 @@ export const componentStyles = css`
     border: var(--li-message-border, 0);
     border-radius: var(--li-message-border-radius, var(--li-common-border-radius));
     display: block;
-    padding: 1rem 1rem 1rem 3.5rem;
-    font-size: 1 rem;
+    padding: 1.6em 1.6em 1.6em 5.6em;
     margin-bottom: var(--li-common-margin-bottom-spacing);
     position: relative;
   }
@@ -44,13 +43,13 @@ export const componentStyles = css`
   }
 
   .type-icon {
-    --width: 20px;
-    --height: 20px;
+    --li-icon-width: 2em;
+    --li-icon-height: 2em;
     color: var(--li-message-icon-color, var(--li-common-color-white-100));
-    line-height: 1.5rem;
+    line-height: 2.4em;
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 1.65em;
+    left: 1.6em;
   }
 
   .close-btn {
@@ -58,19 +57,19 @@ export const componentStyles = css`
     border: 0;
     cursor: pointer;
     position: absolute;
-    width: 38px;
-    height: 38px;
-    top: 9px;
-    right: 12px;
+    width: 3.8em;
+    height: 3.8em;
+    top: 0.65em;
+    right: 0.65em;
     background: rgba(0,0,0,0.2);
     line-height: 0;
-    border-radius: 2px;
+    border-radius: 0.2em;
   }
 
   .close-btn li-icon {
     --li-icon-color: var(--li-message-icon-color, var(--li-common-color-white-100));
-    width: 24px;
-    height: 24px;
+    width: 2.4em;
+    height: 2.4em;
   }
 
   .close-btn:hover, .close-btn:focus {

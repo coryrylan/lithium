@@ -3,7 +3,7 @@ body {
 }
 
 .layout-page main {
-  padding: 60px 30px;
+  padding: 6rem 3rem;
 }
 
 router-outlet ~ * {
@@ -16,10 +16,10 @@ router-outlet ~ * {
 
 .theme-btn {
   background-color: var(--global-color-gray-400);
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 
 .dark-theme {

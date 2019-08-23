@@ -8,13 +8,12 @@ const componentStyles = css`
     background: var(--li-button-background-color, var(--li-common-color-blue-100));
     color: var(--li-button-color, var(--li-common-color-white-100));
     border-radius: var(--li-button-border-radius, var(--li-common-border-radius));
-    border: 2px solid var(--li-button-background-color, var(--li-common-color-blue-100));
-    padding: 6px 24px;
-    margin: 0 4px 24px 0;
-    font-size: 16px;
+    border: 0.2em solid var(--li-button-background-color, var(--li-common-color-blue-100));
+    padding: 0.6em 2.4em;
+    margin: 0 0.4em 2.4em 0;
     text-decoration: none;
     text-align: center;
-    line-height: 1.5rem;
+    line-height: 1.5;
     display: inline-block;
     cursor: pointer;
     text-transform: capitalize;
@@ -28,7 +27,7 @@ const componentStyles = css`
     opacity: 0.9;
     cursor: default;
     background: var(--li-button-disabled-background, var(--li-common-color-gray-300));
-    border: 2px solid var(--li-button-disabled-background, var(--li-common-color-gray-300));
+    border: 0.2em solid var(--li-button-disabled-background, var(--li-common-color-gray-300));
     outline: 0;
   }
 
@@ -39,7 +38,8 @@ const componentStyles = css`
   ::slotted(a) {
     color: var(--li-button-color, var(--li-common-color-white-100)) !important;
     text-decoration: none !important;
-    padding: 6px 24px !important;
+    padding: 0.36em 1.5em !important;
+    line-height: 1.5 !important;
     display: inline-block !important;
   }
 
@@ -47,7 +47,7 @@ const componentStyles = css`
   :host([outline]) {
     background-color: transparent;
     color: var(--li-button-outline-color, var(--li-common-color-blue-100));
-    border: 2px solid var(--li-button-outline-border-color, var(--li-common-color-blue-100));
+    border: 0.2em solid var(--li-button-outline-border-color, var(--li-common-color-blue-100));
   }
 
   :host([outline]:hover) {
@@ -78,8 +78,12 @@ const componentStyles = css`
     border-color: var(--li-button-danger-color, var(--li-common-color-red-100));
   }
 
+  :host([loading]) {
+    line-height: 2.2em !important;
+  }
+
   li-loading-spinner {
-    margin-bottom: -3px;
+    margin-bottom: -0.3em;
   }
 `;
 

@@ -10,13 +10,13 @@ const componentStyles = css`
     background: none;
     text-shadow: 0 1px var(--li-code-example-token-13, white);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 1em;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
+    font-size: 16px;
 
     -moz-tab-size: 4;
     -o-tab-size: 4;

@@ -5,7 +5,10 @@ import { styleVariables } from 'lithium-ui/common';
 const componentStyles = css`
   :host {
     display: block;
-    font-size: 0.85rem;
+  }
+
+  slot {
+    font-size: 1.4em !important;
   }
 `;
 

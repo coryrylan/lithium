@@ -13,8 +13,8 @@ const componentStyles = css`
     animation: rotation 1.4s linear infinite;
     will-change: transform, animation;
     stroke: var(--li-spinner-color, var(--li-common-color-gray-300));
-    width: 40px;
-    height: 40px;
+    width: 4em;
+    height: 4em;
   }
 
   @keyframes rotation
@@ -50,13 +50,13 @@ const componentStyles = css`
   }
 
   :host([small]) .li-spinner{
-    width: 20px;
-    height: 20px;
+    width: 2em;
+    height: 2em;
   }
 
   :host([large]) .li-spinner {
-    width: 60px;
-    height: 60px;
+    width: 6em;
+    height: 6em;
   }
 `;
 

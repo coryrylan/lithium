@@ -10,10 +10,10 @@ export const componentStyles = css`
   }
 
   ::slotted(label) {
-    font-size: 1rem;
-    cursor: pointer;
-    padding-left: 1.8rem;
-    margin-right: 1rem;
+    cursor: pointer !important;
+    padding-left: 1.625em !important;
+    margin-right: 1em !important;
+    line-height: 1.5 !important;
   }
 
   ::slotted([type=checkbox]) {
@@ -31,12 +31,12 @@ export const componentStyles = css`
     position: absolute;
     pointer-events: none;
     left: 0;
-    top: 2px;
-    width: 20px;
-    height: 20px;
+    top: 0.2em;
+    width: 2em;
+    height: 2em;
     border: 1px solid var(--li-checkbox-border-color, var(--li-common-color-gray-300));
     background: var(--li-checkbox-background-color, var(--li-common-color-white-100));
-    border-radius: 3px;
+    border-radius: 0.3em;
   }
 
   li-icon {
@@ -47,10 +47,10 @@ export const componentStyles = css`
   :host([checked]) li-icon {
     display: block;
     position: absolute;
-    width: 15px;
-    height: 15px;
-    top: 3px;
-    left: 3px;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.3em;
+    left: 0.3em;
   }
 
   :host([focused]) ::slotted(label) {

@@ -24,13 +24,20 @@ export const styleVariables = css`
     --li-common-color-red-100: #b31d1d;
 
     /* shape */
-    --li-common-padding-md: 1.5rem;
-    --li-common-border-radius: 4px;
+    --li-common-padding-md: 2.4em;
+    --li-common-border-radius: 0.3em;
     --li-common-outline: 1px solid var(--li-common-color-blue-50);
-    --li-common-outline-shadow: 0 0 6px 0 var(--li-common-color-blue-100);
-    --li-common-margin-bottom-spacing: 1.5rem;
+    --li-common-outline-shadow: 0 0 0.6em 0 var(--li-common-color-blue-100);
+    --li-common-margin-bottom-spacing: 2.4em;
+    --li-common-margin-bottom-spacing-small: 1.2em;
+    --li-common-line-height: 2.4em;
+    --li-common-font-size: 1.6em;
 
     /* base font */
-    font-size: 16px;
+    font-size: var(--li-common-base-font-size, 10px) !important;
+  }
+
+  slot {
+    font-size: var(--li-common-font-size) !important;
   }
 `;

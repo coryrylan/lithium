@@ -4,7 +4,7 @@ import { styleVariables } from 'lithium-ui/common';
 
 export const componentStyles = css`
   :host([large]) .li-modal {
-    max-width: 700px;
+    max-width: 70em;
   }
 
   .li-modal-wrapper {
@@ -18,15 +18,15 @@ export const componentStyles = css`
 
   .li-modal {
     border: 1px solid var(--li-common-color-gray-300);
-    padding: 1rem;
+    padding: 1.6em;
     background-color: var(--li-common-color-white-100);
     color: var(--li-common-color-gray-500);
     width: 100%;
-    max-width: var(--li-modal-max-width, 600px);
+    max-width: var(--li-modal-max-width, 60em);
     max-height: var(--li-modal-max-height, initial);
-    margin: 24px auto;
+    margin: 3.2em auto;
     position: relative;
-    border-radius: 4px;
+    border-radius: 0.4em;
     z-index: 302;
   }
 
@@ -35,11 +35,11 @@ export const componentStyles = css`
     text-align: center;
     width: auto;
     height: auto;
-    padding: 12px;
-    font-size: 24px;
+    padding: 0.4em 0.5em;
+    font-size: 2.4em;
     top: 0;
     right: 0;
-    line-height: 14px;
+    line-height: 1.5;
     border: 0;
     background: transparent;
     cursor: pointer;

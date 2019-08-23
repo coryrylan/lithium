@@ -16,14 +16,13 @@ const componentStyles = css`
     background: var(--li-input-background, var(--li-common-color-white-100)) !important;
     border: 1px solid var(--li-input-border-color, var(--li-common-color-gray-300));
     border-radius: var(--li-input-border-radius, var(--li-common-border-radius));
-    padding: 0.6rem 0.8rem !important;
-    font-size: 1rem;
+    padding: 0.625em 0.6875em !important;
     width: 100%;
   }
 
   ::slotted(label) {
-    display: inline-block;
-    margin-bottom: 0.25rem;
+    display: inline-block !important;
+    margin-bottom: 0.3em !important;
   }
 
   :host([error]) ::slotted(label) {
@@ -52,7 +51,7 @@ const componentStyles = css`
   }
 
   ::slotted(textarea) {
-    min-height: 120px;
+    min-height: 12em;
   }
 `;
 

@@ -11,7 +11,7 @@ export const componentStyles = css`
     display: flex;
     width: 100%;
     overflow: hidden;
-    line-height: 1.5rem;
+    line-height: 2.4em;
   }
 
   :host([sticky]) {
@@ -23,12 +23,12 @@ export const componentStyles = css`
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 16px;
+    padding: 1em;
     background-color: transparent;
     border: 0;
     color: var(--li-nav-bar-color, var(--li-common-color-gray-500));
     text-decoration: none;
-    line-height: 1.5rem !important;
+    line-height: 1.5 !important;
     cursor: pointer;
   }
 

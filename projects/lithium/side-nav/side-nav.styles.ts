@@ -5,11 +5,11 @@ import { styleVariables } from 'lithium-ui/common';
 export const componentStyles = css`
   .li-side-nav {
     position: fixed;
-    left: -400px;
+    left: -40em;
     top: var(--li-side-nav-top, 0);
     bottom: 0;
     width: 80%;
-    max-width: var(--li-side-nav-width, 280px);
+    max-width: var(--li-side-nav-width, 28em);
     z-index: 201;
     background-color: var(--li-side-nav-background-color, var(--li-common-color-white-100));
     overflow-x: hidden;
@@ -27,9 +27,9 @@ export const componentStyles = css`
   }
 
   .li-menu-heading {
-    font-size: 18px;
+    font-size: 1.8em;
     position: relative;
-    height: 50px;
+    height: 5em;
     overflow: hidden;
     background-color: var(--li-side-nav-header-background-color, var(--li-common-color-gray-100));
     color: var(--li-side-nav-color, #2d2d2d);
@@ -37,17 +37,17 @@ export const componentStyles = css`
 
   .li-menu-heading-text {
     float: left;
-    padding: 14px 16px;
+    padding: 1.4em 1.6em;
   }
 
   .li-menu-close-btn {
     border: 0;
-    margin-bottom: 6px;
-    padding: 10px 20px;
-    height: 50px;
+    margin-bottom: 0.6em;
+    padding: 1em 2em;
+    height: 5em;
     display: block;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1.6em;
     right: 0;
     background-color: transparent;
     cursor: pointer;
@@ -61,8 +61,7 @@ export const componentStyles = css`
 
   .li-side-nav-slot::slotted(a), .li-side-nav-slot::slotted(button) {
     display: block;
-    padding: 18px 13px 16px 26px;
-    font-size: 1em;
+    padding: 1.125em 0.8125em 1em 1.625em;
     text-decoration: none;
     color: var(--nav-text-color);
     position: relative;

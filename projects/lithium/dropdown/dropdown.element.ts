@@ -17,7 +17,7 @@ export class XDropdown extends LitElement {
         ${this.visible ?
           html`
             <div>
-              <slot></slot>
+              <slot class="x-dropdown-slot"></slot>
             </div>`
           : '' }
       </div>

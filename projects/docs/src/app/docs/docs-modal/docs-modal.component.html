@@ -9,15 +9,19 @@
     <h2>Example</h2>
 
     <p>Modal Open: {{openModal}}</p>
-    <li-button (click)="openModal = !openModal">toggle modal</li-button>
+    <li-button (click)="openModal = !openModal">open modal</li-button>
     <li-modal [open]="openModal" (openChange)="openModal = $event.detail">
       <h3 slot="header">Hello World Header</h3>
       <p>Hello World</p>
       <div slot="footer">Hello World Footer</div>
     </li-modal>
 
-    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
-    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+    <li-button (click)="largeModal = !largeModal">open large modal</li-button>
+    <li-modal large [open]="largeModal" (openChange)="largeModal = $event.detail">
+      <h3 slot="header">Large Modal</h3>
+      <p>Modal size set with the  <code>large</code> style attribute.</p>
+      <div slot="footer">Hello World Footer</div>
+    </li-modal>
 
     <!-- <li-button (click)="formsModal = !formsModal">toggle forms modal {{formsModal}}</li-button>
     <li-modal [open]="formsModal" (openChange)="formsModal = $event.detail">
@@ -26,19 +30,15 @@
       <p>{{input.value}}</p>
     </li-modal>
 
-    <li-button (click)="largeModal = !largeModal">toggle large modal {{largeModal}}</li-button>
-    <li-modal large [open]="largeModal" (openChange)="largeModal = $event.detail">
-      <h3 slot="header">Large Modal</h3>
-      <p>Modal size set with the  <code>large</code> style attribute.</p>
-      <div slot="footer">Hello World Footer</div>
-    </li-modal>
-
     <li-button (click)="modal.toggle()">toggle via template ref</li-button>  
     <li-modal #modal>
       <h3 slot="header">Template Ref Modal</h3>
       <p>Modal opened using Angular's Template Ref syntax</p>
       <div slot="footer">Hello World Footer</div>
     </li-modal> -->
+
+    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab name="API">
     <h2>API</h2>

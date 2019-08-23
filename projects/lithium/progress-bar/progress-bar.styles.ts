@@ -5,16 +5,16 @@ import { styleVariables } from 'lithium-ui/common';
 export const componentStyles = css`
   .li-progress-bar {
     width: 100%;
-    height: 20px;
+    height: 2em;
     background: var(--li-progress-bar-background-color, var(--li-common-color-gray-100));
-    border-radius: 2px;
+    border-radius: 0.2em;
     position: relative;
     overflow: hidden;
     text-align: center;
     -webkit-box-shadow: inset 0 1px 2px var(--li-progress-bar-shadow-color, rgba(0, 0, 0, 0.1));
     box-shadow: inset 0 1px 2px var(--li-progress-bar-shadow-color, rgba(0, 0, 0, 0.1));
-    padding: 2px;
-    margin-bottom: 4px;
+    padding: 0.2em;
+    margin-bottom: 0.4em;
   }
 
   .li-progress-bar-inner {
@@ -25,7 +25,7 @@ export const componentStyles = css`
     top: 0;
     left: -100%;
     text-align: center;
-    line-height: 35px;
+    line-height: 3.5em;
     font-size: 1em;
     will-change: transform;
     transition: transform 100ms ease-in;
@@ -36,10 +36,11 @@ export const componentStyles = css`
     z-index: 2;
     position: absolute;
     text-align: center;
-    line-height: 1.1rem;
+    line-height: 1.4;
     left: 0;
     right: 0;
     top: 0;
+    font-size: 1.6em;
   }
 `;
 

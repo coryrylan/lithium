@@ -4,8 +4,8 @@ import { styleVariables } from 'lithium-ui/common';
 
 const componentStyles = css`
   :host {
-    width: var(--li-icon-width, 24px);
-    height: var(--li-icon-height, 24px);
+    width: var(--li-icon-width, 2.4em);
+    height: var(--li-icon-height, 2.4em);
     display: inline-block;
   }
 

@@ -5,13 +5,13 @@ import { styleVariables } from 'lithium-ui/common';
 const componentStyles = css`
   :host {
     display: block;
-    margin-bottom: var(--li-common-margin-bottom-spacing);
+    margin-bottom: var(--li-common-margin-bottom-spacing-small);
     position: relative;
   }
 
   ::slotted(label) {
-    padding-left: 1.8rem;
-    margin-right: 1rem;
+    padding-left: 1.75em;
+    margin-right: 1em;
     cursor: pointer;
   }
 
@@ -26,12 +26,12 @@ const componentStyles = css`
     position: absolute;
     display: inline-block;
     pointer-events: none;
-    top: 2px;
+    top: 0.2em;
     position: absolute;
     left: 0;
-    top: 2px;
-    width: 20px;
-    height: 20px;
+    top: 0.2em;
+    width: 2em;
+    height: 2em;
     border: 1px solid var(--li-radio-border-color, var(--li-common-color-gray-300));
     background: var(--li-radio-background-color, var(--li-common-color-white-100));
     border-radius: 50%;
@@ -46,10 +46,10 @@ const componentStyles = css`
     background-color: var(--li-radio-fill-background-color, var(--li-common-color-blue-100));
     display: block;
     position: absolute;
-    width: 14px;
-    height: 14px;
-    top: 2px;
-    left: 2px;
+    width: 1.4em;
+    height: 1.4em;
+    top: 0.2em;
+    left: 0.2em;
     z-index: 99;
     border-radius: 50%;
   }

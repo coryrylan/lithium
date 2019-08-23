@@ -1,14 +1,16 @@
+:root {
+  font-size: 10px;
+}
+
 body {
   font-family: 'Lato', Helvetica, Arial, "Lucida Grande", sans-serif;
-  // font-family: monospace;
   font-display: swap;
-  font-size: 16px;
   color: var(--global-text-color);
   line-height: 1.5;
 }
 
 p {
-  margin: 0 0 24px 0;
+  margin: 0 0 2.4rem 0;
 }
 
 a {
@@ -16,26 +18,30 @@ a {
 }
 
 h1, h2, h3 {
-  line-height: 1.5;
-  margin: 0 0 24px 0;
+  margin: 0 0 2.4rem 0;
+  line-height: 1.2;
   font-weight: 300;
   display: block;
 }
 
 h1 {
-  font-size: 2.6em;
+  font-size: 4.1rem;
 
   small {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 3.2rem;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2.4rem;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 code {
@@ -47,16 +53,16 @@ code {
 }
 
 blockquote {
-  padding: 0 10px 0 20px;
-  border-left: 5px solid var(--global-color-gray-200);
+  padding: 0 1rem 0 2rem;
+  border-left: 0.5rem solid var(--global-color-gray-200);
 }
 
 .command {
-  padding: 12px 16px;
-  border-radius: 4px;
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.4rem;
   background-color: var(--global-text-color);
   color: var(--global-color-white-100);
   font-family: monospace;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
   overflow-x: auto;
 }

@@ -27,13 +27,13 @@ export const componentStyles = css`
     float: left;
     margin-bottom: -1px;
     cursor: pointer;
-    padding: 10px 6px;
+    padding: 1em 0.6em;
     line-height: 1.42857143;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1.4em;
     color: var(--li-tabs-text-color, inherit);
   }
 
@@ -59,11 +59,11 @@ export const componentStyles = css`
 
   @media (min-width: 300px) {
     .li-tabs-nav > button {
-      margin-right: 2px;
+      margin-right: 0.2em;
       width: auto;
       text-align: left;
       border: 1px solid transparent;
-      border-bottom: 3px solid transparent;
+      border-bottom: 0.3em solid transparent;
     }
 
     .li-tabs-nav > button:nth-child(even) {
@@ -71,19 +71,19 @@ export const componentStyles = css`
     }
 
     .li-tabs-nav > button:nth-child(-n + 3) {
-      border-bottom: 3px solid transparent;
+      border-bottom: 0.3em solid transparent;
     }
 
     .li-tabs-nav > button.active {
       background-color: var(--li-tabs-button-background-color, inherit);
-      border-bottom: 3px solid;
+      border-bottom: 0.3em solid;
       border-bottom-color: var(--li-tabs-button-selected-border-color, var(--li-common-color-blue-100))
     }
   }
 
   @media (min-width: 480px) {
     .li-tabs-nav > button {
-      padding: 10px 15px;
+      padding: 1em 1.5em;
     }
   }
 `;
