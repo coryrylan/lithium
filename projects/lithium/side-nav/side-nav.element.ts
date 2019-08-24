@@ -38,7 +38,7 @@ export class LithiumSideNav extends LitElement {
         <nav class="li-side-nav">
           ${!this.sticky ? html`
             <div class="li-menu-heading">
-              <div class="li-menu-heading-text"><slot name="heading">Menu</slot></div>
+              <div class="li-menu-heading-text"><slot name="heading">${IntlService.registry.menu}</slot></div>
               <button aria-label="${IntlService.registry.close}" @click=${e => this.close()} class="li-menu-close-btn">
                 <li-icon name="close" class="li-menu-close-icon"></li-icon>
               </button>

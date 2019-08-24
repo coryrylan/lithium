@@ -27,7 +27,6 @@ export const componentStyles = css`
   }
 
   .li-menu-heading {
-    font-size: 1.8em;
     position: relative;
     height: 5em;
     overflow: hidden;
@@ -36,18 +35,17 @@ export const componentStyles = css`
   }
 
   .li-menu-heading-text {
+    font-size: 1.2em;
     float: left;
-    padding: 1.4em 1.6em;
+    padding: 1em 1.2em;
   }
 
   .li-menu-close-btn {
     border: 0;
-    margin-bottom: 0.6em;
-    padding: 1em 2em;
+    padding: 1em 1.5em;
     height: 5em;
     display: block;
     position: absolute;
-    font-size: 1.6em;
     right: 0;
     background-color: transparent;
     cursor: pointer;
