@@ -62,6 +62,19 @@ const componentStyles = css`
     border: 0;
   }
 
+  /* size */
+  :host([small]) {
+    padding: 0.1em 1.5em;
+  }
+
+  :host([large]) {
+    padding: 1em 3em;
+  }
+
+  :host([large]) slot {
+    font-size: 18px !important;
+  }
+
   /* color */
   :host([success]) {
     background-color: var(--li-button-success-color, var(--li-common-color-green-100));

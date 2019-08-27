@@ -16,6 +16,8 @@ import 'lithium-ui/loading-spinner';
  * @styleAttr `success` - Apply success style.
  * @styleAttr `warning` - Apply warning style.
  * @styleAttr `danger` - Apply danger style.
+ * @styleAttr `small` - Apply small button style
+ * @styleAttr `large` - Apply large button style
  * @cssProp `--li-button-background-color`
  * @cssProp `--li-button-color`
  * @cssProp `--li-button-border-radius`

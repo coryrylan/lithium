@@ -38,6 +38,12 @@ export class DocsButtonComponent {
     </style>
   `;
 
+  codeExampleSize = `
+    <li-button small>small</li-button>
+    <li-button>default</li-button>
+    <li-button large>large</li-button>
+  `;
+
   codeExampleLoading = `
     <li-button loading>
       click for loading
