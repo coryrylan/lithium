@@ -17,6 +17,7 @@ export const componentStyles = css`
   :host([sticky]) {
     position: fixed;
     z-index: 100;
+    margin-bottom: 0;
   }
 
   ::slotted(a), ::slotted(button) {

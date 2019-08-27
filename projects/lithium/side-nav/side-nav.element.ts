@@ -1,4 +1,5 @@
 import { LitElement, html, property } from 'lit-element';
+import ResizeObserver from 'resize-observer-polyfill';
 
 import { registerElementSafely, IntlService } from 'lithium-ui/common';
 import { IconService, closeIcon } from 'lithium-ui/icons';
@@ -26,7 +27,10 @@ IconService.addIcons(closeIcon);
 export class LithiumSideNav extends LitElement {
   @property({ type: Boolean }) open = false;
   @property({ type: Boolean, reflect: true }) sticky = false;
+  @property({ type: Number }) stickyBreakpoint: number;
   @property({ type: Boolean }) closeOnInnerClick = true;
+
+  private resizeObserver: ResizeObserver;
 
   static get styles() {
     return styles;
@@ -51,6 +55,18 @@ export class LithiumSideNav extends LitElement {
         ${!this.sticky ? html`<div @click=${() => this.close()} class="li-side-nav-backdrop"></div>` : ''}
       </div>
     `;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    this.resizeObserver = new ResizeObserver(entries => this.sticky = entries[0].contentRect.width > this.stickyBreakpoint);
+    this.resizeObserver.observe(document.body);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.resizeObserver.unobserve(document.body);
   }
 
   close() {
