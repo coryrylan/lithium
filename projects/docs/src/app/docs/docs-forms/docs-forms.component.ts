@@ -39,36 +39,34 @@ export class DocsFormsComponent {
           </select>
         </li-select>
 
-        <div bp="grid 6@md">
-          <li-checkbox-group inline>
-            <legend>Select a item</legend>
-            <li-checkbox>
-              <input type="checkbox" />
-              <label>Checkbox One</label>
-            </li-checkbox>
-            <li-checkbox>
-              <input type="checkbox" />
-              <label>Checkbox Two</label>
-            </li-checkbox>
-          </li-checkbox-group>
+        <li-checkbox-group inline>
+          <legend>Select a item</legend>
+          <li-checkbox>
+            <input type="checkbox" />
+            <label>Checkbox One</label>
+          </li-checkbox>
+          <li-checkbox>
+            <input type="checkbox" />
+            <label>Checkbox Two</label>
+          </li-checkbox>
+        </li-checkbox-group>
 
-          <li-radio-group name="region" inline>
-            <legend>Choose a Country</legend>
-            <li-radio>
-              <input type="radio" value="north-america" checked />
-              <label>North America</label>
-            </li-radio>
-            <li-radio>
-              <input type="radio" value="south-america" />
-              <label>South America</label>
-            </li-radio>
-            <li-radio>
-              <input type="radio" value="europe" />
-              <label>Europe</label>
-            </li-radio>
-          </li-radio-group>
-        </div>
-        <li-button bp="float-right">Save</li-button>
+        <li-radio-group name="region" inline>
+          <legend>Choose a Country</legend>
+          <li-radio>
+            <input type="radio" value="north-america" checked />
+            <label>North America</label>
+          </li-radio>
+          <li-radio>
+            <input type="radio" value="south-america" />
+            <label>South America</label>
+          </li-radio>
+          <li-radio>
+            <input type="radio" value="europe" />
+            <label>Europe</label>
+          </li-radio>
+        </li-radio-group>
+        <li-button>Save</li-button>
       </form>
     </li-form>
   `;

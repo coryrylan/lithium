@@ -18,7 +18,7 @@
       <li-code-example [code]="codeExampleTypes" language="html"></li-code-example>
 
       <h2>Colors</h2>
-      <li-button>default</li-button>
+      <li-button type="button">default</li-button>
       <li-button success>success</li-button>
       <li-button warning>warning</li-button>
       <li-button danger>danger</li-button>
@@ -45,24 +45,20 @@
       <h2>Loading Button</h2>
 
       <li-button [loading]="showLoading" (click)="toggleLoading()" type="button">
-        click for loading
+        click to load
       </li-button>
 
-      <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
+      <br />
+      <li-button small>submit</li-button>
+      <li-button loading small>loading</li-button>
+      <br />
+      <li-button>submit</li-button>
+      <li-button loading>loading</li-button>
+      <br />
+      <li-button large>submit</li-button>
+      <li-button loading large>loading</li-button>
 
-      <!-- <br /><br />
-    
-      <label for="firstName">First Name</label>
-      <input formControlName="firstName" id="firstName" />
-    
-      <label for="email">Email</label>
-      <input formControlName="email" id="email" />
-    
-      <div *ngIf="email.touched && email.hasError('required')" class="error">
-        email is required
-      </div>
-    
-      <button>Submit</button> -->
+      <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
     </form>
   </li-tab>
   <li-tab name="API">

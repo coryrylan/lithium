@@ -14,6 +14,19 @@ export class DocsThemesComponent implements OnInit {
     }
   `;
 
+  globalVarsExample = `
+    /* Default global variables and values */
+    :root {
+      /* default margin bottom spacing for lithium components */
+      --li-global-spacing-margin-bottom: 2.4em;
+      --li-global-spacing-margin-bottom-small: 1.2em;
+      --li-global-spacing-margin-bottom-large: 3.6em;
+
+      /* Global baseline font size for lithium components */
+      --li-global-base-font-size: 10px;
+    }
+  `;
+
   constructor(private themeService: ThemeService) { }
 
   ngOnInit() {

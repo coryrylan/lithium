@@ -20,8 +20,6 @@ const componentStyles = css`
   ::slotted(legend) {
     display: block;
     margin-bottom: 0.5em;
-    font-weight: bold;
-    font-size: 1.7em;
   }
 `;
 

@@ -32,8 +32,8 @@ export class DocsButtonComponent {
 
     <style>
       li-button.purple {
-        --li-button-background-color: var(--global-color-purple-100);
-        --li-button-color: var(--global-color-white-100);
+        --li-button-background-color: #7c0799;
+        --li-button-color: #fff;
       }
     </style>
   `;

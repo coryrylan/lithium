@@ -6,7 +6,7 @@ export const componentStyles = css`
   :host {
     display: block;
     position: relative;
-    margin-bottom: var(--li-common-margin-bottom-spacing);
+    margin-bottom: var(--li-common-spacing-margin-bottom-small);
   }
 
   ::slotted(label) {

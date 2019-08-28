@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 import { ThemeAPIComponent } from './components/theme-api/theme-api.component';
 import { ClassAPIComponent } from './components/class-api/class-api.component';
 import { ComponentApiComponent } from './components/component-api/component-api.component';
+import { BookComponent } from './components/book/book.component';
 
 const components = [
   ComponentApiComponent,
   ClassAPIComponent,
-  ThemeAPIComponent
+  ThemeAPIComponent,
+  BookComponent
 ];
 
 @NgModule({

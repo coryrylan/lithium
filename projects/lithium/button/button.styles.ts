@@ -10,7 +10,7 @@ const componentStyles = css`
     border-radius: var(--li-button-border-radius, var(--li-common-border-radius));
     border: 0.2em solid var(--li-button-background-color, var(--li-common-color-blue-100));
     padding: 0.6em 2.4em;
-    margin: 0 0.4em 2.4em 0;
+    margin: 0 0.4em var(--li-common-spacing-margin-bottom) 0;
     text-decoration: none;
     text-align: center;
     line-height: 1.5;
@@ -64,15 +64,11 @@ const componentStyles = css`
 
   /* size */
   :host([small]) {
-    padding: 0.1em 1.5em;
+    font-size: 8px !important;
   }
 
   :host([large]) {
-    padding: 1em 3em;
-  }
-
-  :host([large]) slot {
-    font-size: 18px !important;
+    font-size: 12px !important;
   }
 
   /* color */
@@ -91,12 +87,24 @@ const componentStyles = css`
     border-color: var(--li-button-danger-color, var(--li-common-color-red-100));
   }
 
+  /* loading state */
   :host([loading]) {
-    line-height: 2.2em !important;
+    min-height: 4em;
   }
 
   li-loading-spinner {
     margin-bottom: -0.3em;
+    margin-top: 0.1em;
+  }
+
+  :host([loading][small]) li-loading-spinner {
+    margin-bottom: -0.4em;
+    margin-top: -0.2em;
+  }
+
+  :host([loading][large]) li-loading-spinner {
+    margin-bottom: -0.3em;
+    margin-top: 0.4em;
   }
 `;
 

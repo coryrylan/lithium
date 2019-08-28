@@ -1,8 +1,17 @@
+@import './../../styles//variables';
+
 .docs-content {
   padding: 64px 12px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: $nav-breakpoint) {
     padding: 78px 24px 24px 315px;
+  }
+
+  @media (min-width: $book-ad-breakpoint) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1600px) {
     max-width: 1300px;
   }
 }

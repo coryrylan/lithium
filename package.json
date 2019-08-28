@@ -13,7 +13,7 @@
     "lib:start": "ng build lithium --watch",
     "lib:build": "ng build lithium",
     "lib:api": "typedoc --options ./typedoc.js && node api-trim.js",
-    "deploy": "npm run lib:build && npm run build:prod && firebase deploy"
+    "deploy": "npm run lib:build && npm run lib:api && npm run build:prod && firebase deploy"
   },
   "private": true,
   "dependencies": {

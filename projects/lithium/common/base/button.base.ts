@@ -12,14 +12,14 @@ export const hiddenButtonTemplate = (disabled: boolean, value: string, name: str
     style="display: none"
     value="${ifDefined(value)}"
     name="${ifDefined(name)}"
-    type="${type}">
+    type="${ifDefined(type)}">
   </button>
 `;
 
 // @dynamic
 export class BaseButton extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false;
-  @property({ type: String, reflect: true }) type: 'button' | 'submit' = 'submit';
+  @property({ type: String, reflect: true }) type: 'button' | 'submit';
   @property({ type: String, reflect: true }) role = 'button';
   @property({ type: String, reflect: true }) name: string;
   @property({ type: String, reflect: true }) value: string;

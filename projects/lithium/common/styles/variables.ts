@@ -28,13 +28,14 @@ export const styleVariables = css`
     --li-common-border-radius: 0.3em;
     --li-common-outline: 1px solid var(--li-common-color-blue-50);
     --li-common-outline-shadow: 0 0 0.6em 0 var(--li-common-color-blue-100);
-    --li-common-margin-bottom-spacing: 2.4em;
-    --li-common-margin-bottom-spacing-small: 1.2em;
+    --li-common-spacing-margin-bottom: var(--li-global-spacing-margin-bottom, 2.4em);
+    --li-common-spacing-margin-bottom-small: var(--li-global-spacing-margin-bottom-small, 1.2em);
+    --li-common-spacing-margin-bottom-large: var(--li-global-spacing-margin-bottom-large, 3.6em);
     --li-common-line-height: 2.4em;
     --li-common-font-size: 1.6em;
 
     /* base font */
-    font-size: var(--li-common-base-font-size, 10px) !important;
+    font-size: var(--li-common-base-font-size, var(--li-global-base-font-size, 10px)) !important;
   }
 
   slot {

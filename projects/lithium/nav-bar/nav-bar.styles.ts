@@ -7,7 +7,7 @@ export const componentStyles = css`
     background-color: var(--li-nav-bar-background-color, var(--li-common-color-white-100));
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
     color: var(--li-nav-bar-color, var(--li-common-color-gray-500));
-    margin-bottom: var(--li-common-margin-bottom-spacing);
+    margin-bottom: var(--li-common-spacing-margin-bottom);
     display: flex;
     width: 100%;
     overflow: hidden;

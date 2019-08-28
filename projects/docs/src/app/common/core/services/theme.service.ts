@@ -8,7 +8,7 @@ export class ThemeService {
   private renderer: Renderer2;
 
   get theme() {
-    return localStorage.getItem('lithium-theme');
+    return localStorage.getItem('lithium-theme') ? localStorage.getItem('lithium-theme') : 'light-theme';
   }
 
   set theme(value: string) {

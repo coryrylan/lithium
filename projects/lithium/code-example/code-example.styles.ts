@@ -50,7 +50,7 @@ const componentStyles = css`
   /* Code blocks */
   pre[class*="language-"] {
     padding: 1em;
-    margin: .5em 0;
+    margin: 0;
     overflow: auto;
   }
 
@@ -141,7 +141,7 @@ const componentStyles = css`
   /* CUSTOM */
   :host {
     display: block;
-    margin-bottom: var(--li-common-margin-bottom-spacing);
+    margin-bottom: var(--li-common-spacing-margin-bottom);
   }
 
   pre {

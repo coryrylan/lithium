@@ -1,25 +1,37 @@
 <h1>Forms</h1>
 
 <p>
-  THe <code>li-form</code> element provides basic styles to a form group of other
+  The <code>li-form</code> element provides basic styles to a form group of other
   lithium based inputs. Lithium inputs apply styles and provide automatic utilities
   for accessibility (a11y). Lithium inputs work with your framework or form library
-  of choice works out of box.
+  of choice works out of box. Lithium does not provide a way to layout components.
+  You can use any grid system with Lithium, we recommend <a href="https://blueprintcss.dev">Blueprint CSS</a>.
 </p>
 
 <li-tabs>
   <li-tab name="Example">
     <h2>Example</h2>
 
-    <li-form>
+    <li-form bp="9--max">
       <form [formGroup]="form" (ngSubmit)="submit()">
-        <li-input [error]="emailIsInvalidAndTouched || emailIsRequiredAndTouched">
-          <label>Email</label>
-          <input type="email" formControlName="email" />
-          <li-input-message>Must be a active account.</li-input-message>
-          <li-input-error *ngIf="emailIsRequiredAndTouched">Required</li-input-error>
-          <li-input-error *ngIf="emailIsInvalidAndTouched">Invalid Email</li-input-error>
-        </li-input>
+        <div bp="grid 6@md">
+          <li-input [error]="emailIsInvalidAndTouched || emailIsRequiredAndTouched">
+            <label>Email</label>
+            <input type="email" formControlName="email" />
+            <li-input-message>Must be a active account.</li-input-message>
+            <li-input-error *ngIf="emailIsRequiredAndTouched">Required</li-input-error>
+            <li-input-error *ngIf="emailIsInvalidAndTouched">Invalid Email</li-input-error>
+          </li-input>
+  
+          <li-select>
+            <label>Select an Option</label>
+            <select>
+              <option>Option One</option>
+              <option>Option Two</option>
+              <option>Option Three</option>
+            </select>
+          </li-select>
+        </div>
 
         <li-textarea>
           <label>Description</label>
@@ -28,17 +40,8 @@
           <li-input-error>Required</li-input-error>
         </li-textarea>
 
-        <li-select>
-          <label>Select an Option</label>
-          <select>
-            <option>Option One</option>
-            <option>Option Two</option>
-            <option>Option Three</option>
-          </select>
-        </li-select>
-
-        <div bp="grid 6@md">
-          <li-checkbox-group inline>
+        <div bp="grid">
+          <li-checkbox-group inline bp="5@md">
             <legend>Select a item</legend>
             <li-checkbox>
               <input type="checkbox" />
@@ -50,7 +53,7 @@
             </li-checkbox>
           </li-checkbox-group>
 
-          <li-radio-group name="region" inline>
+          <li-radio-group name="region" inline bp="7@md">
             <legend>Choose a Country</legend>
             <li-radio>
               <input type="radio" value="north-america" checked />
@@ -70,12 +73,11 @@
       </form>
     </li-form>
 
-    <!-- <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example> -->
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab name="API">
     <h2>API</h2>
-    <!-- <app-component-api component="LithiumCard"></app-component-api> -->
+    <app-component-api component="LithiumForm"></app-component-api>
   </li-tab>
   <li-tab name="Theme">
     <app-theme-api></app-theme-api>

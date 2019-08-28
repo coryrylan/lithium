@@ -1,0 +1,39 @@
+@import './../../../../../styles//variables';
+
+li-card {
+  --li-card-padding: 1.6rem;
+  max-width: 25rem;
+  text-align: center;
+  margin-top: 2.4rem;
+
+  @media (min-width: $book-ad-breakpoint) {
+    position: fixed;
+    top: 5.6rem;
+    right: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.4rem;
+  }
+
+  span {
+    color: #4292dd;
+  }
+
+  img {
+    width: 100%;
+    max-width: 15rem;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1.8rem;
+  }
+
+  li-button {
+    margin-bottom: 0;
+  }
+}

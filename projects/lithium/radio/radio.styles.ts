@@ -5,7 +5,7 @@ import { styleVariables } from 'lithium-ui/common';
 const componentStyles = css`
   :host {
     display: block;
-    margin-bottom: var(--li-common-margin-bottom-spacing-small);
+    margin-bottom: var(--li-common-spacing-margin-bottom-small);
     position: relative;
   }
 

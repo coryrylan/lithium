@@ -10,7 +10,7 @@ export const componentStyles = css`
     border-radius: var(--li-message-border-radius, var(--li-common-border-radius));
     display: block;
     padding: 1.6em 1.6em 1.6em 5.6em;
-    margin-bottom: var(--li-common-margin-bottom-spacing);
+    margin-bottom: var(--li-common-spacing-margin-bottom);
     position: relative;
   }
 
