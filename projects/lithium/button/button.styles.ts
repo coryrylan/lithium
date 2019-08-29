@@ -62,6 +62,10 @@ const componentStyles = css`
     border: 0;
   }
 
+  :host([flat]) ::slotted(a) {
+    text-decoration: underline !important;
+  }
+
   /* size */
   :host([small]) {
     font-size: 8px !important;

@@ -1,10 +1,9 @@
-import { LitElement, html, property } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 import { styles } from './tab.styles';
 
 // @dynamic
 export class LithiumTab extends LitElement {
-  @property({ type: String }) name = '';
   static get styles() { return styles; }
 
   render() {

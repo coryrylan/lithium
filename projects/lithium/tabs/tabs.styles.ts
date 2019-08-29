@@ -32,8 +32,8 @@ export const componentStyles = css`
     text-decoration: none;
     text-align: center;
     transition: all 0.3s;
-    font-weight: 500;
-    font-size: 1.4em;
+    font-size: 1em;
+    font-family: inherit;
     color: var(--li-tabs-text-color, inherit);
   }
 

@@ -6,7 +6,11 @@
 </p>
 
 <li-tabs>
-  <li-tab name="Example">
+  <li-tab-title>Example</li-tab-title>
+  <li-tab-title>API</li-tab-title>
+  <li-tab-title>Theme</li-tab-title>
+
+  <li-tab>
     <form [formGroup]="form" (ngSubmit)="submit()">
       <h2>Example Types</h2>
       <li-button type="submit">submit</li-button>
@@ -31,6 +35,10 @@
       <li-button>default</li-button>
       <li-button outline>outline</li-button>
       <li-button flat>flat</li-button>
+
+      <!-- <li-button><a href="/about">link</a></li-button>
+      <li-button outline><a href="/about">link</a></li-button>
+      <li-button flat><a href="/about">link</a></li-button> -->
       
       <li-code-example [code]="codeExampleStyles" language="html"></li-code-example>
 
@@ -48,7 +56,7 @@
         click to load
       </li-button>
 
-      <br />
+      <!-- <br />
       <li-button small>submit</li-button>
       <li-button loading small>loading</li-button>
       <br />
@@ -56,17 +64,17 @@
       <li-button loading>loading</li-button>
       <br />
       <li-button large>submit</li-button>
-      <li-button loading large>loading</li-button>
+      <li-button loading large>loading</li-button> -->
 
       <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
     </form>
   </li-tab>
-  <li-tab name="API">
+  <li-tab>
     <h2>API</h2>
 
     <app-component-api component="LithiumButton"></app-component-api>
   </li-tab>
-  <li-tab name="Theme">
+  <li-tab>
     <h2>Theme</h2>
   </li-tab>
 </li-tabs>

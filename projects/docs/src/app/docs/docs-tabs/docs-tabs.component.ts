@@ -11,13 +11,16 @@ export class DocsTabsComponent {
 
   codeExampleTypes = `
     <li-tabs>
-      <li-tab name="Tab Button 1">
+      <li-tab-title>Tab 1</li-tab-title>
+      <li-tab-title>Tab 2</li-tab-title>
+      <li-tab-title>Tab 3</li-tab-title>
+      <li-tab>
         <h2>Tab 1</h2>
       </li-tab>
-      <li-tab name="Tab Button 2">
+      <li-tab>
         <h2>Tab 2</h2>
       </li-tab>
-      <li-tab name="Tab Button 3">
+      <li-tab>
         <h2>Tab 3</h2>
       </li-tab>
     </li-tabs>

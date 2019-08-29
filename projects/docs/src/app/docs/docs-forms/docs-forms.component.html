@@ -9,7 +9,11 @@
 </p>
 
 <li-tabs>
-  <li-tab name="Example">
+  <li-tab-title>Example</li-tab-title>
+  <li-tab-title>API</li-tab-title>
+  <li-tab-title>Theme</li-tab-title>
+
+  <li-tab>
     <h2>Example</h2>
 
     <li-form bp="9--max">
@@ -75,11 +79,11 @@
 
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
-  <li-tab name="API">
+  <li-tab>
     <h2>API</h2>
     <app-component-api component="LithiumForm"></app-component-api>
   </li-tab>
-  <li-tab name="Theme">
+  <li-tab>
     <app-theme-api></app-theme-api>
   </li-tab>
 </li-tabs>

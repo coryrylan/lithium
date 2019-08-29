@@ -6,18 +6,22 @@
 </p>
 
 <li-tabs>
-  <li-tab name="Example">
+  <li-tab-title>Example</li-tab-title>
+  <li-tab-title>API</li-tab-title>
+  <li-tab-title>Theme</li-tab-title>
+
+  <li-tab>
     <h2>Example</h2>
     <li-progress-bar value="65"></li-progress-bar>
 
     <li-code-example [code]="codeExampleImport" language="javascript" bp="margin-top--lg"></li-code-example>
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
-  <li-tab name="API">
+  <li-tab>
     <h2>API</h2>
     <app-component-api component="LithiumProgressBar"></app-component-api>
   </li-tab>
-  <li-tab name="Theme">
+  <li-tab>
     <h2>Theme</h2>
   </li-tab>
 </li-tabs>

@@ -1,9 +1,9 @@
 import { LitElement, html, property } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map.js';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { LithiumTab } from './tab';
+import { LithiumTab } from './tab.element';
 import { styles } from './tabs.styles';
+import { LithiumTabTitle } from './tab-title.element';
 
 /**
  * Tabs, organize related groups into tab panels
@@ -22,14 +22,17 @@ export class LithiumTabs extends LitElement {
   static get styles() { return styles; }
 
   @property() private tabs: LithiumTab[] = [];
-  index = 0;
+  private tabTitles: HTMLElement[] = [];
+  private index = 0;
 
   render() {
     return html`
       <div class="li-tabs">
         <div class="li-tabs-nav">
           ${this.tabs.map((t, i) => html`
-            <button class=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>${t.name}</button>
+            <button class=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>
+              <slot name=${`slot-${i}`}></slot>
+            </button>
           `)}
         </div>
         <slot></slot>
@@ -40,7 +43,10 @@ export class LithiumTabs extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.tabs = [].slice.call(this.querySelectorAll('li-tab'));
+    this.tabTitles = [].slice.call(this.querySelectorAll('li-tab-title'));
     this.tabClick(0);
+
+    this.tabTitles.forEach((t, i) => t.setAttribute('slot', `slot-${i}`));
   }
 
   private tabClick(index: number) {
@@ -55,5 +61,6 @@ export class LithiumTabs extends LitElement {
   }
 }
 
+registerElementSafely('li-tab-title', LithiumTabTitle);
 registerElementSafely('li-tab', LithiumTab);
 registerElementSafely('li-tabs', LithiumTabs);
