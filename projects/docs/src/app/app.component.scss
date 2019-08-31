@@ -1,3 +1,5 @@
+@import './../styles/variables';
+
 main {
   min-height: 100vh;
 }
@@ -10,7 +12,7 @@ footer {
 li-nav-bar a, li-nav-bar button {
   display: none;
 
-  @media (min-width: 1024px) {
+  @media (min-width: $nav-breakpoint) {
     display: flex;
   }
 }
@@ -18,13 +20,13 @@ li-nav-bar a, li-nav-bar button {
 .mobile-only {
   display: flex !important;
 
-  @media (min-width: 1024px) {
+  @media (min-width: $nav-breakpoint) {
     display: none !important;
   }
 }
 
 .docs-nav {
-  @media (min-width: 1024px) {
+  @media (min-width: $nav-breakpoint) {
     --li-side-nav-top: 56px;
     --li-side-nav-width: 280px;
     position: absolute;

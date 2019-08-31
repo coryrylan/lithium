@@ -3,7 +3,11 @@ body {
 }
 
 .layout-page main {
-  padding: 6rem 3rem;
+  padding: 6rem 1.5rem;
+
+  @media(min-width: $md-breakpoint) {
+    padding: 6rem 3rem;
+  }
 }
 
 router-outlet ~ * {
