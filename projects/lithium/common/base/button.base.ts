@@ -48,7 +48,7 @@ export class BaseButton extends LitElement {
     this.addEventListener('keydown', e => this.onKeyDown(e));
   }
 
-  protected firstUpdated(props) {
+  protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
 
     if (this.isAnchor) {
@@ -62,11 +62,12 @@ export class BaseButton extends LitElement {
     }
 
     if (this.disabled) {
-      this.removeAttribute('tabindex');
+      this.tabIndex = this.disabled ? -1 : 0;
     }
   }
 
   protected updated(props: Map<string, any>) {
+    super.updated(props);
     if (props.get('disabled') && !this.isAnchor) {
       this.tabIndex = this.disabled ? -1 : 0;
     }

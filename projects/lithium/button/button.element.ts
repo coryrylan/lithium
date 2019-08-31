@@ -50,12 +50,12 @@ export class LithiumButton extends BaseButton {
     this.initialWidth = this.getBoundingClientRect().width;
   }
 
-  protected updated(changedProps) {
-    super.updated(changedProps);
+  protected updated(props: Map<string, any>) {
+    super.updated(props);
 
     if (this.loading) {
       this.style.minWidth = `${this.initialWidth}px`;
-    } else if (!changedProps.get('loading')) {
+    } else if (!props.get('loading')) {
       this.style.minWidth = 'initial';
     }
   }

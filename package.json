@@ -7,13 +7,14 @@
     "start:prod": "ng serve --prod",
     "build": "ng build",
     "build:prod": "ng build --prod --ts-config projects/docs/tsconfig.prod.json",
-    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy": "npm run lib:build && npm run lib:api && npm run build:prod && firebase deploy",
     "lib:start": "ng build lithium --watch",
+    "lib:test:start": "ng test lithium --watch --code-coverage",
+    "lib:test": "ng test lithium",
     "lib:build": "ng build lithium",
-    "lib:api": "typedoc --options ./typedoc.js && node api-trim.js",
-    "deploy": "npm run lib:build && npm run lib:api && npm run build:prod && firebase deploy"
+    "lib:api": "typedoc --options ./typedoc.js && node api-trim.js"
   },
   "private": true,
   "dependencies": {
