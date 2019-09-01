@@ -21,9 +21,10 @@ IconService.addIcons(checkIcon);
  */
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {
-  private checkbox: any;
-
   static get styles() { return styles; }
+
+  private checkbox: any;
+  private observer: MutationObserver;
 
   render() {
     return html`
@@ -43,6 +44,21 @@ export class LithiumCheckbox extends LithiumInput {
     this.checkbox.addEventListener('change', () => this.updateHostChecked());
     this.checkbox.addEventListener('focusin', () => this.setAttribute('focused', ''));
     this.checkbox.addEventListener('focusout', () => this.removeAttribute('focused'));
+
+    this.observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'disabled') {
+          this.updateHostDisabled();
+        }
+      });
+    });
+
+    this.observer.observe(this.checkbox, { attributes: true });
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.observer.disconnect();
   }
 
   private updateHostChecked() {
@@ -54,7 +70,7 @@ export class LithiumCheckbox extends LithiumInput {
   }
 
   private updateHostDisabled() {
-    if (this.checkbox.disabled) {
+    if (this.checkbox.disabled || this.checkbox.getAttribute('disabled')) {
       this.setAttribute('disabled', '');
     } else {
       this.removeAttribute('disabled');

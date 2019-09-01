@@ -24,6 +24,7 @@ export class LithiumRadio extends LithiumInput {
   static get styles() { return styles; }
 
   private radio: any;
+  private observer: MutationObserver;
 
   render() {
     return html`
@@ -40,6 +41,21 @@ export class LithiumRadio extends LithiumInput {
     this.radio.addEventListener('click', () => this.setHostCheckedAttribute());
     this.radio.addEventListener('focusin', () => this.setAttribute('focused', ''));
     this.radio.addEventListener('focusout', () => this.removeAttribute('focused'));
+
+    this.observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'disabled') {
+          this.updateHostDisabled();
+        }
+      });
+    });
+
+    this.observer.observe(this.radio, { attributes: true });
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.observer.disconnect();
   }
 
   firstUpdated(props) {

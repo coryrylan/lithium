@@ -14,7 +14,8 @@
     "lib:test:start": "ng test lithium --watch --code-coverage",
     "lib:test": "ng test lithium",
     "lib:build": "ng build lithium",
-    "lib:api": "typedoc --options ./typedoc.js && node api-trim.js"
+    "lib:api": "typedoc --options ./typedoc.js && node api-trim.js",
+    "lib:lint": "ng lint lithium"
   },
   "private": true,
   "dependencies": {

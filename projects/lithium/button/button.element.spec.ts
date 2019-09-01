@@ -1,6 +1,6 @@
 import 'lithium-ui/button';
 import { LithiumButton } from 'lithium-ui/button';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable } from 'lithium-ui/test/utils';
+import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
 import { AriaRole } from 'lithium-ui/common';
 
 describe('button', () => {
@@ -11,7 +11,9 @@ describe('button', () => {
     testElement = createTestElement();
     testElement.innerHTML = `
       <form>
-        <li-button>Hello World</li-button>
+        <li-button>
+          <span>Hello World</span>
+        </li-button>
       </form>
     `;
     await waitForComponent('li-button');
@@ -83,6 +85,12 @@ describe('button', () => {
     component.loading = true;
     await componentIsStable(component);
     expect(component.renderRoot.querySelector('li-loading-spinner')).toBeTruthy();
+  });
+
+  it('should render a button with appropriate slots', async () => {
+    await componentIsStable(component);
+    const slots = getComponentSlotContent(component);
+    expect(slots.default.includes('<span>Hello World</span>')).toBe(true);
   });
 });
 
