@@ -47,3 +47,4 @@ function removeMarkdownInTags(element) {
 function valueIsObject(value) {
   return !Array.isArray(value) && typeof value === 'object';
 }
+
