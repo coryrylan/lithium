@@ -1,0 +1,54 @@
+.logo {
+  --border-width: 4px;
+  --inner-background: #f7f7f7;
+  font-size: 58px;
+  padding: 0.15em;
+  width: 1.8em;
+  height: 1.8em;
+  text-align: center;
+  vertical-align: middle;
+  background-clip: padding-box;
+  position: relative;
+  background: linear-gradient(to right, var(--logo-color-one) 0%, var(--logo-color-two) 100%);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: var(--border-width);
+    right: var(--border-width);
+    bottom: var(--border-width);
+    left: var(--border-width);
+    z-index: 1;
+    background-color: var(--inner-background);
+  }
+
+  .logo-inner {
+    line-height: 1.5em;
+    position: absolute;
+    top: 0.1em; 
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to right, var(--logo-color-one) 0%, var(--logo-color-two) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.header-logo {
+  font-size: 18px;
+  margin: -12px 10px -12px -8px;
+  --border-width: 2px;
+  --inner-background: var(--global-color-gray-100);
+}
+
+.dark-theme {
+  .header-logo {
+    --inner-background: #2d2d2d;
+  }
+}
+
+.home-page .logo {
+  --inner-background: var(--hero-background-color);;
+}

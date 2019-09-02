@@ -1,5 +1,10 @@
 <li-nav-bar sticky>
-  <a routerLink="/">Lithium</a>
+  <a routerLink="/">
+    <div class="logo header-logo">
+      <div class="logo-inner">LI</div>
+    </div>
+    Lithium
+  </a>
   <a routerLink="docs" li-nav-bar-right>Docs</a>
   <a routerLink="api">API</a>
   <a href="https://github.com/coryrylan/lithium">Github</a>
@@ -9,7 +14,12 @@
     <div class="theme-btn"></div>
   </button>
 
-  <a routerLink="/" class="mobile-only">Lithium</a>
+  <a routerLink="/" class="mobile-only">
+    <div class="logo header-logo">
+      <div class="logo-inner">LI</div>
+    </div>
+    Lithium
+  </a>
   <button (click)="toggleTheme()" li-nav-bar-right class="mobile-only">
     Theme
     <div class="theme-btn"></div>

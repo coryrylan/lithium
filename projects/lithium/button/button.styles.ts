@@ -50,6 +50,14 @@ const componentStyles = css`
     border: 0.2em solid var(--li-button-outline-border-color, var(--li-common-color-blue-100));
   }
 
+  :host([outline]) ::slotted(a) {
+    color: var(--li-button-outline-color, var(--li-common-color-blue-100)) !important;
+  }
+
+  :host([outline]:hover) ::slotted(a) {
+    color: var(--li-button-outline-hover-color, var(--li-common-color-white-100)) !important;
+  }
+
   :host([outline]:hover) {
     background-color: var(--li-button-outline-hover-background-color, var(--li-common-color-blue-100));
     color: var(--li-button-outline-hover-color, var(--li-common-color-white-100));

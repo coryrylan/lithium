@@ -1,41 +1,82 @@
-h1 {
-  font-size: 3.8rem;
-  margin-top: 20vh;
+.hero {
+  padding: 5rem 1.4rem 3rem 1.4rem;
+  width: 100vw;
+  margin: 0 -1.5rem;
+  background-color: var(--hero-background-color);
 
-  @media (min-width: 1024px) {
-    margin-top: 25vh;
+  @media(min-width: 720px) {
+    margin: 0 -3rem;
+  }
+}
+
+.text-color {
+  // color: var(--logo-color-two);
+}
+
+.logo {
+  margin: 5rem auto 0 auto;
+  font-size: 90px;
+}
+
+h1{
+  font-size: 4.5rem;
+
+  .version {
+    font-size: 1.4rem;
   }
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 
-section {
-  text-align: center;
-}
-
-img {
-  display: inline-block;
-  width: 6rem;
-  margin-right: 3rem;
+h3 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin: 3rem 0;
 }
 
 .images {
   display: block;
   max-width: 40rem;
   margin: 4rem auto 3.5rem auto;
+
+  img {
+    display: inline-block;
+    width: 6rem;
+    margin-right: 3rem;
+  }
+
+  .angular,
+  .javascript {
+    width: 5rem;
+  }
+
+  .vue {
+    margin-right: 0;
+  }
+
+  .javascript {
+    margin-right: 4rem;
+  }
 }
 
-.angular,
-.javascript {
-  width: 5rem;
+hr {
+  height: 2px;
+  width: 100%;
+  border: 0;
+  background: linear-gradient(to right, var(--logo-color-one) 0%, var(--logo-color-two) 100%);
+  margin-top: 4rem;
+  top: 17px;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
-.vue {
-  margin-right: 0;
-}
+.hero-2 {
+  padding: 6rem 0;
 
-.javascript {
-  margin-right: 4rem;
+  h2, h3 {
+    margin-bottom: 1rem;
+  }
 }

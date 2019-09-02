@@ -1,15 +1,50 @@
-<section>
-  <h1>Lithium UI</h1>
-  <h2>Lightweight and fast Web Components that work everywhere.</h2>
+<div class="home-page">
+  <hr />
+  <section class="hero">
+    <div bp="container">
+      <div bp="grid">
+        <div bp="8@md">
+          <h1>Lithium UI <span class="version">0.0.1 alpha</span></h1>
+          <h2>Lightweight and fast UI <span class="text-color">Components</span> that work everywhere.</h2>
+          <h3>
+            Fast, modern Web Components that work in any JavaScript framework.
+            Built on the latest web standards, Lithium lets you include only the components you need.
+          </h3>
 
-  <div class="images">
-    <img src="/assets/images/javascript.svg" class="javascript" />
-    <img src="/assets/images/angular.svg" class="angular" />
-    <img src="/assets/images/react.svg" class="react" />
-    <img src="/assets/images/vue.svg" class="vue" />
-  </div>
+          <li-button large>
+            <a routerLink="/docs">Get Started</a>
+          </li-button>
 
-  <li-button large>
-    <a routerLink="/docs">Get Started</a>
-  </li-button>
-</section>
+          <li-button large outline>
+            <a routerLink="/docs">Download</a>
+          </li-button>
+        </div>
+        <div bp="4@md">
+          <div class="logo">
+            <div class="logo-inner">LI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section bp="container" class="hero-2">
+    <div bp="grid">
+      <div bp="5@md">
+        <h2>Build for any UI</h2>
+        <h3>Learn once. Use Everywhere.</h3>
+        <p>Lithium Web Components are themable and can work in any Web stack.</p>
+        <div class="images">
+          <img src="/assets/images/javascript.svg" class="javascript" />
+          <img src="/assets/images/angular.svg" class="angular" />
+          <img src="/assets/images/react.svg" class="react" />
+          <img src="/assets/images/vue.svg" class="vue" />
+        </div>
+      </div>
+      <div bp="7@md">
+        <li-code-example [code]="codeExample"></li-code-example>
+        <li-code-example [code]="codeExample2" language="html"></li-code-example>
+      </div>
+    </div>
+  </section>
+</div>

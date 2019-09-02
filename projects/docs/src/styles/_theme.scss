@@ -1,9 +1,13 @@
 :root {
+  --logo-color-one: #3439ff;
+  --logo-color-two: #c100ff;
+  --hero-background-color: #f0f0f0;
   --global-color-white-100: #fff;
   --global-color-gray-50: #f7f7f7;
   --global-color-gray-100: #f3f3f3;
   --global-color-gray-200: #e4e4e4;
   --global-color-gray-300: #ccc;
+  --global-color-gray-325: #959595;
   --global-color-gray-350: #555555;
   --global-color-gray-400: #3d3d3d;
   --global-color-gray-500: #2d2d2d;
@@ -22,13 +26,16 @@
 }
 
 :root .dark-theme {
+  --logo-color-one: #007dff;
+  --logo-color-two: #db13ff;
+  --hero-background-color: #363636;
   --global-primary-color: var(--global-color-gray-500);
   --global-secondary-color: var(--global-color-gray-400);
   --global-border-color: var(--global-color-gray-500);
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
   --global-code-background-color: var(--global-color-gray-600);
-  --li-button-outline-border-color: var(--global-color-white-100);
+  --li-button-outline-border-color: var(--global-color-gray-325);
   --li-button-outline-color: var(--global-color-white-100);
   --li-button-outline-hover-background-color: var(--global-color-gray-500);
   --li-button-disabled-background: var(--global-color-blue-200);
