@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   codeExample = `
     import 'lithium-ui/modal';
 
-    const modal = document.querySelector('li-modal);
+    const modal = document.querySelector('li-modal');
     modal.open();
   `;
   codeExample2 = `

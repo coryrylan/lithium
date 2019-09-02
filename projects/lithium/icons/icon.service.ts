@@ -4,9 +4,10 @@ const registryState = {
   [unknownIcon.name]: unknownIcon.svg
 };
 
+// @dynamic
 export class IconService {
   static get registry() {
-    return registryState;
+    return { ...registryState };
   }
 
   static addIcons(...svgIcons: SVGIcon[]) {
