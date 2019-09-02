@@ -2,7 +2,7 @@ import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './icon.styles';
-import { registry } from './icon.service';
+import { IconService } from './icon.service';
 import { unknownIcon } from './svg';
 
 /**
@@ -25,7 +25,7 @@ export class LithiumIcon extends LitElement {
 
   render() {
     return html`
-      <div .innerHTML="${registry[this.name] ? registry[this.name] : registry[unknownIcon.name]}"></div>
+      <div .innerHTML="${IconService.registry[this.name] ? IconService.registry[this.name] : IconService.registry[unknownIcon.name]}"></div>
     `;
   }
 }

@@ -1,17 +1,21 @@
 import { SVGIcon, unknownIcon, SVGIconCollection } from './svg';
 
-export const registry = {
+const registryState = {
   [unknownIcon.name]: unknownIcon.svg
 };
 
 export class IconService {
+  static get registry() {
+    return registryState;
+  }
+
   static addIcons(...svgIcons: SVGIcon[]) {
-    svgIcons.forEach(icon => (registry[icon.name] = icon.svg));
+    svgIcons.forEach(icon => (registryState[icon.name] = icon.svg));
   }
 
   static addIconCollection(...svgIconCollection: SVGIconCollection[]) {
     svgIconCollection.forEach(group => {
-      group.icons.forEach(icon => (registry[icon.name] = icon.svg));
+      group.icons.forEach(icon => (registryState[icon.name] = icon.svg));
     });
   }
 }

@@ -42,7 +42,7 @@ export const componentStyles = css`
     margin-bottom: 0 !important;
   }
 
-  .type-icon {
+  .li-type-icon {
     --li-icon-width: 2em;
     --li-icon-height: 2em;
     color: var(--li-message-icon-color, var(--li-common-color-white-100));
@@ -52,7 +52,7 @@ export const componentStyles = css`
     left: 1.6em;
   }
 
-  .close-btn {
+  .li-close-btn {
     background: transparent;
     border: 0;
     cursor: pointer;
@@ -66,14 +66,14 @@ export const componentStyles = css`
     border-radius: 0.2em;
   }
 
-  .close-btn li-icon {
+  .li-close-btn li-icon {
     --li-icon-color: var(--li-message-icon-color, var(--li-common-color-white-100));
     width: 2.4em;
     height: 2.4em;
   }
 
-  .close-btn:hover,
-  .close-btn:focus {
+  .li-close-btn:hover,
+  .li-close-btn:focus {
     background: rgba(0, 0, 0, 0.2);
   }
 `;

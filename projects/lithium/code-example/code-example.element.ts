@@ -4,6 +4,13 @@ import { highlight, languages } from 'prismjs';
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './code-example.styles';
 
+/**
+ * Code example generator with prismjs highlighting
+ *
+ * @noInheritDoc
+ * @element `li-code-example`
+ * @experimental
+ */
 // @dynamic
 export class LithiumCodeExample extends LitElement {
   @property({ type: String }) language = 'javascript';

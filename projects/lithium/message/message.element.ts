@@ -56,7 +56,7 @@ export class LithiumMessage extends LitElement {
         ? ''
         : html`
             <div class="li-message">
-              <div class="type-icon">
+              <div class="li-type-icon">
                 ${this.type === LithiumMessageType.Default
                   ? html`
                       <li-icon name="info" aria-label="${IntlService.registry.info}"></li-icon>
@@ -85,7 +85,7 @@ export class LithiumMessage extends LitElement {
                     <button
                       @click="${() => this.closeMessage()}"
                       type="button"
-                      class="close-btn"
+                      class="li-close-btn"
                       data-dismiss="alert"
                       aria-label="${IntlService.registry.close}"
                     >
@@ -96,6 +96,11 @@ export class LithiumMessage extends LitElement {
             </div>
           `}
     `;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.setAttribute('aria-live', 'polite');
   }
 
   closeMessage() {

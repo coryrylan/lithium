@@ -37,7 +37,8 @@ export class DocsI18nComponent {
       error: 'Erreur',
       warning: 'Avertissement',
       success: 'Succès',
-      info: 'Information'
+      info: 'Information',
+      loading: 'Chargement'
     });
   }
 }

@@ -1,6 +1,6 @@
 import { css } from 'lit-element';
 
-import { styleVariables } from 'lithium-ui/common';
+import { styleVariables, a11yStyles } from 'lithium-ui/common';
 
 const componentStyles = css`
   :host {
@@ -58,4 +58,4 @@ const componentStyles = css`
   }
 `;
 
-export const styles = [styleVariables, componentStyles];
+export const styles = [styleVariables, a11yStyles, componentStyles];

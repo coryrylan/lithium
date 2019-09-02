@@ -6,6 +6,7 @@ export interface InternationalizationRegistry {
   warning: string;
   success: string;
   info: string;
+  loading: string;
 }
 
 export const englishRegistry: InternationalizationRegistry = {
@@ -15,10 +16,11 @@ export const englishRegistry: InternationalizationRegistry = {
   error: 'Error',
   warning: 'Warning',
   success: 'Success',
-  info: 'Information'
+  info: 'Information',
+  loading: 'loading'
 };
 
-export let registryState: InternationalizationRegistry = { ...englishRegistry };
+let registryState: InternationalizationRegistry = { ...englishRegistry };
 
 // @dynamic
 export class IntlService {

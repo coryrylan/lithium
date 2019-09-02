@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { registerElementSafely, IntlService } from 'lithium-ui/common';
 import { styles } from './loading-spinner.styles';
 
 /**
@@ -18,11 +18,17 @@ export class LithiumLoadingSpinner extends LitElement {
     return styles;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.setAttribute('aria-live', 'polite');
+  }
+
   render() {
     return html`
       <svg class="li-spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
         <circle class="li-spinner-circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
       </svg>
+      <span class="li-sr-only">${IntlService.registry.loading}</span>
     `;
   }
 }

@@ -3,6 +3,7 @@ import { LitElement, html, property } from 'lit-element';
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './dropdown.styles';
 
+// test component, not for production
 // @dynamic
 export class XDropdown extends LitElement {
   @property({ type: Boolean }) visible = false;
