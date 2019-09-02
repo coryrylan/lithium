@@ -5,7 +5,7 @@ import { styleVariables } from 'lithium-ui/common';
 export const componentStyles = css`
   :host {
     background-color: var(--li-nav-bar-background-color, var(--li-common-color-white-100));
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     color: var(--li-nav-bar-color, var(--li-common-color-gray-500));
     margin-bottom: var(--li-common-spacing-margin-bottom);
     display: flex;
@@ -20,7 +20,8 @@ export const componentStyles = css`
     margin-bottom: 0;
   }
 
-  ::slotted(a), ::slotted(button) {
+  ::slotted(a),
+  ::slotted(button) {
     display: flex;
     align-items: center;
     height: 100%;
@@ -33,7 +34,8 @@ export const componentStyles = css`
     cursor: pointer;
   }
 
-  ::slotted(a:hover), ::slotted(button:hover) {
+  ::slotted(a:hover),
+  ::slotted(button:hover) {
     background-color: var(--li-nav-bar-hover-background-color, var(--li-common-color-gray-100)) !important;
   }
 
@@ -42,7 +44,4 @@ export const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

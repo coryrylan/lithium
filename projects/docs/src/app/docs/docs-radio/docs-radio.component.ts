@@ -48,4 +48,3 @@ export class DocsRadioComponent {
     </li-radio-group>
   `;
 }
-

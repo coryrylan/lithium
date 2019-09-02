@@ -13,7 +13,9 @@ import { styles } from './radio-group.styles';
  */
 // @dynamic
 export class LithiumRadioGroup extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   /** Name provides the name for each radio and will automatically associate all radios in element */
   @property({ type: String }) name = '';

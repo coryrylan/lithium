@@ -11,11 +11,7 @@ import { Layout } from '../../enums';
 export class RouterMetaDataService {
   private renderer: Renderer2;
 
-  constructor(
-    rendererFactory: RendererFactory2,
-    private readonly title: Title,
-    private readonly router: Router
-  ) {
+  constructor(rendererFactory: RendererFactory2, private readonly title: Title, private readonly router: Router) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
@@ -45,7 +41,10 @@ export class RouterMetaDataService {
 
 export function getMergedRouteData(router: Router) {
   const currentRoute = of(router.routerState.snapshot);
-  const futureRoutes = router.events.pipe(filter(event => event instanceof NavigationEnd), map(() => router.routerState.snapshot));
+  const futureRoutes = router.events.pipe(
+    filter(event => event instanceof NavigationEnd),
+    map(() => router.routerState.snapshot)
+  );
   return merge(currentRoute, futureRoutes).pipe(map(snapshot => getMergedRouteDataSnapshot(snapshot)));
 }
 

@@ -23,9 +23,7 @@ export class DocsModalComponent implements OnInit {
     </li-modal>
   `;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

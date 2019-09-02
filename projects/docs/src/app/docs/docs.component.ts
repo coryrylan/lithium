@@ -8,4 +8,4 @@ import { fadeAnimation } from '../common/animations';
   styleUrls: ['./docs.component.scss'],
   animations: [fadeAnimation]
 })
-export class DocsComponent { }
+export class DocsComponent {}

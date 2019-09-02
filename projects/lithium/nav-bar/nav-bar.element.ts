@@ -17,7 +17,9 @@ import { styles } from './nav-bar.styles';
  */
 // @dynamic
 export class LithiumNavBar extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

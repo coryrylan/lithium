@@ -27,7 +27,5 @@ export class ApiComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

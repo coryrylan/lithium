@@ -18,8 +18,8 @@ export interface Method {
     shortText: string;
   };
   flags: {
-    isStatic: boolean,
-    isExported: boolean
+    isStatic: boolean;
+    isExported: boolean;
   };
   id: number;
   kind: number;
@@ -35,7 +35,7 @@ export interface Property {
   decorators: any[];
   defaultValue: string;
   flags: {
-    isExported: boolean
+    isExported: boolean;
   };
   id: number;
   kind: number;
@@ -46,11 +46,11 @@ export interface Property {
 export interface Class {
   comment: {
     shortText: string;
-    tags: { tag: string; text: string; }[]
+    tags: { tag: string; text: string }[];
   };
   id: number;
   kind: 128;
   kindString: string;
   name: string;
-  children: Method|Property[];
+  children: Method | Property[];
 }

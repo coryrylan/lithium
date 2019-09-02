@@ -25,4 +25,3 @@ export class DocsTextareaComponent {
     </li-textarea>
   `;
 }
-

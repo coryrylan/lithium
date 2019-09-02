@@ -15,7 +15,7 @@ const componentStyles = css`
     cursor: pointer;
   }
 
-  ::slotted([type=radio]) {
+  ::slotted([type='radio']) {
     position: absolute;
     left: -9999px;
     width: 0;
@@ -65,7 +65,4 @@ const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

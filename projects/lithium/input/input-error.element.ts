@@ -12,7 +12,9 @@ import { styles } from './input-error.styles';
  */
 // @dynamic
 export class LithiumInputError extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

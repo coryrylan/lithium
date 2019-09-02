@@ -21,7 +21,9 @@ import { LithiumRadioGroup } from './radio-group.element';
  */
 // @dynamic
 export class LithiumRadio extends LithiumInput {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   private radio: any;
   private observer: MutationObserver;
@@ -42,8 +44,8 @@ export class LithiumRadio extends LithiumInput {
     this.radio.addEventListener('focusin', () => this.setAttribute('focused', ''));
     this.radio.addEventListener('focusout', () => this.removeAttribute('focused'));
 
-    this.observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
+    this.observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
         if (mutation.attributeName === 'disabled') {
           this.updateHostDisabled();
         }

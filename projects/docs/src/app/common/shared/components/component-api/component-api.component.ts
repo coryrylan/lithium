@@ -12,7 +12,7 @@ export class ComponentApiComponent implements OnInit {
   @Input() component: string;
   componentClass: Class;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.apiService.api.subscribe(classes => {

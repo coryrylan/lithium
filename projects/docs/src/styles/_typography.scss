@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: 'Lato', Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Lato', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-display: swap;
   color: var(--global-text-color);
   line-height: 1.5;
@@ -17,7 +17,9 @@ a {
   color: var(--global-text-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 2.4rem 0;
   line-height: 1.2;
   font-weight: 300;

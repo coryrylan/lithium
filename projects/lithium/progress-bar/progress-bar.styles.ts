@@ -44,7 +44,4 @@ export const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

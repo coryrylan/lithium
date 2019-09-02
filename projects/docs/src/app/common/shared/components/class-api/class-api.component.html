@@ -1,15 +1,14 @@
-
 <li-card *ngIf="componentClass">
-  <h2>{{componentClass.name}}</h2>
+  <h2>{{ componentClass.name }}</h2>
   <p *ngIf="componentClass?.comment?.shortText">
-    {{componentClass.comment.shortText}}
+    {{ componentClass.comment.shortText }}
   </p>
 
   <h3>CSS Custom Properties</h3>
   <ul>
     <ng-container *ngFor="let tag of componentClass?.comment?.tags">
       <li *ngIf="tag.tag === 'cssprop'">
-        <p>{{tag.text}}</p>
+        <p>{{ tag.text }}</p>
       </li>
     </ng-container>
   </ul>
@@ -18,7 +17,7 @@
   <ul>
     <ng-container *ngFor="let tag of componentClass?.comment?.tags">
       <li *ngIf="tag.tag === 'styleattr'">
-        <p>{{tag.text}}</p>
+        <p>{{ tag.text }}</p>
       </li>
     </ng-container>
   </ul>
@@ -27,7 +26,7 @@
   <ul>
     <ng-container *ngFor="let tag of componentClass?.comment?.tags">
       <li *ngIf="tag.tag === 'slot'">
-        <p>{{tag.text}}</p>
+        <p>{{ tag.text }}</p>
       </li>
     </ng-container>
   </ul>
@@ -36,8 +35,8 @@
   <ul>
     <ng-container *ngFor="let child of componentClass.children">
       <li *ngIf="child.kindString === 'Property' && !child.inheritedFrom">
-        <h4>{{child.name}}</h4>
-        <p *ngIf="child.comment">{{child.comment.shortText}}</p>
+        <h4>{{ child.name }}</h4>
+        <p *ngIf="child.comment">{{ child.comment.shortText }}</p>
       </li>
     </ng-container>
   </ul>
@@ -46,9 +45,9 @@
   <ul>
     <ng-container *ngFor="let child of componentClass.children">
       <li *ngIf="child.kindString === 'Method' && !child.inheritedFrom && child.name !== 'render'">
-        <h4>{{child.name}}</h4>
+        <h4>{{ child.name }}</h4>
         <p *ngIf="child.signatures[0]">
-          {{child.signatures[0].comment?.shortText}}
+          {{ child.signatures[0].comment?.shortText }}
         </p>
       </li>
     </ng-container>

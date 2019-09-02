@@ -17,8 +17,7 @@ const componentStyles = css`
     height: 4em;
   }
 
-  @keyframes rotation
-  {
+  @keyframes rotation {
     0% {
       transform: rotate(0deg);
     }
@@ -34,8 +33,7 @@ const componentStyles = css`
     animation: turn 1.4s ease-in-out infinite;
   }
 
-  @keyframes turn
-  {
+  @keyframes turn {
     0% {
       stroke-dashoffset: 187;
     }
@@ -49,7 +47,7 @@ const componentStyles = css`
     }
   }
 
-  :host([small]) .li-spinner{
+  :host([small]) .li-spinner {
     width: 2em;
     height: 2em;
   }
@@ -60,7 +58,4 @@ const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

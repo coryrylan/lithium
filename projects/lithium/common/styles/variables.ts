@@ -1,7 +1,9 @@
 import { css } from 'lit-element';
 
 export const styleVariables = css`
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
 

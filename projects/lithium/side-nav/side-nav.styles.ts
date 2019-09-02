@@ -50,14 +50,14 @@ export const componentStyles = css`
     background-color: transparent;
     cursor: pointer;
     color: var(--li-side-nav-color, var(--li-common-color-gray-500));
-
   }
 
   .li-menu-close-icon {
     --color: var(--li-side-nav-color, var(--li-common-color-gray-500));
   }
 
-  .li-side-nav-slot::slotted(a), .li-side-nav-slot::slotted(button) {
+  .li-side-nav-slot::slotted(a),
+  .li-side-nav-slot::slotted(button) {
     display: block;
     padding: 1.125em 0.8125em 1em 1.625em;
     text-decoration: none;
@@ -67,7 +67,8 @@ export const componentStyles = css`
     cursor: pointer;
   }
 
-  .li-side-nav-slot::slotted(a:hover), .li-side-nav-slot::slotted(button:hover) {
+  .li-side-nav-slot::slotted(a:hover),
+  .li-side-nav-slot::slotted(button:hover) {
     background-color: var(--li-side-nav-hover-background-color, var(--li-common-color-gray-100)) !important;
   }
 
@@ -86,11 +87,8 @@ export const componentStyles = css`
 
   .li-side-nav-open .li-side-nav-backdrop {
     pointer-events: auto;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, 0.5);
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

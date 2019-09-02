@@ -22,7 +22,9 @@ IconService.addIcons(closeIcon);
 // @dynamic
 export class LithiumModal extends LitElement {
   private _open = false;
-  get open() { return this._open; }
+  get open() {
+    return this._open;
+  }
 
   /** Toggle if modal should be open or closed. */
   @property({ type: Boolean })
@@ -46,25 +48,30 @@ export class LithiumModal extends LitElement {
     return html`
       ${this.open
         ? html`
-          <div class="li-modal-wrapper">
-            <div class="li-modal" role="dialog">
-              <focus-trap>
-                <div class="li-modal-header">
-                  <slot name="header"></slot>
-                  <button @click="${() => this.close()}" type="button" aria-label="${IntlService.registry.close}" class="li-modal-close-btn">
-                    <li-icon name="close"></li-icon>
-                  </button>
-                </div>
-                <div class="li-modal-content">
-                  <slot></slot>
-                </div>
-                <div class="li-modal-footer">
-                  <slot name="footer"></slot>
-                </div>
-              </focus-trap>
+            <div class="li-modal-wrapper">
+              <div class="li-modal" role="dialog">
+                <focus-trap>
+                  <div class="li-modal-header">
+                    <slot name="header"></slot>
+                    <button
+                      @click="${() => this.close()}"
+                      type="button"
+                      aria-label="${IntlService.registry.close}"
+                      class="li-modal-close-btn"
+                    >
+                      <li-icon name="close"></li-icon>
+                    </button>
+                  </div>
+                  <div class="li-modal-content">
+                    <slot></slot>
+                  </div>
+                  <div class="li-modal-footer">
+                    <slot name="footer"></slot>
+                  </div>
+                </focus-trap>
+              </div>
+              <div @click="${() => this.backdropClose()}" class="li-modal-backdrop"></div>
             </div>
-            <div @click="${() => this.backdropClose()}" class="li-modal-backdrop"></div>
-          </div>
           `
         : ''}
     `;

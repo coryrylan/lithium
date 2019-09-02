@@ -19,7 +19,9 @@ import { styles } from './card.styles';
  */
 // @dynamic
 export class LithiumCard extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

@@ -12,7 +12,9 @@ import { styles } from './form.styles';
  */
 // @dynamic
 export class LithiumForm extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

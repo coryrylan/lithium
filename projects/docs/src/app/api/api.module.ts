@@ -9,13 +9,7 @@ import { SharedModule } from '../common/shared/shared.module';
 
 @NgModule({
   declarations: [ApiComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    ApiRoutingModule
-  ],
+  imports: [CommonModule, SharedModule, HttpClientModule, ReactiveFormsModule, ApiRoutingModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ApiModule { }
+export class ApiModule {}

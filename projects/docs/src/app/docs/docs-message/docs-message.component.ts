@@ -15,9 +15,7 @@ export class DocsMessageComponent implements OnInit {
     <li-message type="warning">Warning Message</li-message>
     <li-message type="error">Error Message</li-message>
   `;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

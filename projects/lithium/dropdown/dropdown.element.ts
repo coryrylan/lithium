@@ -8,18 +8,21 @@ export class XDropdown extends LitElement {
   @property({ type: Boolean }) visible = false;
   @property({ type: String }) title = 'dropdown';
 
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`
       <div class="dropdown">
         <button @click="${() => this.toggle()}" class="btn">${this.title}</button>
-        ${this.visible ?
-          html`
-            <div>
-              <slot class="x-dropdown-slot"></slot>
-            </div>`
-          : '' }
+        ${this.visible
+          ? html`
+              <div>
+                <slot class="x-dropdown-slot"></slot>
+              </div>
+            `
+          : ''}
       </div>
     `;
   }

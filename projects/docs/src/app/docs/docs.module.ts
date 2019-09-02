@@ -48,11 +48,6 @@ import { DocsFormsComponent } from './docs-forms/docs-forms.component';
     DocsThemesComponent,
     DocsI18nComponent
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    ReactiveFormsModule,
-    DocsRoutingModule,
-  ]
+  imports: [CommonModule, SharedModule, ReactiveFormsModule, DocsRoutingModule]
 })
-export class DocsModule { }
+export class DocsModule {}

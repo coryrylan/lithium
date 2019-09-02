@@ -16,7 +16,7 @@ export const componentStyles = css`
     line-height: 1.5 !important;
   }
 
-  ::slotted([type=checkbox]) {
+  ::slotted([type='checkbox']) {
     position: absolute;
     left: -9999px;
   }
@@ -27,7 +27,7 @@ export const componentStyles = css`
   }
 
   .box {
-    content: "";
+    content: '';
     position: absolute;
     pointer-events: none;
     left: 0;
@@ -59,7 +59,4 @@ export const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

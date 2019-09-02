@@ -36,11 +36,19 @@ export class LithiumButton extends BaseButton {
   @property({ type: Boolean, reflect: true }) loading = false;
   private initialWidth: number;
 
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   protected render() {
     return html`
-      ${this.loading ? html`<li-loading-spinner small></li-loading-spinner>` : html`<slot></slot>`}
+      ${this.loading
+        ? html`
+            <li-loading-spinner small></li-loading-spinner>
+          `
+        : html`
+            <slot></slot>
+          `}
       ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
     `;
   }

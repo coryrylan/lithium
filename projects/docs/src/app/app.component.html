@@ -4,10 +4,16 @@
   <a routerLink="api">API</a>
   <a href="https://github.com/coryrylan/lithium">Github</a>
   <a routerLink="support">Support</a>
-  <button (click)="toggleTheme()">Theme <div class="theme-btn"></div></button>
+  <button (click)="toggleTheme()">
+    Theme
+    <div class="theme-btn"></div>
+  </button>
 
   <a routerLink="/" class="mobile-only">Lithium</a>
-  <button (click)="toggleTheme()" li-nav-bar-right class="mobile-only">Theme <div class="theme-btn"></div></button>
+  <button (click)="toggleTheme()" li-nav-bar-right class="mobile-only">
+    Theme
+    <div class="theme-btn"></div>
+  </button>
   <button (click)="toggleMenu()" class="mobile-only" aria-label="Menu">
     <li-icon name="menu"></li-icon>
   </button>
@@ -17,7 +23,9 @@
   <a routerLink="api" class="mobile-only">API Search</a>
   <a routerLink="about" class="mobile-only">About</a>
   <a routerLink="support" class="mobile-only">Support</a>
-  <a routerLink="/docs">Getting Started <small>({{version}})</small></a>
+  <a routerLink="/docs"
+    >Getting Started <small>({{ version }})</small></a
+  >
   <a routerLink="/docs/themes">Themes</a>
   <a routerLink="/docs/internationalization">i18n</a>
   <a routerLink="/docs/icons">Icons</a>

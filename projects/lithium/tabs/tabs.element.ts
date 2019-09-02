@@ -19,7 +19,9 @@ import { LithiumTabTitle } from './tab-title.element';
  */
 // @dynamic
 export class LithiumTabs extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   @property() private tabs: LithiumTab[] = [];
   private tabTitles: HTMLElement[] = [];
@@ -29,11 +31,13 @@ export class LithiumTabs extends LitElement {
     return html`
       <div class="li-tabs">
         <div class="li-tabs-nav">
-          ${this.tabs.map((t, i) => html`
-            <button class=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>
-              <slot name=${`slot-${i}`}></slot>
-            </button>
-          `)}
+          ${this.tabs.map(
+            (t, i) => html`
+              <button class=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>
+                <slot name=${`slot-${i}`}></slot>
+              </button>
+            `
+          )}
         </div>
         <slot></slot>
       </div>
@@ -56,7 +60,7 @@ export class LithiumTabs extends LitElement {
   }
 
   private showTab() {
-    this.tabs.forEach(t => t.style.display = 'none');
+    this.tabs.forEach(t => (t.style.display = 'none'));
     this.tabs[this.index].style.display = 'block';
   }
 }

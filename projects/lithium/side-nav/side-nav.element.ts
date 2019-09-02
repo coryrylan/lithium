@@ -40,19 +40,25 @@ export class LithiumSideNav extends LitElement {
     return html`
       <div .classList=${this.sticky || this.open ? 'li-side-nav-open' : ''}>
         <nav class="li-side-nav">
-          ${!this.sticky ? html`
-            <div class="li-menu-heading">
-              <div class="li-menu-heading-text"><slot name="heading">${IntlService.registry.menu}</slot></div>
-              <button aria-label="${IntlService.registry.close}" @click=${e => this.close()} class="li-menu-close-btn">
-                <li-icon name="close" class="li-menu-close-icon"></li-icon>
-              </button>
-            </div>
-          ` : ''}
+          ${!this.sticky
+            ? html`
+                <div class="li-menu-heading">
+                  <div class="li-menu-heading-text"><slot name="heading">${IntlService.registry.menu}</slot></div>
+                  <button aria-label="${IntlService.registry.close}" @click=${e => this.close()} class="li-menu-close-btn">
+                    <li-icon name="close" class="li-menu-close-icon"></li-icon>
+                  </button>
+                </div>
+              `
+            : ''}
           <div @click=${() => this.navClose()}>
             <slot class="li-side-nav-slot"></slot>
           </div>
         </nav>
-        ${!this.sticky ? html`<div @click=${() => this.close()} class="li-side-nav-backdrop"></div>` : ''}
+        ${!this.sticky
+          ? html`
+              <div @click=${() => this.close()} class="li-side-nav-backdrop"></div>
+            `
+          : ''}
       </div>
     `;
   }
@@ -60,7 +66,7 @@ export class LithiumSideNav extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.resizeObserver = new ResizeObserver(entries => this.sticky = entries[0].contentRect.width > this.stickyBreakpoint);
+    this.resizeObserver = new ResizeObserver(entries => (this.sticky = entries[0].contentRect.width > this.stickyBreakpoint));
     this.resizeObserver.observe(document.body);
   }
 

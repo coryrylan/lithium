@@ -6,10 +6,7 @@ import { AboutComponent } from './about.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [
-    CommonModule,
-    AboutRoutingModule
-  ],
+  imports: [CommonModule, AboutRoutingModule],
   declarations: [AboutComponent]
 })
-export class AboutModule { }
+export class AboutModule {}

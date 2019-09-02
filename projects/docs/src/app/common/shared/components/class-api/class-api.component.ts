@@ -10,9 +10,7 @@ import { Class } from '../../../interfaces/api';
 export class ClassAPIComponent implements OnInit {
   @Input() componentClass: Class;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

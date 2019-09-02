@@ -13,7 +13,8 @@ export const componentStyles = css`
     list-style: none;
   }
 
-  .li-tabs-nav::before, .li-tabs-nav::after {
+  .li-tabs-nav::before,
+  .li-tabs-nav::after {
     content: ' ';
     display: table;
     clear: both;
@@ -77,7 +78,7 @@ export const componentStyles = css`
     .li-tabs-nav > button.active {
       background-color: var(--li-tabs-button-background-color, inherit);
       border-bottom: 0.3em solid;
-      border-bottom-color: var(--li-tabs-button-selected-border-color, var(--li-common-color-blue-100))
+      border-bottom-color: var(--li-tabs-button-selected-border-color, var(--li-common-color-blue-100));
     }
   }
 
@@ -88,7 +89,4 @@ export const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

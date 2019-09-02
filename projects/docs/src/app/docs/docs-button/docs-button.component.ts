@@ -50,14 +50,13 @@ export class DocsButtonComponent {
     </li-button>
   `;
 
-
   form: FormGroup;
   showLoading = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       firstName: [],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 

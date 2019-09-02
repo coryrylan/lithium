@@ -34,7 +34,9 @@ export class LithiumInput extends LitElement {
   private messageId = `li-input-id-${idCount++}`;
   private errorMessageId = `li-input-id-${idCount++}`;
 
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

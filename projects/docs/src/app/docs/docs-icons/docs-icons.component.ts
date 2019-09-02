@@ -43,4 +43,3 @@ export class DocsIconsComponent {
     IconService.addIcons(customIcon);
   }
 }
-

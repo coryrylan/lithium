@@ -12,7 +12,9 @@ import { styles } from './checkbox-group.styles';
  */
 // @dynamic
 export class LithiumCheckboxGroup extends LitElement {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

@@ -20,9 +20,7 @@ export class ApiService {
   }
 
   private removeMarkdown(classes: Class[]) {
-    classes
-      .filter(c => c.comment)
-      .forEach(c => c.comment.tags.forEach(t => t.text = t.text.replace(/`/g, '')));
+    classes.filter(c => c.comment).forEach(c => c.comment.tags.forEach(t => (t.text = t.text.replace(/`/g, ''))));
 
     return classes;
   }

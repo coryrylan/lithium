@@ -39,4 +39,3 @@ export class DocsSelectComponent {
     </li-select>
   `;
 }
-

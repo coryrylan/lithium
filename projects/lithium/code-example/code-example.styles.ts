@@ -4,8 +4,8 @@ import { styleVariables } from 'lithium-ui/common';
 
 const componentStyles = css`
   /* prism.js modified theme */
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*='language-'],
+  pre[class*='language-'] {
     color: var(--li-code-example-token-14, black);
     background: none;
     text-shadow: 0 1px var(--li-code-example-token-13, white);
@@ -28,41 +28,45 @@ const componentStyles = css`
     hyphens: none;
   }
 
-  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  pre[class*='language-']::-moz-selection,
+  pre[class*='language-'] ::-moz-selection,
+  code[class*='language-']::-moz-selection,
+  code[class*='language-'] ::-moz-selection {
     text-shadow: none;
     background: var(--li-code-example-token-1, #b3d4fc);
   }
 
-  pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-  code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  pre[class*='language-']::selection,
+  pre[class*='language-'] ::selection,
+  code[class*='language-']::selection,
+  code[class*='language-'] ::selection {
     text-shadow: none;
     background: var(--li-code-example-token-1, #b3d4fc);
   }
 
   @media print {
-    code[class*="language-"],
-    pre[class*="language-"] {
+    code[class*='language-'],
+    pre[class*='language-'] {
       text-shadow: none;
     }
   }
 
   /* Code blocks */
-  pre[class*="language-"] {
+  pre[class*='language-'] {
     padding: 1em;
     margin: 0;
     overflow: auto;
   }
 
-  :not(pre) > code[class*="language-"],
-  pre[class*="language-"] {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
     background: var(--li-code-example-token-2, var(--li-common-color-white-100));
   }
 
   /* Inline code */
-  :not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
+  :not(pre) > code[class*='language-'] {
+    padding: 0.1em;
+    border-radius: 0.3em;
     white-space: normal;
   }
 
@@ -78,7 +82,7 @@ const componentStyles = css`
   }
 
   .namespace {
-    opacity: .7;
+    opacity: 0.7;
   }
 
   .token.property,
@@ -106,7 +110,7 @@ const componentStyles = css`
   .language-css .token.string,
   .style .token.string {
     color: var(--li-code-example-token-7, #9a6e3a);
-    background: var(--li-code-example-token-11, hsla(0, 0%, 100%, .5));
+    background: var(--li-code-example-token-11, hsla(0, 0%, 100%, 0.5));
   }
 
   .token.atrule,
@@ -117,7 +121,7 @@ const componentStyles = css`
 
   .token.function,
   .token.class-name {
-    color: var(--li-code-example-token-9, #DD4A68);
+    color: var(--li-code-example-token-9, #dd4a68);
   }
 
   .token.regex,
@@ -164,7 +168,4 @@ const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

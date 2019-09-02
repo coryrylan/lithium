@@ -6,10 +6,11 @@ main {
 
 footer {
   padding: 12px;
-  margin-top:12px;
+  margin-top: 12px;
 }
 
-li-nav-bar a, li-nav-bar button {
+li-nav-bar a,
+li-nav-bar button {
   display: none;
 
   @media (min-width: $nav-breakpoint) {

@@ -5,10 +5,7 @@ import { SupportRoutingModule } from './support-routing.module';
 import { SupportComponent } from './support.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SupportRoutingModule
-  ],
+  imports: [CommonModule, SupportRoutingModule],
   declarations: [SupportComponent]
 })
-export class SupportModule { }
+export class SupportModule {}

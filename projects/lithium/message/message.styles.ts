@@ -61,7 +61,7 @@ export const componentStyles = css`
     height: 3.8em;
     top: 0.65em;
     right: 0.65em;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     line-height: 0;
     border-radius: 0.2em;
   }
@@ -72,12 +72,10 @@ export const componentStyles = css`
     height: 2.4em;
   }
 
-  .close-btn:hover, .close-btn:focus {
-    background: rgba(0,0,0,0.2);
+  .close-btn:hover,
+  .close-btn:focus {
+    background: rgba(0, 0, 0, 0.2);
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

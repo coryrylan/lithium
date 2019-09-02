@@ -21,7 +21,9 @@ IconService.addIcons(checkIcon);
  */
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   private checkbox: any;
   private observer: MutationObserver;
@@ -45,8 +47,8 @@ export class LithiumCheckbox extends LithiumInput {
     this.checkbox.addEventListener('focusin', () => this.setAttribute('focused', ''));
     this.checkbox.addEventListener('focusout', () => this.removeAttribute('focused'));
 
-    this.observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
+    this.observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
         if (mutation.attributeName === 'disabled') {
           this.updateHostDisabled();
         }

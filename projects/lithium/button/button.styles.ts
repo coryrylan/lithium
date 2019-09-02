@@ -19,11 +19,11 @@ const componentStyles = css`
     text-transform: capitalize;
   }
 
-  :host(:hover){
+  :host(:hover) {
     opacity: 0.9;
   }
 
-  :host([disabled]){
+  :host([disabled]) {
     opacity: 0.9;
     cursor: default;
     background: var(--li-button-disabled-background, var(--li-common-color-gray-300));
@@ -31,7 +31,7 @@ const componentStyles = css`
     outline: 0;
   }
 
-  :host([role="presentation"]) {
+  :host([role='presentation']) {
     padding: 0;
   }
 
@@ -112,7 +112,4 @@ const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

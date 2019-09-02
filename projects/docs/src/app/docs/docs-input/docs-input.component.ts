@@ -30,4 +30,3 @@ export class DocsInputComponent {
     </li-input>
   `;
 }
-

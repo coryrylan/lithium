@@ -18,9 +18,7 @@ export class DocsSideNavComponent implements OnInit {
     </li-side-nav>
   `;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

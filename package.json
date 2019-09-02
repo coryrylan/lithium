@@ -15,7 +15,8 @@
     "lib:test": "ng test lithium",
     "lib:build": "ng build lithium",
     "lib:api": "typedoc --options ./typedoc.js && node api-trim.js",
-    "lib:lint": "ng lint lithium"
+    "lib:lint": "ng lint lithium",
+    "format": "prettier --list-different './projects/**/*.{ts,scss,html}' --write"
   },
   "private": true,
   "dependencies": {
@@ -54,6 +55,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^5.1.0",
+    "prettier": "1.18.2",
     "protractor": "~5.4.0",
     "resize-observer-polyfill": "^1.5.1",
     "ts-node": "~7.0.0",

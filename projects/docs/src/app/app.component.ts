@@ -18,9 +18,7 @@ export class AppComponent {
   sticky = false;
   openMenu = false;
 
-  constructor(
-    private routerMetaDataService: RouterMetaDataService,
-    private themeService: ThemeService) {
+  constructor(private routerMetaDataService: RouterMetaDataService, private themeService: ThemeService) {
     this.routerMetaDataService.init().subscribe();
     this.themeService.init();
   }

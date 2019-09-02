@@ -8,9 +8,11 @@ const componentStyles = css`
     margin-bottom: var(--li-common-spacing-margin-bottom);
   }
 
-  ::slotted(input), ::slotted(textarea), ::slotted(select) {
+  ::slotted(input),
+  ::slotted(textarea),
+  ::slotted(select) {
     -moz-appearance: none;
-	  -webkit-appearance: none;
+    -webkit-appearance: none;
     display: block;
     color: var(--li-input-color, var(--li-common-color-gray-500)) !important;
     background: var(--li-input-background, var(--li-common-color-white-100)) !important;
@@ -55,7 +57,4 @@ const componentStyles = css`
   }
 `;
 
-export const styles = [
-  styleVariables,
-  componentStyles
-];
+export const styles = [styleVariables, componentStyles];

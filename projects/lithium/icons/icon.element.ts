@@ -19,10 +19,14 @@ export class LithiumIcon extends LitElement {
   /** Name of Icon to be displayed. */
   @property() name = 'unknown';
 
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
-    return html`<div .innerHTML="${registry[this.name] ? registry[this.name] : registry[unknownIcon.name]}"></div>`;
+    return html`
+      <div .innerHTML="${registry[this.name] ? registry[this.name] : registry[unknownIcon.name]}"></div>
+    `;
   }
 }
 

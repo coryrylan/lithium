@@ -12,8 +12,8 @@ export const hiddenButtonTemplate = (disabled: boolean, value: string, name: str
     style="display: none"
     value="${ifDefined(value)}"
     name="${ifDefined(name)}"
-    type="${ifDefined(type)}">
-  </button>
+    type="${ifDefined(type)}"
+  ></button>
 `;
 
 // @dynamic
@@ -85,7 +85,7 @@ export class BaseButton extends LitElement {
   }
 
   protected onKeyDown(e: KeyboardEvent) {
-    if (this.isButton && e.key === KeyCodes.Enter || e.code === KeyCodes.Space) {
+    if ((this.isButton && e.key === KeyCodes.Enter) || e.code === KeyCodes.Space) {
       this.click();
       stopEvent(e);
     }

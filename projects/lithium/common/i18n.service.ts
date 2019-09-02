@@ -1,4 +1,3 @@
-
 export interface InternationalizationRegistry {
   open: string;
   close: string;

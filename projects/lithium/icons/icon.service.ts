@@ -6,12 +6,12 @@ export const registry = {
 
 export class IconService {
   static addIcons(...svgIcons: SVGIcon[]) {
-    svgIcons.forEach(icon => registry[icon.name] = icon.svg);
+    svgIcons.forEach(icon => (registry[icon.name] = icon.svg));
   }
 
   static addIconCollection(...svgIconCollection: SVGIconCollection[]) {
     svgIconCollection.forEach(group => {
-      group.icons.forEach(icon => registry[icon.name] = icon.svg);
+      group.icons.forEach(icon => (registry[icon.name] = icon.svg));
     });
   }
 }

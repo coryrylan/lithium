@@ -47,7 +47,7 @@ describe('button', () => {
     expect(component.getAttribute('tabindex')).toBe('-1');
   });
 
-  it('should work with form elements when clicked', async (done) => {
+  it('should work with form elements when clicked', async done => {
     await componentIsStable(component);
     testElement.querySelector('form').addEventListener('submit', e => {
       e.preventDefault();
@@ -58,7 +58,7 @@ describe('button', () => {
     component.click();
   });
 
-  it('should work with form elements when clicked via keyboard', async (done) => {
+  it('should work with form elements when clicked via keyboard', async done => {
     await componentIsStable(component);
     testElement.querySelector('form').addEventListener('submit', e => {
       e.preventDefault();
@@ -75,7 +75,7 @@ describe('button', () => {
   it('should not interact with form elements if disabled', async () => {
     component.disabled = true;
     await componentIsStable(component);
-    const o = { f: () => { }};
+    const o = { f: () => {} };
     spyOn(o, 'f');
     testElement.querySelector('form').addEventListener('submit', o.f);
     expect(o.f).not.toHaveBeenCalled();

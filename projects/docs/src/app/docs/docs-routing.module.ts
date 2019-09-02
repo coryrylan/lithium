@@ -25,26 +25,72 @@ import { DocsFormsComponent } from './docs-forms/docs-forms.component';
 
 const routes: Routes = [
   {
-    path: '', component: DocsComponent, children: [
+    path: '',
+    component: DocsComponent,
+    children: [
       { path: '', component: DocsHomeComponent, data: { title: 'Lithium Web Components - Documentation', layout: Layout.Docs } },
       { path: 'themes', component: DocsThemesComponent, data: { title: 'Lithium Progress Themes - Documentation', layout: Layout.Docs } },
-      { path: 'internationalization', component: DocsI18nComponent, data: { title: 'Lithium Internationalization (i18n) - Documentation', layout: Layout.Docs } },
-      { path: 'button', component: DocsButtonComponent, data: { title: 'Lithium Button Web Component - Documentation', layout: Layout.Docs } },
+      {
+        path: 'internationalization',
+        component: DocsI18nComponent,
+        data: { title: 'Lithium Internationalization (i18n) - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'button',
+        component: DocsButtonComponent,
+        data: { title: 'Lithium Button Web Component - Documentation', layout: Layout.Docs }
+      },
       { path: 'card', component: DocsCardComponent, data: { title: 'Lithium Card Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'checkbox', component: DocsCheckboxComponent, data: { title: 'Lithium Checkbox Web Component - Documentation', layout: Layout.Docs } },
+      {
+        path: 'checkbox',
+        component: DocsCheckboxComponent,
+        data: { title: 'Lithium Checkbox Web Component - Documentation', layout: Layout.Docs }
+      },
       { path: 'forms', component: DocsFormsComponent, data: { title: 'Lithium Forms Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'input', component: DocsInputComponent, data: { title: 'Lithium Input Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'nav-bar', component: DocsNavBarComponent, data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs } },
+      {
+        path: 'nav-bar',
+        component: DocsNavBarComponent,
+        data: { title: 'Lithium Nav Bar Web Component - Documentation', layout: Layout.Docs }
+      },
       { path: 'modal', component: DocsModalComponent, data: { title: 'Lithium Modal Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'radio', component: DocsRadioComponent, data: { title: 'Lithium Side Radio Component - Documentation', layout: Layout.Docs } },
-      { path: 'side-nav', component: DocsSideNavComponent, data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'select', component: DocsSelectComponent, data: { title: 'Lithium Select Web Component - Documentation', layout: Layout.Docs } },
+      {
+        path: 'radio',
+        component: DocsRadioComponent,
+        data: { title: 'Lithium Side Radio Component - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'side-nav',
+        component: DocsSideNavComponent,
+        data: { title: 'Lithium Side Nav Web Component - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'select',
+        component: DocsSelectComponent,
+        data: { title: 'Lithium Select Web Component - Documentation', layout: Layout.Docs }
+      },
       { path: 'tabs', component: DocsTabsComponent, data: { title: 'Lithium Tabs Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'textarea', component: DocsTextareaComponent, data: { title: 'Lithium Textarea Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'loading-spinner', component: DocsLoadingSpinnerComponent, data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'message', component: DocsMessageComponent, data: { title: 'Lithium Message Web Component - Documentation', layout: Layout.Docs } },
-      { path: 'progress-bar', component: DocsProgressBarComponent, data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs } },
+      {
+        path: 'textarea',
+        component: DocsTextareaComponent,
+        data: { title: 'Lithium Textarea Web Component - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'loading-spinner',
+        component: DocsLoadingSpinnerComponent,
+        data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'message',
+        component: DocsMessageComponent,
+        data: { title: 'Lithium Message Web Component - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'progress-bar',
+        component: DocsProgressBarComponent,
+        data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs }
+      }
     ]
   }
 ];
@@ -53,4 +99,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocsRoutingModule { }
+export class DocsRoutingModule {}

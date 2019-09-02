@@ -16,6 +16,6 @@ import { registerElementSafely } from 'lithium-ui/common';
  * @cssProp `--li-input-disabled-background`
  */
 // @dynamic
-export class LithiumSelect extends LithiumInput { }
+export class LithiumSelect extends LithiumInput {}
 
 registerElementSafely('li-select', LithiumSelect);

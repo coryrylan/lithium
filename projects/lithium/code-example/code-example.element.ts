@@ -10,7 +10,9 @@ export class LithiumCodeExample extends LitElement {
   @property({ type: String }) code = '';
   @property({ type: String }) private renderedCode = '';
 
-  static get styles() { return styles; }
+  static get styles() {
+    return styles;
+  }
 
   render() {
     return html`

@@ -12,7 +12,7 @@
   <li-tab>
     <h2>Example</h2>
 
-    <p>Modal Open: {{openModal}}</p>
+    <p>Modal Open: {{ openModal }}</p>
     <li-button (click)="openModal = !openModal">open modal</li-button>
     <li-modal [open]="openModal" (openChange)="openModal = $event.detail">
       <h3 slot="header">Hello World Header</h3>

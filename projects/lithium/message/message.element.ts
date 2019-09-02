@@ -43,7 +43,6 @@ export class LithiumMessage extends LitElement {
   /** Set if message can be closable */
   @property({ type: Boolean, reflect: true }) closable = false;
 
-
   /** Set to close message programmatically */
   @property({ type: Boolean, reflect: true }) close = false;
 
@@ -53,23 +52,49 @@ export class LithiumMessage extends LitElement {
 
   render() {
     return html`
-      ${this.close ? '' : html`
-        <div class="li-message">
-          <div class="type-icon">
-            ${this.type === LithiumMessageType.Default ? html`<li-icon name="info" aria-label="${IntlService.registry.info}"></li-icon>` : ''}
-            ${this.type === LithiumMessageType.Warning ? html`<li-icon name="warning" aria-label="${IntlService.registry.warning}"></li-icon>` : ''}
-            ${this.type === LithiumMessageType.Error ? html`<li-icon name="error" aria-label="${IntlService.registry.error}"></li-icon>` : ''}
-            ${this.type === LithiumMessageType.Success ? html`<li-icon name="check" aria-label="${IntlService.registry.success}"></li-icon>` : ''}
-          </div>
-          <slot></slot>
+      ${this.close
+        ? ''
+        : html`
+            <div class="li-message">
+              <div class="type-icon">
+                ${this.type === LithiumMessageType.Default
+                  ? html`
+                      <li-icon name="info" aria-label="${IntlService.registry.info}"></li-icon>
+                    `
+                  : ''}
+                ${this.type === LithiumMessageType.Warning
+                  ? html`
+                      <li-icon name="warning" aria-label="${IntlService.registry.warning}"></li-icon>
+                    `
+                  : ''}
+                ${this.type === LithiumMessageType.Error
+                  ? html`
+                      <li-icon name="error" aria-label="${IntlService.registry.error}"></li-icon>
+                    `
+                  : ''}
+                ${this.type === LithiumMessageType.Success
+                  ? html`
+                      <li-icon name="check" aria-label="${IntlService.registry.success}"></li-icon>
+                    `
+                  : ''}
+              </div>
+              <slot></slot>
 
-          ${this.closable ? html`
-            <button @click="${() => this.closeMessage()}" type="button" class="close-btn" data-dismiss="alert" aria-label="${IntlService.registry.close}">
-              <li-icon name="close"></li-icon>
-            </button>
-          ` : ''}
-        </div>
-      `}
+              ${this.closable
+                ? html`
+                    <button
+                      @click="${() => this.closeMessage()}"
+                      type="button"
+                      class="close-btn"
+                      data-dismiss="alert"
+                      aria-label="${IntlService.registry.close}"
+                    >
+                      <li-icon name="close"></li-icon>
+                    </button>
+                  `
+                : ''}
+            </div>
+          `}
     `;
   }
 
