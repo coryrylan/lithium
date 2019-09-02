@@ -25,7 +25,10 @@
             "aot": false,
             "assets": [
               "projects/docs/src/favicon.ico",
-              "projects/docs/src/assets"
+              "projects/docs/src/assets",
+              "projects/docs/src/manifest.json",
+              "projects/docs/src/robots.txt",
+              "projects/docs/src/sitemap.xml"
             ],
             "styles": [
               "projects/docs/src/styles.scss"
@@ -85,7 +88,10 @@
             "karmaConfig": "projects/docs/karma.conf.js",
             "assets": [
               "projects/docs/src/favicon.ico",
-              "projects/docs/src/assets"
+              "projects/docs/src/assets",
+              "projects/docs/src/manifest.json",
+              "projects/docs/src/robots.txt",
+              "projects/docs/src/sitemap.xml"
             ],
             "styles": [
               "projects/docs/src/styles.scss"

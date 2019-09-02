@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { Layout } from './common/enums';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: { title: 'Lithium JS - Web Component Library', layout: Layout.Page } },
+  { path: '', component: HomeComponent, data: { title: 'Lithium UI - Web Component Library', layout: Layout.Page } },
   {
     path: 'docs',
     loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule),
