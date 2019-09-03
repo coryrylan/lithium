@@ -21,6 +21,10 @@ describe('icon element', () => {
   it('should render a icon with default fallback', async () => {
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-icon-unknown');
+
+    component.name = 'hi';
+    await componentIsStable(component);
+    expect(component.shadowRoot.innerHTML).toContain('li-icon-unknown');
   });
 
   it('should render a icon with set name', async () => {

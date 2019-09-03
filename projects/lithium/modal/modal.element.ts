@@ -83,7 +83,7 @@ export class LithiumModal extends LitElement {
   }
 
   private close() {
-    this.open = !this.open;
+    this.open = false;
   }
 
   private backdropClose() {

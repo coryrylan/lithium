@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     import 'lithium-ui/modal';
 
     const modal = document.querySelector('li-modal');
-    modal.open();
+    modal.toggle();
   `;
   codeExample2 = `
     <li-modal>
