@@ -10,13 +10,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "npm run lib:build && npm run lib:api && npm run build:prod && firebase deploy",
+    "format": "prettier --list-different './projects/**/*.{ts,scss,html}' --write",
     "lib:start": "ng build lithium --watch",
     "lib:test:start": "ng test lithium --watch --code-coverage",
     "lib:test": "ng test lithium",
-    "lib:build": "ng build lithium",
+    "lib:build": "npm run format && npm run lib:lint && ng build lithium",
     "lib:api": "typedoc --options ./typedoc.js && node api-trim.js",
-    "lib:lint": "ng lint lithium",
-    "format": "prettier --list-different './projects/**/*.{ts,scss,html}' --write"
+    "lib:lint": "ng lint lithium"
   },
   "private": true,
   "dependencies": {
