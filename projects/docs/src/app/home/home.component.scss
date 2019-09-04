@@ -1,10 +1,9 @@
 .hero {
   padding: 4.5rem 1.4rem;
-  width: 100vw;
   margin: 0 -1.5rem;
   background-color: var(--hero-background-color);
 
-  @media(min-width: 720px) {
+  @media (min-width: 720px) {
     margin: 0 -3rem;
   }
 }
@@ -18,7 +17,7 @@
   font-size: 90px;
 }
 
-h1{
+h1 {
   font-size: 4.5rem;
 
   .version {
@@ -76,7 +75,8 @@ hr {
 .hero-2 {
   padding: 6rem 0;
 
-  h2, h3 {
+  h2,
+  h3 {
     margin-bottom: 1rem;
   }
 }

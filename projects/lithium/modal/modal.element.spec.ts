@@ -2,7 +2,6 @@ import 'lithium-ui/modal';
 import { LithiumModal } from 'lithium-ui/modal';
 import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
 
-
 describe('modal element', () => {
   let testElement: HTMLElement;
   let component: LithiumModal;
@@ -53,7 +52,7 @@ describe('modal element', () => {
   it('should emit a custom event when opened or closed', async () => {
     let event: any;
     await componentIsStable(component);
-    component.addEventListener('openChange', (e: any) => event = e);
+    component.addEventListener('openChange', (e: any) => (event = e));
 
     component.open = true;
     await componentIsStable(component);

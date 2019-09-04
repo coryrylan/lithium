@@ -6,8 +6,23 @@ import { styles } from './dropdown.styles';
 // test component, not for production
 // @dynamic
 export class XDropdown extends LitElement {
-  @property({ type: Boolean }) visible = false;
-  @property({ type: String }) title = 'dropdown';
+  private _open = false;
+  get open() {
+    return this._open;
+  }
+
+  @property({ type: Boolean })
+  set open(value) {
+    if (value !== this._open) {
+      const old = this._open;
+      this._open = value;
+      this.requestUpdate('open', old);
+      this.openChange();
+    }
+  }
+
+  @property({ type: String })
+  title = 'dropdown';
 
   static get styles() {
     return styles;
@@ -17,10 +32,10 @@ export class XDropdown extends LitElement {
     return html`
       <div class="dropdown">
         <button @click="${() => this.toggle()}" class="btn">${this.title}</button>
-        ${this.visible
+        ${this.open
           ? html`
               <div>
-                <slot class="x-dropdown-slot"></slot>
+                <slot></slot>
               </div>
             `
           : ''}
@@ -29,8 +44,11 @@ export class XDropdown extends LitElement {
   }
 
   toggle() {
-    this.visible = !this.visible;
-    this.dispatchEvent(new CustomEvent('visibleChange', { detail: this.visible }));
+    this.open = !this.open;
+  }
+
+  private openChange() {
+    this.dispatchEvent(new CustomEvent('openChange', { detail: this.open }));
   }
 }
 

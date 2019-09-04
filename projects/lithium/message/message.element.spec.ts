@@ -2,7 +2,6 @@ import 'lithium-ui/message';
 import { LithiumMessage, LithiumMessageType } from 'lithium-ui/message';
 import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
 
-
 describe('card element', () => {
   let testElement: HTMLElement;
   let component: LithiumMessage;

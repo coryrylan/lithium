@@ -35,4 +35,25 @@ describe('dropdown test element', () => {
     const slots = getComponentSlotContent(component);
     expect(slots.default).toBe('<span>hello world</span>');
   });
+
+  it('should emit a custom event when opened or closed', async () => {
+    let event: any;
+    await componentIsStable(component);
+    component.addEventListener('openChange', (e: any) => (event = e));
+
+    component.open = true;
+    await componentIsStable(component);
+
+    expect(event.detail).toBe(true);
+  });
+
+  it('should render dynamic title property', async () => {
+    await componentIsStable(component);
+    const button = component.shadowRoot.querySelector('button');
+    expect(button.innerText).toBe('custom title');
+
+    component.title = 'test';
+    await componentIsStable(component);
+    expect(button.innerText).toBe('test');
+  });
 });
