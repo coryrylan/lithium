@@ -1,3 +1,13 @@
+@import './../../styles//variables';
+
+[bp="container"] {
+  padding: 2.4rem 1.2rem;
+
+  @media (min-width: $nav-breakpoint) {
+    padding: 2.4rem;
+  }
+}
+
 .hero {
   padding: 4.5rem 1.4rem;
   margin: 0 -1.5rem;
@@ -73,10 +83,14 @@ hr {
 }
 
 .hero-2 {
-  padding: 6rem 0;
+  padding-top: 3rem;
 
   h2,
   h3 {
     margin-bottom: 1rem;
+  }
+
+  @media (min-width: $nav-breakpoint) {
+    padding-top: 6rem;
   }
 }

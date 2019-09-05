@@ -5,8 +5,9 @@ main {
 }
 
 footer {
-  padding: 12px;
-  margin-top: 12px;
+  padding: 1.2rem;
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
 }
 
 li-nav-bar a,
@@ -28,8 +29,8 @@ li-nav-bar button {
 
 .docs-nav {
   @media (min-width: $nav-breakpoint) {
-    --li-side-nav-top: 56px;
-    --li-side-nav-width: 280px;
+    --li-side-nav-top: 5.6rem;
+    --li-side-nav-width: 28rem;
     position: absolute;
     z-index: 99;
   }
