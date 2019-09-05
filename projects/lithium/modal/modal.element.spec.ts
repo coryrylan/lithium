@@ -47,6 +47,30 @@ describe('modal element', () => {
     component.open = false;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
+
+    component.openModal();
+    await componentIsStable(component);
+    expect(component.shadowRoot.innerHTML).toContain('li-modal-content');
+
+    component.closeModal();
+    await componentIsStable(component);
+    expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
+  });
+
+  it('should close modal on escape', async () => {
+    await componentIsStable(component);
+    component.openModal();
+    await componentIsStable(component);
+
+    spyOn(component, 'closeModal');
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+
+    expect(component.closeModal).toHaveBeenCalled();
+
+    component.openModal();
+    await componentIsStable(component);
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Esc' }));
+    expect(component.closeModal).toHaveBeenCalled();
   });
 
   it('should emit a custom event when opened or closed', async () => {

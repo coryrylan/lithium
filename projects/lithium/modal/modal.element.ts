@@ -1,7 +1,7 @@
 import { LitElement, html, property } from 'lit-element';
 import '@a11y/focus-trap';
 
-import { registerElementSafely, IntlService } from 'lithium-ui/common';
+import { registerElementSafely, IntlService, KeyCodes } from 'lithium-ui/common';
 import { IconService, closeIcon } from 'lithium-ui/icons';
 import { styles } from './modal.styles';
 IconService.addIcons(closeIcon);
@@ -21,6 +21,8 @@ IconService.addIcons(closeIcon);
  */
 // @dynamic
 export class LithiumModal extends LitElement {
+  private focusedElementBeforeOpen: HTMLElement;
+
   private _open = false;
   get open() {
     return this._open;
@@ -34,6 +36,12 @@ export class LithiumModal extends LitElement {
       this._open = value;
       this.requestUpdate('open', old);
       this.openChange();
+
+      if (this._open) {
+        this.focusedElementBeforeOpen =  document.activeElement as HTMLElement;
+      } else {
+        this.focusedElementBeforeOpen.focus();
+      }
     }
   }
 
@@ -49,12 +57,12 @@ export class LithiumModal extends LitElement {
       ${this.open
         ? html`
             <div class="li-modal-wrapper">
-              <div class="li-modal" role="dialog">
+              <div class="li-modal" role="dialog" aria-labelledby="modal-header">
                 <focus-trap>
                   <div class="li-modal-header">
-                    <slot name="header"></slot>
+                    <slot name="header" id="modal-header"></slot>
                     <button
-                      @click="${() => this.close()}"
+                      @click="${() => this.closeModal()}"
                       type="button"
                       aria-label="${IntlService.registry.close}"
                       class="li-modal-close-btn"
@@ -77,18 +85,40 @@ export class LithiumModal extends LitElement {
     `;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener('keydown',  this.removeOnEscape);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('keydown',  this.removeOnEscape);
+  }
+
   /** Toggles if the modal should be open or closed */
   toggle() {
     this.open = !this.open;
   }
 
-  private close() {
+  /** Opens modal regardless of current state */
+  openModal() {
+    this.open = true;
+  }
+
+  /** Close modal regardless of current state */
+  closeModal() {
     this.open = false;
+  }
+
+  private removeOnEscape = (event: KeyboardEvent) => {
+    if ((event.key === KeyCodes.Escape || event.key === 'Esc') && this.open) {
+      this.closeModal();
+    }
   }
 
   private backdropClose() {
     if (this.backdropClosable) {
-      this.close();
+      this.closeModal();
     }
   }
 

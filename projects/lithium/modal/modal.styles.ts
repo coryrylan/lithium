@@ -24,7 +24,7 @@ export const componentStyles = css`
     width: 100%;
     max-width: var(--li-modal-max-width, 60em);
     max-height: var(--li-modal-max-height, initial);
-    margin: 3.2em auto;
+    margin: 10vh auto 0 auto;
     position: relative;
     border-radius: 0.4em;
     z-index: 302;
