@@ -16,7 +16,7 @@
     "docs:build:prod": "ng build docs --prod --ts-config projects/docs/tsconfig.prod.json",
     "docs:lint": "ng lint docs",
     "docs:e2e": "ng e2e docs",
-    "docs:deploy": "npm run lib:build && npm run lib:api && npm run build:prod && firebase deploy"
+    "docs:deploy": "npm run lib:build && npm run lib:api && npm run docs:build:prod && firebase deploy"
   },
   "private": true,
   "dependencies": {

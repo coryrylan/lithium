@@ -38,7 +38,7 @@ export class LithiumModal extends LitElement {
       this.openChange();
 
       if (this._open) {
-        this.focusedElementBeforeOpen =  document.activeElement as HTMLElement;
+        this.focusedElementBeforeOpen = document.activeElement as HTMLElement;
       } else {
         this.focusedElementBeforeOpen.focus();
       }
@@ -87,12 +87,12 @@ export class LithiumModal extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener('keydown',  this.removeOnEscape);
+    window.addEventListener('keydown', this.removeOnEscape);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener('keydown',  this.removeOnEscape);
+    window.removeEventListener('keydown', this.removeOnEscape);
   }
 
   /** Toggles if the modal should be open or closed */
@@ -114,7 +114,8 @@ export class LithiumModal extends LitElement {
     if ((event.key === KeyCodes.Escape || event.key === 'Esc') && this.open) {
       this.closeModal();
     }
-  }
+    // tslint:disable-next-line: semicolon
+  };
 
   private backdropClose() {
     if (this.backdropClosable) {
