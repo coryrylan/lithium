@@ -1,7 +1,7 @@
 import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './icon.styles';
+import { styles } from './icon.element.sass';
 import { IconService } from './icon.service';
 import { unknownIcon } from './svg';
 

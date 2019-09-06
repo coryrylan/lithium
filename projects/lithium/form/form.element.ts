@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './form.styles';
+import { styles } from './form.element.sass';
 
 /**
  * Form, wrapper container for basic form styles

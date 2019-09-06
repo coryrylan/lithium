@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './nav-bar.styles';
+import { styles } from './nav-bar.element.sass';
 
 /**
  * Nav Bar, standard navigation bar with basic layout

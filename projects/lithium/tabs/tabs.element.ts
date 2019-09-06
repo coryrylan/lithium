@@ -2,7 +2,7 @@ import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { LithiumTab } from './tab.element';
-import { styles } from './tabs.styles';
+import { styles } from './tabs.element.sass';
 import { LithiumTabTitle } from './tab-title.element';
 
 /**

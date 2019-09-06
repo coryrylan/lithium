@@ -1,7 +1,7 @@
 import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './input.styles';
+import { styles } from './input.element.sass';
 import { LithiumInputMessage } from './input-message.element';
 import { LithiumInputError } from './input-error.element';
 
@@ -34,7 +34,7 @@ export class LithiumInput extends LitElement {
   private messageId = `li-input-id-${idCount++}`;
   private errorMessageId = `li-input-id-${idCount++}`;
 
-  static get styles() {
+  static get styles(): any | any[] {
     return styles;
   }
 

@@ -1,7 +1,7 @@
 import { LitElement, property, html } from 'lit-element';
 
 import { LithiumRadio } from './radio.element';
-import { styles } from './radio-group.styles';
+import { styles } from './radio-group.element.sass';
 
 /**
  * Radio Group, group element to associate a collection of radio inputs

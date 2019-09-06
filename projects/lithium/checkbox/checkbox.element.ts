@@ -3,7 +3,7 @@ import { registerElementSafely } from 'lithium-ui/common';
 import { IconService, checkIcon } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
 
-import { styles } from './checkbox.styles';
+import { styles } from './checkbox.element.sass';
 import { LithiumCheckboxGroup } from './checkbox-group.element';
 
 IconService.addIcons(checkIcon);

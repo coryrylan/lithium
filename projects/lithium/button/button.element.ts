@@ -1,6 +1,6 @@
 import { html, property } from 'lit-element';
 import { registerElementSafely, BaseButton, hiddenButtonTemplate } from 'lithium-ui/common';
-import { styles } from './button.styles';
+import { styles } from './button.element.sass';
 import 'lithium-ui/loading-spinner';
 
 /**

@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './card.styles';
+import { styles } from './card.element.sass';
 
 /**
  * Card, to organize and group related content

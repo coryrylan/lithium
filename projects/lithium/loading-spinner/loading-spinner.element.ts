@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
 import { registerElementSafely, IntlService } from 'lithium-ui/common';
-import { styles } from './loading-spinner.styles';
+import { styles } from './loading-spinner.element.sass';
 
 /**
  * Loading Spinner, display a indeterminate task that is processing
