@@ -2,7 +2,7 @@ import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely, IntlService } from 'lithium-ui/common';
 import { IconService, infoIcon, errorIcon, warningIcon, checkIcon, closeIcon } from 'lithium-ui/icons';
-import { styles } from './message.element.sass';
+import { styles } from './message.element.css';
 
 IconService.addIcons(infoIcon, errorIcon, warningIcon, checkIcon, closeIcon);
 

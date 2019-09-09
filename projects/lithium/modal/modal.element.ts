@@ -3,7 +3,7 @@ import '@a11y/focus-trap';
 
 import { registerElementSafely, IntlService, KeyCodes } from 'lithium-ui/common';
 import { IconService, closeIcon } from 'lithium-ui/icons';
-import { styles } from './modal.element.sass';
+import { styles } from './modal.element.css';
 IconService.addIcons(closeIcon);
 
 /**

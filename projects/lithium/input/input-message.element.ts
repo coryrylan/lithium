@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './input-message.element.sass';
+import { styles } from './input-message.element.css';
 
 /**
  * Input message, display messages related for inputs

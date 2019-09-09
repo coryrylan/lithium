@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 
-import { styles } from './input-error.element.sass';
+import { styles } from './input-error.element.css';
 
 /**
  * Input error, display error validation messages related for inputs

@@ -5,7 +5,7 @@ import { LithiumInput } from 'lithium-ui/input';
 import { IconService, checkIcon } from 'lithium-ui/icons';
 IconService.addIcons(checkIcon);
 
-import { styles } from './radio.element.sass';
+import { styles } from './radio.element.css';
 import { LithiumRadioGroup } from './radio-group.element';
 
 /**

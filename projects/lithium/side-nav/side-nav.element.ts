@@ -3,7 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 
 import { registerElementSafely, IntlService } from 'lithium-ui/common';
 import { IconService, closeIcon } from 'lithium-ui/icons';
-import { styles } from './side-nav.element.sass';
+import { styles } from './side-nav.element.css';
 IconService.addIcons(closeIcon);
 
 /**

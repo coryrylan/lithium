@@ -1,5 +1,5 @@
 {
   "files.exclude": {
-    "**/*.element.sass.ts": true
+    "**/*.element.css.ts": true
   }
 }

@@ -2,7 +2,7 @@ import { LitElement, html, property } from 'lit-element';
 import { highlight, languages } from 'prismjs';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './code-example.element.sass';
+import { styles } from './code-example.element.css';
 
 /**
  * Code example generator with prismjs highlighting

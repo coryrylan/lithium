@@ -1,7 +1,7 @@
 import { LitElement, html, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './progress-bar.element.sass';
+import { styles } from './progress-bar.element.css';
 
 /**
  * Progress Bar, display the current state or progress of a running task

@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 
-import { styles } from './checkbox-group.element.sass';
+import { styles } from './checkbox-group.element.css';
 
 /**
  * Radio Group, group element to associate a collection of radio inputs
