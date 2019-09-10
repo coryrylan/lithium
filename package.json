@@ -8,8 +8,8 @@
     "lib:build": "npm run all:format && npm run lib:lint && npm run lib:sass && npm run lib:test && ng build lithium",
     "lib:test": "ng test lithium --watch=false",
     "lib:test:watch": "ng test lithium --watch --code-coverage",
-    "lib:sass": "gulp sass --gulpfile projects/lithium/sass-build.js",
-    "lib:sass:watch": "gulp sass:watch --gulpfile projects/lithium/sass-build.js",
+    "lib:sass": "sass-render --suffix '.css.ts' -t ./projects/lithium/sass-template.js ./projects/lithium/**/*element.scss",
+    "lib:sass:watch": "sass-render --suffix '.css.ts' -t ./projects/lithium/sass-template.js ./projects/lithium/**/*element.scss -w",
     "lib:api": "typedoc --options ./typedoc.js && node api-trim.js",
     "lib:lint": "ng lint lithium",
     "lib:start": "npm run lib:sass && npm-run-all --parallel lib:sass:watch lib:build:watch",
@@ -52,10 +52,6 @@
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "fibers": "^4.0.1",
-    "gulp": "^4.0.2",
-    "gulp-append-prepend": "^1.0.8",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -74,6 +70,7 @@
     "tslint": "~5.15.0",
     "typedoc": "^0.14.2",
     "typedoc-plugin-no-inherit": "^1.1.8",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "wc-sass-render": "^1.2.1"
   }
 }
