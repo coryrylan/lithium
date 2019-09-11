@@ -5,6 +5,8 @@ import { styles } from './icon.element.css';
 import { IconService } from './icon.service';
 import { unknownIcon } from './svg';
 
+let iconId = 0;
+
 /**
  * Icon
  *
@@ -19,13 +21,31 @@ export class LithiumIcon extends LitElement {
   /** Name of Icon to be displayed. */
   @property() name = 'unknown';
 
+  /** Title to provide text for screen reader users */
+  @property() title = 'unknown';
+
   static get styles() {
     return styles;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    iconId++;
+    this.setAttribute('role', 'none');
+    this.updateSVGAttributes();
+  }
+
+  async updateSVGAttributes() {
+    await this.updateComplete;
+    const svg = this.shadowRoot.querySelector('svg');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-labelledby', `li-icon-id-${iconId}`);
   }
 
   render() {
     return html`
       <div .innerHTML="${IconService.registry[this.name] ? IconService.registry[this.name] : IconService.registry[unknownIcon.name]}"></div>
+      <span id=${'li-icon-id-' + iconId} class="li-sr-only">${this.title}</span>
     `;
   }
 }

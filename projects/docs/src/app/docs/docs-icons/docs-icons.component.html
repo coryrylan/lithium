@@ -17,14 +17,25 @@
     <li-icon name="close"></li-icon>
     <li-icon name="menu"></li-icon>
     <li-icon name="info"></li-icon>
-    <li-icon name="warning"></li-icon>
     <li-icon name="error"></li-icon>
+    <li-icon name="warning">CPU Usage High</li-icon>
 
     <br /><br />
 
     <li-code-example [code]="codeExample"></li-code-example>
 
     <li-code-example language="html" [code]="codeExample2"></li-code-example>
+
+    <h2>Accessibility</h2>
+
+    <p>
+      Icons by default are presentational and will will be treated as images. You can provide text for screen readers that describes the
+      icon.
+    </p>
+
+    <li-icon name="warning" title="CPU Usage High"></li-icon>
+    <br /><br />
+    <li-code-example language="html" [code]="codeExample5"></li-code-example>
 
     <h2>Icon Collections</h2>
 

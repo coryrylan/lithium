@@ -34,6 +34,10 @@ export class DocsIconsComponent {
     IconService.addIcons(customIcon);
   `;
 
+  codeExample5 = `
+    <li-icon name="warning" title="CPU Usage High"></li-icon>
+  `;
+
   constructor() {
     const customIcon = {
       name: 'circle',
