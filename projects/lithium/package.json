@@ -1,6 +1,6 @@
 {
   "name": "lithium-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "sideEffects": [
     "./esm5/**/*.element.js",
     "./esm2015/**/*.element.js",
