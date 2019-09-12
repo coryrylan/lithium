@@ -3,8 +3,6 @@ body {
 }
 
 .layout-page main {
-  padding: 5.8 1.5rem;
-
   @media (min-width: $md-breakpoint) {
     padding: 5.8rem 3rem 6rem 3rem;
   }
