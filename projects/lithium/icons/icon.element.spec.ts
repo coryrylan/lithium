@@ -9,7 +9,7 @@ describe('icon element', () => {
 
   beforeEach(async () => {
     testElement = createTestElement();
-    testElement.innerHTML = `<li-icon></li-icon>`;
+    testElement.innerHTML = `<li-icon>test</li-icon>`;
     await waitForComponent('li-icon');
     component = testElement.querySelector<LithiumIcon>('li-icon');
   });
@@ -31,5 +31,13 @@ describe('icon element', () => {
     component.name = 'menu';
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-icon-menu');
+  });
+
+  it('should associate the svg image to a label using aria-labelledby', async () => {
+    await componentIsStable(component);
+    const svg = component.shadowRoot.querySelector('svg');
+    const labelId = component.shadowRoot.querySelector('.li-sr-only').getAttribute('id');
+    expect(svg.getAttribute('aria-labelledby')).toBe(labelId);
+    expect(svg.getAttribute('role')).toBe('img');
   });
 });

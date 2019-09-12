@@ -44,7 +44,9 @@ export class LithiumButton extends BaseButton {
     return html`
       ${this.loading
         ? html`
-            <li-loading-spinner small></li-loading-spinner>
+            <div class="li-loading-spinner-wrapper">
+              <li-loading-spinner small></li-loading-spinner>
+            </div>
           `
         : html`
             <slot></slot>
