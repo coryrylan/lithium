@@ -37,6 +37,7 @@
           },
           "configurations": {
             "production": {
+              "tsConfig": "projects/docs/tsconfig.prod.json",
               "fileReplacements": [
                 {
                   "replace": "projects/docs/src/environments/environment.ts",
