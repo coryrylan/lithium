@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
 import { styles } from './checkbox-group.element.css';
 

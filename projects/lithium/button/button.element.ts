@@ -1,7 +1,7 @@
 import { html, property } from 'lit-element';
-import { registerElementSafely, BaseButton, hiddenButtonTemplate } from 'lithium-ui/common';
-import { styles } from './button.element.css';
+import { BaseButton, hiddenButtonTemplate, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/loading-spinner';
+import { styles } from './button.element.css';
 
 /**
  * Button, action button with multiple states and loading spinner

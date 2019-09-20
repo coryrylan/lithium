@@ -1,6 +1,6 @@
 import 'lithium-ui/input';
 import { LithiumInputError } from 'lithium-ui/input';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('input error element', () => {
   let testElement: HTMLElement;

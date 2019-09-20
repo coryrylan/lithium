@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
 // @dynamic
 export class LithiumTabTitle extends LitElement {

@@ -1,6 +1,6 @@
-import 'lithium-ui/input';
 import { LithiumInput, LithiumMessage } from 'lithium-ui';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import 'lithium-ui/input';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 import { LithiumInputError } from './input-error.element';
 
 describe('input element', () => {

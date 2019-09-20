@@ -1,5 +1,5 @@
-import { Injectable, Renderer2, RendererFactory2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,8 @@ export class ThemeService {
   private renderer: Renderer2;
 
   get theme() {
-    return localStorage.getItem('lithium-theme') ? localStorage.getItem('lithium-theme') : 'light-theme';
+    const value = `${localStorage.getItem('lithium-theme') ? localStorage.getItem('lithium-theme') : 'light-theme'}`;
+    return value;
   }
 
   set theme(value: string) {
@@ -17,12 +18,12 @@ export class ThemeService {
     localStorage.setItem('lithium-theme', value);
   }
 
-  constructor(rendererFactory: RendererFactory2, @Inject(DOCUMENT) private document) {
+  constructor(rendererFactory: RendererFactory2, @Inject(DOCUMENT) private document: any) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
   init() {
-    this.renderer.addClass(document.body, this.theme);
+    this.renderer.addClass(this.document.body, this.theme);
   }
 
   toggleTheme() {

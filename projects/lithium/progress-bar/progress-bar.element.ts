@@ -1,4 +1,4 @@
-import { LitElement, html, property } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './progress-bar.element.css';

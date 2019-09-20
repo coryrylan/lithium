@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IconService, closeIcon, menuIcon } from 'lithium-ui/icons';
+import { closeIcon, IconService, menuIcon } from 'lithium-ui/icons';
 IconService.addIcons(closeIcon, menuIcon);
 
 @Component({

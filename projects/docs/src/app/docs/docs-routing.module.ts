@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import { DocsComponent } from './docs.component';
-import { DocsThemesComponent } from './docs-themes/docs-themes.component';
-import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
+import { Layout } from '../common/enums';
+import { DocsButtonComponent } from './docs-button/docs-button.component';
+import { DocsCardComponent } from './docs-card/docs-card.component';
+import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
+import { DocsFormsComponent } from './docs-forms/docs-forms.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
+import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsIconsComponent } from './docs-icons/docs-icons.component';
-import { DocsModalComponent } from './docs-modal/docs-modal.component';
-import { DocsSideNavComponent } from './docs-side-nav/docs-side-nav.component';
-import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
-import { DocsTabsComponent } from './docs-tabs/docs-tabs.component';
+import { DocsInputComponent } from './docs-input/docs-input.component';
 import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading-spinner.component';
 import { DocsMessageComponent } from './docs-message/docs-message.component';
+import { DocsModalComponent } from './docs-modal/docs-modal.component';
+import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
 import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
-import { Layout } from '../common/enums';
-import { DocsCardComponent } from './docs-card/docs-card.component';
-import { DocsButtonComponent } from './docs-button/docs-button.component';
-import { DocsInputComponent } from './docs-input/docs-input.component';
-import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
-import { DocsSelectComponent } from './docs-select/docs-select.component';
-import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
 import { DocsRadioComponent } from './docs-radio/docs-radio.component';
-import { DocsFormsComponent } from './docs-forms/docs-forms.component';
+import { DocsSelectComponent } from './docs-select/docs-select.component';
+import { DocsSideNavComponent } from './docs-side-nav/docs-side-nav.component';
+import { DocsTabsComponent } from './docs-tabs/docs-tabs.component';
+import { DocsTextareaComponent } from './docs-textarea/docs-textarea.component';
+import { DocsThemesComponent } from './docs-themes/docs-themes.component';
+import { DocsComponent } from './docs.component';
 
 const routes: Routes = [
   {

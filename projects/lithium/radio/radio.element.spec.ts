@@ -1,6 +1,6 @@
 import 'lithium-ui/radio';
 import { LithiumRadio } from 'lithium-ui/radio';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('radio element', () => {
   let testElement: HTMLElement;

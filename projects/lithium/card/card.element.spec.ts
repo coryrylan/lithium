@@ -1,6 +1,6 @@
 import 'lithium-ui/card';
 import { LithiumCard } from 'lithium-ui/card';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('card element', () => {
   let testElement: HTMLElement;

@@ -1,4 +1,4 @@
-import { LitElement, html, property } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
 import { AriaRole, KeyCodes } from './../utils/enums';
@@ -18,13 +18,6 @@ export const hiddenButtonTemplate = (disabled: boolean, value: string, name: str
 
 // @dynamic
 export class BaseButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) disabled = false;
-  @property({ type: String, reflect: true }) type: 'button' | 'submit';
-  @property({ type: String, reflect: true }) role = 'button';
-  @property({ type: String, reflect: true }) name: string;
-  @property({ type: String, reflect: true }) value: string;
-
-  private $hiddenButton: HTMLButtonElement;
 
   private get isButton() {
     return this.role === AriaRole.Button;
@@ -33,19 +26,26 @@ export class BaseButton extends LitElement {
   private get isAnchor() {
     return this.querySelector('a');
   }
+  @property({ type: Boolean, reflect: true }) disabled = false;
+  @property({ type: String, reflect: true }) type: 'button' | 'submit';
+  @property({ type: String, reflect: true }) role = 'button';
+  @property({ type: String, reflect: true }) name = '';
+  @property({ type: String, reflect: true }) value = '';
 
-  protected render() {
-    return html`
-      <slot></slot>
-      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
-    `;
-  }
+  private hiddenButton: HTMLButtonElement;
 
   connectedCallback() {
     super.connectedCallback();
     this.tabIndex = 0;
     this.addEventListener('click', e => this.onClick(e));
     this.addEventListener('keydown', e => this.onKeyDown(e));
+  }
+
+  protected render() {
+    return html`
+      <slot></slot>
+      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
+    `;
   }
 
   protected firstUpdated(props: Map<string, any>) {
@@ -57,8 +57,8 @@ export class BaseButton extends LitElement {
       this.removeAttribute('tabindex');
     } else {
       // append $hiddenButton to light DOM to interface with forms
-      this.$hiddenButton = this.shadowRoot.querySelector('button');
-      this.appendChild(this.$hiddenButton);
+      this.hiddenButton = this.shadowRoot.querySelector('button');
+      this.appendChild(this.hiddenButton);
     }
 
     if (this.disabled) {
@@ -80,7 +80,7 @@ export class BaseButton extends LitElement {
     }
 
     if (this.isButton && event.target === this && !event.defaultPrevented) {
-      this.$hiddenButton.dispatchEvent(new MouseEvent('click', { relatedTarget: this, composed: true }));
+      this.hiddenButton.dispatchEvent(new MouseEvent('click', { relatedTarget: this, composed: true }));
     }
   }
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Class } from '../../../interfaces/api';
 import { ApiService } from '../../../core/services/api.service';
+import { Class } from '../../../interfaces/api';
 
 @Component({
   selector: 'app-component-api',

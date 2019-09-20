@@ -1,7 +1,7 @@
-import { LitElement, property, html } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 
-import { LithiumRadio } from './radio.element';
 import { styles } from './radio-group.element.css';
+import { LithiumRadio } from './radio.element';
 
 /**
  * Radio Group, group element to associate a collection of radio inputs
@@ -34,7 +34,7 @@ export class LithiumRadioGroup extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.liRadioElements = Array.from(this.querySelectorAll('li-radio'));
-    this.liRadioInputs = this.liRadioElements.map(e => e.querySelector('input[type=radio]'));
+    this.liRadioInputs = this.liRadioElements.map(e => e.querySelector<HTMLElement>('input[type=radio]'));
     this.liRadioInputs.forEach(radio => radio.setAttribute('name', this.name));
   }
 

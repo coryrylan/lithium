@@ -1,11 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { ThemeAPIComponent } from './components/theme-api/theme-api.component';
+import { BookComponent } from './components/book/book.component';
 import { ClassAPIComponent } from './components/class-api/class-api.component';
 import { ComponentApiComponent } from './components/component-api/component-api.component';
-import { BookComponent } from './components/book/book.component';
+import { ThemeAPIComponent } from './components/theme-api/theme-api.component';
 
 const components = [ComponentApiComponent, ClassAPIComponent, ThemeAPIComponent, BookComponent];
 

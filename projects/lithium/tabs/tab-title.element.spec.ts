@@ -1,27 +1,27 @@
-import 'lithium-ui/card';
-import { LithiumCheckboxGroup } from 'lithium-ui/checkbox';
+import 'lithium-ui/tabs';
+import { LithiumTabTitle } from 'lithium-ui/tabs';
 import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
-describe('checkbox group element', () => {
+describe('card element', () => {
   let testElement: HTMLElement;
-  let component: LithiumCheckboxGroup;
+  let component: LithiumTabTitle;
 
   beforeEach(async () => {
     testElement = createTestElement();
     testElement.innerHTML = `
-      <li-checkbox-group>
+      <li-tab-title>
         <span>hello world</span>
-      </li-checkbox-group>
+      </li-tab-title>
     `;
-    await waitForComponent('li-checkbox-group');
-    component = testElement.querySelector<LithiumCheckboxGroup>('li-checkbox-group');
+    await waitForComponent('li-tab-title');
+    component = testElement.querySelector<LithiumTabTitle>('li-tab-title');
   });
 
   afterEach(() => {
     removeTestElement(testElement);
   });
 
-  it('should render with appropriate slots', async () => {
+  it('should render a title with appropriate slots', async () => {
     await componentIsStable(component);
     const slots = getComponentSlotContent(component);
     expect(slots.default).toBe('<span>hello world</span>');

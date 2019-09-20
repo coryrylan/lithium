@@ -1,6 +1,6 @@
 import 'lithium-ui/input';
 import { LithiumInputMessage } from 'lithium-ui/input';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('input message element', () => {
   let testElement: HTMLElement;

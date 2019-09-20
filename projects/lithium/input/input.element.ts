@@ -1,9 +1,9 @@
-import { LitElement, html, property } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './input.element.css';
-import { LithiumInputMessage } from './input-message.element';
 import { LithiumInputError } from './input-error.element';
+import { LithiumInputMessage } from './input-message.element';
+import { styles } from './input.element.css';
 
 let idCount = 0;
 

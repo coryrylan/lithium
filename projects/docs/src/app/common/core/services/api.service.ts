@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -19,9 +19,9 @@ export class ApiService {
     );
   }
 
-  private removeMarkdown(classes: Class[]) {
-    classes.filter(c => c.comment).forEach(c => c.comment.tags.forEach(t => (t.text = t.text.replace(/`/g, ''))));
+  // private removeMarkdown(classes: Class[]) {
+  //   classes.filter(c => c.comment).forEach(c => c.comment.tags.forEach(t => (t.text = t.text.replace(/`/g, ''))));
 
-    return classes;
-  }
+  //   return classes;
+  // }
 }

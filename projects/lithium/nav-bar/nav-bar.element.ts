@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './nav-bar.element.css';

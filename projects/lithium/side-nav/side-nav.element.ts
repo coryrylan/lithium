@@ -1,8 +1,8 @@
-import { LitElement, html, property } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import { registerElementSafely, IntlService } from 'lithium-ui/common';
-import { IconService, closeIcon } from 'lithium-ui/icons';
+import { IntlService, registerElementSafely } from 'lithium-ui/common';
+import { closeIcon, IconService } from 'lithium-ui/icons';
 import { styles } from './side-nav.element.css';
 IconService.addIcons(closeIcon);
 
@@ -44,13 +44,13 @@ export class LithiumSideNav extends LitElement {
             ? html`
                 <div class="li-menu-heading">
                   <div class="li-menu-heading-text"><slot name="heading">${IntlService.registry.menu}</slot></div>
-                  <button aria-label="${IntlService.registry.close}" @click=${e => this.close()} class="li-menu-close-btn">
+                  <button aria-label="${IntlService.registry.close}" @click=${() => this.close()} class="li-menu-close-btn">
                     <li-icon name="close" class="li-menu-close-icon"></li-icon>
                   </button>
                 </div>
               `
             : ''}
-          <div @click=${() => this.navClose()}>
+          <div class="li-inner-nav" @click=${() => this.navClose()}>
             <slot class="li-side-nav-slot"></slot>
           </div>
         </nav>
@@ -75,12 +75,19 @@ export class LithiumSideNav extends LitElement {
     this.resizeObserver.unobserve(document.body);
   }
 
+  /** close side nav */
   close() {
     this.open = false;
     this.openChange();
   }
 
-  navClose() {
+  /** toggle the open state */
+  toggle() {
+    this.open = !this.open;
+    this.openChange();
+  }
+
+  private navClose() {
     if (this.closeOnInnerClick && !this.sticky) {
       this.open = false;
       this.openChange();

@@ -1,4 +1,4 @@
-import { IconService, allIconsCollection } from 'lithium-ui/icons';
+import { allIconsCollection, IconService } from 'lithium-ui/icons';
 IconService.addIconCollection(allIconsCollection);
 
 describe('IconService', () => {

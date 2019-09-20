@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Class } from '../common/interfaces/api';
 import { ApiService } from '../common/core/services/api.service';
+import { Class } from '../common/interfaces/api';
 
 @Component({
   selector: 'app-api',

@@ -1,12 +1,12 @@
-import { html, LitElement, property } from 'lit-element';
+import { html } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
+import { checkIcon, IconService } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
-import { IconService, checkIcon } from 'lithium-ui/icons';
 IconService.addIcons(checkIcon);
 
-import { styles } from './radio.element.css';
 import { LithiumRadioGroup } from './radio-group.element';
+import { styles } from './radio.element.css';
 
 /**
  * Radio, standard radio input with accessibility and error enhancements.
@@ -60,7 +60,7 @@ export class LithiumRadio extends LithiumInput {
     this.observer.disconnect();
   }
 
-  firstUpdated(props) {
+  firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
     this.updateHostDisabled();
 

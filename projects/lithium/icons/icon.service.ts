@@ -1,4 +1,4 @@
-import { SVGIcon, unknownIcon, SVGIconCollection } from './svg';
+import { SVGIcon, SVGIconCollection, unknownIcon } from './svg';
 
 const registryState = {
   [unknownIcon.name]: unknownIcon.svg

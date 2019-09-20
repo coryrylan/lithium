@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
 import { Layout } from './common/enums';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Lithium UI - Web Component Library', layout: Layout.Page } },

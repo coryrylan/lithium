@@ -1,6 +1,6 @@
-import { LitElement, html } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
-import { registerElementSafely, IntlService } from 'lithium-ui/common';
+import { IntlService, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './loading-spinner.element.css';
 
 /**

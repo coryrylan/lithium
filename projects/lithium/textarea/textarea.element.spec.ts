@@ -1,6 +1,6 @@
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 import 'lithium-ui/textarea';
 import { LithiumTextArea } from 'lithium-ui/textarea';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
 
 describe('textarea element', () => {
   let testElement: HTMLElement;

@@ -1,4 +1,4 @@
-import { LitElement, html, property } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 import { highlight, languages } from 'prismjs';
 
 import { registerElementSafely } from 'lithium-ui/common';
@@ -32,7 +32,7 @@ export class LithiumCodeExample extends LitElement {
   }
 
   updated() {
-    this.renderedCode = highlight(this.code, languages[this.language]);
+    this.renderedCode = highlight(this.code, languages[this.language], this.language);
   }
 }
 

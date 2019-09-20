@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IntlService, englishRegistry } from 'lithium-ui/common';
+import { englishRegistry, IntlService } from 'lithium-ui/common';
 
 @Component({
   selector: 'app-docs-i18n',

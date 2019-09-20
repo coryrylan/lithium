@@ -1,8 +1,8 @@
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, RouterStateSnapshot, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
-import { tap, map, filter } from 'rxjs/operators';
-import { of, merge } from 'rxjs';
+import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterStateSnapshot } from '@angular/router';
+import { merge, of } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
 import { Layout } from '../../enums';
 
 @Injectable({

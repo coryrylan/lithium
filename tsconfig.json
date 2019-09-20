@@ -26,6 +26,14 @@
       "lithium-ui/*": [
         "projects/lithium/*"
       ]
-    }
+    },
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictFunctionTypes": true,
+    "noFallthroughCasesInSwitch": true
   }
 }

@@ -1,6 +1,6 @@
 import 'lithium-ui/form';
 import { LithiumForm } from 'lithium-ui/form';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('form element', () => {
   let testElement: HTMLElement;

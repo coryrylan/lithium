@@ -11,17 +11,6 @@ export class DocsRadioComponent {
   form: FormGroup;
   value: Observable<string>;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      region: ['south-america']
-    });
-
-    this.value = this.form.valueChanges.pipe(
-      startWith('south-america'),
-      map(() => this.form.value)
-    );
-  }
-
   codeExampleImport = `
     import 'lithium-ui/radio';
   `;
@@ -47,4 +36,15 @@ export class DocsRadioComponent {
       </li-radio>
     </li-radio-group>
   `;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      region: ['south-america']
+    });
+
+    this.value = this.form.valueChanges.pipe(
+      startWith('south-america'),
+      map(() => this.form.value)
+    );
+  }
 }

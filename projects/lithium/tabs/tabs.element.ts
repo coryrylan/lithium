@@ -1,9 +1,9 @@
-import { LitElement, html, property } from 'lit-element';
+import { html, LitElement, queryAll } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
+import { LithiumTabTitle } from './tab-title.element';
 import { LithiumTab } from './tab.element';
 import { styles } from './tabs.element.css';
-import { LithiumTabTitle } from './tab-title.element';
 
 /**
  * Tabs, organize related groups into tab panels
@@ -23,17 +23,20 @@ export class LithiumTabs extends LitElement {
     return styles;
   }
 
-  @property() private tabs: LithiumTab[] = [];
+  @queryAll('button')
+  private tabTitleButtons: HTMLButtonElement[];
+
+  private tabs: LithiumTab[] = [];
   private tabTitles: HTMLElement[] = [];
   private index = 0;
 
   render() {
     return html`
       <div class="li-tabs">
-        <div class="li-tabs-nav">
+        <div class="li-tabs-nav" role="tablist">
           ${this.tabs.map(
-            (t, i) => html`
-              <button class=${this.index === i ? 'active' : ''} @click=${() => this.tabClick(i)}>
+            (_t, i) => html`
+              <button id=${`li-tab-button-${i}`} class=${this.index === i ? 'active' : ''} @click=${() => this.selectTab(i)} role="tab">
                 <slot name=${`slot-${i}`}></slot>
               </button>
             `
@@ -46,22 +49,45 @@ export class LithiumTabs extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.tabs = [].slice.call(this.querySelectorAll('li-tab'));
-    this.tabTitles = [].slice.call(this.querySelectorAll('li-tab-title'));
-    this.tabClick(0);
+    this.tabs = Array.from(this.querySelectorAll('li-tab'));
+    this.tabTitles = Array.from(this.querySelectorAll('li-tab-title'));
 
+    this.initializeTabTitles();
+    this.initializeTabPanels();
+  }
+
+  firstUpdated(props: Map<string, any>) {
+    super.firstUpdated(props);
+    this.initializeTabButtons();
+    this.selectTab(0);
+  }
+
+  private initializeTabButtons() {
+    this.tabTitleButtons.forEach(b => b.setAttribute('aria-selected', 'false'));
+    this.tabTitleButtons[0].setAttribute('aria-selected', 'true');
+  }
+
+  private initializeTabTitles() {
     this.tabTitles.forEach((t, i) => t.setAttribute('slot', `slot-${i}`));
   }
 
-  private tabClick(index: number) {
-    this.index = index;
-    this.requestUpdate('index');
-    this.showTab();
+  private initializeTabPanels() {
+    this.tabs.forEach((t, i) => {
+      t.setAttribute('aria-hidden', 'true');
+      t.setAttribute('aria-labelledby', `li-tab-button-${i}`);
+    });
+    this.tabs[0].removeAttribute('aria-hidden');
   }
 
-  private showTab() {
-    this.tabs.forEach(t => (t.style.display = 'none'));
-    this.tabs[this.index].style.display = 'block';
+  private selectTab(tabIndex: number) {
+    this.index = tabIndex;
+    this.requestUpdate('index');
+
+    this.tabs.forEach(t => (t.setAttribute('aria-hidden', 'true')));
+    this.tabs[this.index].removeAttribute('aria-hidden');
+
+    this.tabTitleButtons.forEach(t => (t.setAttribute('aria-selected', 'false')));
+    this.tabTitleButtons[this.index].setAttribute('aria-selected', 'true');
   }
 }
 

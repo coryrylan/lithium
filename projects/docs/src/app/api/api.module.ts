@@ -1,11 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ApiComponent } from './api.component';
-import { ApiRoutingModule } from './api-routing.module';
 import { SharedModule } from '../common/shared/shared.module';
+import { ApiRoutingModule } from './api-routing.module';
+import { ApiComponent } from './api.component';
 
 @NgModule({
   declarations: [ApiComponent],

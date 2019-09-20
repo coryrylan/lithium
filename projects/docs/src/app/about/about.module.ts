@@ -1,5 +1,5 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';

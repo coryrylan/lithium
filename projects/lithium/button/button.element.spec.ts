@@ -1,7 +1,7 @@
 import 'lithium-ui/button';
 import { LithiumButton } from 'lithium-ui/button';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
 import { AriaRole } from 'lithium-ui/common';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('button', () => {
   let testElement: HTMLElement;

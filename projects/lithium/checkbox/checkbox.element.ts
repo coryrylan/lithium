@@ -1,10 +1,10 @@
 import { html } from 'lit-html';
 import { registerElementSafely } from 'lithium-ui/common';
-import { IconService, checkIcon } from 'lithium-ui/icons';
+import { checkIcon, IconService } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
 
-import { styles } from './checkbox.element.css';
 import { LithiumCheckboxGroup } from './checkbox-group.element';
+import { styles } from './checkbox.element.css';
 
 IconService.addIcons(checkIcon);
 

@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
 import { styles } from './tab.element.css';
 
@@ -14,5 +14,10 @@ export class LithiumTab extends LitElement {
         <slot></slot>
       </div>
     `;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.setAttribute('role', 'tabpanel');
   }
 }

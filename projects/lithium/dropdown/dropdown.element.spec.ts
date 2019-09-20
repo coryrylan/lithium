@@ -1,5 +1,5 @@
 import { registerElementSafely } from 'lithium-ui/common';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 import { XDropdown } from './dropdown.element';
 
 registerElementSafely('x-dropdown', XDropdown);

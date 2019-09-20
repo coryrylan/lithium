@@ -1,6 +1,6 @@
 import 'lithium-ui/code-example';
 import { LithiumCodeExample } from 'lithium-ui/code-example';
-import { createTestElement, waitForComponent, removeTestElement, componentIsStable, getComponentSlotContent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('code example element', () => {
   let testElement: HTMLElement;

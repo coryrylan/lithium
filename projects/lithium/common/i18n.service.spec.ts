@@ -1,4 +1,4 @@
-import { IntlService, englishRegistry } from './i18n.service';
+import { englishRegistry, IntlService } from './i18n.service';
 
 describe('i18n service', () => {
   it('should return a language registry', () => {

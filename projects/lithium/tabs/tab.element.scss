@@ -1,5 +1,9 @@
 @import './../styles/base';
 
+:host([aria-hidden]) .li-tab-content {
+  display: none;
+}
+
 .li-tab-content {
   padding-top: 1.6em;
   overflow: visible;

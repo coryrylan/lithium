@@ -1,5 +1,5 @@
-import { LithiumInput } from 'lithium-ui/input';
 import { registerElementSafely } from 'lithium-ui/common';
+import { LithiumInput } from 'lithium-ui/input';
 
 /**
  * Input, standard textarea with accessibility and error enhancements.
