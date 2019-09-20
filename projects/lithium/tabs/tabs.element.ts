@@ -83,10 +83,10 @@ export class LithiumTabs extends LitElement {
     this.index = tabIndex;
     this.requestUpdate('index');
 
-    this.tabs.forEach(t => (t.setAttribute('aria-hidden', 'true')));
+    this.tabs.forEach(t => t.setAttribute('aria-hidden', 'true'));
     this.tabs[this.index].removeAttribute('aria-hidden');
 
-    this.tabTitleButtons.forEach(t => (t.setAttribute('aria-selected', 'false')));
+    this.tabTitleButtons.forEach(t => t.setAttribute('aria-selected', 'false'));
     this.tabTitleButtons[this.index].setAttribute('aria-selected', 'true');
   }
 }

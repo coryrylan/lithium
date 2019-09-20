@@ -18,7 +18,6 @@ export const hiddenButtonTemplate = (disabled: boolean, value: string, name: str
 
 // @dynamic
 export class BaseButton extends LitElement {
-
   private get isButton() {
     return this.role === AriaRole.Button;
   }

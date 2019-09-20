@@ -1,6 +1,6 @@
 import 'lithium-ui/modal';
 import { LithiumModal } from 'lithium-ui/modal';
-import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('modal element', () => {
   let testElement: HTMLElement;

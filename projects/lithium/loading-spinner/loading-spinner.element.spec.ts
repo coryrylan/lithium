@@ -1,6 +1,6 @@
 import 'lithium-ui/loading-spinner';
 import { LithiumLoadingSpinner } from 'lithium-ui/loading-spinner';
-import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('loading spinner element', () => {
   let testElement: HTMLElement;

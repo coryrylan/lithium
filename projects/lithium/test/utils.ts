@@ -35,7 +35,7 @@ export function componentIsStable(component: any) {
   );
 }
 
-function retry(fn, maxTries = 10, promise?: Promise<any>, promiseObject?: { resolve: any; reject: any }) {
+function retry(fn: any, maxTries = 10, promise?: Promise<any>, promiseObject?: { resolve: any; reject: any }) {
   maxTries--;
   promiseObject = promiseObject || {
     resolve: null,
@@ -50,7 +50,7 @@ function retry(fn, maxTries = 10, promise?: Promise<any>, promiseObject?: { reso
     });
 
   fn()
-    .then(result => {
+    .then((result: any) => {
       promiseObject.resolve(result);
     })
     .catch(() => {

@@ -1,6 +1,6 @@
 import 'lithium-ui/progress-bar';
 import { LithiumProgressBar } from 'lithium-ui/progress-bar';
-import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('card element', () => {
   let testElement: HTMLElement;

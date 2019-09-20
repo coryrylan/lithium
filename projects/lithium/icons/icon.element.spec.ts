@@ -1,7 +1,7 @@
 import 'lithium-ui/icons';
 import { IconService, LithiumIcon, menuIcon } from 'lithium-ui/icons';
 IconService.addIcons(menuIcon);
-import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('icon element', () => {
   let testElement: HTMLElement;

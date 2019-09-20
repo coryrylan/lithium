@@ -1,6 +1,6 @@
 import 'lithium-ui/side-nav';
 import { LithiumSideNav } from 'lithium-ui/side-nav';
-import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('side nav element', () => {
   let testElement: HTMLElement;
