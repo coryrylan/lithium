@@ -25,14 +25,13 @@ let idCount = 0;
 export class LithiumInput extends LitElement {
   @property({ type: Boolean, reflect: true }) error = false;
 
-  private label: HTMLElement;
-  private input: HTMLElement;
-  private message: LithiumInputMessage;
-  private errorMessage: LithiumInputError;
-
-  private inputId = `li-input-id-${idCount++}`;
-  private messageId = `li-input-id-${idCount++}`;
-  private errorMessageId = `li-input-id-${idCount++}`;
+  protected input: HTMLElement;
+  protected label: HTMLElement;
+  protected message: LithiumInputMessage;
+  protected errorMessage: LithiumInputError;
+  protected inputId = `li-input-id-${idCount++}`;
+  protected messageId = `li-input-id-${idCount++}`;
+  protected errorMessageId = `li-input-id-${idCount++}`;
 
   static get styles(): any | any[] {
     return styles;

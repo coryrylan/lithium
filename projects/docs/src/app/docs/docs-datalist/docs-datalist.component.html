@@ -1,0 +1,44 @@
+<h1>Datalist</h1>
+
+<p>
+  The <code>li-datalist</code> component provides basic styles as well as accessibility
+  and <code>id</code> attribute association for the input and datalist.
+</p>
+
+<li-tabs>
+  <li-tab-title>Example</li-tab-title>
+  <li-tab-title>API</li-tab-title>
+  <li-tab-title>Theme</li-tab-title>
+
+  <li-tab>
+    <h2>Example</h2>
+
+    <li-form>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <li-datalist>
+          <label>Choose a browser:</label>
+          <input formControlName="search" />
+          <datalist>
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Internet Explorer">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Microsoft Edge">
+          </datalist>
+        </li-datalist>
+
+        <p>Value: {{form.controls.search.value}}</p>
+      </form>
+    </li-form>
+
+    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+  </li-tab>
+  <li-tab>
+    <h2>API</h2>
+    <app-component-api component="LithiumDatalist"></app-component-api>
+  </li-tab>
+  <li-tab>
+    <app-theme-api></app-theme-api>
+  </li-tab>
+</li-tabs>
