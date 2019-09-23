@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-datalist-forms',
+  selector: 'app-docs-datalist',
   templateUrl: './docs-datalist.component.html'
 })
 export class DocsDatalistComponent {
@@ -14,14 +14,15 @@ export class DocsDatalistComponent {
 
   codeExampleHtml = `
     <li-datalist>
-      <label>Choose a flavor:</label>
-      <input />
+      <label>Choose a browser:</label>
+      <input formControlName="search" />
       <datalist>
-        <option value="Chocolate">
-        <option value="Coconut">
-        <option value="Mint">
-        <option value="Strawberry">
-        <option value="Vanilla">
+        <option value="Chrome"> </option>
+        <option value="Firefox"> </option>
+        <option value="Internet Explorer"> </option>
+        <option value="Opera"> </option>
+        <option value="Safari"> </option>
+        <option value="Microsoft Edge"> </option>
       </datalist>
     </li-datalist>
   `;

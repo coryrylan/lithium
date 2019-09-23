@@ -8,6 +8,7 @@ import 'lithium-ui/card';
 import 'lithium-ui/checkbox';
 import 'lithium-ui/code-example';
 import 'lithium-ui/datalist';
+import 'lithium-ui/datepicker';
 import 'lithium-ui/dropdown';
 import 'lithium-ui/form';
 import 'lithium-ui/input';

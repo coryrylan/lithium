@@ -6,6 +6,7 @@ import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsCardComponent } from './docs-card/docs-card.component';
 import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
 import { DocsDatalistComponent } from './docs-datalist/docs-datalist.component';
+import { DocsDatepickerComponent } from './docs-datepicker/docs-datepicker.component';
 import { DocsFormsComponent } from './docs-forms/docs-forms.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
@@ -47,7 +48,16 @@ const routes: Routes = [
         component: DocsCheckboxComponent,
         data: { title: 'Lithium Checkbox Web Component - Documentation', layout: Layout.Docs }
       },
-      { path: 'datalist', component: DocsDatalistComponent, data: { title: 'Lithium Datalist Component - Documentation', layout: Layout.Docs } },
+      {
+        path: 'datalist',
+        component: DocsDatalistComponent,
+        data: { title: 'Lithium Datalist Component - Documentation', layout: Layout.Docs }
+      },
+      {
+        path: 'datepicker',
+        component: DocsDatepickerComponent,
+        data: { title: 'Lithium Datepicker Component - Documentation', layout: Layout.Docs }
+      },
       { path: 'forms', component: DocsFormsComponent, data: { title: 'Lithium Forms Web Component - Documentation', layout: Layout.Docs } },
       { path: 'icons', component: DocsIconsComponent, data: { title: 'Lithium Icons Web Component - Documentation', layout: Layout.Docs } },
       { path: 'input', component: DocsInputComponent, data: { title: 'Lithium Input Web Component - Documentation', layout: Layout.Docs } },

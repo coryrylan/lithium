@@ -8,6 +8,8 @@
     "./**/lithium-ui-card.js",
     "./**/lithium-ui-checkbox.js",
     "./**/lithium-ui-code-example.js",
+    "./**/lithium-ui-datalist.js",
+    "./**/lithium-ui-datepicker.js",
     "./**/lithium-ui-dropdown.js",
     "./**/lithium-ui-icons.js",
     "./**/lithium-ui-input.js",
@@ -27,6 +29,7 @@
     "lit-element": "^2.2.0",
     "prismjs": "^1.16.0",
     "@a11y/focus-trap": "^1.0.2",
-    "resize-observer-polyfill": "^1.5.1"
+    "resize-observer-polyfill": "^1.5.1",
+    "date-fns": "^2.2.1"
   }
 }

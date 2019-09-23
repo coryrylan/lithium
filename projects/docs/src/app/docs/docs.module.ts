@@ -6,6 +6,7 @@ import { DocsButtonComponent } from './docs-button/docs-button.component';
 import { DocsCardComponent } from './docs-card/docs-card.component';
 import { DocsCheckboxComponent } from './docs-checkbox/docs-checkbox.component';
 import { DocsDatalistComponent } from './docs-datalist/docs-datalist.component';
+import { DocsDatepickerComponent } from './docs-datepicker/docs-datepicker.component';
 import { DocsFormsComponent } from './docs-forms/docs-forms.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
@@ -48,7 +49,8 @@ import { DocsComponent } from './docs.component';
     DocsProgressBarComponent,
     DocsThemesComponent,
     DocsI18nComponent,
-    DocsDatalistComponent
+    DocsDatalistComponent,
+    DocsDatepickerComponent
   ],
   imports: [CommonModule, SharedModule, ReactiveFormsModule, DocsRoutingModule]
 })

@@ -7,6 +7,8 @@ export * from './card/card.element';
 export * from './checkbox/checkbox.element';
 export * from './code-example/code-example.element';
 export * from './common/index';
+export * from './datalist/datalist.element';
+export * from './datepicker/datepicker.element';
 export * from './dropdown/dropdown.element';
 export * from './form/form.element';
 export * from './icons/index';
