@@ -50,6 +50,20 @@ export class DocsButtonComponent {
     </li-button>
   `;
 
+  codeExampleGroup = `
+    <li-button-group>
+      <li-button>Item 1</li-button>
+      <li-button>Item 2</li-button>
+      <li-button>Item 3</li-button>
+    </li-button-group>
+
+    <li-button-group>
+      <li-button outline>Item 1</li-button>
+      <li-button outline>Item 2</li-button>
+      <li-button outline>Item 3</li-button>
+    </li-button-group>
+  `;
+
   form: FormGroup;
   showLoading = false;
 

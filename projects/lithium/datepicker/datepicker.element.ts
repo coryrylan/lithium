@@ -185,21 +185,11 @@ export class LithiumDatepicker extends LitElement {
       </style>
       <div class="li-datepicker">
         <div class="li-datepicker__top-nav">
-          <button
-            type="button"
-            @click="${() => this.prev()}"
-            aria-label="previous month"
-            class="li-datepicker__prev li-datepicker__btn"
-          >
+          <button type="button" @click="${() => this.prev()}" aria-label="previous month" class="li-datepicker__prev li-datepicker__btn">
             ◀
           </button>
           <div class="li-datepicker__title">${this.monthName} ${this.year}</div>
-          <button
-            type="button"
-            @click="${() => this.next()}"
-            aria-label="next month"
-            class="li-datepicker__next li-datepicker__btn"
-          >
+          <button type="button" @click="${() => this.next()}" aria-label="next month" class="li-datepicker__next li-datepicker__btn">
             ▶
           </button>
         </div>
@@ -242,4 +232,4 @@ export class LithiumDatepicker extends LitElement {
   }
 }
 
-registerElementSafely('li-datepicker', LithiumDatepicker);
+registerElementSafely('li-datepicker-inline', LithiumDatepicker);

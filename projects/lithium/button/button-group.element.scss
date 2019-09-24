@@ -1,0 +1,30 @@
+@import './../styles/base';
+
+:host {
+  font-size: 0;
+}
+
+::slotted(li-button) {
+  border-radius: 0;
+  margin-right: 2px !important;
+}
+
+::slotted(li-button:first-child) {
+  border-top-left-radius: var(--li-common-border-radius);
+  border-bottom-left-radius: var(--li-common-border-radius);
+}
+
+::slotted(li-button:last-child) {
+  border-top-right-radius: var(--li-common-border-radius);
+  border-bottom-right-radius: var(--li-common-border-radius);
+}
+
+::slotted(li-button[outline]) {
+  margin-right: 0 !important;
+  border-left: 0;
+  border-right: 0.2em solid var(--li-button-outline-border-color, var(--li-common-color-blue-100));
+}
+
+::slotted(li-button[outline]:first-child) {
+  border-left: 0.2em solid var(--li-button-outline-border-color, var(--li-common-color-blue-100));
+}

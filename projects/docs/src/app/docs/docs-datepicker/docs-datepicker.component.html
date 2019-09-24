@@ -10,12 +10,22 @@
   <li-tab>
     <h2>Example</h2>
 
-    <li-datepicker [value]="myDate" (valueChange)="myDate = $event.detail"></li-datepicker>
+    <li-datepicker>
+      <label>Date</label>
+      <input type="date" />
+    </li-datepicker>
+
+    <!-- when in range mode return json for easy parse on input type { start: '', end: '' } -->
+
+    <br /><br />
+
+    <li-datepicker-inline [value]="myDate" (valueChange)="myDate = $event.detail"></li-datepicker-inline>
     <p>{{ myDate | date }}</p>
 
     <br />
-    <li-datepicker [value]="dates" [range]="true"></li-datepicker>
+    <li-datepicker-inline [value]="dates" [range]="true"></li-datepicker-inline>
 
+    <br /><br />
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab>

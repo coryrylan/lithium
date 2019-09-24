@@ -35,10 +35,10 @@
       <li-button>default</li-button>
       <li-button outline>outline</li-button>
       <li-button flat>flat</li-button>
-
-      <!-- <li-button><a href="/about">link</a></li-button>
+      <br />
+      <li-button><a href="/about">link</a></li-button>
       <li-button outline><a href="/about">link</a></li-button>
-      <li-button flat><a href="/about">link</a></li-button> -->
+      <li-button flat><a href="/about">link</a></li-button>
 
       <li-code-example [code]="codeExampleStyles" language="html"></li-code-example>
 
@@ -56,17 +56,23 @@
         click to load
       </li-button>
 
-      <!-- <br />
-      <li-button small>submit</li-button>
-      <li-button loading small>loading</li-button>
-      <br />
-      <li-button>submit</li-button>
-      <li-button loading>loading</li-button>
-      <br />
-      <li-button large>submit</li-button>
-      <li-button loading large>loading</li-button> -->
-
       <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
+
+      <h2>Button Group</h2>
+
+      <li-button-group>
+        <li-button>Item 1</li-button>
+        <li-button>Item 2</li-button>
+        <li-button>Item 3</li-button>
+      </li-button-group>
+
+      <li-button-group>
+        <li-button outline>Item 1</li-button>
+        <li-button outline>Item 2</li-button>
+        <li-button outline>Item 3</li-button>
+      </li-button-group>
+
+      <li-code-example [code]="codeExampleGroup" language="html"></li-code-example>
     </form>
   </li-tab>
   <li-tab>

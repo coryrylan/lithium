@@ -63,12 +63,14 @@
 }
 
 :host([outline]:hover) ::slotted(a) {
-  color: var(--li-button-outline-hover-color, var(--li-common-color-white-100)) !important;
+  color: var(--li-common-color-blue-100, var(--li-common-color-white-100)) !important;
+  opacity: 1;
 }
 
 :host([outline]:hover) {
   background-color: var(--li-button-outline-hover-background-color, var(--li-common-color-blue-100));
   color: var(--li-button-outline-hover-color, var(--li-common-color-white-100));
+  opacity: 1;
 }
 
 :host([flat]) {
@@ -80,6 +82,7 @@
 
 :host([flat]) ::slotted(a) {
   text-decoration: underline !important;
+  color: var(--li-button-outline-color, var(--li-common-color-blue-100)) !important;
 }
 
 /* size */
