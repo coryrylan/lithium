@@ -22,7 +22,7 @@
             "main": "projects/docs/src/main.ts",
             "polyfills": "projects/docs/src/polyfills.ts",
             "tsConfig": "projects/docs/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/docs/src/favicon.ico",
               "projects/docs/src/assets",
@@ -49,7 +49,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -58,6 +57,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -138,6 +141,11 @@
           "options": {
             "tsConfig": "projects/lithium/tsconfig.lib.json",
             "project": "projects/lithium/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lithium/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -161,6 +169,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "docs"
+    }
+  },
+  "defaultProject": "docs",
+  "cli": {
+    "analytics": "9c4ce1be-0b87-41eb-adbf-eacbf2375850"
+  }
 }
