@@ -1,6 +1,7 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement, property, query } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
+import { querySlot } from './../decorators/query';
 import { AriaRole, KeyCodes } from './../utils/enums';
 import { stopEvent } from './../utils/events';
 
@@ -22,15 +23,14 @@ export class BaseButton extends LitElement {
     return this.role === AriaRole.Button;
   }
 
-  private get isAnchor() {
-    return this.querySelector('a');
-  }
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: String, reflect: true }) type: 'button' | 'submit';
   @property({ type: String, reflect: true }) role = 'button';
   @property({ type: String, reflect: true }) name = '';
   @property({ type: String, reflect: true }) value = '';
 
+  @querySlot('a') private anchor: HTMLAnchorElement;
+  @query('button') private templateButton: HTMLButtonElement;
   private hiddenButton: HTMLButtonElement;
 
   connectedCallback() {
@@ -50,14 +50,13 @@ export class BaseButton extends LitElement {
   protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
 
-    if (this.isAnchor) {
+    if (this.anchor) {
       this.role = AriaRole.Presentation;
       this.type = null;
       this.removeAttribute('tabindex');
     } else {
-      // append $hiddenButton to light DOM to interface with forms
-      this.hiddenButton = this.shadowRoot.querySelector('button');
-      this.appendChild(this.hiddenButton);
+      // append the template button to light DOM to interface with forms
+      this.hiddenButton = this.appendChild(this.templateButton);
     }
 
     if (this.disabled) {
@@ -67,7 +66,7 @@ export class BaseButton extends LitElement {
 
   protected updated(props: Map<string, any>) {
     super.updated(props);
-    if (props.get('disabled') && !this.isAnchor) {
+    if (props.get('disabled') && !this.anchor) {
       this.tabIndex = this.disabled ? -1 : 0;
     }
   }

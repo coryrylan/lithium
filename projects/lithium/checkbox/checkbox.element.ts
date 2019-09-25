@@ -1,5 +1,5 @@
-import { html } from 'lit-html';
-import { registerElementSafely } from 'lithium-ui/common';
+import { html } from 'lit-element';
+import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { checkIcon, IconService } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
 
@@ -25,7 +25,7 @@ export class LithiumCheckbox extends LithiumInput {
     return styles;
   }
 
-  private checkbox: any;
+  @querySlot('input') private checkbox: HTMLInputElement;
   private observer: MutationObserver;
 
   render() {
@@ -38,11 +38,8 @@ export class LithiumCheckbox extends LithiumInput {
 
   connectedCallback() {
     super.connectedCallback();
-
-    this.checkbox = this.querySelector('input');
     this.updateHostChecked();
     this.updateHostDisabled();
-
     this.checkbox.addEventListener('change', () => this.updateHostChecked());
     this.checkbox.addEventListener('focusin', () => this.setAttribute('focused', ''));
     this.checkbox.addEventListener('focusout', () => this.removeAttribute('focused'));

@@ -1,6 +1,6 @@
 import { html } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { checkIcon, IconService } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
 IconService.addIcons(checkIcon);
@@ -25,7 +25,7 @@ export class LithiumRadio extends LithiumInput {
     return styles;
   }
 
-  private radio: any;
+  @querySlot('input[type=radio]') private radio: HTMLInputElement;
   private observer: MutationObserver;
 
   render() {
@@ -39,7 +39,6 @@ export class LithiumRadio extends LithiumInput {
 
   connectedCallback() {
     super.connectedCallback();
-    this.radio = this.querySelector('input[type=radio]');
     this.radio.addEventListener('click', () => this.setHostCheckedAttribute());
     this.radio.addEventListener('focusin', () => this.setAttribute('focused', ''));
     this.radio.addEventListener('focusout', () => this.removeAttribute('focused'));

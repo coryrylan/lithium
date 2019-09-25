@@ -1,5 +1,6 @@
 import { html, LitElement, property } from 'lit-element';
 
+import { querySlotAll } from 'lithium-ui/common';
 import { styles } from './radio-group.element.css';
 import { LithiumRadio } from './radio.element';
 
@@ -20,8 +21,7 @@ export class LithiumRadioGroup extends LitElement {
   /** Name provides the name for each radio and will automatically associate all radios in element */
   @property({ type: String }) name = '';
 
-  private liRadioElements: LithiumRadio[];
-  private liRadioInputs: HTMLElement[];
+  @querySlotAll('li-radio') private liRadioElements: NodeListOf<LithiumRadio>;
 
   render() {
     return html`
@@ -33,9 +33,9 @@ export class LithiumRadioGroup extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.liRadioElements = Array.from(this.querySelectorAll('li-radio'));
-    this.liRadioInputs = this.liRadioElements.map(e => e.querySelector<HTMLElement>('input[type=radio]'));
-    this.liRadioInputs.forEach(radio => radio.setAttribute('name', this.name));
+    Array.from(this.liRadioElements)
+      .map(e => e.querySelector<HTMLElement>('input[type=radio]'))
+      .forEach(radio => radio.setAttribute('name', this.name));
   }
 
   /** internal */

@@ -1,4 +1,4 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement, property, query } from 'lit-element';
 
 import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './icon.element.css';
@@ -24,6 +24,8 @@ export class LithiumIcon extends LitElement {
   /** Title to provide text for screen reader users */
   @property() title = 'unknown';
 
+  @query('svg') private svg: SVGElement;
+
   static get styles() {
     return styles;
   }
@@ -37,9 +39,8 @@ export class LithiumIcon extends LitElement {
 
   async updateSVGAttributes() {
     await this.updateComplete;
-    const svg = this.shadowRoot.querySelector('svg');
-    svg.setAttribute('role', 'img');
-    svg.setAttribute('aria-labelledby', `li-icon-id-${iconId}`);
+    this.svg.setAttribute('role', 'img');
+    this.svg.setAttribute('aria-labelledby', `li-icon-id-${iconId}`);
   }
 
   render() {

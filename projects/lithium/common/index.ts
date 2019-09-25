@@ -1,3 +1,4 @@
+export * from './decorators/query';
 export * from './base/button.base';
 export * from './utils/register';
 export * from './utils/events';

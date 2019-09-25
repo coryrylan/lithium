@@ -1,4 +1,4 @@
-import { registerElementSafely } from 'lithium-ui/common';
+import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInput } from 'lithium-ui/input';
 
 /**
@@ -19,10 +19,11 @@ import { LithiumInput } from 'lithium-ui/input';
 export class LithiumDatalist extends LithiumInput {
   private listId = `${this.inputId}-list`;
 
+  @querySlot('datalist') private datalist: HTMLDataListElement;
+
   connectedCallback() {
     super.connectedCallback();
-    const datalist = this.querySelector('datalist');
-    datalist.id = this.listId;
+    this.datalist.id = this.listId;
     this.input.setAttribute('list', this.listId);
   }
 }

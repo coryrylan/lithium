@@ -1,6 +1,6 @@
 import { html, LitElement, queryAll } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumTabTitle } from './tab-title.element';
 import { LithiumTab } from './tab.element';
 import { styles } from './tabs.element.css';
@@ -26,15 +26,15 @@ export class LithiumTabs extends LitElement {
   @queryAll('button')
   private tabTitleButtons: HTMLButtonElement[];
 
-  private tabs: LithiumTab[] = [];
-  private tabTitles: HTMLElement[] = [];
+  @querySlotAll('li-tab') private tabs: NodeListOf<LithiumTab>;
+  @querySlotAll('li-tab-title') private tabTitles: NodeListOf<LithiumTabTitle>;
   private index = 0;
 
   render() {
     return html`
       <div class="li-tabs">
         <div class="li-tabs-nav" role="tablist">
-          ${this.tabs.map(
+          ${Array.from(this.tabs).map(
             (_t, i) => html`
               <button id=${`li-tab-button-${i}`} class=${this.index === i ? 'active' : ''} @click=${() => this.selectTab(i)} role="tab">
                 <slot name=${`slot-${i}`}></slot>
@@ -49,9 +49,6 @@ export class LithiumTabs extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.tabs = Array.from(this.querySelectorAll('li-tab'));
-    this.tabTitles = Array.from(this.querySelectorAll('li-tab-title'));
-
     this.initializeTabTitles();
     this.initializeTabPanels();
   }

@@ -1,6 +1,6 @@
 import { html, LitElement, property } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError } from './input-error.element';
 import { LithiumInputMessage } from './input-message.element';
 import { styles } from './input.element.css';
@@ -25,10 +25,17 @@ let idCount = 0;
 export class LithiumInput extends LitElement {
   @property({ type: Boolean, reflect: true }) error = false;
 
-  protected input: HTMLElement;
-  protected label: HTMLElement;
-  protected message: LithiumInputMessage;
-  protected errorMessage: LithiumInputError;
+  get input() {
+    return this.textInput ? this.textInput : this.textarea ? this.textarea : this.select;
+  }
+
+  @querySlot('label') protected label: HTMLLabelElement;
+  @querySlot('li-input-message') protected message: LithiumInputMessage;
+  @querySlot('li-input-error') protected errorMessage: LithiumInputError;
+  @querySlot('input') private textInput: HTMLInputElement;
+  @querySlot('textarea') private textarea: HTMLTextAreaElement;
+  @querySlot('select') private select: HTMLSelectElement;
+
   protected inputId = `li-input-id-${idCount++}`;
   protected messageId = `li-input-id-${idCount++}`;
   protected errorMessageId = `li-input-id-${idCount++}`;
@@ -45,16 +52,6 @@ export class LithiumInput extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    const input = this.querySelector('input');
-    const textarea = this.querySelector('textarea');
-    const select = this.querySelector('select');
-    this.input = input ? input : textarea ? textarea : select;
-
-    this.label = this.querySelector('label');
-    this.message = this.querySelector('li-input-message');
-    this.errorMessage = this.querySelector('li-input-error');
-
     this.linkLabelIds();
   }
 
