@@ -1,7 +1,7 @@
 import { html, LitElement, property, query } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
-import { querySlot } from './../decorators/query';
+import { querySlot } from './../decorators/query-slot';
 import { AriaRole, KeyCodes } from './../utils/enums';
 import { stopEvent } from './../utils/events';
 
