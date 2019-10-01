@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { addDays } from 'date-fns';
 
 @Component({
@@ -8,6 +9,9 @@ import { addDays } from 'date-fns';
 export class DocsDatepickerComponent {
   myDate = new Date();
   dates = [new Date(), addDays(new Date(), 5)];
+
+  startDate = new FormControl();
+  val = '';
 
   codeExampleImport = `
     import 'lithium-ui/datepicker';

@@ -14,7 +14,7 @@ import {
 } from './util';
 
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './datepicker.element.css';
+import { styles } from './datepicker-inline.element.css';
 
 let instanceId = 0;
 
@@ -34,7 +34,6 @@ export class LithiumDatepickerInline extends LitElement {
   @property() private year: number;
   @property() private daysInMonth: Date[];
   @property() private dayOfWeekOffset: number[];
-  // @property() private showInputDatepicker = true;
 
   private _value: Date | [Date, Date] = null;
   private selectedRangeIndex = 0;

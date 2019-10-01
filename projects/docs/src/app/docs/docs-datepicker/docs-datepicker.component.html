@@ -10,28 +10,28 @@
   <li-tab>
     <h2>Example</h2>
 
+    <p>angular forms binding: {{ startDate.value }}</p>
+
+    <p>native change event: {{ val }}</p>
+
     <li-datepicker>
       <label>Date</label>
-      <input type="date" />
+      <input type="date" [formControl]="startDate" (change)="val = $event.target.value" />
     </li-datepicker>
 
     <br /><br />
 
-    <li-datepicker>
+    <!-- <li-datepicker>
       <label>Start Date</label>
       <input type="date" />
 
       <label>End Date</label>
       <input type="date" />
-    </li-datepicker>
+    </li-datepicker> -->
 
     <!-- when in range mode return json for easy parse on input type { start: '', end: '' } -->
 
-    <br /><br />
-
-    <li-datepicker-inline [value]="myDate" (valueChange)="myDate = $event.detail"></li-datepicker-inline>
-    <p>{{ myDate | date }}</p>
-
+    <br />
     <br />
     <li-datepicker-inline [value]="dates" [range]="true"></li-datepicker-inline>
 

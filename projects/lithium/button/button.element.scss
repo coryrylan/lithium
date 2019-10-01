@@ -63,7 +63,7 @@
 }
 
 :host([outline]:hover) ::slotted(a) {
-  color: var(--li-common-color-blue-100, var(--li-common-color-white-100)) !important;
+  color: var(--li-button-outline-hover-color, var(--li-common-color-white-100)) !important;
   opacity: 1;
 }
 
