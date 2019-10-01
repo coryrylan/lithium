@@ -73,14 +73,16 @@
   opacity: 1;
 }
 
-:host([tertiary]), :host([tertiary-inline]) {
+:host([tertiary]),
+:host([tertiary-inline]) {
   background-color: transparent;
   color: var(--li-button-secondary-color, var(--li-common-color-blue-100));
   text-decoration: underline;
   border: 0;
 }
 
-:host([tertiary]) ::slotted(a), :host([tertiary-inline]) ::slotted(a) {
+:host([tertiary]) ::slotted(a),
+:host([tertiary-inline]) ::slotted(a) {
   text-decoration: underline !important;
   color: var(--li-button-secondary-color, var(--li-common-color-blue-100)) !important;
 }
