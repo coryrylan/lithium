@@ -6,21 +6,21 @@
 
 :host {
   /* colors */
-  --li-common-color-white-100: #fff;
-  --li-common-color-gray-50: #f7f7f7;
-  --li-common-color-gray-100: #f3f3f3;
-  --li-common-color-gray-200: #e4e4e4;
-  --li-common-color-gray-300: #ccc;
-  --li-common-color-gray-400: #3d3d3d;
-  --li-common-color-gray-500: #2d2d2d;
-  --li-common-color-gray-600: #292929;
-  --li-common-color-gray-700: #1f1f1f;
-  --li-common-color-blue-50: #4191ed;
-  --li-common-color-blue-100: #2974ca;
-  --li-common-color-green-100: #3d9b3d;
-  --li-common-color-orange-100: #c69b20;
-  --li-common-color-red-50: #e30f0f;
-  --li-common-color-red-100: #b31d1d;
+  --li-common-color-white-100: hsl(0, 0%, 100%);
+  --li-common-color-gray-50: hsl(0, 0%, 97%);
+  --li-common-color-gray-100: hsl(0, 0%, 95%);
+  --li-common-color-gray-200: hsl(0, 0%, 89%);
+  --li-common-color-gray-300: hsl(0, 0%, 80%);
+  --li-common-color-gray-400: hsl(0, 0%, 24%);
+  --li-common-color-gray-500: hsl(0, 0%, 18%);
+  --li-common-color-gray-600: hsl(0, 0%, 16%);
+  --li-common-color-gray-700: hsl(0, 0%, 12%);
+  --li-common-color-blue-50: hsl(212, 83%, 59%);
+  --li-common-color-blue-100: hsl(212, 66%, 48%);
+  --li-common-color-green-100: hsl(120, 32%, 50%);
+  --li-common-color-orange-100: hsl(44, 72%, 45%);
+  --li-common-color-red-50: hsl(0, 78%, 53%);
+  --li-common-color-red-100: hsl(0, 60%, 48%);
 
   /* shape */
   --li-common-padding-md: 2.4em;

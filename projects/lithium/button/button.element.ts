@@ -12,8 +12,8 @@ import { styles } from './button.element.css';
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer
- * @styleAttr `outline` - Apply outline style.
- * @styleAttr `flat` - Apply flat style.
+ * @styleAttr `secondary` - Apply secondary style.
+ * @styleAttr `tertiary` - Apply tertiary style.
  * @styleAttr `success` - Apply success style.
  * @styleAttr `warning` - Apply warning style.
  * @styleAttr `danger` - Apply danger style.
@@ -23,10 +23,10 @@ import { styles } from './button.element.css';
  * @cssProp `--li-button-color`
  * @cssProp `--li-button-border-radius`
  * @cssProp `--li-button-disabled-background`
- * @cssProp `--li-button-outline-color`
- * @cssProp `--li-button-outline-border-color`
- * @cssProp `--li-button-outline-hover-background-color`
- * @cssProp `--li-button-outline-hover-color`
+ * @cssProp `--li-button-secondary-color`
+ * @cssProp `--li-button-secondary-border-color`
+ * @cssProp `--li-button-secondary-hover-background-color`
+ * @cssProp `--li-button-secondary-hover-color`
  * @cssProp `--li-button-success-color`
  * @cssProp `--li-button-warning-color`
  * @cssProp `--li-button-danger-color`

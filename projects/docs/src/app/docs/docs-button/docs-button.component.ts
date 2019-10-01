@@ -18,9 +18,10 @@ export class DocsButtonComponent {
   `;
 
   codeExampleStyles = `
-    <li-button>default</li-button>
-    <li-button outline>outline</li-button>
-    <li-button flat>flat</li-button>
+    <li-button>primary</li-button>
+    <li-button secondary>secondary</li-button>
+    <li-button tertiary>tertiary</li-button>
+    <li-button tertiary-inline><a href="/about">tertiary inline</a></li-button>
   `;
 
   codeExampleColors = `
@@ -50,6 +51,18 @@ export class DocsButtonComponent {
     </li-button>
   `;
 
+  codeExampleIcon = `
+    <li-button icon aria-label="CPU Usage High">
+      <li-icon name="warning"></li-icon>
+    </li-button>
+    <li-button icon secondary aria-label="Menu">
+      <li-icon name="menu"></li-icon>
+    </li-button>
+    <li-button icon tertiary aria-label="Info">
+      <li-icon name="info"></li-icon>
+    </li-button>
+  `;
+
   codeExampleGroup = `
     <li-button-group>
       <li-button>Item 1</li-button>
@@ -58,9 +71,9 @@ export class DocsButtonComponent {
     </li-button-group>
 
     <li-button-group>
-      <li-button outline>Item 1</li-button>
-      <li-button outline>Item 2</li-button>
-      <li-button outline>Item 3</li-button>
+      <li-button secondary>Item 1</li-button>
+      <li-button secondary>Item 2</li-button>
+      <li-button secondary>Item 3</li-button>
     </li-button-group>
   `;
 

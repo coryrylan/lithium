@@ -7,7 +7,7 @@ import { styles } from './button-group.element.css';
  * @noInheritDoc
  * @element `li-button-group`
  * @slot `default` - Content slot for modal body
- * @styleAttr `outline` - Apply outline style.
+ * @styleAttr `secondary` - Apply secondary style.
  * @cssProp `--li-button-background-color`
  */
 // @dynamic

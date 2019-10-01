@@ -51,38 +51,47 @@
   display: inline-block !important;
 }
 
-/* style */
-:host([outline]) {
+/* hierarchy */
+:host([secondary]) {
   background-color: transparent;
-  color: var(--li-button-outline-color, var(--li-common-color-blue-100));
-  border: 0.2em solid var(--li-button-outline-border-color, var(--li-common-color-blue-100));
+  color: var(--li-button-secondary-color, var(--li-common-color-blue-100));
+  border: 0.2em solid var(--li-button-secondary-border-color, var(--li-common-color-blue-100));
 }
 
-:host([outline]) ::slotted(a) {
-  color: var(--li-button-outline-color, var(--li-common-color-blue-100)) !important;
+:host([secondary]) ::slotted(a) {
+  color: var(--li-button-secondary-color, var(--li-common-color-blue-100)) !important;
 }
 
-:host([outline]:hover) ::slotted(a) {
-  color: var(--li-button-outline-hover-color, var(--li-common-color-white-100)) !important;
+:host([secondary]:hover) ::slotted(a) {
+  color: var(--li-button-secondary-hover-color, var(--li-common-color-white-100)) !important;
   opacity: 1;
 }
 
-:host([outline]:hover) {
-  background-color: var(--li-button-outline-hover-background-color, var(--li-common-color-blue-100));
-  color: var(--li-button-outline-hover-color, var(--li-common-color-white-100));
+:host([secondary]:hover) {
+  background-color: var(--li-button-secondary-hover-background-color, var(--li-common-color-blue-100));
+  color: var(--li-button-secondary-hover-color, var(--li-common-color-white-100));
   opacity: 1;
 }
 
-:host([flat]) {
+:host([tertiary]), :host([tertiary-inline]) {
   background-color: transparent;
-  color: var(--li-button-outline-color, var(--li-common-color-blue-100));
+  color: var(--li-button-secondary-color, var(--li-common-color-blue-100));
   text-decoration: underline;
   border: 0;
 }
 
-:host([flat]) ::slotted(a) {
+:host([tertiary]) ::slotted(a), :host([tertiary-inline]) ::slotted(a) {
   text-decoration: underline !important;
-  color: var(--li-button-outline-color, var(--li-common-color-blue-100)) !important;
+  color: var(--li-button-secondary-color, var(--li-common-color-blue-100)) !important;
+}
+
+:host([tertiary-inline]) {
+  padding: 0;
+  display: inline;
+}
+
+:host([tertiary-inline]) ::slotted(a) {
+  padding: 0 !important;
 }
 
 /* size */
@@ -108,6 +117,19 @@
 :host([danger]) {
   background-color: var(--li-button-danger-color, var(--li-common-color-red-100));
   border-color: var(--li-button-danger-color, var(--li-common-color-red-100));
+}
+
+/* icon */
+:host([icon]) {
+  padding: 0px 1em;
+}
+
+:host([icon][secondary]) ::slotted(li-icon) {
+  --li-icon-color: var(--li-button-secondary-color) !important;
+}
+
+:host([icon][secondary]:hover) ::slotted(li-icon) {
+  --li-icon-color: var(--li-button-secondary-color, var(--li-common-color-blue-100)) !important;
 }
 
 .li-loading-spinner-wrapper {
