@@ -18,6 +18,17 @@ export class DocsDatepickerComponent {
   `;
 
   codeExampleHtml = `
+    <li-datepicker>
+      <label>Date</label>
+      <input type="date" [formControl]="startDate" (change)="val = $event.target.value" />
+    </li-datepicker>
 
+    <li-datepicker>
+      <label>Start Date</label>
+      <input type="date" />
+
+      <label>End Date</label>
+      <input type="date" />
+    </li-datepicker>
   `;
 }

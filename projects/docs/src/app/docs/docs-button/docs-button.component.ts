@@ -19,9 +19,9 @@ export class DocsButtonComponent {
 
   codeExampleStyles = `
     <li-button>primary</li-button>
-    <li-button secondary>secondary</li-button>
-    <li-button tertiary>tertiary</li-button>
-    <li-button tertiary-inline><a href="/about">tertiary inline</a></li-button>
+    <li-button level="secondary">secondary</li-button>
+    <li-button level="tertiary">tertiary</li-button>
+    <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
   `;
 
   codeExampleColors = `
