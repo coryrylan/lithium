@@ -12,13 +12,8 @@ import { styles } from './button.element.css';
  * @slot `default` - Content slot for modal body
  * @slot `header` - Content slot for modal header
  * @slot `footer` - Content slot for modal footer
- * @styleAttr `secondary` - Apply secondary style.
- * @styleAttr `tertiary` - Apply tertiary style.
- * @styleAttr `success` - Apply success style.
- * @styleAttr `warning` - Apply warning style.
- * @styleAttr `danger` - Apply danger style.
- * @styleAttr `small` - Apply small button style
- * @styleAttr `large` - Apply large button style
+ * @styleAttr `action` [default|secondary|tertiary|success|warning|danger]
+ * @styleAttr `size` - [small|default|large]
  * @cssProp `--li-button-background-color`
  * @cssProp `--li-button-color`
  * @cssProp `--li-button-border-radius`

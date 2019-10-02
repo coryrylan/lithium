@@ -16,40 +16,39 @@
       <li-button type="submit">submit</li-button>
       <li-button disabled>disabled</li-button>
       <li-button><a href="/about">link</a></li-button>
-      <li-button loading>loading</li-button>
+      <li-button loading="true">loading</li-button>
 
       <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
       <li-code-example [code]="codeExampleTypes" language="html"></li-code-example>
 
-      <h2>Colors</h2>
+      <h2>Action Types</h2>
       <li-button type="button">default</li-button>
-      <li-button success>success</li-button>
-      <li-button warning>warning</li-button>
-      <li-button danger>danger</li-button>
+      <li-button action="success">success</li-button>
+      <li-button action="warning">warning</li-button>
+      <li-button action="danger">danger</li-button>
       <li-button class="purple">custom color</li-button>
 
       <li-code-example [code]="codeExampleColors" language="html"></li-code-example>
 
-      <h2>Hierarchy</h2>
-
+      <h2>level</h2>
       <li-button>primary</li-button>
-      <li-button secondary>secondary</li-button>
-      <li-button tertiary>tertiary</li-button>
+      <li-button level="secondary">secondary</li-button>
+      <li-button level="tertiary">tertiary</li-button>
       <br />
       <li-button><a href="/about">link</a></li-button>
-      <li-button secondary><a href="/about">link</a></li-button>
-      <li-button tertiary><a href="/about">link</a></li-button>
+      <li-button level="secondary"><a href="/about">link</a></li-button>
+      <li-button level="tertiary"><a href="/about">link</a></li-button>
       <p>
-        This is a <li-button tertiary-inline><a href="/about">tertiary inline</a></li-button> button.
+        This is a <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button> button.
       </p>
 
       <li-code-example [code]="codeExampleStyles" language="html"></li-code-example>
 
       <h2>Size</h2>
 
-      <li-button small>small</li-button>
+      <li-button size="small">small</li-button>
       <li-button>default</li-button>
-      <li-button large>large</li-button>
+      <li-button size="large">large</li-button>
 
       <li-code-example [code]="codeExampleSize" language="html"></li-code-example>
 
@@ -62,14 +61,13 @@
       <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
 
       <h2>Icon Button</h2>
-
-      <li-button icon aria-label="CPU Usage High">
+      <li-button size="icon" aria-label="CPU Usage High">
         <li-icon name="warning"></li-icon>
       </li-button>
-      <li-button icon secondary aria-label="Menu">
+      <!-- <li-button size="icon" level="secondary" aria-label="Menu">
         <li-icon name="menu"></li-icon>
-      </li-button>
-      <li-button icon tertiary aria-label="Info">
+      </li-button> -->
+      <li-button size="icon" level="tertiary"  aria-label="Info">
         <li-icon name="info"></li-icon>
       </li-button>
 
@@ -84,9 +82,9 @@
       </li-button-group>
 
       <li-button-group>
-        <li-button secondary>Item 1</li-button>
-        <li-button secondary>Item 2</li-button>
-        <li-button secondary>Item 3</li-button>
+        <li-button level="secondary">Item 1</li-button>
+        <li-button level="secondary">Item 2</li-button>
+        <li-button level="secondary">Item 3</li-button>
       </li-button-group>
 
       <li-code-example [code]="codeExampleGroup" language="html"></li-code-example>

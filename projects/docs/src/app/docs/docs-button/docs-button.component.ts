@@ -14,7 +14,7 @@ export class DocsButtonComponent {
     <li-button type="submit">submit</li-button>
     <li-button disabled>disabled</li-button>
     <li-button><a href="/about">link</a></li-button>
-    <li-button loading>loading...</li-button>
+    <li-button loading="true">loading</li-button>
   `;
 
   codeExampleStyles = `
@@ -26,9 +26,9 @@ export class DocsButtonComponent {
 
   codeExampleColors = `
     <li-button>default</li-button>
-    <li-button success>success</li-button>
-    <li-button warning>warning</li-button>
-    <li-button danger>danger</li-button>
+    <li-button action="success">success</li-button>
+    <li-button action="warning">warning</li-button>
+    <li-button action="danger">danger</li-button>
     <li-button class="purple">custom color</li-button>
 
     <style>
@@ -40,25 +40,22 @@ export class DocsButtonComponent {
   `;
 
   codeExampleSize = `
-    <li-button small>small</li-button>
+    <li-button size="small">small</li-button>
     <li-button>default</li-button>
-    <li-button large>large</li-button>
+    <li-button size="large">large</li-button>
   `;
 
   codeExampleLoading = `
-    <li-button loading>
+    <li-button loading="true">
       click for loading
     </li-button>
   `;
 
   codeExampleIcon = `
-    <li-button icon aria-label="CPU Usage High">
+    <li-button size="icon" aria-label="CPU Usage High">
       <li-icon name="warning"></li-icon>
     </li-button>
-    <li-button icon secondary aria-label="Menu">
-      <li-icon name="menu"></li-icon>
-    </li-button>
-    <li-button icon tertiary aria-label="Info">
+    <li-button size="tertiary" aria-label="Info">
       <li-icon name="info"></li-icon>
     </li-button>
   `;
@@ -71,9 +68,9 @@ export class DocsButtonComponent {
     </li-button-group>
 
     <li-button-group>
-      <li-button secondary>Item 1</li-button>
-      <li-button secondary>Item 2</li-button>
-      <li-button secondary>Item 3</li-button>
+      <li-button level="secondary">Item 1</li-button>
+      <li-button level="secondary">Item 2</li-button>
+      <li-button level="secondary">Item 3</li-button>
     </li-button-group>
   `;
 
