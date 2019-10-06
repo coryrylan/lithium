@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run lib:sass && npm-run-all --parallel lib:sass:watch docs:build:watch",
+    "build": "npm run lib:build && npm run lib:api && npm run docs:build:prod",
     "all:format": "prettier --list-different './projects/**/*.{ts,scss,html}' --write",
-    "lib:build": "npm run all:format && npm run lib:lint && npm run lib:sass && npm run lib:test && ng build lithium && node modules.js",
+    "lib:build": "npm run all:format && npm run lib:lint && npm run lib:sass && npm run lib:test && ng build lithium && node modules.js && npm run lib:test:bundles",
     "lib:test": "ng test lithium --watch=false",
+    "lib:test:bundles": "bundlesize --config bundlesize.json",
     "lib:test:watch": "ng test lithium --watch --code-coverage",
     "lib:sass": "sass-render --q --suffix '.css.ts' -t ./projects/lithium/sass-template.js ./projects/lithium/**/*element.scss",
     "lib:sass:watch": "sass-render --q --suffix '.css.ts' -t ./projects/lithium/sass-template.js ./projects/lithium/**/*element.scss -w",
@@ -18,11 +20,13 @@
     "docs:build:watch": "ng serve docs",
     "docs:watch:prod": "ng serve docs --prod",
     "docs:build": "ng build docs",
-    "docs:build:prod": "ng build docs --prod --ts-config projects/docs/tsconfig.prod.json",
+    "docs:build:prod": "ng build docs --prod --stats-json --source-map --ts-config projects/docs/tsconfig.prod.json",
     "docs:build:watch:prod": "npm run lib:build && ng serve docs --prod",
     "docs:lint": "ng lint docs",
     "docs:e2e": "ng e2e docs",
-    "docs:deploy": "npm run lib:build && npm run lib:api && npm run docs:build:prod && firebase deploy"
+    "docs:deploy": "npm run build && firebase deploy",
+    "bundle-sourcemaps": "source-map-explorer dist/docs/*.js",
+    "bundle-webpack": "webpack-bundle-analyzer dist/docs/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +59,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "bundlesize": "^0.18.0",
     "codelyzer": "^5.0.0",
     "fibers": "^4.0.1",
     "jasmine-core": "~3.4.0",
@@ -69,11 +74,13 @@
     "prettier": "1.18.2",
     "protractor": "~5.4.0",
     "sass": "^1.23.0-module.beta.1",
+    "source-map-explorer": "^2.1.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typedoc": "^0.14.2",
     "typedoc-plugin-no-inherit": "^1.1.8",
     "typescript": "~3.5.3",
-    "wc-sass-render": "^1.2.1"
+    "wc-sass-render": "^1.2.1",
+    "webpack-bundle-analyzer": "^3.5.2"
   }
 }
