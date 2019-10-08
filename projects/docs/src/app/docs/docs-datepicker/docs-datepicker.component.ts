@@ -10,7 +10,7 @@ export class DocsDatepickerComponent {
   myDate = new Date();
   dates = [new Date(), addDays(new Date(), 5)];
 
-  startDate = new FormControl();
+  startDate = new FormControl('2019-10-06');
   val = '';
 
   codeExampleImport = `

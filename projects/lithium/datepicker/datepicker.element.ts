@@ -17,6 +17,7 @@ export class LithiumDatepicker extends LitElement {
   @querySlotAll('li-input-error') protected errorMessages: NodeListOf<LithiumInputError>;
   @querySlotAll('input') private inputs: NodeListOf<HTMLInputElement>;
   @query('input') private input: HTMLInputElement;
+  @query('li-datepicker-inline') private inlineDatepicker: LithiumDatepickerInline;
 
   protected inputStartId = `li-datepicker-input-start-id-${idCount++}`;
   protected inputEndId = `li-datepicker-input-end-id-${idCount++}`;
@@ -70,9 +71,12 @@ export class LithiumDatepicker extends LitElement {
   }
 
   private setupStartInput() {
-    console.log(this.input);
     this.input.id = this.inputStartId;
     this.input.setAttribute('aria-describedby', `${this.messageStartId} ${this.errorMessageStartId}`);
+
+    // fix date offset and format
+    this.input.value = this.inputs[0].value;
+    this.inlineDatepicker.value = new Date(this.input.value);
     this.labels[0].setAttribute('for', this.inputStartId);
 
     if (this.messages[0]) {
