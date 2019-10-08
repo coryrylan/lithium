@@ -11,6 +11,7 @@
   background-color: var(--li-side-nav-background-color, var(--li-common-color-white-100));
   overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior: contain;
   will-change: left;
   transition: left var(--li-side-nav-transition-speed, 250ms) ease-in;
 }
@@ -25,7 +26,7 @@
 
 .li-menu-heading {
   position: relative;
-  height: 5em;
+  min-height: 5em;
   overflow: hidden;
   background-color: var(--li-side-nav-header-background-color, var(--li-common-color-gray-100));
   color: var(--li-side-nav-color, #2d2d2d);

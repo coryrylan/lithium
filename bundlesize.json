@@ -11,6 +11,10 @@
     {
       "path": "./dist/docs/**/main-es2015*.js",
       "maxSize": "150 kB"
+    },
+    {
+      "path": "./dist/docs/styles.*.css",
+      "maxSize": "5 kB"
     }
   ]
 }
