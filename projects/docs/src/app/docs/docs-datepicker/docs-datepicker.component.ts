@@ -10,8 +10,16 @@ export class DocsDatepickerComponent {
   myDate = new Date();
   dates = [new Date(), addDays(new Date(), 5)];
 
-  startDate = new FormControl('2019-10-06');
-  val = '';
+  defaultDate = new FormControl('2019-10-08');
+  defaultDateValue = '2019-10-08';
+
+  inlineDate = new FormControl('2019-10-08');
+  inlineDateValue = '2019-10-08';
+
+  startDate = new FormControl('2019-10-08');
+  endDate = new FormControl('2019-10-14');
+  startDateValue = '2019-10-08';
+  endDateValue = '2019-10-14';
 
   codeExampleImport = `
     import 'lithium-ui/datepicker';

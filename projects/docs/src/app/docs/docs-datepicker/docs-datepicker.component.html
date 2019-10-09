@@ -1,6 +1,10 @@
 <h1>Datepicker</h1>
 
-<p></p>
+<p>
+  The datepicker component extends the functionality of the native datepicker by
+  adding range support. The datepicker follows the same format for the date value
+  as the native datepicker <code>YYYY-MM-DD</code>.
+</p>
 
 <li-tabs>
   <li-tab-title>Example</li-tab-title>
@@ -10,37 +14,44 @@
   <li-tab>
     <h2>Example</h2>
 
-    <p>angular forms binding: {{ startDate.value }}</p>
+    <!-- <p>angular forms binding: {{ startDate.value }} - {{ endDate.value }}</p>
+    <p>native change event: {{ startDateValue }} - {{ endDateValue }}</p>
 
-    <p>native change event: {{ val }}</p>
+    <li-datepicker>
+      <label>Range</label>
+      <input type="date" [formControl]="startDate" (change)="startDateValue = $event.target.value" />
+
+      <label>End Date</label>
+      <input type="date" [formControl]="endDate" (change)="endValue = $event.target.value" />
+    </li-datepicker>
+
+    <br /><hr /><br /> -->
+
+
+    <p>angular forms binding: {{ defaultDate.value }}</p>
+    <p>native change event: {{ defaultDateValue }}</p>
 
     <li-datepicker>
       <label>Date</label>
-      <input type="date" [formControl]="startDate" (change)="val = $event.target.value" />
+      <input type="date" [formControl]="defaultDate" (change)="defaultDateValue = $event.target.value" />
     </li-datepicker>
 
-    <br /><br />
+    <br /><hr /><br />
 
-    <!-- <li-datepicker>
-      <label>Start Date</label>
-      <input type="date" />
-
-      <label>End Date</label>
-      <input type="date" />
-    </li-datepicker> -->
-
-    <!-- when in range mode return json for easy parse on input type { start: '', end: '' } -->
+    <p>angular forms binding: {{ inlineDate.value }}</p>
+    <p>native change event: {{ inlineDateValue }}</p>
+    <li-datepicker inline>
+      <label>Inline Date</label>
+      <input type="date" [formControl]="inlineDate" (change)="inlineDateValue = $event.target.value" />
+    </li-datepicker>
 
     <br />
     <br />
-    <li-datepicker-inline [value]="dates" [range]="true"></li-datepicker-inline>
-
-    <br /><br />
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab>
     <h2>API</h2>
-    <app-component-api component="LithiumDatalist"></app-component-api>
+    <app-component-api component="LithiumDatepicker"></app-component-api>
   </li-tab>
   <li-tab>
     <app-theme-api></app-theme-api>

@@ -1,3 +1,4 @@
+import { parse, format } from 'date-fns';
 import { html, LitElement, property, query } from 'lit-element';
 import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError, LithiumInputMessage } from 'lithium-ui/input';
@@ -5,12 +6,11 @@ import { LithiumDatepickerInline } from './datepicker-inline.element';
 import { styles } from './datepicker.element.css';
 
 let idCount = 0;
-
+/**
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+ */
 export class LithiumDatepicker extends LitElement {
-  @property({ type: Boolean, reflect: true }) error = false;
   @property({ type: Boolean, reflect: true }) inline = false;
-  @property({ type: Boolean }) nativeOnly = false;
-  @property({ type: Boolean }) nativeMobileOnly = true;
 
   @querySlotAll('label') protected labels: NodeListOf<HTMLLabelElement>;
   @querySlotAll('li-input-message') protected messages: NodeListOf<LithiumInputMessage>;
@@ -19,12 +19,9 @@ export class LithiumDatepicker extends LitElement {
   @query('input') private input: HTMLInputElement;
   @query('li-datepicker-inline') private inlineDatepicker: LithiumDatepickerInline;
 
-  protected inputStartId = `li-datepicker-input-start-id-${idCount++}`;
-  protected inputEndId = `li-datepicker-input-end-id-${idCount++}`;
-  protected messageStartId = `li-datepicker-start-message-id-${idCount++}`;
-  protected messageEndId = `li-datepicker-end-message-id-${idCount++}`;
-  protected errorMessageStartId = `li-datepicker-start-error-id-${idCount++}`;
-  protected errorMessageEndId = `li-datepicker-end-error-id-${idCount++}`;
+  protected inputId = `li-datepicker-input-start-id-${idCount++}`;
+  protected messageId = `li-datepicker-start-message-id-${idCount++}`;
+  protected errorMessageId = `li-datepicker-start-error-id-${idCount++}`;
 
   @property() private showStartDatepicker = false;
 
@@ -35,9 +32,11 @@ export class LithiumDatepicker extends LitElement {
   render() {
     return html`
       <slot></slot>
-      <input type="text" readonly />
+      <input type="text" readonly class="${this.inline ? 'li-display-none' : ''}" />
       <li-datepicker-inline
-        ?hidden="${!this.showStartDatepicker}"
+        class="${this.inline ? 'li-datepicker-inline' : 'li-datepicker-dropdown'}"
+        dropdown="${!this.showStartDatepicker && !this.inline}"
+        ?hidden="${!this.showStartDatepicker && !this.inline}"
         @valueChange=${(e: CustomEvent) => this.valueChange(e)}
       ></li-datepicker-inline>
     `;
@@ -47,6 +46,7 @@ export class LithiumDatepicker extends LitElement {
     super.firstUpdated(props);
     this.setupStartInput();
     this.setupEndInput();
+    this.setupFormatValue();
 
     this.input.addEventListener('focus', () => (this.showStartDatepicker = true));
 
@@ -61,45 +61,51 @@ export class LithiumDatepicker extends LitElement {
     this.showStartDatepicker = false;
 
     const date: Date = e.detail;
-    const day = ('0' + date.getDate()).slice(-2);
-    const month = ('0' + (date.getMonth() + 1)).slice(-2);
-    const dateString = `${date.getFullYear()}-${month}-${day}`;
-    this.input.value = dateString;
-    this.inputs[0].value = dateString;
+    const dateFormat = format(date, 'MM/dd/yyyy');
+    const dateValue = format(date, 'yyyy-MM-dd');
+
+    this.input.value = dateFormat;
+    this.updateStartInput(dateValue);
+  }
+
+  private updateStartInput(dateValue: string) {
+    this.inputs[0].value = dateValue;
     this.inputs[0].dispatchEvent(new Event('input'));
     this.inputs[0].dispatchEvent(new Event('change'));
   }
 
+  // private updateEndInput(dateValue: string) {
+  //   this.inputs[0].value = dateValue;
+  //   this.inputs[0].dispatchEvent(new Event('input'));
+  //   this.inputs[0].dispatchEvent(new Event('change'));
+  // }
+
   private setupStartInput() {
-    this.input.id = this.inputStartId;
-    this.input.setAttribute('aria-describedby', `${this.messageStartId} ${this.errorMessageStartId}`);
-
-    // fix date offset and format
-    this.input.value = this.inputs[0].value;
-    this.inlineDatepicker.value = new Date(this.input.value);
-    this.labels[0].setAttribute('for', this.inputStartId);
-
-    if (this.messages[0]) {
-      this.messages[0].id = this.messageStartId;
-    }
-
-    if (this.errorMessages[0]) {
-      this.errorMessages[0].id = this.errorMessageStartId;
-    }
+    this.setUpInput(0);
   }
 
   private setupEndInput() {
-    if (this.inputs[1]) {
-      this.inputs[1].id = this.inputEndId;
-      this.inputs[1].setAttribute('aria-describedby', `${this.messageStartId} ${this.errorMessageEndId}`);
-      this.labels[1].setAttribute('for', this.inputEndId);
+    this.setUpInput(1);
+  }
+
+  private setupFormatValue() {
+    this.input.value = this.inputs[0].value;
+    this.inlineDatepicker.value = parse(this.inputs[0].value, 'yyyy-MM-dd', new Date());
+  }
+
+  private setUpInput(index: number) {
+    if (this.inputs[index]) {
+      const indexId = `-${index}`;
+      this.inputs[index].id = this.inputId + indexId;
+      this.inputs[index].setAttribute('aria-describedby', `${this.messageId}${indexId} ${this.errorMessageId}${indexId}`);
+      this.labels[index].setAttribute('for', this.inputId + indexId);
 
       if (this.messages[1]) {
-        this.messages[1].id = this.messageEndId;
+        this.messages[1].id = this.messageId + indexId;
       }
 
       if (this.errorMessages[1]) {
-        this.errorMessages[1].id = this.errorMessageEndId;
+        this.errorMessages[1].id = this.errorMessageId + indexId;
       }
     }
   }
