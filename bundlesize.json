@@ -10,7 +10,7 @@
     },
     {
       "path": "./dist/docs/**/main-es2015*.js",
-      "maxSize": "150 kB"
+      "maxSize": "160 kB"
     },
     {
       "path": "./dist/docs/styles.*.css",

@@ -1,4 +1,4 @@
-import { parse, format } from 'date-fns';
+import { format, parse } from 'date-fns';
 import { html, LitElement, property, query } from 'lit-element';
 import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError, LithiumInputMessage } from 'lithium-ui/input';
@@ -23,7 +23,10 @@ export class LithiumDatepicker extends LitElement {
   protected messageId = `li-datepicker-start-message-id-${idCount++}`;
   protected errorMessageId = `li-datepicker-start-error-id-${idCount++}`;
 
-  @property() private showStartDatepicker = false;
+  @property({ type: Boolean }) private showStartDatepicker = false;
+  @property({ type: Boolean }) private range = false;
+  @property({ type: String }) private min: string;
+  @property({ type: String }) private max: string;
 
   static get styles() {
     return styles;
@@ -37,6 +40,9 @@ export class LithiumDatepicker extends LitElement {
         class="${this.inline ? 'li-datepicker-inline' : 'li-datepicker-dropdown'}"
         dropdown="${!this.showStartDatepicker && !this.inline}"
         ?hidden="${!this.showStartDatepicker && !this.inline}"
+        .range=${this.range}
+        .minDate=${parse(this.min, 'yyyy-MM-dd', new Date())}
+        .maxDate=${parse(this.max, 'yyyy-MM-dd', new Date())}
         @valueChange=${(e: CustomEvent) => this.valueChange(e)}
       ></li-datepicker-inline>
     `;
@@ -46,7 +52,7 @@ export class LithiumDatepicker extends LitElement {
     super.firstUpdated(props);
     this.setupStartInput();
     this.setupEndInput();
-    this.setupFormatValue();
+    this.setupInitialValue();
 
     this.input.addEventListener('focus', () => (this.showStartDatepicker = true));
 
@@ -60,12 +66,17 @@ export class LithiumDatepicker extends LitElement {
   private valueChange(e: CustomEvent) {
     this.showStartDatepicker = false;
 
-    const date: Date = e.detail;
-    const dateFormat = format(date, 'MM/dd/yyyy');
-    const dateValue = format(date, 'yyyy-MM-dd');
+    if (e.detail.length) {
+      this.input.value = format(e.detail[0], 'MM/dd/yyyy');
+      this.updateStartInput(format(e.detail[0], 'yyyy-MM-dd'));
 
-    this.input.value = dateFormat;
-    this.updateStartInput(dateValue);
+      if (e.detail[1]) {
+        this.updateEndInput(format(e.detail[1], 'yyyy-MM-dd'));
+      }
+    } else {
+      this.input.value = format(e.detail, 'MM/dd/yyyy');
+      this.updateStartInput(format(e.detail, 'yyyy-MM-dd'));
+    }
   }
 
   private updateStartInput(dateValue: string) {
@@ -74,11 +85,11 @@ export class LithiumDatepicker extends LitElement {
     this.inputs[0].dispatchEvent(new Event('change'));
   }
 
-  // private updateEndInput(dateValue: string) {
-  //   this.inputs[0].value = dateValue;
-  //   this.inputs[0].dispatchEvent(new Event('input'));
-  //   this.inputs[0].dispatchEvent(new Event('change'));
-  // }
+  private updateEndInput(dateValue: string) {
+    this.inputs[1].value = dateValue;
+    this.inputs[1].dispatchEvent(new Event('input'));
+    this.inputs[1].dispatchEvent(new Event('change'));
+  }
 
   private setupStartInput() {
     this.setUpInput(0);
@@ -88,7 +99,25 @@ export class LithiumDatepicker extends LitElement {
     this.setUpInput(1);
   }
 
-  private setupFormatValue() {
+  private setupInitialValue() {
+    if (this.inputs.length && this.inputs[1]) {
+      this.setupInitialRangeValue();
+    } else {
+      this.setupInitialSingleValue();
+    }
+  }
+
+  private setupInitialRangeValue() {
+    this.range = true;
+    this.input.value = `${this.inputs[0].value} - ${this.inputs[1].value}`;
+
+    this.inlineDatepicker.value = [
+      parse(this.inputs[0].value, 'yyyy-MM-dd', new Date()),
+      parse(this.inputs[1].value, 'yyyy-MM-dd', new Date())
+    ];
+  }
+
+  private setupInitialSingleValue() {
     this.input.value = this.inputs[0].value;
     this.inlineDatepicker.value = parse(this.inputs[0].value, 'yyyy-MM-dd', new Date());
   }

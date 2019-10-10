@@ -16,6 +16,11 @@ export class DocsDatepickerComponent {
   inlineDate = new FormControl('2019-10-08');
   inlineDateValue = '2019-10-08';
 
+  minMaxDate = new FormControl('2019-10-08');
+  minMaxDateValue = '2019-10-08';
+  minDate = '2019-10-04';
+  maxDate = '2019-10-16';
+
   startDate = new FormControl('2019-10-08');
   endDate = new FormControl('2019-10-14');
   startDateValue = '2019-10-08';
@@ -28,7 +33,12 @@ export class DocsDatepickerComponent {
   codeExampleHtml = `
     <li-datepicker>
       <label>Date</label>
-      <input type="date" [formControl]="startDate" (change)="val = $event.target.value" />
+      <input type="date" />
+    </li-datepicker>
+
+    <li-datepicker inline>
+      <label>Date Inline</label>
+      <input type="date" />
     </li-datepicker>
 
     <li-datepicker>
@@ -36,6 +46,11 @@ export class DocsDatepickerComponent {
       <input type="date" />
 
       <label>End Date</label>
+      <input type="date" />
+    </li-datepicker>
+
+    <li-datepicker min="2019-10-04" max="2019-10-16">
+      <label>Min/Max Date</label>
       <input type="date" />
     </li-datepicker>
   `;

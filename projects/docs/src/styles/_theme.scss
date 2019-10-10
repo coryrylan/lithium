@@ -14,6 +14,9 @@
   --global-color-gray-600: hsl(0, 0%, 16%);
   --global-color-gray-700: hsl(0, 0%, 12%);
   --global-color-purple-100: hsl(288, 38%, 50%);
+  --global-color-blue-10: hsl(212, 100%, 97%);
+  --global-color-blue-25: hsl(212, 100%, 93%);
+  --global-color-blue-50: hsl(212, 83%, 59%);
   --global-color-blue-100: hsl(212, 66%, 48%);
   --global-color-blue-200: hsl(212, 67%, 37%);
   --global-primary-color: var(--global-color-gray-100);
@@ -40,6 +43,14 @@
   --li-button-disabled-background: var(--global-color-blue-200);
   --li-card-background-color: var(--global-color-gray-500);
   --li-card-border-color: var(--global-color-gray-600);
+  --li-datepicker-today-color: var(--global-color-white-100);
+  --li-datepicker-background-color: var(--global-color-gray-500);
+  --li-datepicker-color: var(--global-color-white-100);
+  --li-datepicker-range-selected-color: var(--global-color-white-100);
+  --li-datepicker-range-selected-background-color: var(--global-color-blue-200);
+  --li-datepicker-selected-background-color: var(--global-color-blue-100);
+  --li-datepicker-button-disabled-background-color: var(--global-color-gray-600);
+  --li-datepicker-button-disabled-color: var(--global-color-gray-300);
   --li-nav-bar-background-color: var(--global-color-gray-500);
   --li-nav-bar-color: var(--global-text-color);
   --li-nav-bar-hover-background-color: var(--global-color-gray-700);

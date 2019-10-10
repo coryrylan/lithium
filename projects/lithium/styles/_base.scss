@@ -35,6 +35,7 @@
   --li-common-line-height: 2.4em;
   --li-common-font-size: 1.6em;
   --li-common-font-size-px: 16px;
+  --li-common-font-color: var(--li-common-color-gray-500);
 
   /* base font */
   font-size: var(--li-common-base-font-size, var(--li-global-base-font-size, 10px)) !important;

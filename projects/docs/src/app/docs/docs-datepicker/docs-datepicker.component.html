@@ -1,9 +1,9 @@
 <h1>Datepicker</h1>
 
 <p>
-  The datepicker component extends the functionality of the native datepicker by
-  adding range support. The datepicker follows the same format for the date value
-  as the native datepicker <code>YYYY-MM-DD</code>.
+  The datepicker component extends the functionality of the native datepicker by adding range support. The datepicker follows the same
+  format for the date value as the native datepicker <code>YYYY-MM-DD</code>. Learn more about
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#Value">date input values</a>.
 </p>
 
 <li-tabs>
@@ -14,39 +14,49 @@
   <li-tab>
     <h2>Example</h2>
 
-    <!-- <p>angular forms binding: {{ startDate.value }} - {{ endDate.value }}</p>
-    <p>native change event: {{ startDateValue }} - {{ endDateValue }}</p>
+    <!--
+      TODO
+      - focus to active month
+      - native only
+      - native mobile
+      - unit tests
+      - i18n
+      - display format
+    -->
 
+    <!-- <p>angular forms binding: {{ defaultDate.value }}</p> -->
     <li-datepicker>
-      <label>Range</label>
-      <input type="date" [formControl]="startDate" (change)="startDateValue = $event.target.value" />
-
-      <label>End Date</label>
-      <input type="date" [formControl]="endDate" (change)="endValue = $event.target.value" />
-    </li-datepicker>
-
-    <br /><hr /><br /> -->
-
-
-    <p>angular forms binding: {{ defaultDate.value }}</p>
-    <p>native change event: {{ defaultDateValue }}</p>
-
-    <li-datepicker>
-      <label>Date</label>
+      <label>Date {{ defaultDateValue }}</label>
       <input type="date" [formControl]="defaultDate" (change)="defaultDateValue = $event.target.value" />
     </li-datepicker>
 
-    <br /><hr /><br />
-
-    <p>angular forms binding: {{ inlineDate.value }}</p>
-    <p>native change event: {{ inlineDateValue }}</p>
+    <br />
+    <h3>Inline Datepicker</h3>
+    <!-- <p>angular forms binding: {{ inlineDate.value }}</p> -->
     <li-datepicker inline>
-      <label>Inline Date</label>
+      <label>Inline Date {{ inlineDateValue }}</label>
       <input type="date" [formControl]="inlineDate" (change)="inlineDateValue = $event.target.value" />
     </li-datepicker>
 
     <br />
+    <h3>Date Range Datepicker</h3>
+    <!-- <p>angular forms binding: {{ startDate.value }} - {{ endDate.value }}</p> -->
+    <li-datepicker inline>
+      <label>Range {{ startDateValue }} - {{ endDateValue }}</label>
+      <input type="date" [formControl]="startDate" (change)="startDateValue = $event.target.value" />
+
+      <label>End Date</label>
+      <input type="date" [formControl]="endDate" (change)="endDateValue = $event.target.value" />
+    </li-datepicker>
+
     <br />
+    <h3>Min/Max Datepicker</h3>
+    <!-- <p>angular forms binding: {{ minMaxDate.value }}</p> -->
+    <li-datepicker inline [min]="minDate" [max]="maxDate">
+      <label>Min/Max Date {{ minMaxDateValue }}</label>
+      <input type="date" [formControl]="minMaxDate" (change)="minMaxDateValue = $event.target.value" />
+    </li-datepicker>
+
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
   </li-tab>
   <li-tab>
