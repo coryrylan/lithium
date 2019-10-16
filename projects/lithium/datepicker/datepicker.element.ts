@@ -66,16 +66,19 @@ export class LithiumDatepicker extends LitElement {
   private valueChange(e: CustomEvent) {
     this.showStartDatepicker = false;
 
-    if (e.detail.length) {
+    if (Array.isArray(e.detail)) {
       this.input.value = format(e.detail[0], 'MM/dd/yyyy');
       this.updateStartInput(format(e.detail[0], 'yyyy-MM-dd'));
 
       if (e.detail[1]) {
         this.updateEndInput(format(e.detail[1], 'yyyy-MM-dd'));
       }
-    } else {
+    } else if (e.detail) {
       this.input.value = format(e.detail, 'MM/dd/yyyy');
       this.updateStartInput(format(e.detail, 'yyyy-MM-dd'));
+    } else {
+      this.input.value = '';
+      this.updateStartInput('');
     }
   }
 
@@ -119,7 +122,10 @@ export class LithiumDatepicker extends LitElement {
 
   private setupInitialSingleValue() {
     this.input.value = this.inputs[0].value;
-    this.inlineDatepicker.value = parse(this.inputs[0].value, 'yyyy-MM-dd', new Date());
+
+    if (this.inputs[0].value && this.inputs[0].value.length) {
+      this.inlineDatepicker.value = parse(this.inputs[0].value, 'yyyy-MM-dd', new Date());
+    }
   }
 
   private setUpInput(index: number) {
