@@ -43,7 +43,7 @@ export interface Property {
   name: string;
 }
 
-export interface Class {
+export interface ClassType {
   comment: {
     shortText: string;
     tags: { tag: string; text: string }[];
@@ -52,5 +52,5 @@ export interface Class {
   kind: 128;
   kindString: string;
   name: string;
-  children: Method | Property[];
+  children: Property | Method[];
 }

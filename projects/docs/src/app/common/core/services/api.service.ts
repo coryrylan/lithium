@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
-import { Class } from '../../interfaces/api';
+import { ClassType } from '../../interfaces/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  api: Observable<Class[]>;
+  api: Observable<ClassType[]>;
 
   constructor(private httpClient: HttpClient) {
     this.api = this.httpClient.get<any>('/assets/api.json').pipe(

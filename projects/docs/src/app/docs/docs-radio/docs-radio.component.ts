@@ -9,7 +9,7 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class DocsRadioComponent {
   form: FormGroup;
-  value: Observable<string>;
+  value: Observable<any>;
 
   codeExampleImport = `
     import 'lithium-ui/radio';

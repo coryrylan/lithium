@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Class } from '../../../interfaces/api';
+// import { ClassType } from '../../../interfaces/api';
 
 @Component({
   selector: 'app-class-api',
@@ -8,7 +8,7 @@ import { Class } from '../../../interfaces/api';
   styleUrls: ['./class-api.component.scss']
 })
 export class ClassAPIComponent implements OnInit {
-  @Input() componentClass: Class;
+  @Input() componentClass: any; // ClassType does work due to union type :(
 
   constructor() {}
 

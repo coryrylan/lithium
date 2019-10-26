@@ -35,5 +35,9 @@
     "noUnusedParameters": true,
     "strictFunctionTypes": true,
     "noFallthroughCasesInSwitch": true
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

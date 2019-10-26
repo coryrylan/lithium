@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ApiService } from '../common/core/services/api.service';
-import { Class } from '../common/interfaces/api';
+import { ClassType } from '../common/interfaces/api';
 
 @Component({
   selector: 'app-api',
@@ -9,8 +9,8 @@ import { Class } from '../common/interfaces/api';
 })
 export class ApiComponent implements OnInit {
   search = new FormControl('');
-  classResults: Class[] = [];
-  private classes: Class[] = [];
+  classResults: ClassType[] = [];
+  private classes: ClassType[] = [];
 
   constructor(private apiService: ApiService) {
     this.apiService.api.subscribe(classes => {

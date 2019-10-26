@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { ApiService } from '../../../core/services/api.service';
-import { Class } from '../../../interfaces/api';
+import { ClassType } from '../../../interfaces/api';
 
 @Component({
   selector: 'app-component-api',
@@ -10,7 +10,7 @@ import { Class } from '../../../interfaces/api';
 })
 export class ComponentApiComponent implements OnInit {
   @Input() component: string;
-  componentClass: Class;
+  componentClass: ClassType;
 
   constructor(private apiService: ApiService) {}
 
