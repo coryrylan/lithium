@@ -38,7 +38,7 @@ export class LithiumDatepicker extends LitElement {
       <input type="text" readonly class="${this.inline ? 'li-display-none' : ''}" />
       <li-datepicker-inline
         class="${this.inline ? 'li-datepicker-inline' : 'li-datepicker-dropdown'}"
-        dropdown="${!this.showStartDatepicker && !this.inline}"
+        ?dropdown="${!this.showStartDatepicker && !this.inline}"
         ?hidden="${!this.showStartDatepicker && !this.inline}"
         .range=${this.range}
         .minDate=${parse(this.min, 'yyyy-MM-dd', new Date())}

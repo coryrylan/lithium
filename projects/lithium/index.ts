@@ -13,6 +13,8 @@ export * from './dropdown/dropdown.element';
 export * from './form/form.element';
 export * from './icons/index';
 export * from './input/input.element';
+export * from './input/input-error.element';
+export * from './input/input-message.element';
 export * from './loading-spinner/loading-spinner.element';
 export * from './message/message.element';
 export * from './modal/modal.element';
