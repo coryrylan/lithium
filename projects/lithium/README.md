@@ -1,6 +1,6 @@
 # Lithium
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-next.14.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-rc.0.
 
 ## Code scaffolding
 
