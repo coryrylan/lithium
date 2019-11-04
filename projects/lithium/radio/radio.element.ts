@@ -84,3 +84,10 @@ export class LithiumRadio extends LithiumInput {
 
 registerElementSafely('li-radio', LithiumRadio);
 registerElementSafely('li-radio-group', LithiumRadioGroup);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-radio': LithiumRadio;
+    'li-radio-group': LithiumRadioGroup;
+  }
+}

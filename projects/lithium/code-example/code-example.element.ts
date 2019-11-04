@@ -37,3 +37,9 @@ export class LithiumCodeExample extends LitElement {
 }
 
 registerElementSafely('li-code-example', LithiumCodeExample);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-code-example': LithiumCodeExample;
+  }
+}

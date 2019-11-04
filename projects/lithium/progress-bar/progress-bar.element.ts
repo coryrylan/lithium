@@ -47,3 +47,9 @@ export class LithiumProgressBar extends LitElement {
 }
 
 registerElementSafely('li-progress-bar', LithiumProgressBar);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-progress-bar': LithiumProgressBar;
+  }
+}

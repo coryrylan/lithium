@@ -110,3 +110,9 @@ export class LithiumMessage extends LitElement {
 }
 
 registerElementSafely('li-message', LithiumMessage);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-message': LithiumMessage;
+  }
+}

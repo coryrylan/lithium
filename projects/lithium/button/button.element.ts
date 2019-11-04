@@ -69,3 +69,10 @@ export class LithiumButton extends BaseButton {
 
 registerElementSafely('li-button', LithiumButton);
 registerElementSafely('li-button-group', LithiumButtonGroup);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-button': LithiumButton;
+    'li-button-group': LithiumButtonGroup;
+  }
+}

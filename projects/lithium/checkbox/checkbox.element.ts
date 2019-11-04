@@ -79,3 +79,10 @@ export class LithiumCheckbox extends LithiumInput {
 
 registerElementSafely('li-checkbox', LithiumCheckbox);
 registerElementSafely('li-checkbox-group', LithiumCheckboxGroup);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-checkbox': LithiumCheckbox;
+    'li-checkbox-group': LithiumCheckboxGroup;
+  }
+}

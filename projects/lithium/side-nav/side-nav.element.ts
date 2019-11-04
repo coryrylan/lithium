@@ -100,3 +100,9 @@ export class LithiumSideNav extends LitElement {
 }
 
 registerElementSafely('li-side-nav', LithiumSideNav);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-side-nav': LithiumSideNav;
+  }
+}
