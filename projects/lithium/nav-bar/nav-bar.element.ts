@@ -29,3 +29,9 @@ export class LithiumNavBar extends LitElement {
 }
 
 registerElementSafely('li-nav-bar', LithiumNavBar);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-nav-bar': LithiumNavBar;
+  }
+}

@@ -19,3 +19,9 @@ import { LithiumInput } from 'lithium-ui/input';
 export class LithiumTextArea extends LithiumInput {}
 
 registerElementSafely('li-textarea', LithiumTextArea);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-textarea': LithiumTextArea;
+  }
+}

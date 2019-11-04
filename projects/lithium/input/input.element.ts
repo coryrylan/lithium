@@ -73,3 +73,11 @@ export class LithiumInput extends LitElement {
 registerElementSafely('li-input', LithiumInput);
 registerElementSafely('li-input-error', LithiumInputError);
 registerElementSafely('li-input-message', LithiumInputMessage);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    // 'li-input': LithiumInput;
+    'li-input-error': LithiumInputError;
+    'li-input-message': LithiumInputMessage;
+  }
+}

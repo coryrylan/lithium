@@ -1,6 +1,6 @@
 {
   "name": "lithium-ui",
-  "version": "0.0.9",
+  "version": "0.0.17",
   "sideEffects": [
     "./esm5/**/*.element.js",
     "./esm2015/**/*.element.js",
@@ -30,6 +30,7 @@
     "prismjs": "^1.16.0",
     "@a11y/focus-trap": "^1.0.2",
     "resize-observer-polyfill": "^1.5.1",
-    "date-fns": "^2.2.1"
+    "date-fns": "^2.2.1",
+    "tslib": "^1.10.0"
   }
 }

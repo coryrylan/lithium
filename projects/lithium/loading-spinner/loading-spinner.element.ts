@@ -34,3 +34,9 @@ export class LithiumLoadingSpinner extends LitElement {
 }
 
 registerElementSafely('li-loading-spinner', LithiumLoadingSpinner);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-loading-spinner': LithiumLoadingSpinner;
+  }
+}

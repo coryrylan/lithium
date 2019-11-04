@@ -33,3 +33,9 @@ export class LithiumCard extends LitElement {
 }
 
 registerElementSafely('li-card', LithiumCard);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-card': LithiumCard;
+  }
+}

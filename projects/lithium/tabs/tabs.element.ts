@@ -91,3 +91,11 @@ export class LithiumTabs extends LitElement {
 registerElementSafely('li-tab-title', LithiumTabTitle);
 registerElementSafely('li-tab', LithiumTab);
 registerElementSafely('li-tabs', LithiumTabs);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-tab-title': LithiumTabTitle;
+    'li-tab': LithiumTab;
+    'li-tabs': LithiumTabs;
+  }
+}

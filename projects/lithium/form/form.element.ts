@@ -24,3 +24,9 @@ export class LithiumForm extends LitElement {
 }
 
 registerElementSafely('li-form', LithiumForm);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-form': LithiumForm;
+  }
+}

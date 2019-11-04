@@ -53,3 +53,9 @@ export class XDropdown extends LitElement {
 }
 
 registerElementSafely('x-dropdown', XDropdown);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-dropdown': XDropdown;
+  }
+}

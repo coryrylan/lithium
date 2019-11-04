@@ -148,3 +148,9 @@ export class LithiumDatepicker extends LitElement {
 
 registerElementSafely('li-datepicker-inline', LithiumDatepickerInline);
 registerElementSafely('li-datepicker', LithiumDatepicker);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-datepicker': LithiumDatepicker;
+  }
+}

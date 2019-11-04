@@ -29,3 +29,9 @@ export class LithiumDatalist extends LithiumInput {
 }
 
 registerElementSafely('li-datalist', LithiumDatalist);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-datalist': LithiumDatalist;
+  }
+}

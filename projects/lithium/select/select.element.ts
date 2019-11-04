@@ -19,3 +19,9 @@ import { LithiumInput } from 'lithium-ui/input';
 export class LithiumSelect extends LithiumInput {}
 
 registerElementSafely('li-select', LithiumSelect);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-select': LithiumSelect;
+  }
+}

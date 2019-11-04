@@ -52,3 +52,9 @@ export class LithiumIcon extends LitElement {
 }
 
 registerElementSafely('li-icon', LithiumIcon);
+
+// declare global {
+//   interface HTMLElementTagNameMap {
+//     'li-icon': LithiumIcon;
+//   }
+// }

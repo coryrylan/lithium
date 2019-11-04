@@ -129,3 +129,9 @@ export class LithiumModal extends LitElement {
 }
 
 registerElementSafely('li-modal', LithiumModal);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-modal': LithiumModal;
+  }
+}
