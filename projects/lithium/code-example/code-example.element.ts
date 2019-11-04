@@ -8,7 +8,7 @@ import { styles } from './code-example.element.css';
  * Code example generator with prismjs highlighting
  *
  * @noInheritDoc
- * @element `li-code-example`
+ * @element li-code-example
  * @experimental
  */
 // @dynamic

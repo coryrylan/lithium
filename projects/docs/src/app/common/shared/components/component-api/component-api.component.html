@@ -1,1 +1,76 @@
-<app-class-api [componentClass]="componentClass"></app-class-api>
+<li-card>
+  <section *ngIf="el | async as el">
+      <h2>{{el.name}}</h2>
+      <p>{{el.description}}</p>
+    
+      <ng-container *ngIf="el.properties.length > 0">
+        <h3>Properties</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+          </tr>
+          <tr *ngFor="let prop of el.properties">
+            <td><span>{{prop.name}}</span></td>
+            <td>{{prop.description}}</td>
+            <td>{{prop.type}}</td>
+          </tr>
+        </table>
+      </ng-container>
+    
+      <ng-container *ngIf="el.events.length > 0">
+        <h3>Events</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          <tr *ngFor="let event of el.events">
+            <td><span>{{event.name}}</span></td>
+            <td>{{event.description}}</td>
+          </tr>
+        </table>
+      </ng-container>
+    
+      <ng-container *ngIf="el.slots.length > 0">
+        <h3>Slots</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          <tr *ngFor="let slot of el.slots">
+            <td><span>{{slot.name}}</span></td>
+            <td>{{slot.description}}</td>
+          </tr>
+        </table>
+      </ng-container>
+    
+      <ng-container *ngIf="el.attributes.length > 0">
+        <h3>Attributes</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          <tr *ngFor="let attr of el.attributes">
+            <td><span>{{attr.name}}</span></td>
+            <td>{{attr.description}}</td>
+          </tr>
+        </table>
+      </ng-container>
+    
+      <ng-container *ngIf="el.cssProperties">
+        <h3>CSS Custom Properties</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+          </tr>
+          <tr *ngFor="let cssProp of el.cssProperties">
+            <td><span>{{cssProp.name}}</span></td>
+          </tr>
+        </table>
+      </ng-container>
+  </section>
+</li-card>

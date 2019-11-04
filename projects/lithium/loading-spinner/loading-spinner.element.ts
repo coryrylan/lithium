@@ -7,10 +7,10 @@ import { styles } from './loading-spinner.element.css';
  * Loading Spinner, display a indeterminate task that is processing
  *
  * @noInheritDoc
- * @element `li-loading-spinner`
- * @styleAttr `small` - small sized spinner
- * @styleAttr `large` - large sized spinner
- * @cssProp `--li-spinner-color`
+ * @element li-loading-spinner
+ * @attr {String} small - small sized spinner
+ * @attr {String} large - large sized spinner
+ * @cssProp --li-spinner-color
  */
 // @dynamic
 export class LithiumLoadingSpinner extends LitElement {

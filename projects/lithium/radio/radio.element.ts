@@ -12,12 +12,12 @@ import { styles } from './radio.element.css';
  * Radio, standard radio input with accessibility and error enhancements.
  *
  * @noInheritDoc
- * @element `li-radio`
- * @slot `default` - Content slot for radio input
- * @cssProp `--li-radio-border-color`
- * @cssProp `--li-radio-background-color`
- * @cssProp `--li-radio-fill-background-color`
- * @cssProp `--li-radio-disabled-label-color`
+ * @element li-radio
+ * @slot default - Content slot for radio input
+ * @cssprop --li-radio-border-color
+ * @cssprop --li-radio-background-color
+ * @cssprop --li-radio-fill-background-color
+ * @cssprop --li-radio-disabled-label-color
  */
 // @dynamic
 export class LithiumRadio extends LithiumInput {

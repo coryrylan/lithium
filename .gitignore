@@ -7,7 +7,7 @@
 /tmp
 /out-tsc
 /api
-/projects/docs/src/assets/api.json
+/projects/docs/api
 .firebase
 # Only exists if Bazel was run
 /bazel-out
