@@ -10,18 +10,18 @@ IconService.addIcons(closeIcon);
  * Side Nav, a slide out nav for navigation menus
  *
  * @noInheritDoc
- * @element `li-side-nav`
- * @slot `default` - Content slot for nav elements
- * @customEvent `openChange` - Notify when the side nav has been opened or closed.
- * @styleAttr `sticky` - Set nav to remain open on left side
- * @cssProp `--li-side-nav-top`
- * @cssProp `--li-side-nav-width`
- * @cssProp `--li-side-nav-background-color`
- * @cssProp `--li-side-nav-transition-speed`
- * @cssProp `--li-side-nav-border-color`
- * @cssProp `--li-side-nav-header-background-color`
- * @cssProp `--li-side-nav-hover-background-color`
- * @cssProp `--li-side-nav-color`
+ * @element li-side-nav
+ * @slot default - Content slot for nav elements
+ * @event openChange - Notify when the side nav has been opened or closed.
+ * @attr {String} sticky - Set nav to remain open on left side
+ * @cssprop --li-side-nav-top
+ * @cssprop --li-side-nav-width
+ * @cssprop --li-side-nav-background-color
+ * @cssprop --li-side-nav-transition-speed
+ * @cssprop --li-side-nav-border-color
+ * @cssprop --li-side-nav-header-background-color
+ * @cssprop --li-side-nav-hover-background-color
+ * @cssprop --li-side-nav-color
  */
 // @dynamic
 export class LithiumSideNav extends LitElement {

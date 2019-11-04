@@ -24,6 +24,7 @@
             "tsConfig": "projects/docs/tsconfig.app.json",
             "aot": true,
             "assets": [
+              { "glob": "**/*", "input": "projects/docs/api/", "output": "./api/" },
               "projects/docs/src/favicon.ico",
               "projects/docs/src/assets",
               "projects/docs/src/manifest.json",

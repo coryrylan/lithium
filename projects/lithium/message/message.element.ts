@@ -17,23 +17,23 @@ export enum LithiumMessageType {
  * Message, display messages to user with varying importance.
  *
  * @noInheritDoc
- * @element `li-message`
- * @slot `default` - Content slot for modal body
- * @customEvent `closeChange` - Notify when the message has been dismissed
- * @styleAttr `success` - Display success message
- * @styleAttr `warning` - Display warning message
- * @styleAttr `error` - Display error message
- * @cssProp `--li-message-color`
- * @cssProp `--li-message-background-color`
- * @cssProp `--li-message-border`
- * @cssProp `--li-message-border-radius`
- * @cssProp `--li-message-success-background-color`
- * @cssProp `--li-message-warning-background-color`
- * @cssProp `--li-message-error-background-color`
- * @cssProp `--li-message-success-icon-color`
- * @cssProp `--li-message-warning-icon-color`
- * @cssProp `--li-message-error-icon-color`
- * @cssProp `--li-message-icon-color`
+ * @element li-message
+ * @slot default - Content slot for modal body
+ * @event closeChange - Notify when the message has been dismissed
+ * @attr {String} success - Display success message
+ * @attr {String} warning - Display warning message
+ * @attr {String} error - Display error message
+ * @cssprop --li-message-color
+ * @cssprop --li-message-background-color
+ * @cssprop --li-message-border
+ * @cssprop --li-message-border-radius
+ * @cssprop --li-message-success-background-color
+ * @cssprop --li-message-warning-background-color
+ * @cssprop --li-message-error-background-color
+ * @cssprop --li-message-success-icon-color
+ * @cssprop --li-message-warning-icon-color
+ * @cssprop --li-message-error-icon-color
+ * @cssprop --li-message-icon-color
  */
 // @dynamic
 export class LithiumMessage extends LitElement {

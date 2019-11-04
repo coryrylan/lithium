@@ -8,9 +8,9 @@ import { LithiumRadio } from './radio.element';
  * Radio Group, group element to associate a collection of radio inputs
  *
  * @noInheritDoc
- * @element `li-radio-group`
- * @slot `default` - Content slot for radio input
- * @styleAttr `inline` - Display radio elements inline
+ * @element li-radio-group
+ * @slot default - Content slot for radio input
+ * @attr {String} inline - Display radio elements inline
  */
 // @dynamic
 export class LithiumRadioGroup extends LitElement {

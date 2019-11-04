@@ -7,8 +7,8 @@ import { styles } from './form.element.css';
  * Form, wrapper container for basic form styles
  *
  * @noInheritDoc
- * @element `li-form`
- * @slot `default` - Content slot for checkbox inputs
+ * @element li-form
+ * @slot default - Content slot for checkbox inputs
  */
 // @dynamic
 export class LithiumForm extends LitElement {

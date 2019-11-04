@@ -10,14 +10,14 @@ IconService.addIcons(closeIcon);
  * Modal, to intercept or pause user for a specific blocking task.
  *
  * @noInheritDoc
- * @element `li-modal`
- * @slot `default` - Content slot for modal body
- * @slot `header` - Content slot for modal header
- * @slot `footer` - Content slot for modal footer
- * @customEvent `openChange` - Notify when the modal has been opened or closed.
- * @styleAttr `large` - Set modal size to large breakpoint
- * @cssProp `--li-modal-max-width`
- * @cssProp `--li-modal-max-height`
+ * @element li-modal
+ * @slot default - Content slot for modal body
+ * @slot header - Content slot for modal header
+ * @slot footer - Content slot for modal footer
+ * @event openChange - Notify when the modal has been opened or closed.
+ * @attr {String} large - Set modal size to large breakpoint
+ * @cssprop --li-modal-max-width
+ * @cssprop --li-modal-max-height
  */
 // @dynamic
 export class LithiumModal extends LitElement {

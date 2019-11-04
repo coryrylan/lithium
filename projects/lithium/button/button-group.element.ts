@@ -5,10 +5,10 @@ import { styles } from './button-group.element.css';
  * Button Group, group related button actions
  *
  * @noInheritDoc
- * @element `li-button-group`
- * @slot `default` - Content slot for modal body
- * @styleAttr `secondary` - Apply secondary style.
- * @cssProp `--li-button-background-color`
+ * @element li-button-group
+ * @slot default - Content slot for modal body
+ * @attr {String} secondary - Apply secondary style.
+ * @cssprop --li-button-background-color
  */
 // @dynamic
 export class LithiumButtonGroup extends LitElement {

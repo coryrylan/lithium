@@ -7,8 +7,8 @@ import { styles } from './input-message.element.css';
  * Input message, display messages related for inputs
  *
  * @noInheritDoc
- * @element `li-input-message`
- * @slot `default` - Text content for message
+ * @element li-input-message
+ * @slot default - Text content for message
  */
 // @dynamic
 export class LithiumInputMessage extends LitElement {

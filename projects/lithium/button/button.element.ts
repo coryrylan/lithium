@@ -8,23 +8,23 @@ import { styles } from './button.element.css';
  * Button, action button with multiple states and loading spinner
  *
  * @noInheritDoc
- * @element `li-button`
- * @slot `default` - Content slot for modal body
- * @slot `header` - Content slot for modal header
- * @slot `footer` - Content slot for modal footer
- * @styleAttr `action` [default|secondary|tertiary|success|warning|danger]
- * @styleAttr `size` - [small|default|large]
- * @cssProp `--li-button-background-color`
- * @cssProp `--li-button-color`
- * @cssProp `--li-button-border-radius`
- * @cssProp `--li-button-disabled-background`
- * @cssProp `--li-button-secondary-color`
- * @cssProp `--li-button-secondary-border-color`
- * @cssProp `--li-button-secondary-hover-background-color`
- * @cssProp `--li-button-secondary-hover-color`
- * @cssProp `--li-button-success-color`
- * @cssProp `--li-button-warning-color`
- * @cssProp `--li-button-danger-color`
+ * @element li-button
+ * @slot default - Content slot for modal body
+ * @slot header - Content slot for modal header
+ * @slot footer - Content slot for modal footer
+ * @attr {String} action - [default|secondary|tertiary|success|warning|danger]
+ * @attr {String} size - [small|default|large]
+ * @cssprop --li-button-background-color
+ * @cssprop --li-button-color
+ * @cssprop --li-button-border-radius
+ * @cssprop --li-button-disabled-background
+ * @cssprop --li-button-secondary-color
+ * @cssprop --li-button-secondary-border-color
+ * @cssprop --li-button-secondary-hover-background-color
+ * @cssprop --li-button-secondary-hover-color
+ * @cssprop --li-button-success-color
+ * @cssprop --li-button-warning-color
+ * @cssprop --li-button-danger-color
  */
 // @dynamic
 export class LithiumButton extends BaseButton {

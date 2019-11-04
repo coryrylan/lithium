@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { BookComponent } from './components/book/book.component';
-import { ClassAPIComponent } from './components/class-api/class-api.component';
 import { ComponentApiComponent } from './components/component-api/component-api.component';
 import { ThemeAPIComponent } from './components/theme-api/theme-api.component';
 
-const components = [ComponentApiComponent, ClassAPIComponent, ThemeAPIComponent, BookComponent];
+const components = [ComponentApiComponent, ThemeAPIComponent, BookComponent];
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -7,11 +7,11 @@ import { styles } from './progress-bar.element.css';
  * Progress Bar, display the current state or progress of a running task
  *
  * @noInheritDoc
- * @element `li-progress-bar`
- * @cssProp `--li-progress-bar-background-color`
- * @cssProp `--li-progress-bar-shadow-color`
- * @cssProp `--li-progress-bar-inset-background-color`
- * @cssProp `--li-progress-bar-color`
+ * @element li-progress-bar
+ * @cssprop --li-progress-bar-background-color
+ * @cssprop --li-progress-bar-shadow-color
+ * @cssprop --li-progress-bar-inset-background-color
+ * @cssprop --li-progress-bar-color
  */
 // @dynamic
 export class LithiumProgressBar extends LitElement {

@@ -12,12 +12,12 @@ IconService.addIcons(checkIcon);
  * Checkbox, standard checkbox input with accessibility and error enhancements.
  *
  * @noInheritDoc
- * @element `li-checkbox`
- * @slot `default` - Content slot for checkbox input
- * @styleAttr `error` - Set error styles
- * @cssProp `--li-checkbox-disabled-color`
- * @cssProp `--li-checkbox-border-color`
- * @cssProp `--li-checkbox-background-color`
+ * @element li-checkbox
+ * @slot default - Content slot for checkbox input
+ * @attr {String} error - Set error styles
+ * @cssprop --li-checkbox-disabled-color
+ * @cssprop --li-checkbox-border-color
+ * @cssprop --li-checkbox-background-color
  */
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {

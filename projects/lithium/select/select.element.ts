@@ -5,15 +5,15 @@ import { LithiumInput } from 'lithium-ui/input';
  * Input, standard select input with accessibility and error enhancements.
  *
  * @noInheritDoc
- * @element `li-select`
- * @slot `default` - Content slot select input
- * @styleAttr `error` - Set error styles
- * @cssProp `--li-input-color`
- * @cssProp `--li-input-background`
- * @cssProp `--li-input-border-color`
- * @cssProp `--li-input-border-radius`
- * @cssProp `--li-input-error-color`
- * @cssProp `--li-input-disabled-background`
+ * @element li-select
+ * @slot default - Content slot select input
+ * @attr {String} error - Set error styles
+ * @cssprop --li-input-color
+ * @cssprop --li-input-background
+ * @cssprop --li-input-border-color
+ * @cssprop --li-input-border-radius
+ * @cssprop --li-input-error-color
+ * @cssprop --li-input-disabled-background
  */
 // @dynamic
 export class LithiumSelect extends LithiumInput {}
