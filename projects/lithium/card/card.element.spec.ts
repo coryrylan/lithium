@@ -10,9 +10,9 @@ describe('card element', () => {
     testElement = createTestElement();
     testElement.innerHTML = `
       <li-card>
-        <span slot="header">hello header</span>
-        <span>hello world</span>
-        <span slot="footer">hello footer</span>
+        <li-card-header>hello header</li-card-header>
+        <li-card-content>hello world</li-card-content>
+        <li-card-actions>hello actions</li-card-actions>
       </li-card>
     `;
     await waitForComponent('li-card');
@@ -27,8 +27,8 @@ describe('card element', () => {
     await componentIsStable(component);
 
     const slots = getComponentSlotContent(component);
-    expect(slots.default).toBe('<span>hello world</span>');
-    expect(slots.header).toBe('<span slot="header">hello header</span>');
-    expect(slots.footer).toBe('<span slot="footer">hello footer</span>');
+    expect(slots.default).toBe('<li-card-content>hello world</li-card-content>');
+    expect(slots.header).toBe('<li-card-header slot="header">hello header</li-card-header>');
+    expect(slots.actions).toBe('<li-card-actions slot="actions">hello actions</li-card-actions>');
   });
 });

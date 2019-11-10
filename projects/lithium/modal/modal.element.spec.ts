@@ -1,6 +1,6 @@
 import 'lithium-ui/modal';
 import { LithiumModal } from 'lithium-ui/modal';
-import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
+import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('modal element', () => {
   let testElement: HTMLElement;
@@ -10,7 +10,9 @@ describe('modal element', () => {
     testElement = createTestElement();
     testElement.innerHTML = `
       <li-modal>
-        <span>hello world</span>
+        <li-modal-header>header</li-modal-header>
+        <li-modal-content>hello world</li-modal-content>
+        <li-modal-actions>actions</li-modal-actions>
       </li-modal>
     `;
     await waitForComponent('li-modal');
@@ -102,5 +104,15 @@ describe('modal element', () => {
     component.shadowRoot.querySelector<HTMLButtonElement>('.li-modal-backdrop').click();
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
+  });
+
+  it('should render a modal with appropriate slots', async () => {
+    component.open = true;
+    await componentIsStable(component);
+
+    const slots = getComponentSlotContent(component);
+    expect(slots.default).toBe('<li-modal-content>hello world</li-modal-content>');
+    expect(slots.header).toBe('<li-modal-header slot="header">header</li-modal-header>');
+    expect(slots.actions).toBe('<li-modal-actions slot="actions">actions</li-modal-actions>');
   });
 });

@@ -11,9 +11,9 @@ IconService.addIcons(closeIcon);
  *
  * @noInheritDoc
  * @element li-modal
- * @slot default - Content slot for modal body
- * @slot header - Content slot for modal header
- * @slot footer - Content slot for modal footer
+ * @slot li-modal-content - Content slot for modal body
+ * @slot li-modal-header - Content slot for modal header
+ * @slot li-modal-actions - Content slot for modal actions
  * @event openChange - Notify when the modal has been opened or closed.
  * @attr {String} large - Set modal size to large breakpoint
  * @cssprop --li-modal-max-width
@@ -98,8 +98,8 @@ export class LithiumModal extends LitElement {
                   <div class="li-modal-content">
                     <slot></slot>
                   </div>
-                  <div class="li-modal-footer">
-                    <slot name="footer"></slot>
+                  <div class="li-modal-actions">
+                    <slot name="actions"></slot>
                   </div>
                 </focus-trap>
               </div>
@@ -128,10 +128,50 @@ export class LithiumModal extends LitElement {
   }
 }
 
+export class LithiumModalHeader extends LitElement {
+  connectedCallback() {
+    super.connectedCallback();
+    this.setAttribute('slot', 'header');
+  }
+
+  protected render() {
+    return html`
+      <slot></slot>
+    `;
+  }
+}
+
+export class LithiumModalContent extends LitElement {
+  protected render() {
+    return html`
+      <slot></slot>
+    `;
+  }
+}
+
+export class LithiumModalActions extends LitElement {
+  connectedCallback() {
+    super.connectedCallback();
+    this.setAttribute('slot', 'actions');
+  }
+
+  protected render() {
+    return html`
+      <slot></slot>
+    `;
+  }
+}
+
 registerElementSafely('li-modal', LithiumModal);
+registerElementSafely('li-modal-header', LithiumModalHeader);
+registerElementSafely('li-modal-content', LithiumModalContent);
+registerElementSafely('li-modal-actions', LithiumModalActions);
 
 declare global {
   interface HTMLElementTagNameMap {
     'li-modal': LithiumModal;
+    'li-modal-header': LithiumModalHeader;
+    'li-modal-content': LithiumModalContent;
+    'li-modal-actions': LithiumModalActions;
   }
 }

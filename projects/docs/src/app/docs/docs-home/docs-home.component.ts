@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class DocsHomeComponent {
   showDropdown = false;
   codeExample = `
-    npm install lithium-ui
+    npm install lithium-ui --save
   `;
   codeExample2 = `
     import 'lithium-ui/modal';

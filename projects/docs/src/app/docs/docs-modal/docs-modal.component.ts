@@ -16,10 +16,22 @@ export class DocsModalComponent implements OnInit {
   `;
 
   codeExampleHtml = `
+    <!-- Simple Layout -->
     <li-modal>
-      <h1 slot="header">Hello World Header</h1>
-      <p>Hello World</p>
-      <div slot="footer">Hello World Footer</div>
+      Hello World
+    </li-modal>
+
+    <!-- Complex Layout -->
+    <li-modal>
+      <li-modal-header>
+        <h1>Hello World Header</h1>
+      </li-modal-header>
+      <li-modal-content>
+        <p>Hello World</p>
+      </li-modal-content>
+      <li-modal-actions>
+        Hello World Actions
+      </li-modal-actions>
     </li-modal>
   `;
 
