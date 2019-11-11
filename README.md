@@ -1,29 +1,33 @@
-# Lithium
+# Lithium (Beta)
 
 [![build status](https://github.com/coryrylan/lithium/workflows/Build/badge.svg)](https://github.com/coryrylan/lithium/actions)
+[![npm version](https://badge.fury.io/js/lithium-ui.svg)](https://badge.fury.io/js/lithium-ui)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-rc.0.
+## Lightweight UI Components that work everywhere.
 
-## Development server
+Fast, modern Web Components that work in any JavaScript framework. Built on the
+latest web standards, Lithium lets you include only the components you need.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Lithium Web Components are themable and can work in any Web stack. Open Source.
 
-## Code scaffolding
+### [Documentation](https://lithiumui.dev/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```javascript
+import 'lithium-ui/modal';
 
-## Build
+const modal = document.querySelector('li-modal');
+modal.toggle();
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```html
+<li-modal>
+  Hello World
+</li-modal>
+```
 
-## Running unit tests
+### License
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+All standard components (non Pro Components) are released under [MIT License](https://opensource.org/licenses/MIT).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[Pro Components](https://github.com/coryrylan/lithium/tree/master/projects/lithium/pro) released under [non-commercial license](https://polyformproject.org/licenses/noncommercial/1.0.0)
+and can be used commercially with purchase of a [Lithium Pro Component License](https://lithiumui.dev/pricing).

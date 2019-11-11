@@ -25,6 +25,11 @@ const routes: Routes = [
     path: 'api',
     loadChildren: () => import('./api/api.module').then(m => m.ApiModule),
     data: { title: 'Lithium - API Reference', layout: Layout.Page }
+  },
+  {
+    path: 'pricing',
+    loadChildren: () => import('./pricing/pricing.module').then(m => m.PricingModule),
+    data: { title: 'Lithium - Pricing', layout: Layout.Page }
   }
 ];
 
