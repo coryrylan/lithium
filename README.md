@@ -1,5 +1,7 @@
 # Lithium
 
+[![build status](https://github.com/coryrylan/lithium/workflows/Build/badge.svg)](https://github.com/coryrylan/lithium/actions)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-rc.0.
 
 ## Development server
