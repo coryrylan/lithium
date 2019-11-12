@@ -84,7 +84,7 @@ export class LithiumModal extends LitElement {
             <div class="li-modal-wrapper">
               <div class="li-modal" role="dialog" aria-labelledby="modal-header">
                 <focus-trap>
-                  <div class="li-modal-header">
+                  <header class="li-modal-header">
                     <slot name="header" id="modal-header"></slot>
                     <button
                       @click="${() => this.closeModal()}"
@@ -94,13 +94,13 @@ export class LithiumModal extends LitElement {
                     >
                       <li-icon name="close"></li-icon>
                     </button>
-                  </div>
-                  <div class="li-modal-content">
+                  </header>
+                  <section class="li-modal-content">
                     <slot></slot>
-                  </div>
-                  <div class="li-modal-actions">
+                  </section>
+                  <footer class="li-modal-actions">
                     <slot name="actions"></slot>
-                  </div>
+                  </footer>
                 </focus-trap>
               </div>
               <div @click="${() => this.backdropClose()}" class="li-modal-backdrop"></div>

@@ -9,9 +9,7 @@ import { styles } from './button.element.css';
  *
  * @noInheritDoc
  * @element li-button
- * @slot default - Content slot for modal body
- * @slot header - Content slot for modal header
- * @slot footer - Content slot for modal footer
+ * @slot default - Content slot for button
  * @attr {String} action - [default|secondary|tertiary|success|warning|danger]
  * @attr {String} size - [small|default|large]
  * @cssprop --li-button-background-color
