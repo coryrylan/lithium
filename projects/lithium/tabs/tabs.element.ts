@@ -5,6 +5,8 @@ import { LithiumTabTitle } from './tab-title.element';
 import { LithiumTab } from './tab.element';
 import { styles } from './tabs.element.css';
 
+let id = 0;
+
 /**
  * Tabs, organize related groups into tab panels
  *
@@ -30,14 +32,16 @@ export class LithiumTabs extends LitElement {
   @querySlotAll('li-tab-title') private tabTitles: NodeListOf<LithiumTabTitle>;
   private index = 0;
 
+  private _id = id++;
+
   render() {
     return html`
       <div class="li-tabs">
         <div class="li-tabs-nav" role="tablist">
           ${Array.from(this.tabs).map(
             (_t, i) => html`
-              <button id=${`li-tab-button-${i}`} class=${this.index === i ? 'active' : ''} @click=${() => this.selectTab(i)} role="tab">
-                <slot name=${`slot-${i}`}></slot>
+              <button id=${`li-tab-button-${i}-${this._id}`} class=${this.index === i ? 'active' : ''} @click=${() => this.selectTab(i)} role="tab">
+                <slot name=${`slot-${i}-${this._id}`}></slot>
               </button>
             `
           )}
@@ -51,6 +55,11 @@ export class LithiumTabs extends LitElement {
     super.connectedCallback();
     this.initializeTabTitles();
     this.initializeTabPanels();
+
+    this.shadowRoot.addEventListener('slotchange', () => {
+      this.initializeTabTitles();
+      this.initializeTabPanels();
+    });
   }
 
   firstUpdated(props: Map<string, any>) {
@@ -65,15 +74,17 @@ export class LithiumTabs extends LitElement {
   }
 
   private initializeTabTitles() {
-    this.tabTitles.forEach((t, i) => t.setAttribute('slot', `slot-${i}`));
+    this.tabTitles.forEach((t, i) => t.setAttribute('slot', `slot-${i}-${this._id}`));
   }
 
   private initializeTabPanels() {
-    this.tabs.forEach((t, i) => {
-      t.setAttribute('aria-hidden', 'true');
-      t.setAttribute('aria-labelledby', `li-tab-button-${i}`);
-    });
-    this.tabs[0].removeAttribute('aria-hidden');
+    if (this.tabs && this.tabs.length) {
+      this.tabs.forEach((t, i) => {
+        t.setAttribute('aria-hidden', 'true');
+        t.setAttribute('aria-labelledby', `li-tab-button-${i}-${this._id}`);
+      });
+      this.tabs[0].removeAttribute('aria-hidden');
+    }
   }
 
   private selectTab(tabIndex: number) {
