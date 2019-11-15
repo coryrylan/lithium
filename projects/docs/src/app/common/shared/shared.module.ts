@@ -4,9 +4,10 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { BookComponent } from './components/book/book.component';
 import { ComponentApiComponent } from './components/component-api/component-api.component';
+import { ComponentExampleComponent } from './components/component-example/component-example.component';
 import { ThemeAPIComponent } from './components/theme-api/theme-api.component';
 
-const components = [ComponentApiComponent, ThemeAPIComponent, BookComponent];
+const components = [ComponentApiComponent, ThemeAPIComponent, BookComponent, ComponentExampleComponent];
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

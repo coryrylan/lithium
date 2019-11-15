@@ -10,69 +10,217 @@ export class DocsButtonComponent {
     import 'lithium-ui/button';
   `;
 
-  codeExampleTypes = `
-    <li-button type="submit">submit</li-button>
-    <li-button disabled>disabled</li-button>
-    <li-button><a href="/about">link</a></li-button>
-    <li-button loading="true">loading</li-button>
-  `;
+  componentEvents = {
+    angular: `
+      <li-button (click)="log($event)">angular</li-button>
+    `,
+    vue: `
+      <li-button @click="log">vue</li-button>
+    `,
+    javascript: `
+      <li-button>javascript</li-button>
+      <script>
+        document
+          .querySelector('li-button')
+          .addEventListener('click', event => console.log(event));
+      </script>
+    `
+  };
 
-  codeExampleStyles = `
-    <li-button>primary</li-button>
-    <li-button level="secondary">secondary</li-button>
-    <li-button level="tertiary">tertiary</li-button>
-    <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
-  `;
+  componentExampleTypes = {
+    angular: `
+      <li-button type="submit">angular</li-button>
+      <li-button disabled>disabled</li-button>
+      <li-button><a href="/about">link</a></li-button>
+      <li-button loading="true">loading</li-button>
+    `,
+    vue: `
+      <li-button type="submit">vue</li-button>
+      <li-button disabled>disabled</li-button>
+      <li-button><a href="/about">link</a></li-button>
+      <li-button loading="true">loading</li-button>
+    `,
+    javascript: `
+      <li-button type="submit">javascript</li-button>
+      <li-button disabled>disabled</li-button>
+      <li-button><a href="/about">link</a></li-button>
+      <li-button loading="true">loading</li-button>
+    `
+  };
 
-  codeExampleColors = `
-    <li-button>default</li-button>
-    <li-button action="success">success</li-button>
-    <li-button action="warning">warning</li-button>
-    <li-button action="danger">danger</li-button>
-    <li-button class="purple">custom color</li-button>
+  componentExampleColors = {
+    angular: `
+      <li-button>default</li-button>
+      <li-button action="success">success</li-button>
+      <li-button action="warning">warning</li-button>
+      <li-button action="danger">danger</li-button>
+      <li-button class="purple">custom color</li-button>
 
-    <style>
-      li-button.purple {
-        --li-button-background-color: #7c0799;
-        --li-button-color: #fff;
-      }
-    </style>
-  `;
+      <style>
+        li-button.purple {
+          --li-button-background-color: #7c0799;
+          --li-button-color: #fff;
+        }
+      </style>
+    `,
+    vue: `
+      <li-button>default</li-button>
+      <li-button action="success">success</li-button>
+      <li-button action="warning">warning</li-button>
+      <li-button action="danger">danger</li-button>
+      <li-button class="purple">custom color</li-button>
 
-  codeExampleSize = `
-    <li-button size="small">small</li-button>
-    <li-button>default</li-button>
-    <li-button size="large">large</li-button>
-  `;
+      <style>
+        li-button.purple {
+          --li-button-background-color: #7c0799;
+          --li-button-color: #fff;
+        }
+      </style>
+    `,
+    javascript: `
+      <li-button>default</li-button>
+      <li-button action="success">success</li-button>
+      <li-button action="warning">warning</li-button>
+      <li-button action="danger">danger</li-button>
+      <li-button class="purple">custom color</li-button>
 
-  codeExampleLoading = `
-    <li-button loading="true">
-      click for loading
-    </li-button>
-  `;
+      <style>
+        li-button.purple {
+          --li-button-background-color: #7c0799;
+          --li-button-color: #fff;
+        }
+      </style>
+    `
+  };
 
-  codeExampleIcon = `
-    <li-button size="icon" aria-label="CPU Usage High">
-      <li-icon name="warning"></li-icon>
-    </li-button>
-    <li-button size="tertiary" aria-label="Info">
-      <li-icon name="info"></li-icon>
-    </li-button>
-  `;
+  componentExampleStyles = {
+    angular: `
+      <li-button>primary</li-button>
+      <li-button level="secondary">secondary</li-button>
+      <li-button level="tertiary">tertiary</li-button>
+      <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
+    `,
+    vue: `
+      <li-button>primary</li-button>
+      <li-button level="secondary">secondary</li-button>
+      <li-button level="tertiary">tertiary</li-button>
+      <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
+    `,
+    javascript: `
+      <li-button>primary</li-button>
+      <li-button level="secondary">secondary</li-button>
+      <li-button level="tertiary">tertiary</li-button>
+      <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
+    `
+  };
 
-  codeExampleGroup = `
-    <li-button-group>
-      <li-button>Item 1</li-button>
-      <li-button>Item 2</li-button>
-      <li-button>Item 3</li-button>
-    </li-button-group>
+  componentExampleSize = {
+    angular: `
+      <li-button size="small">small</li-button>
+      <li-button>default</li-button>
+      <li-button size="large">large</li-button>
+    `,
+    vue: `
+      <li-button size="small">small</li-button>
+      <li-button>default</li-button>
+      <li-button size="large">large</li-button>
+    `,
+    javascript: `
+      <li-button size="small">small</li-button>
+      <li-button>default</li-button>
+      <li-button size="large">large</li-button>
+    `
+  };
 
-    <li-button-group>
-      <li-button level="secondary">Item 1</li-button>
-      <li-button level="secondary">Item 2</li-button>
-      <li-button level="secondary">Item 3</li-button>
-    </li-button-group>
-  `;
+  componentExampleLoading = {
+    angular: `
+      <li-button [loading]="loadingBoolean">
+        click for loading
+      </li-button>
+    `,
+    vue: `
+      <li-button :loading="loadingBoolean">
+        click for loading
+      </li-button>
+    `,
+    javascript: `
+      <li-button>
+        click for loading
+      </li-button>
+      <script>
+        document.querySelector('li-button').loading = true;
+      </script>
+    `
+  };
+
+  componentExampleIcon = {
+    angular: `
+      <li-button size="icon" aria-label="CPU Usage High">
+        <li-icon name="warning"></li-icon>
+      </li-button>
+      <li-button size="tertiary" aria-label="Info">
+        <li-icon name="info"></li-icon>
+      </li-button>
+    `,
+    vue: `
+      <li-button size="icon" aria-label="CPU Usage High">
+        <li-icon name="warning"></li-icon>
+      </li-button>
+      <li-button size="tertiary" aria-label="Info">
+        <li-icon name="info"></li-icon>
+      </li-button>
+    `,
+    javascript: `
+      <li-button size="icon" aria-label="CPU Usage High">
+        <li-icon name="warning"></li-icon>
+      </li-button>
+      <li-button size="tertiary" aria-label="Info">
+        <li-icon name="info"></li-icon>
+      </li-button>
+    `
+  };
+
+  componentExampleGroup = {
+    angular: `
+      <li-button-group>
+        <li-button>Item 1</li-button>
+        <li-button>Item 2</li-button>
+        <li-button>Item 3</li-button>
+      </li-button-group>
+
+      <li-button-group>
+        <li-button level="secondary">Item 1</li-button>
+        <li-button level="secondary">Item 2</li-button>
+        <li-button level="secondary">Item 3</li-button>
+      </li-button-group>
+    `,
+    vue: `
+      <li-button-group>
+        <li-button>Item 1</li-button>
+        <li-button>Item 2</li-button>
+        <li-button>Item 3</li-button>
+      </li-button-group>
+
+      <li-button-group>
+        <li-button level="secondary">Item 1</li-button>
+        <li-button level="secondary">Item 2</li-button>
+        <li-button level="secondary">Item 3</li-button>
+      </li-button-group>
+    `,
+    javascript: `
+      <li-button-group>
+        <li-button>Item 1</li-button>
+        <li-button>Item 2</li-button>
+        <li-button>Item 3</li-button>
+      </li-button-group>
+
+      <li-button-group>
+        <li-button level="secondary">Item 1</li-button>
+        <li-button level="secondary">Item 2</li-button>
+        <li-button level="secondary">Item 3</li-button>
+      </li-button-group>
+    `
+  };
 
   form: FormGroup;
   showLoading = false;

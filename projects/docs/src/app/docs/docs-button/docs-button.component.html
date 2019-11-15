@@ -1,5 +1,7 @@
 <h1>Button</h1>
 
+<code class="code-import">import 'lithium-ui/button'</code>
+
 <p>
   The <code>li-button</code> component provides default styles and utilities for buttons including built in loading spinners and size
   variations.
@@ -8,7 +10,6 @@
 <li-tabs>
   <li-tab-title>Example</li-tab-title>
   <li-tab-title>API</li-tab-title>
-  <li-tab-title>Theme</li-tab-title>
 
   <li-tab>
     <form [formGroup]="form" (ngSubmit)="submit()">
@@ -17,9 +18,9 @@
       <li-button disabled>disabled</li-button>
       <li-button><a href="/about">link</a></li-button>
       <li-button loading="true">loading</li-button>
-
-      <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
-      <li-code-example [code]="codeExampleTypes" language="html"></li-code-example>
+      <app-component-example [code]="componentExampleTypes"></app-component-example>
+      <!-- <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
+      <app-component-example [code]="componentEvents"></app-component-example> -->
 
       <h2>Action Types</h2>
       <li-button type="button">default</li-button>
@@ -27,8 +28,7 @@
       <li-button action="warning">warning</li-button>
       <li-button action="danger">danger</li-button>
       <li-button class="purple">custom color</li-button>
-
-      <li-code-example [code]="codeExampleColors" language="html"></li-code-example>
+      <app-component-example [code]="componentExampleColors"></app-component-example>
 
       <h2>level</h2>
       <li-button>primary</li-button>
@@ -38,64 +38,45 @@
       <li-button><a href="/about">link</a></li-button>
       <li-button level="secondary"><a href="/about">link</a></li-button>
       <li-button level="tertiary"><a href="/about">link</a></li-button>
-      <p>
-        This is a <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button> button.
-      </p>
-
-      <li-code-example [code]="codeExampleStyles" language="html"></li-code-example>
+      <p>This is a <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button> button.</p>
+      <app-component-example [code]="componentExampleStyles"></app-component-example>
 
       <h2>Size</h2>
-
       <li-button size="small">small</li-button>
       <li-button>default</li-button>
       <li-button size="large">large</li-button>
-
-      <li-code-example [code]="codeExampleSize" language="html"></li-code-example>
+      <app-component-example [code]="componentExampleSize"></app-component-example>
 
       <h2>Loading Button</h2>
-
-      <li-button [loading]="showLoading" (click)="toggleLoading()" type="button">
-        click to load
-      </li-button>
-
-      <li-code-example [code]="codeExampleLoading" language="html"></li-code-example>
+      <li-button [loading]="showLoading" (click)="toggleLoading()" type="button">click to load</li-button>
+      <app-component-example [code]="componentExampleLoading"></app-component-example>
 
       <h2>Icon Button</h2>
       <li-button size="icon" aria-label="CPU Usage High">
         <li-icon name="warning"></li-icon>
       </li-button>
-      <!-- <li-button size="icon" level="secondary" aria-label="Menu">
-        <li-icon name="menu"></li-icon>
-      </li-button> -->
       <li-button size="icon" level="tertiary" aria-label="Info">
         <li-icon name="info"></li-icon>
       </li-button>
-
-      <li-code-example [code]="codeExampleIcon" language="html"></li-code-example>
+      <app-component-example [code]="componentExampleIcon"></app-component-example>
 
       <h2>Button Group</h2>
-
       <li-button-group>
         <li-button>Item 1</li-button>
         <li-button>Item 2</li-button>
         <li-button>Item 3</li-button>
       </li-button-group>
-
       <li-button-group>
         <li-button level="secondary">Item 1</li-button>
         <li-button level="secondary">Item 2</li-button>
         <li-button level="secondary">Item 3</li-button>
       </li-button-group>
-
-      <li-code-example [code]="codeExampleGroup" language="html"></li-code-example>
+      <app-component-example [code]="componentExampleGroup"></app-component-example>
     </form>
   </li-tab>
   <li-tab>
     <h2>API</h2>
 
     <app-component-api element="li-button"></app-component-api>
-  </li-tab>
-  <li-tab>
-    <h2>Theme</h2>
   </li-tab>
 </li-tabs>

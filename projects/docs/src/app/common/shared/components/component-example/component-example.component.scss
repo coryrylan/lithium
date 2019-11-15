@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  max-width: 70rem;
+  margin-bottom: 8rem;
+  
+  // @media (min-width: 1024px) {
+  //   margin: 0 2rem;
+  // }
+}
+
+li-tabs {
+  --li-tabs-button-selected-border-color: var(--global-color-gray-300);
+}
+
+li-tab-title {
+  text-transform: uppercase;
+}
