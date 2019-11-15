@@ -28,7 +28,7 @@ export function querySlot(selector: string) {
   ): any => {
     const descriptor = {
       get(this: LitElement) {
-        return this.querySelector(selector);
+        return this.querySelector(`:scope > ${selector}`);
       },
       enumerable: true,
       configurable: true
@@ -53,7 +53,7 @@ export function querySlotAll(selector: string) {
   ): any => {
     const descriptor = {
       get(this: LitElement) {
-        return this.querySelectorAll(selector);
+        return this.querySelectorAll(`:scope > ${selector}`);
       },
       enumerable: true,
       configurable: true
