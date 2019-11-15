@@ -14,28 +14,39 @@
   <li-tab>
     <h2>Example</h2>
 
+    <li-card bp="7--max">
+      <li-card-header>
+        <h3>Hello World</h3>
+      </li-card-header>
+      <li-card-content>
+        <p>
+          Bacon ipsum dolor amet biltong tenderloin pork loin, sausage short loin shoulder shank shankle salami. Short loin boudin salami
+          corned beef filet mignon ball tip chuck tongue kevin jerky pancetta fatback alcatra drumstick.
+        </p>
+      </li-card-content>
+      <li-card-actions>
+        <li-button level="tertiary">Cancel</li-button>
+        <li-button>Action</li-button>
+      </li-card-actions>
+    </li-card>
+    <app-component-example [code]="componentComplexExample"></app-component-example>
+
+    <h2>Simple Card</h2>
     <li-card>
-      <h2>Hello World</h2>
       <p>
         Hi there!
       </p>
     </li-card>
+    <app-component-example [code]="componentExample"></app-component-example>
 
-    <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
-    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
-
-    <h3>Layout</h3>
-
+    <h2>Layout</h2>
     <p>Cards can be layed out in <a href="https://blueprintcss.dev">grid systems</a>.</p>
-
     <div bp="grid 6">
       <li-card>
         <h2>Card 1</h2>
         <p>
           Cards can be useful for grouping related content and actions.
         </p>
-
-        <div slot="footer"></div>
       </li-card>
       <li-card>
         <h2>Card 2</h2>

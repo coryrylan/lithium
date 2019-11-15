@@ -1,0 +1,11 @@
+@import './../styles/base';
+
+:host {
+  display: block;
+  display: flex;
+  justify-content: flex-end;
+}
+
+::slotted(li-button) {
+  margin-bottom: 0 !important;
+}

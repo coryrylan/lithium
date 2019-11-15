@@ -1,6 +1,9 @@
 import { html, LitElement } from 'lit-element';
-
 import { registerElementSafely } from 'lithium-ui/common';
+
+import { LithiumCardActions } from './card-actions.element';
+import { LithiumCardContent } from './card-content.element';
+import { LithiumCardHeader } from './card-header.element';
 import { styles } from './card.element.css';
 
 /**
@@ -9,9 +12,9 @@ import { styles } from './card.element.css';
  * @noInheritDoc
  * @element li-card
  * @slot default - Content slot for modal body
- * @slot card-header - Content slot for card header
- * @slot card-content - Content slot for card content
- * @slot card-actions - Content slot for card actions
+ * @slot li-card-header - Content slot for card header
+ * @slot li-card-content - Content slot for card content
+ * @slot li-card-actions - Content slot for card actions
  * @cssprop --li-card-background-color
  * @cssprop --li-card-border-color
  * @cssprop --li-card-border-radius
@@ -33,40 +36,6 @@ export class LithiumCard extends LitElement {
   }
 }
 
-export class LithiumCardHeader extends LitElement {
-  connectedCallback() {
-    super.connectedCallback();
-    this.setAttribute('slot', 'header');
-  }
-
-  protected render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-}
-
-export class LithiumCardContent extends LitElement {
-  protected render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-}
-
-export class LithiumCardActions extends LitElement {
-  connectedCallback() {
-    super.connectedCallback();
-    this.setAttribute('slot', 'actions');
-  }
-
-  protected render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-}
-
 registerElementSafely('li-card', LithiumCard);
 registerElementSafely('li-card-header', LithiumCardHeader);
 registerElementSafely('li-card-content', LithiumCardContent);
@@ -75,8 +44,5 @@ registerElementSafely('li-card-actions', LithiumCardActions);
 declare global {
   interface HTMLElementTagNameMap {
     'li-card': LithiumCard;
-    'li-card-header': LithiumCardHeader;
-    'li-card-content': LithiumCardHeader;
-    'li-card-footer': LithiumCardActions;
   }
 }

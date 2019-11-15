@@ -1,0 +1,16 @@
+@import './../styles/base';
+
+:host {
+  display: block;
+  border-bottom: 1px solid;
+  border-color: var(--li-card-border-color, var(--li-common-color-gray-200));
+  margin-bottom: var(--li-common-padding-md);
+  margin-left: var(--li-common-padding-md-negative);
+  margin-right: var(--li-common-padding-md-negative);
+  padding: var(--li-card-padding, var(--li-common-padding-md));
+  padding-top: 0;
+}
+
+::slotted(*) {
+  margin: 0 !important;
+}

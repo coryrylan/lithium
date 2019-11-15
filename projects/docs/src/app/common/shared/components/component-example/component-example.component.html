@@ -1,5 +1,5 @@
 <li-tabs>
-  <li-tab-title *ngFor="let example of code | keyvalue">{{example.key}}</li-tab-title>
+  <li-tab-title *ngFor="let example of code | keyvalue">{{ example.key }}</li-tab-title>
   <li-tab *ngFor="let example of code | keyvalue">
     <li-code-example [code]="example.value" language="html"></li-code-example>
   </li-tab>

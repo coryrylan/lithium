@@ -40,7 +40,12 @@ export class LithiumTabs extends LitElement {
         <div class="li-tabs-nav" role="tablist">
           ${Array.from(this.tabs).map(
             (_t, i) => html`
-              <button id=${`li-tab-button-${i}-${this._id}`} class=${this.index === i ? 'active' : ''} @click=${() => this.selectTab(i)} role="tab">
+              <button
+                id=${`li-tab-button-${i}-${this._id}`}
+                class=${this.index === i ? 'active' : ''}
+                @click=${() => this.selectTab(i)}
+                role="tab"
+              >
                 <slot name=${`slot-${i}-${this._id}`}></slot>
               </button>
             `
