@@ -15,7 +15,7 @@ export class DocsDatalistComponent {
   codeExampleHtml = `
     <li-datalist>
       <label>Choose a browser:</label>
-      <input formControlName="search" />
+      <input />
       <datalist>
         <option value="Chrome"> </option>
         <option value="Firefox"> </option>

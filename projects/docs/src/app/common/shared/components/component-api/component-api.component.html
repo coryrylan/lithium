@@ -13,7 +13,7 @@
         </tr>
         <tr *ngFor="let prop of el.properties">
           <td>
-            <span>{{ prop.name }}</span>
+            <code>{{ prop.name }}</code>
           </td>
           <td>{{ prop.description }}</td>
           <td>{{ prop.type }}</td>
@@ -30,7 +30,7 @@
         </tr>
         <tr *ngFor="let event of el.events">
           <td>
-            <span>{{ event.name }}</span>
+            <code>{{ event.name }}</code>
           </td>
           <td>{{ event.description }}</td>
         </tr>
@@ -46,7 +46,7 @@
         </tr>
         <tr *ngFor="let slot of el.slots">
           <td>
-            <span>{{ slot.name }}</span>
+            <code>{{ slot.name }}</code>
           </td>
           <td>{{ slot.description }}</td>
         </tr>
@@ -62,7 +62,7 @@
         </tr>
         <tr *ngFor="let attr of el.attributes">
           <td>
-            <span>{{ attr.name }}</span>
+            <code>{{ attr.name }}</code>
           </td>
           <td>{{ attr.description }}</td>
         </tr>
@@ -77,7 +77,7 @@
         </tr>
         <tr *ngFor="let cssProp of el.cssProperties">
           <td>
-            <span>{{ cssProp.name }}</span>
+            <code>{{ cssProp.name }}</code>
           </td>
         </tr>
       </table>

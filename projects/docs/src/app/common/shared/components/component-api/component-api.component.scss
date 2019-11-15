@@ -9,7 +9,7 @@ table {
   width: 100%;
   padding: 2rem 0;
   margin-bottom: 2rem;
-  border-bottom: 1px solid hsl(0, 0%, 80%);
+  border-bottom: 1px solid var(--global-color-gray-300);
 }
 
 th {
@@ -20,9 +20,4 @@ th,
 td {
   padding: 0.5rem;
   width: 33.33%;
-}
-
-tr td:first-child span {
-  background-color: hsl(0, 0%, 95%);
-  padding: 0.1rem 0.2rem;
 }
