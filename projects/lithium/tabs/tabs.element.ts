@@ -1,5 +1,4 @@
 import { html, LitElement, queryAll } from 'lit-element';
-
 import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumTabTitle } from './tab-title.element';
 import { LithiumTab } from './tab.element';
@@ -104,14 +103,10 @@ export class LithiumTabs extends LitElement {
   }
 }
 
-registerElementSafely('li-tab-title', LithiumTabTitle);
-registerElementSafely('li-tab', LithiumTab);
 registerElementSafely('li-tabs', LithiumTabs);
 
 declare global {
   interface HTMLElementTagNameMap {
-    'li-tab-title': LithiumTabTitle;
-    'li-tab': LithiumTab;
     'li-tabs': LithiumTabs;
   }
 }

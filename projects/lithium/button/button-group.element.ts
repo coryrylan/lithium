@@ -1,4 +1,5 @@
 import { html, LitElement } from 'lit-element';
+import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './button-group.element.css';
 
 /**
@@ -22,3 +23,11 @@ export class LithiumButtonGroup extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-button-group': LithiumButtonGroup;
+  }
+}
+
+registerElementSafely('li-button-group', LithiumButtonGroup);

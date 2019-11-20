@@ -1,12 +1,8 @@
 import { html, LitElement } from 'lit-element';
+
 import { registerElementSafely } from 'lithium-ui/common';
-import { styles } from './card-actions.element.css';
 
-export class LithiumCardActions extends LitElement {
-  static get styles() {
-    return styles;
-  }
-
+export class LithiumModalActions extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.setAttribute('slot', 'actions');
@@ -19,10 +15,10 @@ export class LithiumCardActions extends LitElement {
   }
 }
 
-registerElementSafely('li-card-actions', LithiumCardActions);
+registerElementSafely('li-modal-actions', LithiumModalActions);
 
 declare global {
   interface HTMLElementTagNameMap {
-    'li-card-actions': LithiumCardActions;
+    'li-modal-actions': LithiumModalActions;
   }
 }

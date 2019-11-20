@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit-element';
-
+import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './card-header.element.css';
 
 export class LithiumCardHeader extends LitElement {
@@ -18,6 +18,8 @@ export class LithiumCardHeader extends LitElement {
     `;
   }
 }
+
+registerElementSafely('li-card-header', LithiumCardHeader);
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,5 +1,4 @@
 import { html, LitElement, property } from 'lit-element';
-
 import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError } from './input-error.element';
 import { LithiumInputMessage } from './input-message.element';
@@ -71,13 +70,9 @@ export class LithiumInput extends LitElement {
 }
 
 registerElementSafely('li-input', LithiumInput);
-registerElementSafely('li-input-error', LithiumInputError);
-registerElementSafely('li-input-message', LithiumInputMessage);
 
-declare global {
-  interface HTMLElementTagNameMap {
-    // 'li-input': LithiumInput;
-    'li-input-error': LithiumInputError;
-    'li-input-message': LithiumInputMessage;
-  }
-}
+// declare global {
+//   interface HTMLElementTagNameMap {
+//     'li-input': LithiumInput;
+//   }
+// }

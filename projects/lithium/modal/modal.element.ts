@@ -4,6 +4,7 @@ import { html, LitElement, property } from 'lit-element';
 import { IntlService, KeyCodes, registerElementSafely } from 'lithium-ui/common';
 import { closeIcon, IconService } from 'lithium-ui/icons';
 import { styles } from './modal.element.css';
+
 IconService.addIcons(closeIcon);
 
 /**
@@ -21,6 +22,10 @@ IconService.addIcons(closeIcon);
  */
 // @dynamic
 export class LithiumModal extends LitElement {
+  static get styles() {
+    return styles;
+  }
+
   get open() {
     return this._open;
   }
@@ -42,15 +47,14 @@ export class LithiumModal extends LitElement {
     }
   }
 
-  static get styles() {
-    return styles;
-  }
-  private focusedElementBeforeOpen: HTMLElement;
-
-  private _open = false;
+  /** Option to set if modal can be closed by clicking the X or backdrop */
+  @property({ type: Boolean }) closable = true;
 
   /** Option to set if modal can be closed by clicking the modal backdrop */
   @property({ type: Boolean }) backdropClosable = true;
+
+  private focusedElementBeforeOpen: HTMLElement;
+  private _open = false;
 
   connectedCallback() {
     super.connectedCallback();
@@ -62,21 +66,6 @@ export class LithiumModal extends LitElement {
     window.removeEventListener('keydown', this.removeOnEscape);
   }
 
-  /** Toggles if the modal should be open or closed */
-  toggle() {
-    this.open = !this.open;
-  }
-
-  /** Opens modal regardless of current state */
-  openModal() {
-    this.open = true;
-  }
-
-  /** Close modal regardless of current state */
-  closeModal() {
-    this.open = false;
-  }
-
   protected render() {
     return html`
       ${this.open
@@ -86,14 +75,18 @@ export class LithiumModal extends LitElement {
                 <focus-trap>
                   <header class="li-modal-header">
                     <slot name="header" id="modal-header"></slot>
-                    <button
-                      @click="${() => this.closeModal()}"
-                      type="button"
-                      aria-label="${IntlService.registry.close}"
-                      class="li-modal-close-btn"
-                    >
-                      <li-icon name="close"></li-icon>
-                    </button>
+                    ${this.closable
+                      ? html`
+                          <button
+                            @click="${() => this.closeModal()}"
+                            type="button"
+                            aria-label="${IntlService.registry.close}"
+                            class="li-modal-close-btn"
+                          >
+                            <li-icon name="close"></li-icon>
+                          </button>
+                        `
+                      : ''}
                   </header>
                   <section class="li-modal-content">
                     <slot></slot>
@@ -118,9 +111,13 @@ export class LithiumModal extends LitElement {
   };
 
   private backdropClose() {
-    if (this.backdropClosable) {
+    if (this.backdropClosable && this.closable) {
       this.closeModal();
     }
+  }
+
+  private closeModal() {
+    this.open = false;
   }
 
   private openChange() {
@@ -128,50 +125,10 @@ export class LithiumModal extends LitElement {
   }
 }
 
-export class LithiumModalHeader extends LitElement {
-  connectedCallback() {
-    super.connectedCallback();
-    this.setAttribute('slot', 'header');
-  }
-
-  protected render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-}
-
-export class LithiumModalContent extends LitElement {
-  protected render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-}
-
-export class LithiumModalActions extends LitElement {
-  connectedCallback() {
-    super.connectedCallback();
-    this.setAttribute('slot', 'actions');
-  }
-
-  protected render() {
-    return html`
-      <slot></slot>
-    `;
-  }
-}
-
 registerElementSafely('li-modal', LithiumModal);
-registerElementSafely('li-modal-header', LithiumModalHeader);
-registerElementSafely('li-modal-content', LithiumModalContent);
-registerElementSafely('li-modal-actions', LithiumModalActions);
 
 declare global {
   interface HTMLElementTagNameMap {
     'li-modal': LithiumModal;
-    'li-modal-header': LithiumModalHeader;
-    'li-modal-content': LithiumModalContent;
-    'li-modal-actions': LithiumModalActions;
   }
 }

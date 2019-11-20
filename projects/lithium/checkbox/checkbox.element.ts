@@ -2,8 +2,6 @@ import { html } from 'lit-element';
 import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { checkIcon, IconService } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
-
-import { LithiumCheckboxGroup } from './checkbox-group.element';
 import { styles } from './checkbox.element.css';
 
 IconService.addIcons(checkIcon);
@@ -78,11 +76,9 @@ export class LithiumCheckbox extends LithiumInput {
 }
 
 registerElementSafely('li-checkbox', LithiumCheckbox);
-registerElementSafely('li-checkbox-group', LithiumCheckboxGroup);
 
 declare global {
   interface HTMLElementTagNameMap {
     'li-checkbox': LithiumCheckbox;
-    'li-checkbox-group': LithiumCheckboxGroup;
   }
 }

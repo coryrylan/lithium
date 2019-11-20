@@ -35,6 +35,9 @@
     "strictFunctionTypes": true,
     "noFallthroughCasesInSwitch": true
   },
+  "exclude": [
+    "dist"
+  ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true

@@ -27,13 +27,13 @@ describe('modal element', () => {
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
 
-    component.toggle();
+    component.open = true;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-modal-content');
   });
 
   it('should have appropriate role for a11y', async () => {
-    component.toggle();
+    component.open = true;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('role="dialog"');
   });
@@ -50,29 +50,28 @@ describe('modal element', () => {
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
 
-    component.openModal();
+    component.open = true;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-modal-content');
 
-    component.closeModal();
+    component.open = false;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
   });
 
   it('should close modal on escape', async () => {
     await componentIsStable(component);
-    component.openModal();
+    component.open = true;
     await componentIsStable(component);
 
-    spyOn(component, 'closeModal');
     window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
 
-    expect(component.closeModal).toHaveBeenCalled();
+    expect(component.open).toBe(false);
 
-    component.openModal();
+    component.open = true;
     await componentIsStable(component);
     window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Esc' }));
-    expect(component.closeModal).toHaveBeenCalled();
+    expect(component.open).toBe(false);
   });
 
   it('should emit a custom event when opened or closed', async () => {
@@ -88,7 +87,7 @@ describe('modal element', () => {
 
   it('should close modal when user closes it', async () => {
     await componentIsStable(component);
-    component.toggle();
+    component.open = true;
 
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-modal-content');
@@ -97,7 +96,7 @@ describe('modal element', () => {
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).not.toContain('li-modal-content');
 
-    component.toggle();
+    component.open = true;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-modal-content');
 

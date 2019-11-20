@@ -1,6 +1,5 @@
 import { html, LitElement, property } from 'lit-element';
-
-import { querySlotAll } from 'lithium-ui/common';
+import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './radio-group.element.css';
 import { LithiumRadio } from './radio.element';
 
@@ -41,5 +40,13 @@ export class LithiumRadioGroup extends LitElement {
   /** internal */
   _clearRadios() {
     this.liRadioElements.forEach(radio => radio.removeAttribute('checked'));
+  }
+}
+
+registerElementSafely('li-radio-group', LithiumRadioGroup);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-radio-group': LithiumRadioGroup;
   }
 }

@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit-element';
-
+import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './input-error.element.css';
 
 /**
@@ -25,5 +25,13 @@ export class LithiumInputError extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.setAttribute('aria-live', 'polite');
+  }
+}
+
+registerElementSafely('li-input-error', LithiumInputError);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-input-error': LithiumInputError;
   }
 }

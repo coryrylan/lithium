@@ -1,12 +1,11 @@
 import { html } from 'lit-element';
-
 import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { checkIcon, IconService } from 'lithium-ui/icons';
 import { LithiumInput } from 'lithium-ui/input';
-IconService.addIcons(checkIcon);
-
 import { LithiumRadioGroup } from './radio-group.element';
 import { styles } from './radio.element.css';
+
+IconService.addIcons(checkIcon);
 
 /**
  * Radio, standard radio input with accessibility and error enhancements.
@@ -83,11 +82,9 @@ export class LithiumRadio extends LithiumInput {
 }
 
 registerElementSafely('li-radio', LithiumRadio);
-registerElementSafely('li-radio-group', LithiumRadioGroup);
 
 declare global {
   interface HTMLElementTagNameMap {
     'li-radio': LithiumRadio;
-    'li-radio-group': LithiumRadioGroup;
   }
 }

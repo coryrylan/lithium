@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit-element';
-
+import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './checkbox-group.element.css';
 
 /**
@@ -22,5 +22,13 @@ export class LithiumCheckboxGroup extends LitElement {
         <slot></slot>
       </fieldset>
     `;
+  }
+}
+
+registerElementSafely('li-checkbox-group', LithiumCheckboxGroup);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-checkbox-group': LithiumCheckboxGroup;
   }
 }

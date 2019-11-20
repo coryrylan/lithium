@@ -1,7 +1,8 @@
 import { html, LitElement } from 'lit-element';
+
 import { registerElementSafely } from 'lithium-ui/common';
 
-export class LithiumCardContent extends LitElement {
+export class LithiumModalContent extends LitElement {
   protected render() {
     return html`
       <slot></slot>
@@ -9,10 +10,10 @@ export class LithiumCardContent extends LitElement {
   }
 }
 
-registerElementSafely('li-card-content', LithiumCardContent);
+registerElementSafely('li-modal-content', LithiumModalContent);
 
 declare global {
   interface HTMLElementTagNameMap {
-    'li-card-content': LithiumCardContent;
+    'li-modal-content': LithiumModalContent;
   }
 }

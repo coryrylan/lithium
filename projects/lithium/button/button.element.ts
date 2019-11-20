@@ -1,7 +1,6 @@
 import { html, property } from 'lit-element';
 import { BaseButton, hiddenButtonTemplate, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/loading-spinner';
-import { LithiumButtonGroup } from './button-group.element';
 import { styles } from './button.element.css';
 
 /**
@@ -66,11 +65,9 @@ export class LithiumButton extends BaseButton {
 }
 
 registerElementSafely('li-button', LithiumButton);
-registerElementSafely('li-button-group', LithiumButtonGroup);
 
 declare global {
   interface HTMLElementTagNameMap {
     'li-button': LithiumButton;
-    'li-button-group': LithiumButtonGroup;
   }
 }

@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "radio.element.ts"
+      "entryFile": "index.ts"
     }
   }
 }
