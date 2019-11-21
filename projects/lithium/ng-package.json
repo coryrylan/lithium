@@ -3,5 +3,14 @@
   "dest": "../../dist/lithium",
   "lib": {
     "entryFile": "public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "lit-element",
+    "lit-html",
+    "prismjs",
+    "@a11y/focus-trap",
+    "date-fns",
+    "tslib",
+    "resize-observer-polyfill"
+  ]
 }

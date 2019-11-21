@@ -1,6 +1,6 @@
 {
   "name": "lithium-ui",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "sideEffects": [
     "./esm5/**/*.element.js",
     "./esm2015/**/*.element.js",
@@ -25,12 +25,13 @@
     "./**/lithium-ui-tabs.js",
     "./**/lithium-ui-textarea.js"
   ],
-  "peerDependencies": {
-    "lit-element": "^2.2.0",
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2",
     "prismjs": "^1.16.0",
     "@a11y/focus-trap": "^1.0.2",
-    "resize-observer-polyfill": "^1.5.1",
     "date-fns": "^2.2.1",
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "resize-observer-polyfill": "^1.5.1"
   }
 }
