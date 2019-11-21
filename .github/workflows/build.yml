@@ -19,11 +19,11 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          key: cache-${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
+            cache-${{ runner.OS }}-build-${{ env.cache-name }}-
+            cache-${{ runner.OS }}-build-
+            cache-${{ runner.OS }}-
 
       - name: Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
