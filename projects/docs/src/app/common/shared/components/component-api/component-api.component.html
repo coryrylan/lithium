@@ -21,7 +21,7 @@
       </table>
     </ng-container>
 
-    <ng-container *ngIf="el.events.length > 0">
+    <ng-container *ngIf="el.events && el.events.length > 0">
       <h3>Events</h3>
       <table>
         <tr>
@@ -37,7 +37,7 @@
       </table>
     </ng-container>
 
-    <ng-container *ngIf="el.slots.length > 0">
+    <ng-container *ngIf="el.slots && el.slots.length > 0">
       <h3>Slots</h3>
       <table>
         <tr>
@@ -53,7 +53,7 @@
       </table>
     </ng-container>
 
-    <ng-container *ngIf="el.attributes.length > 0">
+    <ng-container *ngIf="el.attributes && el.attributes.length > 0">
       <h3>Attributes</h3>
       <table>
         <tr>

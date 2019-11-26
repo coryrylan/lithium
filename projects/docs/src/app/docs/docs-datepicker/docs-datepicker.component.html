@@ -26,15 +26,13 @@
       - display format
     -->
 
-    <!-- <p>angular forms binding: {{ defaultDate.value }}</p> -->
     <li-datepicker>
-      <label>Date {{ defaultDateValue }}</label>
-      <input type="date" [formControl]="defaultDate" (change)="defaultDateValue = $event.target.value" />
+      <label>Date {{ defaultDate.value }}</label>
+      <input type="date" [formControl]="defaultDate" />
     </li-datepicker>
 
     <br />
     <h3>Inline Datepicker</h3>
-    <!-- <p>angular forms binding: {{ inlineDate.value }}</p> -->
     <li-datepicker inline>
       <label>Inline Date {{ inlineDateValue }}</label>
       <input type="date" [formControl]="inlineDate" (change)="inlineDateValue = $event.target.value" />
@@ -42,21 +40,20 @@
 
     <br />
     <h3>Date Range Datepicker</h3>
-    <!-- <p>angular forms binding: {{ startDate.value }} - {{ endDate.value }}</p> -->
-    <li-datepicker inline>
-      <label>Range {{ startDateValue }} - {{ endDateValue }}</label>
-      <input type="date" [formControl]="startDate" (change)="startDateValue = $event.target.value" />
+    <li-datepicker>
+      <label>Range {{ startDate.value }} - {{ endDate.value }}</label>
+      <input type="date" [formControl]="startDate" />
 
       <label>End Date</label>
-      <input type="date" [formControl]="endDate" (change)="endDateValue = $event.target.value" />
+      <input type="date" [formControl]="endDate" />
     </li-datepicker>
 
     <br />
     <h3>Min/Max Datepicker</h3>
     <!-- <p>angular forms binding: {{ minMaxDate.value }}</p> -->
     <li-datepicker inline [min]="minDate" [max]="maxDate">
-      <label>Min/Max Date {{ minMaxDateValue }}</label>
-      <input type="date" [formControl]="minMaxDate" (change)="minMaxDateValue = $event.target.value" />
+      <label>Min/Max Date {{ minMaxDate.value }}</label>
+      <input type="date" [formControl]="minMaxDate" />
     </li-datepicker>
 
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>

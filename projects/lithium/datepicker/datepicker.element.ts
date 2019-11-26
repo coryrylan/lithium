@@ -1,22 +1,34 @@
 import { format, parse } from 'date-fns';
 import { html, LitElement, property, query } from 'lit-element';
-import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
+import { KeyCodes, querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError, LithiumInputMessage } from 'lithium-ui/input';
 import { LithiumDatepickerInline } from './datepicker-inline.element';
 import { styles } from './datepicker.element.css';
 
 let idCount = 0;
+
 /**
- * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+ * Datepicker, input that adds additional functionality to the native HTML datepicker
+ *
+ * @noInheritDoc
+ * @element li-datepicker
+ * @slot default - Content slot for date inputs
  */
+// @dynamic
 export class LithiumDatepicker extends LitElement {
+  /** display datepicker inline without a text input */
   @property({ type: Boolean, reflect: true }) inline = false;
+
+  /** set the minimum date that can be selected */
+  @property({ type: String }) min: string;
+
+  /** set the maximum date that can be selected */
+  @property({ type: String }) max: string;
 
   @querySlotAll('label') protected labels: NodeListOf<HTMLLabelElement>;
   @querySlotAll('li-input-message') protected messages: NodeListOf<LithiumInputMessage>;
   @querySlotAll('li-input-error') protected errorMessages: NodeListOf<LithiumInputError>;
   @querySlotAll('input') private inputs: NodeListOf<HTMLInputElement>;
-  @query('input') private input: HTMLInputElement;
   @query('li-datepicker-inline') private inlineDatepicker: LithiumDatepickerInline;
 
   protected inputId = `li-datepicker-input-start-id-${idCount++}`;
@@ -24,9 +36,8 @@ export class LithiumDatepicker extends LitElement {
   protected errorMessageId = `li-datepicker-start-error-id-${idCount++}`;
 
   @property({ type: Boolean }) private showStartDatepicker = false;
-  @property({ type: Boolean }) private range = false;
-  @property({ type: String }) private min: string;
-  @property({ type: String }) private max: string;
+  @property({ type: Boolean, reflect: true }) private range = false;
+  @query('input') private input: HTMLInputElement;
 
   static get styles() {
     return styles;
@@ -54,31 +65,48 @@ export class LithiumDatepicker extends LitElement {
     this.setupEndInput();
     this.setupInitialValue();
 
+    this.labels[0].addEventListener('click', () => this.input.focus());
     this.input.addEventListener('focus', () => (this.showStartDatepicker = true));
+    this.input.readOnly = true;
 
     document.addEventListener('click', (event: any) => {
       if (!this.shadowRoot.contains(event.target) && !this.contains(event.target)) {
         this.showStartDatepicker = false;
       }
     });
+
+    window.addEventListener('keydown', this.closeOnEscape);
   }
 
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('keydown', this.closeOnEscape);
+  }
+
+  private closeOnEscape = (event: KeyboardEvent) => {
+    if ((event.key === KeyCodes.Escape || event.key === 'Esc') && this.showStartDatepicker === true) {
+      this.showStartDatepicker = false;
+      this.input.blur();
+    }
+    // tslint:disable-next-line: semicolon
+  };
+
   private valueChange(e: CustomEvent) {
-    this.showStartDatepicker = false;
-
     if (Array.isArray(e.detail)) {
-      this.input.value = format(e.detail[0], 'MM/dd/yyyy');
-      this.updateStartInput(format(e.detail[0], 'yyyy-MM-dd'));
-
-      if (e.detail[1]) {
+      if (e.detail[0] && e.detail[1]) {
+        this.updateStartInput(format(e.detail[0], 'yyyy-MM-dd'));
         this.updateEndInput(format(e.detail[1], 'yyyy-MM-dd'));
+        this.input.value = `${format(e.detail[0], 'MM/dd/yyyy')} - ${format(e.detail[1], 'MM/dd/yyyy')}`;
+        this.showStartDatepicker = false;
       }
-    } else if (e.detail) {
-      this.input.value = format(e.detail, 'MM/dd/yyyy');
+    } else if (!Array.isArray(e.detail) && e.detail) {
       this.updateStartInput(format(e.detail, 'yyyy-MM-dd'));
+      this.input.value = format(e.detail, 'MM/dd/yyyy');
+      this.showStartDatepicker = false;
     } else {
-      this.input.value = '';
       this.updateStartInput('');
+      this.updateEndInput('');
+      this.showStartDatepicker = false;
     }
   }
 
@@ -121,7 +149,7 @@ export class LithiumDatepicker extends LitElement {
   }
 
   private setupInitialSingleValue() {
-    this.input.value = this.inputs[0].value;
+    this.inputs[0].value = this.inputs[0].value;
 
     if (this.inputs[0].value && this.inputs[0].value.length) {
       this.inlineDatepicker.value = parse(this.inputs[0].value, 'yyyy-MM-dd', new Date());

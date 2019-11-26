@@ -24,3 +24,12 @@ li-datepicker-inline.li-datepicker-dropdown {
 .li-datepicker-inline {
   display: block;
 }
+
+:host([inline]) ::slotted(input),
+:host([inline]) ::slotted(label:nth-of-type(2)) {
+  display: none !important;
+}
+
+:host([range]) ::slotted(label:nth-of-type(2)) {
+  display: none !important;
+}

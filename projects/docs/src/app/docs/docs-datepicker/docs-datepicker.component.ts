@@ -1,30 +1,24 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { addDays } from 'date-fns';
+import { addDays, format, subDays } from 'date-fns';
 
 @Component({
   selector: 'app-docs-datepicker',
   templateUrl: './docs-datepicker.component.html'
 })
 export class DocsDatepickerComponent {
-  myDate = new Date();
-  dates = [new Date(), addDays(new Date(), 5)];
+  private today = new Date();
+  defaultDate = new FormControl(format(this.today, 'yyyy-MM-dd'));
 
-  defaultDate = new FormControl('2019-10-08');
-  defaultDateValue = '2019-10-08';
+  inlineDateValue = format(this.today, 'yyyy-MM-dd'); // set by (change) event which Angular forms doesn't use but rather (input).
+  inlineDate = new FormControl(this.inlineDateValue);
 
-  inlineDate = new FormControl('2019-10-08');
-  inlineDateValue = '2019-10-08';
+  minMaxDate = new FormControl(format(this.today, 'yyyy-MM-dd'));
+  minDate = format(subDays(this.today, 3), 'yyyy-MM-dd');
+  maxDate = format(addDays(this.today, 3), 'yyyy-MM-dd');
 
-  minMaxDate = new FormControl('2019-10-08');
-  minMaxDateValue = '2019-10-08';
-  minDate = '2019-10-04';
-  maxDate = '2019-10-16';
-
-  startDate = new FormControl('2019-10-08');
-  endDate = new FormControl('2019-10-14');
-  startDateValue = '2019-10-08';
-  endDateValue = '2019-10-14';
+  startDate = new FormControl(format(subDays(this.today, 3), 'yyyy-MM-dd'));
+  endDate = new FormControl(format(addDays(this.today, 3), 'yyyy-MM-dd'));
 
   codeExampleImport = `
     import 'lithium-ui/datepicker';
