@@ -15,9 +15,9 @@
     <form [formGroup]="form" (ngSubmit)="submit()">
       <h2>Example Types</h2>
       <li-button type="submit">submit</li-button>
-      <li-button disabled>disabled</li-button>
+      <li-button disabled (click)="log()">disabled</li-button>
       <li-button><a href="/about">link</a></li-button>
-      <li-button loading="true">loading</li-button>
+      <li-button loading="true" (click)="log()">loading</li-button>
       <app-component-example [code]="componentExampleTypes"></app-component-example>
       <!-- <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
       <app-component-example [code]="componentEvents"></app-component-example> -->

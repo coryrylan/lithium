@@ -92,6 +92,20 @@ describe('button', () => {
     const slots = getComponentSlotContent(component);
     expect(slots.default.includes('<span>Hello World</span>')).toBe(true);
   });
+
+  it('should remove button attributes when set to readonly', async () => {
+    component.readonly = true;
+    await componentIsStable(component);
+    expect(testElement.querySelector('li-button').hasAttribute('role')).toBe(false);
+    expect(testElement.querySelector('li-button').hasAttribute('tabindex')).toBe(false);
+  });
+
+  it('should prevent click when readonly or disabled', async () => {
+    component.disabled = true;
+    await componentIsStable(component);
+    const style = getComputedStyle(testElement.querySelector('li-button'));
+    expect(style.pointerEvents).toBe('none');
+  });
 });
 
 describe('button link', () => {

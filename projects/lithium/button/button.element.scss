@@ -19,6 +19,7 @@
   flex-direction: column;
   text-align: center;
   line-height: 1.5em;
+  user-select: none;
 }
 
 @-moz-document url-prefix() {

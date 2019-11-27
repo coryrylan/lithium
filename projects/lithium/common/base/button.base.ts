@@ -28,6 +28,7 @@ export class BaseButton extends LitElement {
   @property({ type: String, reflect: true }) role = 'button';
   @property({ type: String, reflect: true }) name = '';
   @property({ type: String, reflect: true }) value = '';
+  @property({ type: Boolean, reflect: true }) readonly = false;
 
   @querySlot('a') private anchor: HTMLAnchorElement;
   @query('button') private templateButton: HTMLButtonElement;
@@ -42,37 +43,30 @@ export class BaseButton extends LitElement {
 
   protected render() {
     return html`
-      <slot></slot>
-      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
+        <slot></slot>
+        ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
     `;
   }
 
   protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
+    this.updateButtonAttributes();
 
-    if (this.anchor) {
-      this.role = AriaRole.Presentation;
-      this.type = null;
-      this.removeAttribute('tabindex');
-    } else {
+    if (!this.anchor) {
       // append the template button to light DOM to interface with forms
       this.hiddenButton = this.appendChild(this.templateButton);
-    }
-
-    if (this.disabled) {
-      this.tabIndex = this.disabled ? -1 : 0;
     }
   }
 
   protected updated(props: Map<string, any>) {
     super.updated(props);
-    if (props.get('disabled') && !this.anchor) {
-      this.tabIndex = this.disabled ? -1 : 0;
+    if (props.has('readonly') || props.has('disabled')) {
+      this.updateButtonAttributes();
     }
   }
 
   protected onClick(event: Event) {
-    if (this.disabled) {
+    if (this.disabled || this.readonly) {
       stopEvent(event);
       return;
     }
@@ -86,6 +80,33 @@ export class BaseButton extends LitElement {
     if ((this.isButton && e.key === KeyCodes.Enter) || e.code === KeyCodes.Space) {
       this.click();
       stopEvent(e);
+    }
+  }
+
+  private updateButtonAttributes() {
+    const oldRole = this.role;
+    const oldTabIndex = this.tabIndex;
+
+    this.style.pointerEvents = this.disabled ? 'none' : '';
+
+    if (this.anchor) {
+      this.role = AriaRole.Presentation;
+      this.type = null;
+      this.removeAttribute('tabindex');
+    } else if (this.readonly) {
+      this.removeAttribute('role');
+      this.removeAttribute('tabIndex');
+    } else {
+      this.role = 'button';
+      this.tabIndex = this.disabled ? -1 : 0;
+    }
+
+    if (this.role !== oldRole) {
+      this.requestUpdate('role', oldRole);
+    }
+
+    if (this.tabIndex !== oldTabIndex) {
+      this.requestUpdate('tabIndex', oldTabIndex);
     }
   }
 }
