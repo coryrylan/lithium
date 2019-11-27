@@ -98,11 +98,11 @@
 }
 
 /* size */
-:host([size='small']) {
+:host([size='sm']) {
   font-size: 8px !important;
 }
 
-:host([size='large']) {
+:host([size='lg']) {
   font-size: 12px !important;
 }
 
@@ -154,7 +154,7 @@ li-loading-spinner {
   }
 }
 
-:host([loading][size='small']) li-loading-spinner {
+:host([loading][size='sm']) li-loading-spinner {
   top: -0.4em;
   left: -0.2em;
 }

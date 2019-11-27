@@ -45,12 +45,12 @@
   }
 }
 
-:host([small]) .li-spinner {
+:host([size='sm']) .li-spinner {
   width: 2em;
   height: 2em;
 }
 
-:host([large]) .li-spinner {
+:host([size='lg']) .li-spinner {
   width: 6em;
   height: 6em;
 }

@@ -10,7 +10,7 @@ import { styles } from './button.element.css';
  * @element li-button
  * @slot default - Content slot for button
  * @attr {String} action - [default|secondary|tertiary|success|warning|danger]
- * @attr {String} size - [small|default|large]
+ * @attr {String} size - [sm|default|lg|icon]
  * @cssprop --li-button-background-color
  * @cssprop --li-button-color
  * @cssprop --li-button-border-radius
@@ -38,7 +38,7 @@ export class LithiumButton extends BaseButton {
       ${this.loading
         ? html`
             <div class="li-loading-spinner-wrapper">
-              <li-loading-spinner small></li-loading-spinner>
+              <li-loading-spinner size="sm"></li-loading-spinner>
             </div>
           `
         : html`

@@ -10,8 +10,8 @@ export class DocsLoadingSpinnerComponent {
   `;
 
   codeExampleHtml = `
-    <li-loading-spinner small></li-loading-spinner>
+    <li-loading-spinner size="sm"></li-loading-spinner>
     <li-loading-spinner></li-loading-spinner>
-    <li-loading-spinner large></li-loading-spinner>
+    <li-loading-spinner size="lg"></li-loading-spinner>
   `;
 }

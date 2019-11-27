@@ -1,6 +1,6 @@
 @import './../styles/base';
 
-:host([large]) .li-modal {
+:host([size='lg']) .li-modal {
   max-width: 70em;
 }
 

@@ -43,8 +43,8 @@ export class BaseButton extends LitElement {
 
   protected render() {
     return html`
-        <slot></slot>
-        ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
+      <slot></slot>
+      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
     `;
   }
 

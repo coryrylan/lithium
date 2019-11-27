@@ -17,7 +17,7 @@
     <p>Modal Open: {{ openModal }}</p>
     <li-button (click)="openModal = !openModal">open modal</li-button>
 
-    <li-modal [open]="openModal" (openChange)="openModal = $event.detail" [closable]="false">
+    <li-modal [open]="openModal" (openChange)="openModal = $event.detail">
       <li-modal-header>
         <h3>Hello World Header</h3>
       </li-modal-header>
@@ -30,7 +30,7 @@
     </li-modal>
 
     <li-button (click)="largeModal = !largeModal">open large modal</li-button>
-    <li-modal large [open]="largeModal" (openChange)="largeModal = $event.detail">
+    <li-modal size="lg" [open]="largeModal" (openChange)="largeModal = $event.detail">
       <li-modal-header>
         <h3>Large Modal</h3>
       </li-modal-header>

@@ -8,8 +8,7 @@ import { styles } from './loading-spinner.element.css';
  *
  * @noInheritDoc
  * @element li-loading-spinner
- * @attr {String} small - small sized spinner
- * @attr {String} large - large sized spinner
+ * @attr {String} size - (sm, lg) sized spinner
  * @cssProp --li-spinner-color
  */
 // @dynamic
