@@ -1,5 +1,5 @@
 import { html, property } from 'lit-element';
-import { BaseButton, hiddenButtonTemplate, registerElementSafely } from 'lithium-ui/common';
+import { BaseButton, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/loading-spinner';
 import { styles } from './button.element.css';
 
@@ -44,7 +44,7 @@ export class LithiumButton extends BaseButton {
         : html`
             <slot></slot>
           `}
-      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
+      ${this.hiddenButtonTemplate}
     `;
   }
 

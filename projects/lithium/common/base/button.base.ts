@@ -1,61 +1,50 @@
 import { html, LitElement, property, query } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
-import { querySlot } from './../decorators/query-slot';
-import { AriaRole, KeyCodes } from './../utils/enums';
+import { KeyCodes } from './../utils/enums';
 import { stopEvent } from './../utils/events';
-
-export const hiddenButtonTemplate = (disabled: boolean, value: string, name: string, type: 'button' | 'submit' | 'reset' | 'menu') => html`
-  <button
-    aria-hidden="true"
-    ?disabled="${disabled}"
-    tabindex="-1"
-    style="display: none"
-    value="${ifDefined(value)}"
-    name="${ifDefined(name)}"
-    type="${ifDefined(type)}"
-  ></button>
-`;
 
 // @dynamic
 export class BaseButton extends LitElement {
-  private get isButton() {
-    return this.role === AriaRole.Button;
-  }
-
-  @property({ type: Boolean, reflect: true }) disabled = false;
-  @property({ type: String, reflect: true }) type: 'button' | 'submit';
+  @property({ type: Boolean, reflect: true }) readonly = false;
   @property({ type: String, reflect: true }) role = 'button';
+  @property({ type: String, reflect: true }) type: 'button' | 'submit';
   @property({ type: String, reflect: true }) name = '';
   @property({ type: String, reflect: true }) value = '';
-  @property({ type: Boolean, reflect: true }) readonly = false;
+  @property({ type: Boolean, reflect: true }) disabled = false;
 
-  @querySlot('a') private anchor: HTMLAnchorElement;
   @query('button') private templateButton: HTMLButtonElement;
   private hiddenButton: HTMLButtonElement;
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.tabIndex = 0;
-    this.addEventListener('click', e => this.onClick(e));
-    this.addEventListener('keydown', e => this.onKeyDown(e));
+  protected get hiddenButtonTemplate() {
+    return this.readonly
+      ? html``
+      : html`
+          <button
+            aria-hidden="true"
+            ?disabled="${this.disabled}"
+            tabindex="-1"
+            style="display: none"
+            value="${ifDefined(this.value)}"
+            name="${ifDefined(name)}"
+            type="${ifDefined(this.type)}"
+          ></button>
+        `;
   }
 
   protected render() {
     return html`
       <slot></slot>
-      ${hiddenButtonTemplate(this.disabled, this.value, this.name, this.type)}
+      ${this.hiddenButtonTemplate}
     `;
   }
 
   protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
+    this.setAnchorMode();
     this.updateButtonAttributes();
-
-    if (!this.anchor) {
-      // append the template button to light DOM to interface with forms
-      this.hiddenButton = this.appendChild(this.templateButton);
-    }
+    this.setHiddenButton();
+    this.setEventListeners();
   }
 
   protected updated(props: Map<string, any>) {
@@ -65,19 +54,76 @@ export class BaseButton extends LitElement {
     }
   }
 
-  protected onClick(event: Event) {
-    if (this.disabled || this.readonly) {
+  /**
+   * This sets some hacks to allow buttons to be wrapped by an anchor element
+   * until the custom elements native element extends API is widely supported.
+   * We need to allow buttons to be wrapped so anchors can be properly used.
+   */
+  private setAnchorMode() {
+    if (this.parentElement.tagName.toLowerCase() === 'a') {
+      // set to read only to prevent button from interfering with anchor
+      this.readonly = true;
+
+      // override button margin space to apply to parent anchor to prevent irregular focus shape
+      this.parentElement.style.marginRight = window.getComputedStyle(this).getPropertyValue('margin-right');
+      this.style.marginRight = '0';
+
+      this.appendAnchorStyles();
+    }
+  }
+
+  /** override anchor style to prevent style leak into slotted content */
+  private appendAnchorStyles() {
+    this.parentElement.setAttribute('li-button-anchor', '');
+
+    if (!document.querySelector('#li-button-anchor-styles')) {
+      const style = document.createElement('style');
+      style.id = 'li-button-anchor-styles';
+      style.innerHTML = `
+        a[li-button-anchor] {
+          line-height: 0;
+          text-decoration: none;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  /**
+   * We have to append a hidden button outside the web component in the light DOM
+   * This allows us to trigger native submit events within a form element.
+   */
+  private setHiddenButton() {
+    if (!this.readonly) {
+      this.hiddenButton = this.appendChild(this.templateButton);
+    }
+  }
+
+  private setEventListeners() {
+    if (!this.readonly) {
+      this.addEventListener('click', e => {
+        this.preventClickIfDisabled(e);
+        this.triggerHiddenFormButton(e);
+      });
+      this.addEventListener('keydown', e => this.emulateKeyBoardEventBehavior(e));
+    }
+  }
+
+  private preventClickIfDisabled(event: Event) {
+    if (this.disabled) {
       stopEvent(event);
       return;
     }
+  }
 
-    if (this.isButton && event.target === this && !event.defaultPrevented) {
+  private triggerHiddenFormButton(event: Event) {
+    if (!this.readonly && !this.disabled && event.target === this && !event.defaultPrevented) {
       this.hiddenButton.dispatchEvent(new MouseEvent('click', { relatedTarget: this, composed: true }));
     }
   }
 
-  protected onKeyDown(e: KeyboardEvent) {
-    if ((this.isButton && e.key === KeyCodes.Enter) || e.code === KeyCodes.Space) {
+  private emulateKeyBoardEventBehavior(e: KeyboardEvent) {
+    if (e.key === KeyCodes.Enter || e.code === KeyCodes.Space) {
       this.click();
       stopEvent(e);
     }
@@ -87,13 +133,7 @@ export class BaseButton extends LitElement {
     const oldRole = this.role;
     const oldTabIndex = this.tabIndex;
 
-    this.style.pointerEvents = this.disabled ? 'none' : '';
-
-    if (this.anchor) {
-      this.role = AriaRole.Presentation;
-      this.type = null;
-      this.removeAttribute('tabindex');
-    } else if (this.readonly) {
+    if (this.readonly) {
       this.removeAttribute('role');
       this.removeAttribute('tabIndex');
     } else {

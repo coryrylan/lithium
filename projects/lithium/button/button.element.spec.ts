@@ -30,7 +30,8 @@ describe('button', () => {
     expect(component.innerText).toBe('Hello World');
   });
 
-  it('should have a tab index of 0 to be able to focus', () => {
+  it('should have a tab index of 0 to be able to focus', async () => {
+    await componentIsStable(component);
     expect(component.getAttribute('tabindex')).toBe('0');
   });
 
@@ -40,6 +41,7 @@ describe('button', () => {
   });
 
   it('should remove button from tab index if disabled', async () => {
+    await componentIsStable(component);
     expect(component.getAttribute('tabindex')).toBe('0');
     component.disabled = true;
     await componentIsStable(component);
@@ -71,7 +73,6 @@ describe('button', () => {
     component.dispatchEvent(event);
   });
 
-  // todo: fix async
   it('should not interact with form elements if disabled', async () => {
     component.disabled = true;
     await componentIsStable(component);
@@ -79,6 +80,14 @@ describe('button', () => {
     spyOn(o, 'f');
     testElement.querySelector('form').addEventListener('submit', o.f);
     expect(o.f).not.toHaveBeenCalled();
+  });
+
+  it('should remove button attributes and hidden form button when set to readonly', async () => {
+    component.readonly = true;
+    await componentIsStable(component);
+    expect(testElement.querySelector('li-button').hasAttribute('role')).toBe(false);
+    expect(testElement.querySelector('li-button').hasAttribute('tabindex')).toBe(false);
+    expect(component.querySelector('button')).toBe(null);
   });
 
   it('should show loading spinner', async () => {
@@ -91,13 +100,6 @@ describe('button', () => {
     await componentIsStable(component);
     const slots = getComponentSlotContent(component);
     expect(slots.default.includes('<span>Hello World</span>')).toBe(true);
-  });
-
-  it('should remove button attributes when set to readonly', async () => {
-    component.readonly = true;
-    await componentIsStable(component);
-    expect(testElement.querySelector('li-button').hasAttribute('role')).toBe(false);
-    expect(testElement.querySelector('li-button').hasAttribute('tabindex')).toBe(false);
   });
 
   it('should prevent click when readonly or disabled', async () => {
@@ -114,7 +116,7 @@ describe('button link', () => {
 
   beforeEach(async () => {
     testElement = createTestElement();
-    testElement.innerHTML = `<li-button><a href="about">About</a></li-button>`;
+    testElement.innerHTML = `<a href="about"><li-button>About</li-button></a>`;
     await waitForComponent('li-button');
     component = testElement.querySelector<LithiumButton>('li-button');
   });
@@ -129,8 +131,8 @@ describe('button link', () => {
     expect(component.innerText).toBe('About');
   });
 
-  it('should set outer host to have a role of presentation', async () => {
+  it('should set button to be readonly', async () => {
     await componentIsStable(component);
-    expect(component.getAttribute('role')).toBe(AriaRole.Presentation);
+    expect(component.readonly).toBe(true);
   });
 });

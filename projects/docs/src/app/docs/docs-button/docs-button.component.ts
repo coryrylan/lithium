@@ -27,19 +27,19 @@ export class DocsButtonComponent {
     angular: `
       <li-button type="submit">angular</li-button>
       <li-button disabled>disabled</li-button>
-      <li-button><a href="/about">link</a></li-button>
+      <a routerLink="/about"><li-button>link</li-button></a>
       <li-button loading="true">loading</li-button>
     `,
     vue: `
       <li-button type="submit">vue</li-button>
       <li-button disabled>disabled</li-button>
-      <li-button><a href="/about">link</a></li-button>
+      <a href="/about">link</li-button></a>
       <li-button loading="true">loading</li-button>
     `,
     javascript: `
       <li-button type="submit">javascript</li-button>
       <li-button disabled>disabled</li-button>
-      <li-button><a href="/about">link</a></li-button>
+      <a href="/about"><li-button>link</li-button></a>
       <li-button loading="true">loading</li-button>
     `
   };
@@ -94,19 +94,19 @@ export class DocsButtonComponent {
       <li-button>primary</li-button>
       <li-button level="secondary">secondary</li-button>
       <li-button level="tertiary">tertiary</li-button>
-      <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
+      <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a>
     `,
     vue: `
       <li-button>primary</li-button>
       <li-button level="secondary">secondary</li-button>
       <li-button level="tertiary">tertiary</li-button>
-      <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
+      <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a>
     `,
     javascript: `
       <li-button>primary</li-button>
       <li-button level="secondary">secondary</li-button>
       <li-button level="tertiary">tertiary</li-button>
-      <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
+      <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a>
     `
   };
 

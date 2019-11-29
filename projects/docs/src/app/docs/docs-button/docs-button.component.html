@@ -4,7 +4,8 @@
 
 <p>
   The <code>li-button</code> component provides default styles and utilities for buttons including built in loading spinners and size
-  variations.
+  variations. Buttons provide necessary attributes to be accessible. If button is wrapped in an anchor tag the button will set itself to
+  readonly and remove button related attributes.
 </p>
 
 <li-tabs>
@@ -16,11 +17,9 @@
       <h2>Example Types</h2>
       <li-button type="submit">submit</li-button>
       <li-button disabled (click)="log()">disabled</li-button>
-      <li-button><a href="/about">link</a></li-button>
+      <a routerLink="/about"><li-button>link</li-button></a>
       <li-button loading="true" (click)="log()">loading</li-button>
       <app-component-example [code]="componentExampleTypes"></app-component-example>
-      <!-- <li-code-example [code]="codeExampleImport" language="javascript"></li-code-example>
-      <app-component-example [code]="componentEvents"></app-component-example> -->
 
       <h2>Action Types</h2>
       <li-button type="button">default</li-button>
@@ -35,11 +34,11 @@
       <li-button level="secondary">secondary</li-button>
       <li-button level="tertiary">tertiary</li-button>
       <br />
-      <li-button><a href="/about">link</a></li-button>
-      <li-button level="secondary"><a href="/about">link</a></li-button>
-      <li-button level="tertiary"><a href="/about">link</a></li-button>
+      <a href="/about"><li-button>link</li-button></a>
+      <a href="/about"><li-button level="secondary">link</li-button></a>
+      <a href="/about"><li-button level="tertiary">link</li-button></a>
       <p>
-        This is a <li-button level="tertiary-inline"><a href="/about">tertiary inline</a></li-button> button.
+        This is a <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a> button.
       </p>
       <app-component-example [code]="componentExampleStyles"></app-component-example>
 
