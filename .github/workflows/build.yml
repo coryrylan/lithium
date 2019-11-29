@@ -14,16 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      ## https://help.github.com/en/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows
       - name: Cache node modules
         uses: actions/cache@v1
         with:
-          path: node_modules
-          key: cache-${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            cache-${{ runner.OS }}-build-${{ env.cache-name }}-
-            cache-${{ runner.OS }}-build-
-            cache-${{ runner.OS }}-
+            ${{ runner.os }}-node-
 
       - name: Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
