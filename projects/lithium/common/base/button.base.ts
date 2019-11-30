@@ -65,17 +65,14 @@ export class BaseButton extends LitElement {
       this.readonly = true;
 
       // override button margin space to apply to parent anchor to prevent irregular focus shape
-      this.parentElement.style.marginRight = window.getComputedStyle(this).getPropertyValue('margin-right');
-      this.style.marginRight = '0';
-
+      this.parentElement.setAttribute('li-button-anchor', '');
+      this.setAttribute('is-anchor', '');
       this.appendAnchorStyles();
     }
   }
 
   /** override anchor style to prevent style leak into slotted content */
   private appendAnchorStyles() {
-    this.parentElement.setAttribute('li-button-anchor', '');
-
     if (!document.querySelector('#li-button-anchor-styles')) {
       const style = document.createElement('style');
       style.id = 'li-button-anchor-styles';
@@ -83,6 +80,8 @@ export class BaseButton extends LitElement {
         a[li-button-anchor] {
           line-height: 0;
           text-decoration: none;
+          margin-right: 4px;
+          display: inline;
         }
       `;
       document.head.appendChild(style);

@@ -41,6 +41,10 @@
   pointer-events: none;
 }
 
+:host([is-anchor]) {
+  margin-right: 0;
+}
+
 /* level */
 :host([level='secondary']) {
   background-color: transparent;
