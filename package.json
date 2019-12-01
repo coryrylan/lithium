@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "npm-run-all lib:sass && npm-run-all --parallel lib:sass:watch docs:build:watch",
-    "build": "npm-run-all clean lib:build docs:build:prod test:bundle lib:test",
+    "build": "npm-run-all clean lib:build docs:build:prod test:bundle lib:test clean:packages",
     "build:ci": "npm-run-all clean lib:build docs:build:prod test:bundle lib:test:ci",
     "test:bundle": "bundlesize --config bundlesize.json",
     "all:format": "prettier --list-different './projects/**/*.{ts,scss,html}' --write",
     "clean": "rimraf ./dist",
-    "lib:build": "npm-run-all all:format lib:lint lib:sass && ng build lithium && node modules.js && npm run lib:api:editor && cpy README.md LICENSE.md dist/lithium",
+    "clean:packages": "node packages.js",
+    "lib:build": "npm-run-all all:format lib:lint lib:sass && ng build lithium && npm run lib:api:editor && cpy README.md LICENSE.md dist/lithium && npm run clean:packages",
     "lib:test": "ng test lithium --watch=false",
     "lib:test:ci": "ng test lithium --watch=false --browsers=ChromeHeadlessCustom",
     "lib:test:watch": "ng test lithium --watch --code-coverage",
@@ -30,7 +31,8 @@
     "docs:e2e": "ng e2e docs",
     "docs:deploy": "npm run build && firebase deploy",
     "bundle-sourcemaps": "source-map-explorer dist/docs/*.js",
-    "bundle-webpack": "webpack-bundle-analyzer dist/docs/stats-es2015.json"
+    "bundle-webpack": "webpack-bundle-analyzer dist/docs/stats-es2015.json",
+    "lib:clean": "node modules.js"
   },
   "private": true,
   "dependencies": {
