@@ -38,7 +38,9 @@ export class DocsI18nComponent {
       warning: 'Avertissement',
       success: 'Succès',
       info: 'Information',
-      loading: 'Chargement'
+      loading: 'Chargement',
+      previousMonth: '',
+      nextMonth: ''
     });
   }
 }

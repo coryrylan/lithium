@@ -7,6 +7,8 @@ export interface InternationalizationRegistry {
   success: string;
   info: string;
   loading: string;
+  previousMonth: string;
+  nextMonth: string;
 }
 
 export const englishRegistry: InternationalizationRegistry = {
@@ -17,7 +19,9 @@ export const englishRegistry: InternationalizationRegistry = {
   warning: 'Warning',
   success: 'Success',
   info: 'Information',
-  loading: 'loading'
+  loading: 'loading',
+  previousMonth: 'previous month',
+  nextMonth: 'next month'
 };
 
 let registryState: InternationalizationRegistry = { ...englishRegistry };

@@ -12,7 +12,9 @@ describe('i18n service', () => {
         warning: 'Avertissement',
         success: 'Succès',
         info: 'Information',
-        loading: 'Chargement'
+        loading: 'Chargement',
+        nextMonth: '',
+        previousMonth: ''
       })
     );
 

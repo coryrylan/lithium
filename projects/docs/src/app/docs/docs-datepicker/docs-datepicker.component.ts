@@ -7,7 +7,7 @@ import { addDays, format, subDays } from 'date-fns';
   templateUrl: './docs-datepicker.component.html'
 })
 export class DocsDatepickerComponent {
-  private today = new Date();
+  private today = new Date('December 15, 2019');
   defaultDate = new FormControl(format(this.today, 'yyyy-MM-dd'));
 
   inlineDateValue = format(this.today, 'yyyy-MM-dd'); // set by (change) event which Angular forms doesn't use but rather (input).

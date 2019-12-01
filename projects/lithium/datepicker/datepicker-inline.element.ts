@@ -13,10 +13,8 @@ import {
   weekDays
 } from './util';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { IntlService, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './datepicker-inline.element.css';
-
-let instanceId = 0;
 
 export class LithiumDatepickerInline extends LitElement {
   @property({ type: Boolean }) range = false;
@@ -46,8 +44,10 @@ export class LithiumDatepickerInline extends LitElement {
       if ((val as Date[]).length) {
         const dates = val as [Date, Date];
         val = [removeTimeIfAvailable(dates[0]), removeTimeIfAvailable(dates[1])];
+        this.setCalendarDate(val[0]);
       } else {
         val = removeTimeIfAvailable(val as Date);
+        this.setCalendarDate(val);
       }
     }
 
@@ -57,8 +57,6 @@ export class LithiumDatepickerInline extends LitElement {
       this.dispatchEvent(new CustomEvent('valueChange', { detail: this.value }));
     }
   }
-
-  instanceId = `wc-input-switch-${instanceId++}`;
 
   constructor() {
     super();
@@ -72,11 +70,21 @@ export class LithiumDatepickerInline extends LitElement {
       </style>
       <div class="li-datepicker">
         <div class="li-datepicker__top-nav">
-          <button type="button" @click="${() => this.prev()}" aria-label="previous month" class="li-datepicker__prev li-datepicker__btn">
+          <button
+            type="button"
+            @click="${() => this.prev()}"
+            aria-label="${IntlService.registry.previousMonth}"
+            class="li-datepicker__prev li-datepicker__btn"
+          >
             ◀
           </button>
           <div class="li-datepicker__title">${this.monthName} ${this.year}</div>
-          <button type="button" @click="${() => this.next()}" aria-label="next month" class="li-datepicker__next li-datepicker__btn">
+          <button
+            type="button"
+            @click="${() => this.next()}"
+            aria-label="${IntlService.registry.nextMonth}"
+            class="li-datepicker__next li-datepicker__btn"
+          >
             ▶
           </button>
         </div>

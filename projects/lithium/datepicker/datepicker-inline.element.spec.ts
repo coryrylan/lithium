@@ -1,4 +1,4 @@
-import { addMonths, format } from 'date-fns';
+import { addDays, addMonths, format } from 'date-fns';
 import 'lithium-ui/datepicker';
 import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 import { LithiumDatepickerInline } from './datepicker-inline.element';
@@ -63,5 +63,48 @@ describe('li-datepicker-inline element', () => {
     component.shadowRoot.querySelector<HTMLButtonElement>('.li-datepicker__prev').click();
     await componentIsStable(component);
     expect(component.shadowRoot.querySelector('.li-datepicker__title').textContent.trim()).toBe(title);
+  });
+
+  it('should set a range value', async () => {
+    await componentIsStable(component);
+    const startDate = new Date('December 01, 2019');
+    const threeDaysLater = addDays(startDate, 3);
+
+    component.range = true;
+    component.value = [startDate, threeDaysLater];
+    await componentIsStable(component);
+
+    expect(component.shadowRoot.querySelector('.li-datepicker__start-date').textContent.trim()).toBe('1');
+    expect(component.shadowRoot.querySelector('.li-datepicker__end-date').textContent.trim()).toBe('4');
+
+    component.shadowRoot.querySelectorAll<HTMLButtonElement>('.li-datepicker__day')[1].click();
+    component.shadowRoot.querySelectorAll<HTMLButtonElement>('.li-datepicker__day')[2].click();
+    await componentIsStable(component);
+
+    expect(component.shadowRoot.querySelector('.li-datepicker__start-date').textContent.trim()).toBe('2');
+    expect(component.shadowRoot.querySelector('.li-datepicker__end-date').textContent.trim()).toBe('3');
+  });
+
+  it('should set a day when clicked', async () => {
+    await componentIsStable(component);
+    const startDate = new Date('December 01, 2019');
+    component.value = startDate;
+
+    component.shadowRoot.querySelectorAll<HTMLButtonElement>('.li-datepicker__day')[1].click();
+    await componentIsStable(component);
+
+    expect(component.shadowRoot.querySelector('.li-datepicker__selected-date').textContent.trim()).toBe('2');
+  });
+
+  it('should disable dates outside of range', async () => {
+    component.minDate = new Date('December 02, 2019');
+    component.value = new Date('December 04, 2019');
+    component.maxDate = new Date('December 06, 2019');
+    await componentIsStable(component);
+
+    const days = component.shadowRoot.querySelectorAll<HTMLButtonElement>('.li-datepicker__day');
+    expect(days[1].disabled).toBe(false);
+    expect(days[3].disabled).toBe(false);
+    expect(days[6].disabled).toBe(true);
   });
 });
