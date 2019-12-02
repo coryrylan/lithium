@@ -60,7 +60,7 @@ export class BaseButton extends LitElement {
    * We need to allow buttons to be wrapped so anchors can be properly used.
    */
   private setAnchorMode() {
-    if (this.parentElement.tagName.toLowerCase() === 'a') {
+    if (this.parentElement && this.parentElement.tagName.toLowerCase() === 'a') {
       // set to read only to prevent button from interfering with anchor
       this.readonly = true;
 
