@@ -9,25 +9,20 @@ import { styles } from './button.element.css';
  * @noInheritDoc
  * @element li-button
  * @slot default - Content slot for button
- * @attr {String} action - [default|secondary|tertiary|success|warning|danger]
+ * @attr {String} action - [default|secondary|tertiary]
+ * @attr {String} status - [default|success|warning|danger]
  * @attr {String} size - [sm|default|lg|icon]
  * @cssprop --li-button-background-color
  * @cssprop --li-button-color
  * @cssprop --li-button-border-radius
- * @cssprop --li-button-disabled-background
- * @cssprop --li-button-secondary-color
- * @cssprop --li-button-secondary-border-color
- * @cssprop --li-button-secondary-hover-background-color
- * @cssprop --li-button-secondary-hover-color
- * @cssprop --li-button-success-color
- * @cssprop --li-button-warning-color
- * @cssprop --li-button-danger-color
+ * @cssprop --li-button-border-color
  */
 // @dynamic
 export class LithiumButton extends BaseButton {
   /** Loading property to determine if loading spinner should be visible. */
   @property({ type: Boolean, reflect: true }) loading = false;
   private initialWidth: number;
+  private initialMinWidth: string;
 
   static get styles() {
     return styles;
@@ -51,6 +46,7 @@ export class LithiumButton extends BaseButton {
   protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
     this.initialWidth = this.getBoundingClientRect().width;
+    this.initialMinWidth = this.style.minWidth;
   }
 
   protected updated(props: Map<string, any>) {
@@ -59,7 +55,7 @@ export class LithiumButton extends BaseButton {
     if (this.loading) {
       this.style.minWidth = `${this.initialWidth}px`;
     } else if (!props.get('loading')) {
-      this.style.minWidth = 'initial';
+      this.style.minWidth = this.initialMinWidth;
     }
   }
 }

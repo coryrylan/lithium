@@ -3,7 +3,7 @@
     <h2>{{ el.name }}</h2>
     <p>{{ el.description }}</p>
 
-    <ng-container *ngIf="el.properties.length > 0">
+    <ng-container *ngIf="el.properties && el.properties.length > 0">
       <h3>Properties</h3>
       <table>
         <tr>
@@ -21,7 +21,7 @@
       </table>
     </ng-container>
 
-    <ng-container *ngIf="el.events && el.events.length > 0">
+    <ng-container *ngIf="el.events && el.events && el.events.length > 0">
       <h3>Events</h3>
       <table>
         <tr>

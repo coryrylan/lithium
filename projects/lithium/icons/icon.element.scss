@@ -5,6 +5,7 @@
   width: var(--li-icon-width, 2.4em);
   height: var(--li-icon-height, 2.4em);
   display: inline-block;
+  overflow: hidden;
 }
 
 svg {

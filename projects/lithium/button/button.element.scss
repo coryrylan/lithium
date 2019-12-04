@@ -2,7 +2,7 @@
 
 :host {
   -webkit-appearance: none !important;
-  background: var(--li-button-background-color, var(--li-common-color-blue-100));
+  background-color: var(--li-button-background-color, var(--li-common-color-blue-100));
   color: var(--li-button-color, var(--li-common-color-white-100));
   border-radius: var(--li-button-border-radius, var(--li-common-border-radius));
   margin: 0 0.4em var(--li-common-spacing-margin-bottom) 0;
@@ -11,16 +11,30 @@
   display: inline-block;
   cursor: pointer;
   text-transform: capitalize;
-  border: 0.2em solid var(--li-button-background-color, var(--li-common-color-blue-100));
+  border: 0.2em solid;
+  border-color: var(--li-button-border-color, var(--li-common-color-blue-100));
   height: 4.4em;
   padding: 0 2.4em;
-  display: inline-flex;
-  justify-content: center;
-  flex-direction: column;
+  display: inline-block;
+  vertical-align: middle;
   text-align: center;
-  line-height: 1.5em;
+  line-height: 3.7em;
   user-select: none;
+  text-decoration: none;
+}
+
+:host([is-anchor]) {
+  padding: 0;
+}
+
+::slotted(a) {
+  color: var(--li-button-color, var(--li-common-color-white-100)) !important;
+  font-size: 16px;
   text-decoration: none !important;
+  line-height: 2.4em;
+  display: block;
+  height: 100%;
+  padding: 0 1.5em;
 }
 
 @-moz-document url-prefix() {
@@ -35,38 +49,39 @@
 
 :host([disabled]) {
   opacity: 0.9;
-  background: var(--li-button-disabled-background, var(--li-common-color-gray-300));
-  border: 0.2em solid var(--li-button-disabled-background, var(--li-common-color-gray-300));
   outline: 0;
   pointer-events: none;
-}
-
-:host([is-anchor]) {
-  margin-right: 0;
+  --li-button-background-color: var(--li-common-color-gray-300);
+  --li-button-border-color: var(--li-button-background-color);
 }
 
 /* level */
-:host([level='secondary']) {
-  background-color: transparent;
-  color: var(--li-button-secondary-color, var(--li-common-color-blue-100));
-  border: 0.2em solid var(--li-button-secondary-border-color, var(--li-common-color-blue-100));
+:host([action='secondary']) {
+  --li-button-background-color: transparent;
+  --li-button-color: var(--li-common-color-blue-100);
+  --li-button-border-color: var(--li-common-color-blue-100);
 }
 
-:host([level='secondary']:hover) {
-  background-color: var(--li-button-secondary-hover-background-color, var(--li-common-color-blue-100));
-  color: var(--li-button-secondary-hover-color, var(--li-common-color-white-100));
-  opacity: 1;
+:host([action='secondary']:hover) {
+  --li-button-background-color: rgba(0, 0, 0, 0.05);
 }
 
-:host([level='tertiary']),
-:host([level='tertiary-inline']) {
-  background-color: transparent;
-  color: var(--li-button-secondary-color, var(--li-common-color-blue-100));
+:host([action='tertiary']),
+:host([action='tertiary-inline']) {
+  --li-button-background-color: transparent;
+  --li-button-color: var(--li-common-color-blue-100);
   text-decoration: underline !important;
   border: 0;
 }
 
-:host([level='tertiary-inline']) {
+:host([action='tertiary']) ::slotted(a),
+:host([action='tertiary-inline']) ::slotted(a) {
+  text-decoration: underline !important;
+  display: inline;
+}
+
+:host([action='tertiary-inline']),
+:host([action='tertiary-inline']) ::slotted(a) {
   padding: 0;
   display: inline;
 }
@@ -74,31 +89,40 @@
 /* size */
 :host([size='sm']) {
   font-size: 8px !important;
+
+  & ::slotted(a) {
+    line-height: 2em;
+  }
 }
 
 :host([size='lg']) {
   font-size: 12px !important;
-  padding-top: 2px;
+  line-height: 3.95em;
+
+  & ::slotted(a) {
+    font-size: 18px;
+    line-height: 2.7em;
+  }
 }
 
 :host([size='icon']) {
-  padding: 0 1em;
+  padding: 0.8em 1em 1em 1em;
 }
 
 /* color */
-:host([action='success']) {
-  background-color: var(--li-button-success-color, var(--li-common-color-green-100));
-  border-color: var(--li-button-success-color, var(--li-common-color-green-100));
+:host([status='success']) {
+  --li-button-background-color: var(--li-common-color-green-100);
+  --li-button-border-color: var(--li-common-color-green-100);
 }
 
-:host([action='warning']) {
-  background-color: var(--li-button-warning-color, var(--li-common-color-orange-100));
-  border-color: var(--li-button-warning-color, var(--li-common-color-orange-100));
+:host([status='warning']) {
+  --li-button-background-color: var(--li-common-color-orange-100);
+  --li-button-border-color: var(--li-common-color-orange-100);
 }
 
-:host([action='danger']) {
-  background-color: var(--li-button-danger-color, var(--li-common-color-red-100));
-  border-color: var(--li-button-danger-color, var(--li-common-color-red-100));
+:host([status='danger']) {
+  --li-button-background-color: var(--li-common-color-red-100);
+  --li-button-border-color: var(--li-common-color-red-100);
 }
 
 .li-loading-spinner-wrapper {
@@ -110,7 +134,7 @@
 
 li-loading-spinner {
   position: absolute;
-  top: -0.4em;
+  top: 1em;
   left: 0;
 }
 

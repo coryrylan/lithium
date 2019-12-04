@@ -37,10 +37,6 @@
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
   --global-code-background-color: var(--global-color-gray-600);
-  --li-button-secondary-border-color: var(--global-color-gray-325);
-  --li-button-secondary-color: var(--global-color-white-100);
-  --li-button-secondary-hover-background-color: var(--global-color-gray-500);
-  --li-button-disabled-background: var(--global-color-blue-200);
   --li-card-background-color: var(--global-color-gray-500);
   --li-card-border-color: var(--global-color-gray-600);
   --li-datepicker-today-color: var(--global-color-white-100);
@@ -87,9 +83,28 @@
   --li-code-example-token-12: var(--global-color-gray-600);
   --li-code-example-token-13: none;
   --li-code-example-token-14: var(--global-color-white-100);
+
+  li-button[action='secondary'] {
+    --li-button-border-color: var(--global-color-gray-325);
+    --li-button-color: var(--global-color-white-100);
+
+    &:hover {
+      --li-button-background-color: var(--global-color-gray-500);
+    }
+  }
+
+  li-button[action='tertiary'],
+  li-button[action='tertiary-inline'] {
+    --li-button-color: var(--global-color-white-100);
+  }
+
+  li-button[disabled] {
+    --li-button-background-color: var(--global-color-blue-200);
+  }
 }
 
 li-button.purple {
   --li-button-background-color: var(--global-color-purple-100);
+  --li-button-border-color: var(--global-color-purple-100);
   --li-button-color: var(--global-color-white-100);
 }

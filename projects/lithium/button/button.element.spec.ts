@@ -116,7 +116,7 @@ describe('button link', () => {
 
   beforeEach(async () => {
     testElement = createTestElement();
-    testElement.innerHTML = `<a href="about"><li-button>About</li-button></a>`;
+    testElement.innerHTML = `<li-button><a href="about">About</a></li-button>`;
     await waitForComponent('li-button');
     component = testElement.querySelector<LithiumButton>('li-button');
   });

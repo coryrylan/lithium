@@ -1,6 +1,6 @@
 @import './../styles/base';
 
-.li-message {
+:host {
   color: var(--li-message-color, var(--li-common-color-white-100));
   background-color: var(--li-message-background-color, var(--li-common-color-blue-100));
   border: var(--li-message-border, 0);
@@ -11,28 +11,24 @@
   position: relative;
 }
 
-:host([type='success']) .li-message {
-  background-color: var(--li-message-success-background-color, var(--li-common-color-green-100));
+:host([close]) {
+  display: none;
 }
 
-:host([type='warning']) .li-message {
-  background-color: var(--li-message-warning-background-color, var(--li-common-color-orange-100));
+:host([status='success']) {
+  --li-message-background-color: var(--li-common-color-green-100);
 }
 
-:host([type='error']) .li-message {
-  background-color: var(--li-message-error-background-color, var(--li-common-color-red-100));
+:host([status='warning']) {
+  --li-message-background-color: var(--li-common-color-orange-100);
 }
 
-:host([type='success']) li-icon {
-  color: var(--li-message-success-icon-color, var(--li-common-color-white-100));
+:host([status='error']) {
+  --li-message-background-color: var(--li-common-color-red-100);
 }
 
-:host([type='warning']) li-icon {
-  color: var(--li-message-warning-icon-color, var(--li-common-color-white-100));
-}
-
-:host([type='error']) li-icon {
-  color: var(--li-message-error-icon-color, var(--li-common-color-white-100));
+li-icon {
+  --li-message-icon-color: var(--li-common-color-white-100);
 }
 
 ::slotted(p) {

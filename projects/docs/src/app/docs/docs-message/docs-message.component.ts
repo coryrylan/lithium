@@ -11,9 +11,9 @@ export class DocsMessageComponent implements OnInit {
 
   codeExampleHtml = `
     <li-message closable="true">Default Message</li-message>
-    <li-message type="success">Success Message</li-message>
-    <li-message type="warning">Warning Message</li-message>
-    <li-message type="error">Error Message</li-message>
+    <li-message status="success">Success Message</li-message>
+    <li-message status="warning">Warning Message</li-message>
+    <li-message status="error">Error Message</li-message>
   `;
   constructor() {}
 

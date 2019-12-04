@@ -17,33 +17,33 @@
       <h2>Example Types</h2>
       <li-button type="submit">submit</li-button>
       <li-button disabled (click)="log()">disabled</li-button>
-      <a routerLink="/about"><li-button>link</li-button></a>
+      <li-button><a routerLink="/about">link</a></li-button>
       <li-button loading="true" (click)="log()">loading</li-button>
       <app-component-example [code]="componentExampleTypes"></app-component-example>
 
       <h2>Action Types</h2>
       <li-button type="button">default</li-button>
-      <li-button action="success">success</li-button>
-      <li-button action="warning">warning</li-button>
-      <li-button action="danger">danger</li-button>
+      <li-button status="success">success</li-button>
+      <li-button status="warning">warning</li-button>
+      <li-button status="danger">danger</li-button>
       <li-button class="purple">custom color</li-button>
       <app-component-example [code]="componentExampleColors"></app-component-example>
 
       <h2>level</h2>
       <li-button>primary</li-button>
-      <li-button level="secondary">secondary</li-button>
-      <li-button level="tertiary">tertiary</li-button>
+      <li-button action="secondary">secondary</li-button>
+      <li-button action="tertiary">tertiary</li-button>
       <br />
-      <a href="/about"><li-button>link</li-button></a>
-      <a href="/about"><li-button level="secondary">link</li-button></a>
-      <a href="/about"><li-button level="tertiary">link</li-button></a>
+      <li-button><a href="/about">link</a></li-button>
+      <li-button action="secondary"><a href="/about">link</a></li-button>
+      <li-button action="tertiary"><a href="/about">link</a></li-button>
       <p>
-        This is a <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a> button.
+        This is a <li-button action="tertiary-inline"><a href="/about">tertiary inline</a></li-button> button.
       </p>
       <app-component-example [code]="componentExampleStyles"></app-component-example>
 
       <h2>Size</h2>
-      <li-button size="sm">small</li-button>
+      <li-button size="sm"><a href="/about">small</a></li-button>
       <li-button>default</li-button>
       <li-button size="lg">large</li-button>
       <app-component-example [code]="componentExampleSize"></app-component-example>
@@ -56,7 +56,7 @@
       <li-button size="icon" aria-label="CPU Usage High">
         <li-icon name="warning"></li-icon>
       </li-button>
-      <li-button size="icon" level="tertiary" aria-label="Info">
+      <li-button size="icon" action="tertiary" aria-label="Info">
         <li-icon name="info"></li-icon>
       </li-button>
       <app-component-example [code]="componentExampleIcon"></app-component-example>
@@ -68,9 +68,9 @@
         <li-button>Item 3</li-button>
       </li-button-group>
       <li-button-group>
-        <li-button level="secondary">Item 1</li-button>
-        <li-button level="secondary">Item 2</li-button>
-        <li-button level="secondary">Item 3</li-button>
+        <li-button action="secondary">Item 1</li-button>
+        <li-button action="secondary">Item 2</li-button>
+        <li-button action="secondary"><a href="/about">Item 3</a></li-button>
       </li-button-group>
       <app-component-example [code]="componentExampleGroup"></app-component-example>
     </form>

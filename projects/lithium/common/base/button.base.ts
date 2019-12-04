@@ -1,6 +1,7 @@
 import { html, LitElement, property, query } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
+import { querySlot } from '../decorators/query-slot';
 import { KeyCodes } from './../utils/enums';
 import { stopEvent } from './../utils/events';
 
@@ -14,6 +15,8 @@ export class BaseButton extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false;
 
   @query('button') private templateButton: HTMLButtonElement;
+  @querySlot('a') private anchor: HTMLAnchorElement;
+
   private hiddenButton: HTMLButtonElement;
 
   protected get hiddenButtonTemplate() {
@@ -41,7 +44,6 @@ export class BaseButton extends LitElement {
 
   protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
-    this.setAnchorMode();
     this.updateButtonAttributes();
     this.setHiddenButton();
     this.setEventListeners();
@@ -51,40 +53,6 @@ export class BaseButton extends LitElement {
     super.updated(props);
     if (props.has('readonly') || props.has('disabled')) {
       this.updateButtonAttributes();
-    }
-  }
-
-  /**
-   * This sets some hacks to allow buttons to be wrapped by an anchor element
-   * until the custom elements native element extends API is widely supported.
-   * We need to allow buttons to be wrapped so anchors can be properly used.
-   */
-  private setAnchorMode() {
-    if (this.parentElement && this.parentElement.tagName.toLowerCase() === 'a') {
-      // set to read only to prevent button from interfering with anchor
-      this.readonly = true;
-
-      // override button margin space to apply to parent anchor to prevent irregular focus shape
-      this.parentElement.setAttribute('li-button-anchor', '');
-      this.setAttribute('is-anchor', '');
-      this.appendAnchorStyles();
-    }
-  }
-
-  /** override anchor style to prevent style leak into slotted content */
-  private appendAnchorStyles() {
-    if (!document.querySelector('#li-button-anchor-styles')) {
-      const style = document.createElement('style');
-      style.id = 'li-button-anchor-styles';
-      style.innerHTML = `
-        a[li-button-anchor] {
-          line-height: 0;
-          text-decoration: none;
-          margin-right: 4px;
-          display: inline;
-        }
-      `;
-      document.head.appendChild(style);
     }
   }
 
@@ -131,6 +99,11 @@ export class BaseButton extends LitElement {
   private updateButtonAttributes() {
     const oldRole = this.role;
     const oldTabIndex = this.tabIndex;
+
+    if (this.anchor) {
+      this.readonly = true;
+      this.setAttribute('is-anchor', '');
+    }
 
     if (this.readonly) {
       this.removeAttribute('role');

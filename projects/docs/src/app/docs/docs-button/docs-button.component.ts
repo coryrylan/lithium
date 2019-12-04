@@ -27,19 +27,19 @@ export class DocsButtonComponent {
     angular: `
       <li-button type="submit">angular</li-button>
       <li-button disabled>disabled</li-button>
-      <a routerLink="/about"><li-button>link</li-button></a>
+      <li-button><a routerLink="/about">link</a></li-button>
       <li-button loading="true">loading</li-button>
     `,
     vue: `
       <li-button type="submit">vue</li-button>
       <li-button disabled>disabled</li-button>
-      <a href="/about">link</li-button></a>
+      <li-button><a href="/about">link</a></li-button>
       <li-button loading="true">loading</li-button>
     `,
     javascript: `
       <li-button type="submit">javascript</li-button>
       <li-button disabled>disabled</li-button>
-      <a href="/about"><li-button>link</li-button></a>
+      <li-button><a href="/about">link</a></li-button>
       <li-button loading="true">loading</li-button>
     `
   };
@@ -47,9 +47,9 @@ export class DocsButtonComponent {
   componentExampleColors = {
     angular: `
       <li-button>default</li-button>
-      <li-button action="success">success</li-button>
-      <li-button action="warning">warning</li-button>
-      <li-button action="danger">danger</li-button>
+      <li-button status="success">success</li-button>
+      <li-button status="warning">warning</li-button>
+      <li-button status="danger">danger</li-button>
       <li-button class="purple">custom color</li-button>
 
       <style>
@@ -61,9 +61,9 @@ export class DocsButtonComponent {
     `,
     vue: `
       <li-button>default</li-button>
-      <li-button action="success">success</li-button>
-      <li-button action="warning">warning</li-button>
-      <li-button action="danger">danger</li-button>
+      <li-button status="success">success</li-button>
+      <li-button status="warning">warning</li-button>
+      <li-button status="danger">danger</li-button>
       <li-button class="purple">custom color</li-button>
 
       <style>
@@ -75,9 +75,9 @@ export class DocsButtonComponent {
     `,
     javascript: `
       <li-button>default</li-button>
-      <li-button action="success">success</li-button>
-      <li-button action="warning">warning</li-button>
-      <li-button action="danger">danger</li-button>
+      <li-button status="success">success</li-button>
+      <li-button status="warning">warning</li-button>
+      <li-button status="danger">danger</li-button>
       <li-button class="purple">custom color</li-button>
 
       <style>
@@ -92,21 +92,21 @@ export class DocsButtonComponent {
   componentExampleStyles = {
     angular: `
       <li-button>primary</li-button>
-      <li-button level="secondary">secondary</li-button>
-      <li-button level="tertiary">tertiary</li-button>
-      <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a>
+      <li-button action="secondary">secondary</li-button>
+      <li-button action="tertiary">tertiary</li-button>
+      <li-button action="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
     `,
     vue: `
       <li-button>primary</li-button>
-      <li-button level="secondary">secondary</li-button>
-      <li-button level="tertiary">tertiary</li-button>
-      <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a>
+      <li-button action="secondary">secondary</li-button>
+      <li-button action="tertiary">tertiary</li-button>
+      <li-button action="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
     `,
     javascript: `
       <li-button>primary</li-button>
-      <li-button level="secondary">secondary</li-button>
-      <li-button level="tertiary">tertiary</li-button>
-      <a href="/about"><li-button level="tertiary-inline">tertiary inline</li-button></a>
+      <li-button action="secondary">secondary</li-button>
+      <li-button action="tertiary">tertiary</li-button>
+      <li-button action="tertiary-inline"><a href="/about">tertiary inline</a></li-button>
     `
   };
 
@@ -185,9 +185,9 @@ export class DocsButtonComponent {
       </li-button-group>
 
       <li-button-group>
-        <li-button level="secondary">Item 1</li-button>
-        <li-button level="secondary">Item 2</li-button>
-        <li-button level="secondary">Item 3</li-button>
+        <li-button action="secondary">Item 1</li-button>
+        <li-button action="secondary">Item 2</li-button>
+        <li-button action="secondary">Item 3</li-button>
       </li-button-group>
     `,
     vue: `
@@ -198,9 +198,9 @@ export class DocsButtonComponent {
       </li-button-group>
 
       <li-button-group>
-        <li-button level="secondary">Item 1</li-button>
-        <li-button level="secondary">Item 2</li-button>
-        <li-button level="secondary">Item 3</li-button>
+        <li-button action="secondary">Item 1</li-button>
+        <li-button action="secondary">Item 2</li-button>
+        <li-button action="secondary">Item 3</li-button>
       </li-button-group>
     `,
     javascript: `
@@ -211,9 +211,9 @@ export class DocsButtonComponent {
       </li-button-group>
 
       <li-button-group>
-        <li-button level="secondary">Item 1</li-button>
-        <li-button level="secondary">Item 2</li-button>
-        <li-button level="secondary">Item 3</li-button>
+        <li-button action="secondary">Item 1</li-button>
+        <li-button action="secondary">Item 2</li-button>
+        <li-button action="secondary">Item 3</li-button>
       </li-button-group>
     `
   };

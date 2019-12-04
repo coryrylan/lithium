@@ -1,5 +1,5 @@
 import 'lithium-ui/message';
-import { LithiumMessage, LithiumMessageType } from 'lithium-ui/message';
+import { LithiumMessage, LithiumMessageStatus } from 'lithium-ui/message';
 import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('card element', () => {
@@ -58,15 +58,15 @@ describe('card element', () => {
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-icon name="info"');
 
-    component.type = LithiumMessageType.Error;
+    component.status = LithiumMessageStatus.Error;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-icon name="error"');
 
-    component.type = LithiumMessageType.Success;
+    component.status = LithiumMessageStatus.Success;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-icon name="check"');
 
-    component.type = LithiumMessageType.Warning;
+    component.status = LithiumMessageStatus.Warning;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML).toContain('li-icon name="warning"');
   });

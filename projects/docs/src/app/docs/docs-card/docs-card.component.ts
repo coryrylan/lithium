@@ -33,7 +33,7 @@ export class DocsCardComponent {
           <p>Card Content</p>
         </li-card-content>
         <li-card-actions>
-          <li-button level="tertiary">Cancel</li-button>
+          <li-button action="tertiary">Cancel</li-button>
           <li-button>Action</li-button>
         </li-card-actions>
       </li-card>
@@ -47,7 +47,7 @@ export class DocsCardComponent {
           <p>Card Content</p>
         </li-card-content>
         <li-card-actions>
-          <li-button level="tertiary">Cancel</li-button>
+          <li-button action="tertiary">Cancel</li-button>
           <li-button>Action</li-button>
         </li-card-actions>
       </li-card>
@@ -61,7 +61,7 @@ export class DocsCardComponent {
           <p>Card Content</p>
         </li-card-content>
         <li-card-actions>
-          <li-button level="tertiary">Cancel</li-button>
+          <li-button action="tertiary">Cancel</li-button>
           <li-button>Action</li-button>
         </li-card-actions>
       </li-card>
