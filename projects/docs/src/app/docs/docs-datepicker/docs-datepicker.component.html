@@ -51,9 +51,9 @@
     <br />
     <h3>Min/Max Datepicker</h3>
     <!-- <p>angular forms binding: {{ minMaxDate.value }}</p> -->
-    <li-datepicker inline [min]="minDate" [max]="maxDate">
+    <li-datepicker inline>
       <label>Min/Max Date {{ minMaxDate.value }}</label>
-      <input type="date" [formControl]="minMaxDate" />
+      <input type="date" [formControl]="minMaxDate" [attr.min]="minDate" [attr.max]="maxDate" />
     </li-datepicker>
 
     <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>

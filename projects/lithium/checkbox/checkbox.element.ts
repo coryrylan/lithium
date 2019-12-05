@@ -13,9 +13,9 @@ IconService.addIcons(checkIcon);
  * @element li-checkbox
  * @slot default - Content slot for checkbox input
  * @attr {String} error - Set error styles
- * @cssprop --li-checkbox-disabled-color
- * @cssprop --li-checkbox-border-color
- * @cssprop --li-checkbox-background-color
+ * @cssprop --color-disabled
+ * @cssprop --border-color
+ * @cssprop --background-color
  */
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {

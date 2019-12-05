@@ -8,7 +8,7 @@ import { styles } from './input-error.element.css';
  * @noInheritDoc
  * @element li-input-error
  * @slot default - Text content for message
- * @cssprop --li-input-error-color
+ * @cssprop --color
  */
 // @dynamic
 export class LithiumInputError extends LitElement {

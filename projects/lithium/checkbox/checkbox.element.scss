@@ -1,6 +1,9 @@
 @import './../styles/base';
 
 :host {
+  --color-disabled: var(--li-common-color-gray-300);
+  --border-color: var(--li-common-color-gray-300);
+  --background-color: var(--li-common-color-white-100);
   display: block;
   position: relative;
   margin-bottom: var(--li-common-spacing-margin-bottom-small);
@@ -19,8 +22,8 @@
 }
 
 :host([disabled]) ::slotted(label) {
-  color: var(--li-checkbox-disabled-color, var(--li-common-color-gray-300));
-  cursor: not-allowed;
+  color: var(--color-disabled);
+  cursor: not-allowed !important;
 }
 
 .box {
@@ -31,8 +34,8 @@
   top: 0.2em;
   width: 2em;
   height: 2em;
-  border: 1px solid var(--li-checkbox-border-color, var(--li-common-color-gray-300));
-  background: var(--li-checkbox-background-color, var(--li-common-color-white-100));
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
   border-radius: 0.3em;
 }
 

@@ -1,16 +1,18 @@
 @import './../styles/base';
 
 :host {
+  --border-color: var(--li-common-color-gray-200);
+  --padding: 0 var(--li-common-padding-md) 1.6em var(--li-common-padding-md);
+  --margin: -0.6em var(--li-common-padding-md-negative) 1.4em var(--li-common-padding-md-negative);
+
   display: block;
   border-bottom: 1px solid;
-  border-color: var(--li-card-border-color, var(--li-common-color-gray-200));
-  margin-bottom: var(--li-common-padding-md);
-  margin-left: var(--li-common-padding-md-negative);
-  margin-right: var(--li-common-padding-md-negative);
-  padding: var(--li-card-padding, var(--li-common-padding-md));
-  padding-top: 0;
+  border-color: var(--border-color);
+  padding: var(--padding);
+  margin: var(--margin);
 }
 
 ::slotted(*) {
   margin: 0 !important;
+  font-size: 20px !important;
 }

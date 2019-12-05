@@ -2,12 +2,15 @@
 @import './../styles/a11y';
 
 :host {
-  width: var(--li-icon-width, 2.4em);
-  height: var(--li-icon-height, 2.4em);
+  --color: var(--li-common-color-gray-500);
+  --width: 2.4em;
+  --height: 2.4em;
+  width: var(--width);
+  height: var(--height);
   display: inline-block;
   overflow: hidden;
 }
 
 svg {
-  fill: var(--li-icon-color, var(--li-common-color-gray-500));
+  fill: var(--color);
 }

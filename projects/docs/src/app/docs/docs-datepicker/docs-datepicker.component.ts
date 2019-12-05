@@ -43,9 +43,9 @@ export class DocsDatepickerComponent {
       <input type="date" />
     </li-datepicker>
 
-    <li-datepicker min="2019-10-04" max="2019-10-16">
+    <li-datepicker>
       <label>Min/Max Date</label>
-      <input type="date" />
+      <input type="date" min="2019-10-04" max="2019-10-16" />
     </li-datepicker>
   `;
 }

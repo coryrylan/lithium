@@ -9,3 +9,7 @@
 ::slotted(li-button) {
   margin-bottom: 0 !important;
 }
+
+::slotted(li-button:last-child) {
+  margin-right: 0 !important;
+}

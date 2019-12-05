@@ -7,15 +7,15 @@ import { styles } from './card.element.css';
  *
  * @noInheritDoc
  * @element li-card
- * @slot default - Content slot for modal body
+ * @slot default - Content slot for card content
  * @slot li-card-header - Content slot for card header
  * @slot li-card-content - Content slot for card content
  * @slot li-card-actions - Content slot for card actions
- * @cssprop --li-card-background-color
- * @cssprop --li-card-border-color
- * @cssprop --li-card-border-radius
- * @cssprop --li-card-color
- * @cssprop --li-card-padding
+ * @cssprop --background-color
+ * @cssprop --border-color
+ * @cssprop --border-radius
+ * @cssprop --color
+ * @cssprop --padding
  */
 // @dynamic
 export class LithiumCard extends LitElement {

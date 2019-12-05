@@ -36,8 +36,8 @@ li-icon {
 }
 
 .li-type-icon {
-  --li-icon-width: 2em;
-  --li-icon-height: 2em;
+  --width: 2em;
+  --height: 2em;
   color: var(--li-message-icon-color, var(--li-common-color-white-100));
   line-height: 2.4em;
   position: absolute;
@@ -60,9 +60,9 @@ li-icon {
 }
 
 .li-close-btn li-icon {
-  --li-icon-color: var(--li-message-icon-color, var(--li-common-color-white-100));
-  width: 2.4em;
-  height: 2.4em;
+  --color: var(--li-message-icon-color, var(--li-common-color-white-100));
+  --width: 2.4em;
+  --height: 2.4em;
 }
 
 .li-close-btn:hover,

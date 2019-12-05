@@ -12,10 +12,10 @@ import { styles } from './button.element.css';
  * @attr {String} action - [default|secondary|tertiary]
  * @attr {String} status - [default|success|warning|danger]
  * @attr {String} size - [sm|default|lg|icon]
- * @cssprop --li-button-background-color
- * @cssprop --li-button-color
- * @cssprop --li-button-border-radius
- * @cssprop --li-button-border-color
+ * @cssprop --background-color
+ * @cssprop --color
+ * @cssprop --border-radius
+ * @cssprop --border-color
  */
 // @dynamic
 export class LithiumButton extends BaseButton {

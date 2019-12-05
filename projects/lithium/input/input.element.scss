@@ -1,6 +1,12 @@
 @import './../styles/base';
 
 :host {
+  --color: var(--li-common-color-gray-500);
+  --color-error: var(--li-common-color-red-50);
+  --background-color: var(--li-common-color-white-100);
+  --background-color-disabled: var(--li-common-color-gray-100);
+  --border-color: var(--li-common-color-gray-300);
+  --border-radius: var(--li-common-border-radius);
   display: block;
   margin-bottom: var(--li-common-spacing-margin-bottom);
 }
@@ -12,10 +18,10 @@ input[type='text'],
   -moz-appearance: none;
   -webkit-appearance: none;
   display: block;
-  color: var(--li-input-color, var(--li-common-color-gray-500)) !important;
-  background: var(--li-input-background, var(--li-common-color-white-100)) !important;
-  border: 1px solid var(--li-input-border-color, var(--li-common-color-gray-300));
-  border-radius: var(--li-input-border-radius, var(--li-common-border-radius));
+  color: var(--color) !important;
+  background-color: var(--background-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius);
   padding: 0.625em 0.6875em !important;
   width: 100%;
   font-size: var(--li-common-font-size-px) !important;
@@ -27,28 +33,29 @@ input[type='text'],
 }
 
 :host([error]) ::slotted(label) {
-  color: var(--li-input-error-color, var(--li-common-color-red-50));
+  color: var(--color-error) !important;
 }
 
 :host([error]) ::slotted(input),
 :host([error]) ::slotted(textarea),
 :host([error]) ::slotted(select) {
-  border-color: var(--li-input-error-color, var(--li-common-color-red-50));
+  border-color: var(--color-error) !important;
 }
 
 ::slotted(input:disabled),
 ::slotted(textarea:disabled),
 ::slotted(select:disabled) {
-  background: var(--li-input-disabled-background, var(--li-common-color-gray-100));
+  background: var(--background-color-disabled);
   cursor: not-allowed;
 }
 
 ::slotted(li-input-error) {
-  display: none;
+  display: none !important;
+  --color: var(--color-error) !important;
 }
 
 :host([error]) ::slotted(li-input-error) {
-  display: block;
+  display: block !important;
 }
 
 ::slotted(textarea) {

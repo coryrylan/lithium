@@ -45,8 +45,7 @@ export class BaseButton extends LitElement {
   protected firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
     this.updateButtonAttributes();
-    this.setHiddenButton();
-    this.setEventListeners();
+    this.setupNativeButtonBehavior();
   }
 
   protected updated(props: Map<string, any>) {
@@ -60,37 +59,30 @@ export class BaseButton extends LitElement {
    * We have to append a hidden button outside the web component in the light DOM
    * This allows us to trigger native submit events within a form element.
    */
-  private setHiddenButton() {
+  private setupNativeButtonBehavior() {
+    this.appendHiddenButton();
+    this.addEventListener('click', e => this.triggerNativeButtonBehavior(e));
+    this.addEventListener('keydown', e => this.emulateKeyBoardEventBehavior(e));
+  }
+
+  private triggerNativeButtonBehavior(event: Event) {
     if (!this.readonly) {
+      if (this.disabled) {
+        stopEvent(event);
+      } else if (event.target === this && !event.defaultPrevented) {
+        this.hiddenButton.dispatchEvent(new MouseEvent('click', { relatedTarget: this, composed: true }));
+      }
+    }
+  }
+
+  private appendHiddenButton() {
+    if (!this.hiddenButton && this.templateButton) {
       this.hiddenButton = this.appendChild(this.templateButton);
     }
   }
 
-  private setEventListeners() {
-    if (!this.readonly) {
-      this.addEventListener('click', e => {
-        this.preventClickIfDisabled(e);
-        this.triggerHiddenFormButton(e);
-      });
-      this.addEventListener('keydown', e => this.emulateKeyBoardEventBehavior(e));
-    }
-  }
-
-  private preventClickIfDisabled(event: Event) {
-    if (this.disabled) {
-      stopEvent(event);
-      return;
-    }
-  }
-
-  private triggerHiddenFormButton(event: Event) {
-    if (!this.readonly && !this.disabled && event.target === this && !event.defaultPrevented) {
-      this.hiddenButton.dispatchEvent(new MouseEvent('click', { relatedTarget: this, composed: true }));
-    }
-  }
-
   private emulateKeyBoardEventBehavior(e: KeyboardEvent) {
-    if (e.key === KeyCodes.Enter || e.code === KeyCodes.Space) {
+    if (!this.anchor && (e.key === KeyCodes.Enter || e.code === KeyCodes.Space)) {
       this.click();
       stopEvent(e);
     }
@@ -108,6 +100,7 @@ export class BaseButton extends LitElement {
     if (this.readonly) {
       this.removeAttribute('role');
       this.removeAttribute('tabIndex');
+      this.appendHiddenButton();
     } else {
       this.role = 'button';
       this.tabIndex = this.disabled ? -1 : 0;

@@ -8,12 +8,12 @@ import { LithiumInput } from 'lithium-ui/input';
  * @element li-datalist
  * @slot default - Content slot for modal body
  * @attr {String} error - Set error styles
- * @cssprop --li-input-color
- * @cssprop --li-input-background
- * @cssprop --li-input-border-color
- * @cssprop --li-input-border-radius
- * @cssprop --li-input-error-color
- * @cssprop --li-input-disabled-background
+ * @cssprop --color
+ * @cssprop --color-error
+ * @cssprop --background-color
+ * @cssprop --background-color-disabled
+ * @cssprop --border-color
+ * @cssprop --border-radius
  */
 // @dynamic
 export class LithiumDatalist extends LithiumInput {

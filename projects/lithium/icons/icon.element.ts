@@ -12,9 +12,9 @@ let iconId = 0;
  *
  * @noInheritDoc
  * @element li-icon
- * @cssprop --li-icon-width - Icon width.
- * @cssprop --li-icon-height - Icon height.
- * @cssprop --li-icon-color - Icon Color.
+ * @cssprop --color
+ * @cssprop --width
+ * @cssprop --height
  */
 // @dynamic
 export class LithiumIcon extends LitElement {

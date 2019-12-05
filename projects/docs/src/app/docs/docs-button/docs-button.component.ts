@@ -54,8 +54,8 @@ export class DocsButtonComponent {
 
       <style>
         li-button.purple {
-          --li-button-background-color: #7c0799;
-          --li-button-color: #fff;
+          --background-color: #7c0799;
+          --color: #fff;
         }
       </style>
     `,
@@ -68,8 +68,8 @@ export class DocsButtonComponent {
 
       <style>
         li-button.purple {
-          --li-button-background-color: #7c0799;
-          --li-button-color: #fff;
+          --background-color: #7c0799;
+          --color: #fff;
         }
       </style>
     `,
@@ -82,8 +82,8 @@ export class DocsButtonComponent {
 
       <style>
         li-button.purple {
-          --li-button-background-color: #7c0799;
-          --li-button-color: #fff;
+          --background-color: #7c0799;
+          --color: #fff;
         }
       </style>
     `

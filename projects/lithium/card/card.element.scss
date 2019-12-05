@@ -1,12 +1,17 @@
 @import './../styles/base';
 
 :host {
-  background-color: var(--li-card-background-color, var(--li-common-color-white-100));
+  --background-color: var(--li-common-color-white-100);
+  --border-color: var(--li-common-color-gray-200);
+  --border-radius: var(--li-common-border-radius);
+  --padding: var(--li-common-padding-md);
+
+  background-color: var(--background-color);
   border-bottom: 0.2em solid;
-  border-color: var(--li-card-border-color, var(--li-common-color-gray-200));
-  border-radius: var(--li-card-border-radius, var(--li-common-border-radius));
-  color: var(--li-card-color, inherit);
-  padding: var(--li-card-padding, var(--li-common-padding-md));
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+  color: var(--color, inherit);
+  padding: var(--padding);
   margin-bottom: var(--li-common-spacing-margin-bottom);
   display: block;
   position: relative;

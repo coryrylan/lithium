@@ -37,8 +37,7 @@
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
   --global-code-background-color: var(--global-color-gray-600);
-  --li-card-background-color: var(--global-color-gray-500);
-  --li-card-border-color: var(--global-color-gray-600);
+
   --li-datepicker-today-color: var(--global-color-white-100);
   --li-datepicker-background-color: var(--global-color-gray-500);
   --li-datepicker-color: var(--global-color-white-100);
@@ -55,16 +54,9 @@
   --li-side-nav-background-color: var(--global-color-gray-600);
   --li-side-nav-hover-background-color: var(--global-color-gray-700);
   --li-side-nav-border-color: var(--global-border-color);
-  --li-icon-color: var(--global-text-color);
+
   --li-progress-bar-background-color: var(--global-color-gray-500);
   --li-progress-bar-color: var(--global-text-color);
-  --li-input-color: var(--global-color-white-100);
-  --li-input-background: var(--global-color-gray-350);
-  --li-input-border-color: var(--global-color-gray-350);
-  --li-input-error-color: var(--global-color-red-50);
-  --li-input-disabled-background: var(--global-color-gray-400);
-  --li-checkbox-background-color: var(--global-color-gray-350);
-  --li-checkbox-border-color: var(--global-color-gray-350);
   --li-radio-background-color: var(--global-color-gray-350);
   --li-radio-border-color: var(--global-color-gray-350);
   --li-code-example-background-color: var(--global-color-gray-500);
@@ -84,27 +76,55 @@
   --li-code-example-token-13: none;
   --li-code-example-token-14: var(--global-color-white-100);
 
+  li-input,
+  li-datalist,
+  li-select,
+  li-textarea {
+    --color: var(--global-color-white-100);
+    --background-color: var(--global-color-gray-350);
+    --background-color-disabled: var(--global-color-gray-400);
+    --border-color: var(--global-color-gray-350);
+  }
+
   li-button[action='secondary'] {
-    --li-button-border-color: var(--global-color-gray-325);
-    --li-button-color: var(--global-color-white-100);
+    --border-color: var(--global-color-gray-325);
+    --color: var(--global-color-white-100);
 
     &:hover {
-      --li-button-background-color: var(--global-color-gray-500);
+      --background-color: var(--global-color-gray-500);
     }
   }
 
   li-button[action='tertiary'],
   li-button[action='tertiary-inline'] {
-    --li-button-color: var(--global-color-white-100);
+    --color: var(--global-color-white-100);
   }
 
   li-button[disabled] {
-    --li-button-background-color: var(--global-color-blue-200);
+    --background-color: var(--global-color-blue-200);
+  }
+
+  li-checkbox {
+    --background-color: var(--global-color-gray-350);
+    --border-color: var(--global-color-gray-350);
+  }
+
+  li-card {
+    --background-color: var(--global-color-gray-500);
+    --border-color: var(--global-color-gray-600);
+  }
+
+  li-card-header {
+    --border-color: var(--global-color-gray-600);
+  }
+
+  li-icon {
+    --color: var(--global-text-color);
   }
 }
 
 li-button.purple {
-  --li-button-background-color: var(--global-color-purple-100);
-  --li-button-border-color: var(--global-color-purple-100);
-  --li-button-color: var(--global-color-white-100);
+  --background-color: var(--global-color-purple-100);
+  --border-color: var(--global-color-purple-100);
+  --color: var(--global-color-white-100);
 }

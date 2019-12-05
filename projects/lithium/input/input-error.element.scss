@@ -1,6 +1,7 @@
 @import './../styles/base';
 
 :host {
+  --color: var(--li-common-color-red-50);
   display: block;
-  color: var(--li-input-error-color, var(--li-common-color-red-50));
+  color: var(--color);
 }

@@ -38,6 +38,7 @@ export class LithiumDatepicker extends LitElement {
   @property({ type: Boolean }) private showStartDatepicker = false;
   @property({ type: Boolean, reflect: true }) private range = false;
   @query('input') private input: HTMLInputElement;
+  private observer: MutationObserver;
 
   static get styles() {
     return styles;
@@ -67,8 +68,18 @@ export class LithiumDatepicker extends LitElement {
 
     this.labels[0].addEventListener('click', () => this.input.focus());
     this.input.addEventListener('focus', () => (this.showStartDatepicker = true));
-    this.input.readOnly = true;
 
+    this.listenForCloseEvent();
+    this.listenForMinMaxUpdates();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('keydown', this.closeOnEscape);
+    this.observer.disconnect();
+  }
+
+  private listenForCloseEvent() {
     document.addEventListener('click', (event: any) => {
       if (!this.shadowRoot.contains(event.target) && !this.contains(event.target)) {
         this.showStartDatepicker = false;
@@ -78,9 +89,23 @@ export class LithiumDatepicker extends LitElement {
     window.addEventListener('keydown', this.closeOnEscape);
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    window.removeEventListener('keydown', this.closeOnEscape);
+  private listenForMinMaxUpdates() {
+    this.getMinMaxValues();
+
+    this.observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.type === 'attributes') {
+          this.getMinMaxValues();
+        }
+      });
+    });
+
+    this.observer.observe(this.inputs[0], { attributes: true });
+  }
+
+  private getMinMaxValues() {
+    this.min = this.inputs[0].getAttribute('min');
+    this.max = this.inputs[0].getAttribute('max');
   }
 
   private closeOnEscape = (event: KeyboardEvent) => {
