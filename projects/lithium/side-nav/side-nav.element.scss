@@ -1,23 +1,37 @@
 @import './../styles/base';
 
+:host {
+  --top: 0;
+  --width: 28em;
+  --color: var(--li-common-color-gray-500);
+  --background: var(--li-common-color-white-100);
+  --background-hover: var(--li-common-color-gray-100);
+  --transition: left 250ms ease-in;
+  --border-right: 1px solid var(--li-common-color-gray-100);
+  --heading-background: var(--li-common-color-gray-100);
+  --heading-color: var(--color);
+  --backdrop-transition: background 250ms ease-in;
+  --backdrop-background: rgba(0, 0, 0, 0.5);
+}
+
 .li-side-nav {
   position: fixed;
   left: -40em;
-  top: var(--li-side-nav-top, 0);
+  top: var(--top);
   bottom: 0;
   width: 80%;
-  max-width: var(--li-side-nav-width, 28em);
+  max-width: var(--width);
   z-index: 201;
-  background-color: var(--li-side-nav-background-color, var(--li-common-color-white-100));
+  background-color: var(--background);
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   will-change: left;
-  transition: left var(--li-side-nav-transition-speed, 250ms) ease-in;
+  transition: var(--transition);
 }
 
 :host([sticky]) .li-side-nav {
-  border-right: 1px solid var(--li-side-nav-border-color, var(--li-common-color-gray-100));
+  border-right: var(--border-right);
 }
 
 .li-side-nav-open .li-side-nav {
@@ -28,8 +42,8 @@
   position: relative;
   min-height: 5em;
   overflow: hidden;
-  background-color: var(--li-side-nav-header-background-color, var(--li-common-color-gray-100));
-  color: var(--li-side-nav-color, #2d2d2d);
+  background-color: var(--heading-background);
+  color: var(--heading-color);
 }
 
 .li-menu-heading-text {
@@ -47,11 +61,11 @@
   right: 0;
   background-color: transparent;
   cursor: pointer;
-  color: var(--li-side-nav-color, var(--li-common-color-gray-500));
+  color: var(--color);
 }
 
 .li-menu-close-icon {
-  --color: var(--li-side-nav-color, var(--li-common-color-gray-500));
+  --color: var(--heading-color);
 }
 
 .li-side-nav-slot::slotted(a),
@@ -59,7 +73,7 @@
   display: block;
   padding: 1.125em 0.8125em 1em 1.625em;
   text-decoration: none;
-  color: var(--nav-text-color);
+  color: var(--color) !important;
   position: relative;
   font-weight: bold;
   cursor: pointer;
@@ -67,7 +81,7 @@
 
 .li-side-nav-slot::slotted(a:hover),
 .li-side-nav-slot::slotted(button:hover) {
-  background-color: var(--li-side-nav-hover-background-color, var(--li-common-color-gray-100)) !important;
+  background-color: var(--background-hover) !important;
 }
 
 .li-side-nav-backdrop {
@@ -80,10 +94,10 @@
   background: transparent;
   pointer-events: none;
   will-change: background;
-  transition: background var(--li-side-nav-transition-speed) ease-in;
+  transition: var(--backdrop-transition);
 }
 
 .li-side-nav-open .li-side-nav-backdrop {
   pointer-events: auto;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--backdrop-background);
 }

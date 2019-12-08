@@ -17,8 +17,14 @@ IconService.addIcons(closeIcon);
  * @slot li-modal-actions - Content slot for modal actions
  * @event openChange - Notify when the modal has been opened or closed.
  * @attr {String} large - Set modal size to large breakpoint
- * @cssprop --li-modal-max-width
- * @cssprop --li-modal-max-height
+ * @cssprop --border
+ * @cssprop --background
+ * @cssprop --color
+ * @cssprop --max-width
+ * @cssprop --max-height
+ * @cssprop --margin
+ * @cssprop --border-radius
+ * @cssprop --backdrop-background
  */
 // @dynamic
 export class LithiumModal extends LitElement {

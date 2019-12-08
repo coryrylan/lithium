@@ -14,14 +14,17 @@ IconService.addIcons(closeIcon);
  * @slot default - Content slot for nav elements
  * @event openChange - Notify when the side nav has been opened or closed.
  * @attr {String} sticky - Set nav to remain open on left side
- * @cssprop --li-side-nav-top
- * @cssprop --li-side-nav-width
- * @cssprop --li-side-nav-background-color
- * @cssprop --li-side-nav-transition-speed
- * @cssprop --li-side-nav-border-color
- * @cssprop --li-side-nav-header-background-color
- * @cssprop --li-side-nav-hover-background-color
- * @cssprop --li-side-nav-color
+ * @cssprop --top
+ * @cssprop --width
+ * @cssprop --color
+ * @cssprop --background
+ * @cssprop --background-hover
+ * @cssprop --transition
+ * @cssprop --border-right
+ * @cssprop --heading-background
+ * @cssprop --heading-color
+ * @cssprop --backdrop-transition
+ * @cssprop --backdrop-background
  */
 // @dynamic
 export class LithiumSideNav extends LitElement {

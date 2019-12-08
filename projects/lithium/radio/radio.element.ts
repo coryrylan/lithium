@@ -13,10 +13,10 @@ IconService.addIcons(checkIcon);
  * @noInheritDoc
  * @element li-radio
  * @slot default - Content slot for radio input
- * @cssprop --li-radio-border-color
- * @cssprop --li-radio-background-color
- * @cssprop --li-radio-fill-background-color
- * @cssprop --li-radio-disabled-label-color
+ * @cssprop --color-disabled
+ * @cssprop --border
+ * @cssprop --background
+ * @cssprop --fill-background
  */
 // @dynamic
 export class LithiumRadio extends LithiumInput {

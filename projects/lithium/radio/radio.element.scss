@@ -1,8 +1,14 @@
 @import './../styles/base';
+
 :host {
+  --border: 1px solid var(--li-common-color-gray-300);
+  --background: var(--li-common-color-white-100);
+  --fill-background: var(--li-common-color-blue-100);
+  --color-disabled: var(--li-common-color-gray-300);
+  --color: inherit;
   display: block;
-  margin-bottom: var(--li-common-spacing-margin-bottom-small);
   position: relative;
+  margin-bottom: var(--li-common-spacing-margin-bottom-small);
 }
 
 ::slotted(label) {
@@ -28,8 +34,8 @@
   top: 0.2em;
   width: 2em;
   height: 2em;
-  border: 1px solid var(--li-radio-border-color, var(--li-common-color-gray-300));
-  background: var(--li-radio-background-color, var(--li-common-color-white-100));
+  border: var(--border);
+  background: var(--background);
   border-radius: 50%;
 }
 
@@ -39,7 +45,7 @@
 }
 
 :host([checked]) .circle-fill {
-  background-color: var(--li-radio-fill-background-color, var(--li-common-color-blue-100));
+  background-color: var(--fill-background);
   display: block;
   position: absolute;
   width: 1.4em;
@@ -51,7 +57,7 @@
 }
 
 :host([disabled]) ::slotted(label) {
-  color: var(--li-radio-disabled-label-color, var(--li-common-color-gray-300)) !important;
+  color: var(--color-disabled) !important;
   cursor: not-allowed;
 }
 

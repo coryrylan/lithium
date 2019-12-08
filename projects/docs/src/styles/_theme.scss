@@ -46,19 +46,10 @@
   --li-datepicker-selected-background-color: var(--global-color-blue-100);
   --li-datepicker-button-disabled-background-color: var(--global-color-gray-600);
   --li-datepicker-button-disabled-color: var(--global-color-gray-300);
-  --li-nav-bar-background-color: var(--global-color-gray-500);
-  --li-nav-bar-color: var(--global-text-color);
-  --li-nav-bar-hover-background-color: var(--global-color-gray-700);
-  --li-side-nav-color: var(--global-text-color);
-  --li-side-nav-header-background-color: var(--global-color-gray-700);
-  --li-side-nav-background-color: var(--global-color-gray-600);
-  --li-side-nav-hover-background-color: var(--global-color-gray-700);
-  --li-side-nav-border-color: var(--global-border-color);
 
   --li-progress-bar-background-color: var(--global-color-gray-500);
   --li-progress-bar-color: var(--global-text-color);
-  --li-radio-background-color: var(--global-color-gray-350);
-  --li-radio-border-color: var(--global-color-gray-350);
+
   --li-code-example-background-color: var(--global-color-gray-500);
   --li-code-example-border-color: var(--global-color-gray-600);
   --li-code-example-token-1: hsl(213, 92%, 85%);
@@ -120,6 +111,27 @@
 
   li-icon {
     --color: var(--global-text-color);
+  }
+
+  li-nav-bar {
+    --background-hover: var(--global-color-gray-700);
+    --background: var(--global-color-gray-500);
+    --color: var(--global-text-color);
+  }
+
+  li-radio {
+    --border: 1px solid var(--global-color-gray-350);
+    --background: var(--global-color-gray-350);
+    --fill-background: var(--li-common-color-blue-100);
+    --color-disabled: var(--li-common-color-gray-300);
+  }
+
+  li-side-nav {
+    --color: var(--global-text-color);
+    --heading-background: var(--global-color-gray-700);
+    --background: var(--global-color-gray-600);
+    --background-hover: var(--global-color-gray-700);
+    --border-right: 1px solid var(--global-border-color);
   }
 }
 

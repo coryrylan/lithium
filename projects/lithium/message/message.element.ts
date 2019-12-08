@@ -21,11 +21,13 @@ export enum LithiumMessageStatus {
  * @slot default - Content slot for modal body
  * @event closeChange - Notify when the message has been dismissed
  * @attr {String} status - [default|success|warning|danger]
- * @cssprop --li-message-color
- * @cssprop --li-message-background-color
- * @cssprop --li-message-border
- * @cssprop --li-message-border-radius
- * @cssprop --li-message-icon-color
+ * @cssprop --color
+ * @cssprop --background
+ * @cssprop --border-radius
+ * @cssprop --border
+ * @cssprop --padding
+ * @cssprop --status-icon-color
+ * @cssprop --close-icon-color
  */
 // @dynamic
 export class LithiumMessage extends LitElement {

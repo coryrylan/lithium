@@ -135,4 +135,16 @@ describe('button link', () => {
     await componentIsStable(component);
     expect(component.readonly).toBe(true);
   });
+
+  it('should not trigger button click if link', async () => {
+    await componentIsStable(component);
+    const o = { f: () => {} };
+    spyOn(o, 'f');
+    component.addEventListener('click', o.f);
+
+    testElement.focus();
+    testElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+
+    expect(o.f).not.toHaveBeenCalled();
+  });
 });

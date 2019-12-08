@@ -11,9 +11,10 @@ import { styles } from './nav-bar.element.css';
  * @slot default - Content slot for nav bar
  * @attr {String} sticky - Make nav bar sticky and position to top of page
  * @attr {String} li-nav-bar-right - Align nav links to right
- * @cssprop --li-nav-bar-background-color
- * @cssprop --li-nav-bar-color
- * @cssprop --li-nav-bar-hover-background-color
+ * @cssprop --background
+ * @cssprop --background-hover
+ * @cssprop --box-shadow
+ * @cssprop --color
  */
 // @dynamic
 export class LithiumNavBar extends LitElement {
