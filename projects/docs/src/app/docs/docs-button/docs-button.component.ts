@@ -54,7 +54,7 @@ export class DocsButtonComponent {
 
       <style>
         li-button.purple {
-          --background-color: #7c0799;
+          --background: #7c0799;
           --color: #fff;
         }
       </style>
@@ -68,7 +68,7 @@ export class DocsButtonComponent {
 
       <style>
         li-button.purple {
-          --background-color: #7c0799;
+          --background: #7c0799;
           --color: #fff;
         }
       </style>
@@ -82,7 +82,7 @@ export class DocsButtonComponent {
 
       <style>
         li-button.purple {
-          --background-color: #7c0799;
+          --background: #7c0799;
           --color: #fff;
         }
       </style>

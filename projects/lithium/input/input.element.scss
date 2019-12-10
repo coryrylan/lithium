@@ -3,8 +3,8 @@
 :host {
   --color: var(--li-common-color-gray-500);
   --color-error: var(--li-common-color-red-50);
-  --background-color: var(--li-common-color-white-100);
-  --background-color-disabled: var(--li-common-color-gray-100);
+  --background: var(--li-common-color-white-100);
+  --background-disabled: var(--li-common-color-gray-100);
   --border-color: var(--li-common-color-gray-300);
   --border-radius: var(--li-common-border-radius);
   display: block;
@@ -19,7 +19,7 @@ input[type='text'],
   -webkit-appearance: none;
   display: block;
   color: var(--color) !important;
-  background-color: var(--background-color) !important;
+  background: var(--background) !important;
   border: 1px solid var(--border-color) !important;
   border-radius: var(--border-radius);
   padding: 0.625em 0.6875em !important;
@@ -45,7 +45,7 @@ input[type='text'],
 ::slotted(input:disabled),
 ::slotted(textarea:disabled),
 ::slotted(select:disabled) {
-  background: var(--background-color-disabled);
+  background: var(--background-disabled);
   cursor: not-allowed;
 }
 

@@ -9,7 +9,7 @@ import { ThemeService } from '../../common/core/services/theme.service';
 export class DocsThemesComponent implements OnInit {
   codeExample = `
     li-card {
-      --background-color: #ccc;
+      --background: #ccc;
       --border-color: #2d2d2d;
     }
   `;

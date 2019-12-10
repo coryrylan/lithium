@@ -19,24 +19,18 @@
   --global-color-blue-50: hsl(212, 83%, 59%);
   --global-color-blue-100: hsl(212, 66%, 48%);
   --global-color-blue-200: hsl(212, 67%, 37%);
-  --global-primary-color: var(--global-color-gray-100);
-  --global-secondary-color: var(--global-color-gray-200);
   --global-border-color: var(--global-color-gray-200);
   --global-text-color: var(--global-color-gray-500);
   --global-background-color: var(--global-color-gray-50);
-  --global-code-background-color: var(--global-color-gray-100);
 }
 
 :root .dark-theme {
   --logo-color-one: hsl(211, 100%, 50%);
   --logo-color-two: hsl(211, 97%, 71%);
   --hero-background-color: hsl(0, 0%, 21%);
-  --global-primary-color: var(--global-color-gray-500);
-  --global-secondary-color: var(--global-color-gray-400);
   --global-border-color: var(--global-color-gray-500);
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
-  --global-code-background-color: var(--global-color-gray-600);
 
   --li-datepicker-today-color: var(--global-color-white-100);
   --li-datepicker-background-color: var(--global-color-gray-500);
@@ -50,30 +44,32 @@
   --li-progress-bar-background-color: var(--global-color-gray-500);
   --li-progress-bar-color: var(--global-text-color);
 
-  --li-code-example-background-color: var(--global-color-gray-500);
-  --li-code-example-border-color: var(--global-color-gray-600);
-  --li-code-example-token-1: hsl(213, 92%, 85%);
-  --li-code-example-token-2: var(--global-color-gray-500);
-  --li-code-example-token-3: hsl(210, 13%, 50%);
-  --li-code-example-token-4: hsl(0, 0%, 82%);
-  --li-code-example-token-5: hsl(327, 100%, 54%);
-  --li-code-example-token-6: hsl(120, 52%, 60%);
-  --li-code-example-token-7: hsl(33, 74%, 63%);
-  --li-code-example-token-8: hsl(198, 100%, 47%);
-  --li-code-example-token-9: hsl(348, 95%, 66%);
-  --li-code-example-token-10: hsl(39, 100%, 47%);
-  --li-code-example-token-11: transparent;
-  --li-code-example-token-12: var(--global-color-gray-600);
-  --li-code-example-token-13: none;
-  --li-code-example-token-14: var(--global-color-white-100);
+  li-code-example {
+    --background: var(--global-color-gray-500);
+    --border-bottom: var(--global-color-gray-600);
+    --token-1: hsl(213, 92%, 85%);
+    --token-2: var(--global-color-gray-500);
+    --token-3: hsl(210, 13%, 50%);
+    --token-4: hsl(0, 0%, 82%);
+    --token-5: hsl(327, 100%, 54%);
+    --token-6: hsl(120, 52%, 60%);
+    --token-7: hsl(33, 74%, 63%);
+    --token-8: hsl(198, 100%, 47%);
+    --token-9: hsl(348, 95%, 66%);
+    --token-10: hsl(39, 100%, 47%);
+    --token-11: transparent;
+    --token-12: var(--global-color-gray-600);
+    --token-13: none;
+    --token-14: var(--global-color-white-100);
+  }
 
   li-input,
   li-datalist,
   li-select,
   li-textarea {
     --color: var(--global-color-white-100);
-    --background-color: var(--global-color-gray-350);
-    --background-color-disabled: var(--global-color-gray-400);
+    --background: var(--global-color-gray-350);
+    --background-disabled: var(--global-color-gray-400);
     --border-color: var(--global-color-gray-350);
   }
 
@@ -82,7 +78,7 @@
     --color: var(--global-color-white-100);
 
     &:hover {
-      --background-color: var(--global-color-gray-500);
+      --background: var(--global-color-gray-500);
     }
   }
 
@@ -92,16 +88,17 @@
   }
 
   li-button[disabled] {
-    --background-color: var(--global-color-blue-200);
+    --background: var(--global-color-blue-200);
   }
 
   li-checkbox {
-    --background-color: var(--global-color-gray-350);
+    --background: var(--global-color-gray-350);
     --border-color: var(--global-color-gray-350);
+    --color: var(--global-color-white-100);
   }
 
   li-card {
-    --background-color: var(--global-color-gray-500);
+    --background: var(--global-color-gray-500);
     --border-color: var(--global-color-gray-600);
   }
 
@@ -136,7 +133,7 @@
 }
 
 li-button.purple {
-  --background-color: var(--global-color-purple-100);
+  --background: var(--global-color-purple-100);
   --border-color: var(--global-color-purple-100);
   --color: var(--global-color-white-100);
 }

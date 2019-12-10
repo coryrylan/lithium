@@ -12,7 +12,7 @@ import { styles } from './button.element.css';
  * @attr {String} action - [default|secondary|tertiary]
  * @attr {String} status - [default|success|warning|danger]
  * @attr {String} size - [sm|default|lg|icon]
- * @cssprop --background-color
+ * @cssprop --background
  * @cssprop --color
  * @cssprop --border-radius
  * @cssprop --border-color

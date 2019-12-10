@@ -1,5 +1,10 @@
 @import './../styles/base';
 
+:host {
+  --border-top: inherit;
+  --background: inherit;
+}
+
 :host([aria-hidden]) .li-tab-content {
   display: none;
 }
@@ -7,5 +12,5 @@
 .li-tab-content {
   padding-top: 1.6em;
   overflow: visible;
-  border-top: 1px solid var(--li-tabs-border-color, var(--li-common-color-gray-300));
+  border-top: var(--tab-border-top);
 }

@@ -11,7 +11,7 @@ import { styles } from './card.element.css';
  * @slot li-card-header - Content slot for card header
  * @slot li-card-content - Content slot for card content
  * @slot li-card-actions - Content slot for card actions
- * @cssprop --background-color
+ * @cssprop --background
  * @cssprop --border-color
  * @cssprop --border-radius
  * @cssprop --color

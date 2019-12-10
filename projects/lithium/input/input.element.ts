@@ -15,8 +15,8 @@ let idCount = 0;
  * @attr {String} error - Set error styles
  * @cssprop --color
  * @cssprop --color-error
- * @cssprop --background-color
- * @cssprop --background-color-disabled
+ * @cssprop --background
+ * @cssprop --background-disabled
  * @cssprop --border-color
  * @cssprop --border-radius
  */

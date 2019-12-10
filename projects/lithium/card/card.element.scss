@@ -1,12 +1,12 @@
 @import './../styles/base';
 
 :host {
-  --background-color: var(--li-common-color-white-100);
+  --background: var(--li-common-color-white-100);
   --border-color: var(--li-common-color-gray-200);
   --border-radius: var(--li-common-border-radius);
   --padding: var(--li-common-padding-md);
 
-  background-color: var(--background-color);
+  background: var(--background);
   border-bottom: 0.2em solid;
   border-color: var(--border-color);
   border-radius: var(--border-radius);

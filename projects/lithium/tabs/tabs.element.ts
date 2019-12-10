@@ -13,10 +13,12 @@ let id = 0;
  * @element li-tabs
  * @slot default - Content slot for tab panels
  * @event openChange - Notify when the modal has been opened or closed.
- * @cssprop --li-tabs-text-color
- * @cssprop --li-tabs-border-color
- * @cssprop --li-tabs-button-background-color
- * @cssprop --li-tabs-button-selected-border-color
+ * @cssprop --color
+ * @cssprop --button-background
+ * @cssprop --button-active-background
+ * @cssprop --button-active-border-bottom
+ * @cssprop --tab-border-top
+ * @cssprop --tab-background
  */
 // @dynamic
 export class LithiumTabs extends LitElement {

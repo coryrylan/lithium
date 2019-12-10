@@ -1,12 +1,12 @@
 @import './../styles/base';
 
 :host {
-  --background-color: var(--li-common-color-blue-100);
+  --background: var(--li-common-color-blue-100);
   --color: var(--li-common-color-white-100);
   --border-radius: var(--li-common-border-radius);
   --border-color: var(--li-common-color-blue-100);
   -webkit-appearance: none !important;
-  background-color: var(--background-color);
+  background: var(--background);
   color: var(--color);
   border-radius: var(--border-radius);
   margin: 0 0.4em var(--li-common-spacing-margin-bottom) 0;
@@ -55,24 +55,24 @@
   opacity: 0.9;
   outline: 0;
   pointer-events: none;
-  --background-color: var(--li-common-color-gray-300);
-  --border-color: var(--background-color);
+  --background: var(--li-common-color-gray-300);
+  --border-color: var(--background);
 }
 
 /* level */
 :host([action='secondary']) {
-  --background-color: transparent;
+  --background: transparent;
   --color: var(--li-common-color-blue-100);
   --border-color: var(--li-common-color-blue-100);
 }
 
 :host([action='secondary']:hover) {
-  --background-color: rgba(0, 0, 0, 0.05);
+  --background: rgba(0, 0, 0, 0.05);
 }
 
 :host([action='tertiary']),
 :host([action='tertiary-inline']) {
-  --background-color: transparent;
+  --background: transparent;
   --color: var(--li-common-color-blue-100);
   text-decoration: underline !important;
   border: 0;
@@ -115,17 +115,17 @@
 
 /* color */
 :host([status='success']) {
-  --background-color: var(--li-common-color-green-100);
+  --background: var(--li-common-color-green-100);
   --border-color: var(--li-common-color-green-100);
 }
 
 :host([status='warning']) {
-  --background-color: var(--li-common-color-orange-100);
+  --background: var(--li-common-color-orange-100);
   --border-color: var(--li-common-color-orange-100);
 }
 
 :host([status='danger']) {
-  --background-color: var(--li-common-color-red-100);
+  --background: var(--li-common-color-red-100);
   --border-color: var(--li-common-color-red-100);
 }
 

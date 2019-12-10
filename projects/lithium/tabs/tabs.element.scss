@@ -1,5 +1,19 @@
 @import './../styles/base';
 
+:host {
+  --color: inherit;
+  --button-background: inherit;
+  --button-active-background: inherit;
+  --button-active-border-bottom: 0.3em solid var(--li-common-color-blue-100);
+  --tab-border-top: 1px solid var(--li-common-color-gray-300);
+  --tab-background: inherit;
+}
+
+li-tab {
+  --border-top: var(--tab-border-top);
+  --background: var(--tab-background);
+}
+
 .li-tabs {
   display: block;
 }
@@ -20,7 +34,7 @@
 .li-tabs-nav > button {
   position: relative;
   display: block;
-  background-color: transparent;
+  background: var(--button-background);
   width: 50%;
   float: left;
   margin-bottom: -1px;
@@ -32,27 +46,19 @@
   transition: all 0.3s;
   font-size: 1em;
   font-family: inherit;
-  color: var(--li-tabs-text-color, inherit);
+  color: var(--color);
 }
 
 .li-tabs-nav > button.active,
 .li-tabs-nav > button.active:hover,
 .li-tabs-nav > button.active:focus {
   cursor: default;
-  color: var(--li-tabs-text-color, inherit);
+  color: var(--color);
 }
 
 .li-tabs-nav > button:focus,
 .li-tabs-nav > button:hover {
-  color: var(--li-tabs-text-color, inherit);
-}
-
-.li-tabs-nav > button:nth-child(-n + 3) {
-  border-bottom: 1px solid var(--li-tabs-border-color, var(--li-common-color-gray-300));
-}
-
-.li-tabs-nav > button:nth-child(even) {
-  border-right: 1px solid var(--li-tabs-border-color, var(--li-common-color-gray-300));
+  color: var(--color);
 }
 
 @media (min-width: 300px) {
@@ -73,9 +79,8 @@
   }
 
   .li-tabs-nav > button.active {
-    background-color: var(--li-tabs-button-background-color, inherit);
-    border-bottom: 0.3em solid;
-    border-bottom-color: var(--li-tabs-button-selected-border-color, var(--li-common-color-blue-100));
+    background: var(--button-active-background);
+    border-bottom: var(--button-active-border-bottom);
   }
 }
 
