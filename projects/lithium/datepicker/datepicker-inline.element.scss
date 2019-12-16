@@ -1,6 +1,20 @@
 @import './../styles/base';
 
 :host {
+  --li-datepicker-inline-border-bottom: 0.2em solid var(--li-common-color-gray-200);
+  --li-datepicker-inline-color: var(--li-common-font-color);
+  --li-datepicker-inline-background: var(--li-common-color-white-100);
+  --li-datepicker-inline-border-radius: var(--li-common-border-radius);
+  --li-datepicker-inline-button-color: var(--li-common-font-color);
+  --li-datepicker-inline-button-color-hover: var(--li-common-color-blue-100);
+  --li-datepicker-inline-button-background-hover: var(--li-common-color-blue-25);
+  --li-datepicker-inline-button-background-disabled: var(--li-common-color-gray-100);
+  --li-datepicker-inline-button-color-disabled: var(--li-common-color-gray-300);
+  --li-datepicker-inline-button-background-in-range: var(--li-common-color-blue-10);
+  --li-datepicker-inline-button-color-in-range: var(--li-common-color-blue-100);
+  --li-datepicker-inline-button-color-today: var(--li-common-color-blue-100);
+  --li-datepicker-inline-button-background-start-end-date: var(--li-common-color-blue-100);
+  --li-datepicker-inline-button-color-start-end-date: var(--li-common-color-white-100);
   display: inline-block;
   max-width: 300px;
   min-width: 250px;
@@ -18,13 +32,13 @@
 }
 
 .li-datepicker {
+  border-bottom: var(--li-datepicker-inline-border-bottom);
+  color: var(--li-datepicker-inline-color);
+  background: var(--li-datepicker-inline-background);
+  border-radius: var(--li-datepicker-inline-border-radius);
   font-size: 16px;
   line-height: 1.5em;
-  border-bottom: 0.2em solid var(--li-common-color-gray-200);
   padding: 8px 4px;
-  color: var(--li-datepicker-color, --li-common-font-color);
-  background-color: var(--li-datepicker-background-color, var(--li-common-color-white-100));
-  border-radius: var(--li-common-border-radius);
 
   &__top-nav {
     display: flex;
@@ -65,31 +79,31 @@
     background-color: transparent;
     height: 30px;
     text-align: center;
-    color: var(--li-datepicker-color, --li-common-font-color);
+    color: var(--li-datepicker-inline-button-color);
 
     &:hover {
       transform: scale(1.2);
-      color: var(--li-datepicker-today-color, var(--li-common-color-blue-100));
-      background-color: var(--li-datepicker-selected-background-color, var(--li-common-color-blue-25));
+      color: var(--li-datepicker-inline-button-color-hover);
+      background: var(--li-datepicker-inline-button-background-hover);
     }
   }
 
   &__btn:disabled,
   &__btn[disabled] {
-    background-color: var(--li-datepicker-button-disabled-background-color, var(--li-common-color-gray-100));
-    color: var(--li-datepicker-button-disabled-color, var(--li-common-color-gray-300));
+    background: var(--li-datepicker-inline-button-background-disabled);
+    color: var(--li-datepicker-inline-button-color-disabled);
     transform: scale(1);
     cursor: not-allowed;
   }
 
   &__in-range-date {
-    background-color: var(--li-datepicker-range-selected-background-color, var(--li-common-color-blue-10));
-    color: var(--li-datepicker-range-selected-color, var(--li-common-color-blue-100));
+    background: var(--li-datepicker-inline-button-background-in-range);
+    color: var(--li-datepicker-inline-button-color-in-range);
   }
 
   &__today {
     font-weight: bold;
-    color: var(--li-datepicker-today-color, var(--li-common-color-blue-100));
+    color: var(--li-datepicker-inline-button-color-today);
   }
 
   &__selected-date,
@@ -98,8 +112,8 @@
   &__selected-date:hover,
   &__start-date:hover,
   &__end-date:hover {
-    background-color: var(--li-datepicker-selected-background-color, var(--li-common-color-blue-100));
-    color: var(--li-datepicker-selected-color, var(--li-common-color-white-100));
+    background: var(--li-datepicker-inline-button-background-start-end-date);
+    color: var(--li-datepicker-inline-button-color-start-end-date);
   }
 
   &__show-input {

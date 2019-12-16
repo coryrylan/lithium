@@ -13,6 +13,27 @@ let idCount = 0;
  * @noInheritDoc
  * @element li-datepicker
  * @slot default - Content slot for date inputs
+ * @cssprop
+ * @cssprop --color
+ * @cssprop --color-error
+ * @cssprop --background
+ * @cssprop --background-disabled
+ * @cssprop --border-color
+ * @cssprop --border-radius
+ * @cssprop --calendar-color
+ * @cssprop --calendar-background
+ * @cssprop --calendar-border-bottom
+ * @cssprop --calendar-border-radius
+ * @cssprop --calendar-button-color
+ * @cssprop --calendar-button-color-hover
+ * @cssprop --calendar-button-background-hover
+ * @cssprop --calendar-button-background-disabled
+ * @cssprop --calendar-button-color-disabled
+ * @cssprop --calendar-button-background-in-range
+ * @cssprop --calendar-button-color-in-range
+ * @cssprop --calendar-button-color-today
+ * @cssprop --calendar-button-background-start-end-date
+ * @cssprop --calendar-button-color-start-end-date
  */
 // @dynamic
 export class LithiumDatepicker extends LitElement {

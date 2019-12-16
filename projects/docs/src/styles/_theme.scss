@@ -31,42 +31,31 @@
   --global-border-color: var(--global-color-gray-500);
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
-
-  --li-datepicker-today-color: var(--global-color-white-100);
-  --li-datepicker-background-color: var(--global-color-gray-500);
-  --li-datepicker-color: var(--global-color-white-100);
-  --li-datepicker-range-selected-color: var(--global-color-white-100);
-  --li-datepicker-range-selected-background-color: var(--global-color-blue-200);
-  --li-datepicker-selected-background-color: var(--global-color-blue-100);
-  --li-datepicker-button-disabled-background-color: var(--global-color-gray-600);
-  --li-datepicker-button-disabled-color: var(--global-color-gray-300);
-
   --li-progress-bar-background-color: var(--global-color-gray-500);
   --li-progress-bar-color: var(--global-text-color);
 
-  li-code-example {
-    --background: var(--global-color-gray-500);
-    --border-bottom: var(--global-color-gray-600);
-    --token-1: hsl(213, 92%, 85%);
-    --token-2: var(--global-color-gray-500);
-    --token-3: hsl(210, 13%, 50%);
-    --token-4: hsl(0, 0%, 82%);
-    --token-5: hsl(327, 100%, 54%);
-    --token-6: hsl(120, 52%, 60%);
-    --token-7: hsl(33, 74%, 63%);
-    --token-8: hsl(198, 100%, 47%);
-    --token-9: hsl(348, 95%, 66%);
-    --token-10: hsl(39, 100%, 47%);
-    --token-11: transparent;
-    --token-12: var(--global-color-gray-600);
-    --token-13: none;
-    --token-14: var(--global-color-white-100);
+  li-datepicker {
+    --calendar-border-bottom: 0.2em solid var(--global-color-gray-600);
+    --calendar-color: var(--li-common-color-white-100);
+    --calendar-background: var(--global-color-gray-500);
+    --calendar-border-radius: var(--li-common-border-radius);
+    --calendar-button-color: var(--li-common-color-white-100);
+    --calendar-button-color-hover: var(--global-color-white-100);
+    --calendar-button-background-hover: var(--global-color-blue-100);
+    --calendar-button-background-disabled: var(--li-common-color-gray-600);
+    --calendar-button-color-disabled: var(--global-color-gray-300);
+    --calendar-button-background-in-range: var(--global-color-blue-200);
+    --calendar-button-color-in-range: var(--global-color-white-100);
+    --calendar-button-color-today: var(--li-common-color-white-100);
+    --calendar-button-background-start-end-date: var(--li-common-color-blue-100);
+    --calendar-button-color-start-end-date: var(--li-common-color-white-100);
   }
 
   li-input,
   li-datalist,
   li-select,
-  li-textarea {
+  li-textarea,
+  li-datepicker {
     --color: var(--global-color-white-100);
     --background: var(--global-color-gray-350);
     --background-disabled: var(--global-color-gray-400);
@@ -129,6 +118,25 @@
     --background: var(--global-color-gray-600);
     --background-hover: var(--global-color-gray-700);
     --border-right: 1px solid var(--global-border-color);
+  }
+
+  li-code-example {
+    --background: var(--global-color-gray-500);
+    --border-bottom: var(--global-color-gray-600);
+    --token-1: hsl(213, 92%, 85%);
+    --token-2: var(--global-color-gray-500);
+    --token-3: hsl(210, 13%, 50%);
+    --token-4: hsl(0, 0%, 82%);
+    --token-5: hsl(327, 100%, 54%);
+    --token-6: hsl(120, 52%, 60%);
+    --token-7: hsl(33, 74%, 63%);
+    --token-8: hsl(198, 100%, 47%);
+    --token-9: hsl(348, 95%, 66%);
+    --token-10: hsl(39, 100%, 47%);
+    --token-11: transparent;
+    --token-12: var(--global-color-gray-600);
+    --token-13: none;
+    --token-14: var(--global-color-white-100);
   }
 }
 

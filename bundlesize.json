@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "./dist/lithium/fesm2015/**/lithium-ui-*.js",
-      "maxSize": "5 kB"
+      "maxSize": "6 kB"
     },
     {
       "path": "./dist/lithium/fesm2015/**/lithium-ui.js",

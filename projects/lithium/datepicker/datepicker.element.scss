@@ -2,9 +2,40 @@
 @import './../input/input.element.scss';
 
 :host {
+  --calendar-border-bottom: 0.2em solid var(--li-common-color-gray-200);
+  --calendar-color: var(--li-common-font-color);
+  --calendar-background: var(--li-common-color-white-100);
+  --calendar-border-radius: var(--li-common-border-radius);
+  --calendar-button-color: var(--li-common-font-color);
+  --calendar-button-color-hover: var(--li-common-color-blue-100);
+  --calendar-button-background-hover: var(--li-common-color-blue-25);
+  --calendar-button-background-disabled: var(--li-common-color-gray-100);
+  --calendar-button-color-disabled: var(--li-common-color-gray-300);
+  --calendar-button-background-in-range: var(--li-common-color-blue-10);
+  --calendar-button-color-in-range: var(--li-common-color-blue-100);
+  --calendar-button-color-today: var(--li-common-color-blue-100);
+  --calendar-button-background-start-end-date: var(--li-common-color-blue-100);
+  --calendar-button-color-start-end-date: var(--li-common-color-white-100);
   display: block;
   position: relative;
   margin-bottom: var(--li-common-spacing-margin-bottom);
+}
+
+li-datepicker-inline {
+  --li-datepicker-inline-border-bottom: var(--calendar-border-bottom);
+  --li-datepicker-inline-color: var(--calendar-color);
+  --li-datepicker-inline-background: var(--calendar-background);
+  --li-datepicker-inline-border-radius: var(--li-common-border-radius);
+  --li-datepicker-inline-button-color: var(--calendar-color);
+  --li-datepicker-inline-button-color-hover: var(--calendar-button-color-hover);
+  --li-datepicker-inline-button-background-hover: var(--calendar-button-background-hover);
+  --li-datepicker-inline-button-background-disabled: var(--calendar-button-background-disabled);
+  --li-datepicker-inline-button-color-disabled: var(--calendar-button-color-disabled);
+  --li-datepicker-inline-button-background-in-range: var(--calendar-button-background-in-range);
+  --li-datepicker-inline-button-color-in-range: var(--calendar-button-color-in-range);
+  --li-datepicker-inline-button-color-today: var(--calendar-button-color-today);
+  --li-datepicker-inline-button-background-start-end-date: var(--li-common-color-blue-100);
+  --li-datepicker-inline-button-color-start-end-date: var(--li-common-color-white-100);
 }
 
 li-datepicker-inline.li-datepicker-dropdown {
