@@ -1,25 +1,25 @@
-import 'lithium-ui/progress-bar';
-import { LithiumProgressBar } from 'lithium-ui/progress-bar';
+import 'lithium-ui/progress';
+import { LithiumProgress } from 'lithium-ui/progress';
 import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 
 describe('card element', () => {
   let testElement: HTMLElement;
-  let component: LithiumProgressBar;
+  let component: LithiumProgress;
 
   beforeEach(async () => {
     testElement = createTestElement();
     testElement.innerHTML = `
-      <li-progress-bar></li-progress-bar>
+      <li-progress></li-progress>
     `;
-    await waitForComponent('li-progress-bar');
-    component = testElement.querySelector<LithiumProgressBar>('li-progress-bar');
+    await waitForComponent('li-progress');
+    component = testElement.querySelector<LithiumProgress>('li-progress');
   });
 
   afterEach(() => {
     removeTestElement(testElement);
   });
 
-  it('should render a progress bar', async () => {
+  it('should render a progress', async () => {
     component.value = 50;
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML.includes('li-progress-bar-value')).toBe(true);

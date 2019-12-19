@@ -16,7 +16,7 @@ import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading
 import { DocsMessageComponent } from './docs-message/docs-message.component';
 import { DocsModalComponent } from './docs-modal/docs-modal.component';
 import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
-import { DocsProgressBarComponent } from './docs-progress-bar/docs-progress-bar.component';
+import { DocsProgressBarComponent } from './docs-progress/docs-progress.component';
 import { DocsRadioComponent } from './docs-radio/docs-radio.component';
 import { DocsRoutingModule } from './docs-routing.module';
 import { DocsSelectComponent } from './docs-select/docs-select.component';

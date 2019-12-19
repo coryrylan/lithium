@@ -16,7 +16,7 @@ import 'lithium-ui/loading-spinner';
 import 'lithium-ui/message';
 import 'lithium-ui/modal';
 import 'lithium-ui/nav-bar';
-import 'lithium-ui/progress-bar';
+import 'lithium-ui/progress';
 import 'lithium-ui/radio';
 import 'lithium-ui/select';
 import 'lithium-ui/side-nav';

@@ -31,8 +31,6 @@
   --global-border-color: var(--global-color-gray-500);
   --global-text-color: var(--global-color-white-100);
   --global-background-color: var(--global-color-gray-400);
-  --li-progress-bar-background-color: var(--global-color-gray-500);
-  --li-progress-bar-color: var(--global-text-color);
 
   li-datepicker {
     --calendar-border-bottom: 0.2em solid var(--global-color-gray-600);
@@ -118,6 +116,10 @@
     --background: var(--global-color-gray-600);
     --background-hover: var(--global-color-gray-700);
     --border-right: 1px solid var(--global-border-color);
+  }
+
+  li-progress {
+    --background: var(--global-color-gray-500);
   }
 
   li-code-example {

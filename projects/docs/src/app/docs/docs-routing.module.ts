@@ -109,9 +109,9 @@ const routes: Routes = [
         loadChildren: () => import('./docs-message/docs-message.module').then(m => m.DocsMessageModule)
       },
       {
-        path: 'progress-bar',
-        data: { title: 'Lithium Progress Bar Web Component - Documentation', layout: Layout.Docs },
-        loadChildren: () => import('./docs-progress-bar/docs-progress-bar.module').then(m => m.DocsProgressBarModule)
+        path: 'progress',
+        data: { title: 'Lithium Progress Web Component - Documentation', layout: Layout.Docs },
+        loadChildren: () => import('./docs-progress/docs-progress.module').then(m => m.DocsProgressBarModule)
       }
     ]
   }
