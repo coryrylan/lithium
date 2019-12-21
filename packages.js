@@ -1,11 +1,12 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 
-// Temporary script needed for modern build toolchains that default and expect es2015 modules as the main entry point.
+// Temporary script needed for modern build tools that default that expect es2015 modules as the main entry point.
 // https://github.com/ng-packagr/ng-packagr/pull/1372
 // https://github.com/ng-packagr/ng-packagr/issues/1318
+// https://github.com/angular/angular/issues/33395
 // https://justinfagnani.com/2019/11/01/how-to-publish-web-components-to-npm/
 const read = (dir) => fs.readdirSync(dir).reduce((files, file) =>
   fs.statSync(path.join(dir, file)).isDirectory() ?
@@ -13,15 +14,16 @@ const read = (dir) => fs.readdirSync(dir).reduce((files, file) =>
     files.concat(path.join(dir, file)),
   []);
 
-read('./dist/lithium').filter(file => file.includes('package.json')).forEach(file => {
-  const data = JSON.parse(fs.readFileSync(file));
-  data.module = data.module.replace('fesm5', 'fesm2015');
-  data.main = data.module;
+fs.copySync('./dist/lithium/esm2015', './dist/lithium');
+['bundles','esm5', 'fesm5', 'esm2015', 'fesm2015'].forEach(f => fs.removeSync(`./dist/lithium/${f}`));
+read('./dist/lithium').filter(f => f.includes('lithium-ui') || f.includes('public-api')).forEach(f => fs.removeSync(f));
+read('./dist/lithium').filter(f => f.includes('package.json')).forEach(file => {
+  const data = fs.readJsonSync(file);
+  data.typings = './index.d.ts';
+  data.module = './index.js';
+  data.main = './index.js';
   data.type = 'module';
-
-  // ngcc pollutes package.json files in the monorepo use case https://github.com/angular/angular/issues/33395
-  delete data['__processed_by_ivy_ngcc__'];
-  delete data['scripts'];
-
-  fs.writeFileSync(file, JSON.stringify(data, null, 2));
+  data.sideEffects = data.name.includes('/') ? undefined : data.sideEffects;
+  ['__processed_by_ivy_ngcc__', 'scripts', 'es2015', 'esm5', 'esm2015', 'fesm5', 'fesm2015'].forEach(p => delete data[p]);
+  fs.writeJsonSync(file, data, { spaces: 2 });
 });

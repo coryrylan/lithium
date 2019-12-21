@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { englishRegistry, IntlService } from 'lithium-ui/common';
+import { englishRegistry, IntlService } from 'lithium-ui';
 
 @Component({
   selector: 'app-docs-i18n',
@@ -10,7 +10,7 @@ export class DocsI18nComponent {
   IntlService = IntlService;
 
   codeExample = `
-    import { IntlService } from 'lithium-ui/common';
+    import { IntlService } from 'lithium-ui';
 
     IntlService.registry.open // 'Open'
 

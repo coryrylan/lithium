@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// import 'lithium-ui'; // imports all components
 import 'lithium-ui/button';
 import 'lithium-ui/card';
 import 'lithium-ui/checkbox';
