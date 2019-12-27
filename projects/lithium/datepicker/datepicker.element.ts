@@ -1,6 +1,6 @@
 import { format, parse } from 'date-fns';
 import { html, LitElement, property, query } from 'lit-element';
-import { KeyCodes, querySlotAll, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, KeyCodes, querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError, LithiumInputMessage } from 'lithium-ui/input';
 import { LithiumDatepickerInline } from './datepicker-inline.element';
 import { styles } from './datepicker.element.css';
@@ -62,7 +62,7 @@ export class LithiumDatepicker extends LitElement {
   private observer: MutationObserver;
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

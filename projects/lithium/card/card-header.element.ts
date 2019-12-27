@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit-element';
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './card-header.element.css';
 
 /**
@@ -15,7 +15,7 @@ import { styles } from './card-header.element.css';
 // @dynamic
 export class LithiumCardHeader extends LitElement {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   connectedCallback() {

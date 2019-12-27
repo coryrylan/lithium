@@ -1,4 +1,4 @@
-import { LithiumDatepicker } from 'lithium-ui';
+import { LithiumDatepicker } from 'lithium-ui/datepicker';
 import 'lithium-ui/datepicker';
 import { componentIsStable, createTestElement, getComponentSlotContent, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 

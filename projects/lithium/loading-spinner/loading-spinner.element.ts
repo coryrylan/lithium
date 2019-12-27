@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit-element';
 
-import { IntlService, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './loading-spinner.element.css';
 
 /**
@@ -14,7 +14,7 @@ import { styles } from './loading-spinner.element.css';
 // @dynamic
 export class LithiumLoadingSpinner extends LitElement {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   connectedCallback() {

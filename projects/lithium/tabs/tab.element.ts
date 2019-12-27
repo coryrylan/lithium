@@ -1,11 +1,11 @@
 import { html, LitElement } from 'lit-element';
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './tab.element.css';
 
 // @dynamic
 export class LithiumTab extends LitElement {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

@@ -1,7 +1,8 @@
 import { html, LitElement, property } from 'lit-element';
 
-import { IntlService, registerElementSafely } from 'lithium-ui/common';
-import { checkIcon, closeIcon, errorIcon, IconService, infoIcon, warningIcon } from 'lithium-ui/icons';
+import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
+import { IconService } from 'lithium-ui/icon';
+import { checkIcon, closeIcon, errorIcon, infoIcon, warningIcon } from 'lithium-ui/icon-shapes';
 import { styles } from './message.element.css';
 
 IconService.addIcons(infoIcon, errorIcon, warningIcon, checkIcon, closeIcon);
@@ -41,7 +42,7 @@ export class LithiumMessage extends LitElement {
   @property({ type: Boolean, reflect: true }) close = false;
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

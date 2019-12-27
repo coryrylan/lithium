@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IconService, menuIcon } from 'lithium-ui/icons';
+import { IconService } from 'lithium-ui/icon';
+import { menuIcon } from 'lithium-ui/icon-shapes';
 IconService.addIcons(menuIcon);
 
 import { environment } from '../environments/environment';

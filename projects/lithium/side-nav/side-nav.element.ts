@@ -1,8 +1,9 @@
 import { html, LitElement, property } from 'lit-element';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import { IntlService, registerElementSafely } from 'lithium-ui/common';
-import { closeIcon, IconService } from 'lithium-ui/icons';
+import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
+import { IconService } from 'lithium-ui/icon';
+import { closeIcon } from 'lithium-ui/icon-shapes';
 import { styles } from './side-nav.element.css';
 IconService.addIcons(closeIcon);
 
@@ -36,7 +37,7 @@ export class LithiumSideNav extends LitElement {
   private resizeObserver: ResizeObserver;
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

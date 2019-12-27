@@ -1,0 +1,18 @@
+@import './variables';
+@import './a11y';
+@import './utils';
+
+:host {
+  font-size: var(--li-common-base-font-size, var(--li-global-base-font-size, 10px)) !important;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+slot {
+  font-size: var(--li-common-font-size) !important;
+}

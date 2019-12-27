@@ -1,8 +1,9 @@
-import { html, LitElement, property, query } from 'lit-element';
+import { customElement, html, LitElement, property, query } from 'lit-element';
+import { baseStyles } from 'lithium-ui/common';
+import { unknownIcon } from 'lithium-ui/icon-shapes';
 
-import { registerElementSafely } from 'lithium-ui/common';
 import { styles } from './icon.element.css';
-import { unknownIcon } from './svg';
+import { IconService } from './icon.service';
 
 let iconId = 0;
 
@@ -15,10 +16,8 @@ let iconId = 0;
  * @cssprop --width
  * @cssprop --height
  */
-// @dynamic
+@customElement('li-icon')
 export class LithiumIcon extends LitElement {
-  private static registry: any = {};
-
   /** Name of Icon to be displayed. */
   @property() name = 'unknown';
 
@@ -28,7 +27,7 @@ export class LithiumIcon extends LitElement {
   @query('svg') private svg: SVGElement;
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   connectedCallback() {
@@ -46,16 +45,14 @@ export class LithiumIcon extends LitElement {
 
   render() {
     return html`
-      <div .innerHTML="${LithiumIcon.registry[this.name] ? LithiumIcon.registry[this.name] : LithiumIcon.registry[unknownIcon.name]}"></div>
+      <div .innerHTML="${IconService.registry[this.name] ? IconService.registry[this.name] : IconService.registry[unknownIcon.name]}"></div>
       <span id=${'li-icon-id-' + iconId} class="li-sr-only">${this.title}</span>
     `;
   }
 }
 
-registerElementSafely('li-icon', LithiumIcon);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'li-icon': LithiumIcon;
-//   }
-// }
+declare global {
+  interface HTMLElementTagNameMap {
+    'li-icon': LithiumIcon;
+  }
+}

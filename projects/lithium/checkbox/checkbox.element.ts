@@ -1,6 +1,7 @@
 import { html } from 'lit-element';
-import { querySlot, registerElementSafely } from 'lithium-ui/common';
-import { checkIcon, IconService } from 'lithium-ui/icons';
+import { baseStyles, querySlot, registerElementSafely } from 'lithium-ui/common';
+import { IconService } from 'lithium-ui/icon';
+import { checkIcon } from 'lithium-ui/icon-shapes';
 import { LithiumInput } from 'lithium-ui/input';
 import { styles } from './checkbox.element.css';
 
@@ -21,7 +22,7 @@ IconService.addIcons(checkIcon);
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   @querySlot('input') private checkbox: HTMLInputElement;

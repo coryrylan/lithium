@@ -1,27 +1,6 @@
 {
   "name": "lithium-ui",
-  "version": "0.0.30",
-  "sideEffects": [
-    "./button/*.js",
-    "./card/*.js",
-    "./checkbox/*.js",
-    "./code-example/*.js",
-    "./datalist/*.js",
-    "./datepicker/*.js",
-    "./dropdown/*.js",
-    "./form/*.js",
-    "./input/*.js",
-    "./loading-spinner/*.js",
-    "./message/*.js",
-    "./modal/*.js",
-    "./nav-bar/*.js",
-    "./progress/*.js",
-    "./radio/*.js",
-    "./select/*.js",
-    "./side-nav/*.js",
-    "./tabs/*.js",
-    "./textarea/*.js"
-  ],
+  "version": "0.0.33",
   "dependencies": {
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",

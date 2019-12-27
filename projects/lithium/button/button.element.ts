@@ -1,5 +1,5 @@
 import { html, property } from 'lit-element';
-import { BaseButton, registerElementSafely } from 'lithium-ui/common';
+import { BaseButton, baseStyles, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/loading-spinner';
 import { styles } from './button.element.css';
 
@@ -25,7 +25,7 @@ export class LithiumButton extends BaseButton {
   private initialMinWidth: string;
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   protected render() {

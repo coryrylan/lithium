@@ -1,5 +1,5 @@
 import { html, LitElement, queryAll } from 'lit-element';
-import { querySlotAll, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumTabTitle } from './tab-title.element';
 import { LithiumTab } from './tab.element';
 import { styles } from './tabs.element.css';
@@ -23,7 +23,7 @@ let id = 0;
 // @dynamic
 export class LithiumTabs extends LitElement {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   @queryAll('button')

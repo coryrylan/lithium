@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './nav-bar.element.css';
 
 /**
@@ -19,7 +19,7 @@ import { styles } from './nav-bar.element.css';
 // @dynamic
 export class LithiumNavBar extends LitElement {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

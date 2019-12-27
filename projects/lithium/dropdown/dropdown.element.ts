@@ -1,6 +1,6 @@
 import { html, LitElement, property } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './dropdown.element.css';
 
 // test component, not for production
@@ -25,7 +25,7 @@ export class XDropdown extends LitElement {
   title = 'dropdown';
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

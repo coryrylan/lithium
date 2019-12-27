@@ -1,6 +1,6 @@
 import { html, LitElement, property } from 'lit-element';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './progress.element.css';
 
 /**
@@ -29,7 +29,7 @@ export class LithiumProgress extends LitElement {
   @property({ type: Number }) private dashoffset = 80;
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

@@ -22,11 +22,11 @@ describe('card element', () => {
   it('should render a progress', async () => {
     component.value = 50;
     await componentIsStable(component);
-    expect(component.shadowRoot.innerHTML.includes('li-progress-bar-value')).toBe(true);
+    expect(component.shadowRoot.innerHTML.includes('progress-bar__value')).toBe(true);
     expect(component.shadowRoot.innerHTML.includes('50%')).toBe(true);
 
     component.showValue = false;
     await componentIsStable(component);
-    expect(component.shadowRoot.innerHTML.includes('li-progress-bar-value')).toBe(false);
+    expect(component.shadowRoot.innerHTML.includes('progress-bar__value')).toBe(false);
   });
 });

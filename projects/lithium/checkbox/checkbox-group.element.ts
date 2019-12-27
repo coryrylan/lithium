@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit-element';
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './checkbox-group.element.css';
 
 /**
@@ -13,7 +13,7 @@ import { styles } from './checkbox-group.element.css';
 // @dynamic
 export class LithiumCheckboxGroup extends LitElement {
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {

@@ -1,7 +1,7 @@
 import { html, LitElement, property } from 'lit-element';
 import { highlight, languages } from 'prismjs';
 
-import { registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './code-example.element.css';
 
 /**
@@ -18,7 +18,7 @@ export class LithiumCodeExample extends LitElement {
   @property({ type: String }) private renderedCode = '';
 
   static get styles() {
-    return styles;
+    return [baseStyles, styles];
   }
 
   render() {
