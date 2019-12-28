@@ -29,4 +29,15 @@ describe('card element', () => {
     await componentIsStable(component);
     expect(component.shadowRoot.innerHTML.includes('progress-bar__value')).toBe(false);
   });
+
+  it('should hide value when circular intermediate settings', async () => {
+    component.value = 50;
+    component.circular = true;
+    await componentIsStable(component);
+    expect(component.shadowRoot.innerHTML.includes('50%')).toBe(true);
+
+    component.intermediate = true;
+    await componentIsStable(component);
+    expect(component.shadowRoot.innerHTML.includes('50%')).toBe(false);
+  });
 });

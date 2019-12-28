@@ -90,10 +90,10 @@ describe('button', () => {
     expect(component.querySelector('button')).toBe(null);
   });
 
-  it('should show loading spinner', async () => {
+  it('should show progress spinner', async () => {
     component.loading = true;
     await componentIsStable(component);
-    expect(component.renderRoot.querySelector('li-loading-spinner')).toBeTruthy();
+    expect(component.renderRoot.querySelector('li-progress')).toBeTruthy();
   });
 
   it('should render a button with appropriate slots', async () => {

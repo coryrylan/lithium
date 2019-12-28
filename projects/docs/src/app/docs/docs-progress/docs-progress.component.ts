@@ -5,13 +5,40 @@ import { Component } from '@angular/core';
   templateUrl: './docs-progress.component.html'
 })
 export class DocsProgressBarComponent {
-  codeExampleImport = `
-    import 'lithium-ui/progress';
-  `;
-
   codeExampleHtml = `
     <li-progress value="65"></li-progress>
-    <li-progress value="65" circular="true"></li-progress>
-    <li-progress size="sm" circular="true" intermediate="true"></li-progress>
+    <li-progress value="25" circular"></li-progress>
+    <li-progress size="sm" circular intermediate></li-progress>
+    <li-progress size="md" circular intermediate></li-progress>
+    <li-progress size="lg" circular intermediate></li-progress>
   `;
+
+  componentExample = {
+    angular: `
+      <li-progress [value]="65"></li-progress>
+      <li-progress value="25" circular"></li-progress>
+      <li-progress size="sm" circular intermediate></li-progress>
+      <li-progress size="md" circular intermediate></li-progress>
+      <li-progress size="lg" circular intermediate></li-progress>
+    `,
+    vue: `
+      <li-progress :value="65"></li-progress>
+      <li-progress value="25" circular"></li-progress>
+      <li-progress size="sm" circular intermediate></li-progress>
+      <li-progress size="md" circular intermediate></li-progress>
+      <li-progress size="lg" circular intermediate></li-progress>
+    `,
+    javascript: `
+      <li-progress value="65"></li-progress>
+      <li-progress value="25" circular"></li-progress>
+      <li-progress size="sm" circular intermediate></li-progress>
+      <li-progress size="md" circular intermediate></li-progress>
+      <li-progress size="lg" circular intermediate></li-progress>
+
+      <script>
+        const progress = document.querySelector('li-progress');
+        progress.value = 75;
+      </script>
+    `
+  };
 }

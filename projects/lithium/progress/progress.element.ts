@@ -54,7 +54,7 @@ export class LithiumProgress extends LitElement {
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              <svg class="progress-circular__svg" width="120" height="120" viewBox="0 0 120 120">
+              <svg class="progress-circular__svg" viewBox="0 0 120 120">
                 <circle class="progress-circular__meter" cx="60" cy="60" r="${this.radius}" stroke-width="12" />
                 <circle
                   class="progress-circular__value ${this.intermediate ? 'spin' : ''}"
@@ -116,17 +116,6 @@ export class LithiumProgress extends LitElement {
     this.dashoffset = this.circumference * (1 - progress);
   }
 }
-
-// function step(timestamp) {
-//   if (!start) start = timestamp;
-//   var progress = timestamp - start;
-//   element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
-//   if (progress < 2000) {
-//     window.requestAnimationFrame(step);
-//   }
-// }
-
-// window.requestAnimationFrame(step);
 
 registerElementSafely('li-progress', LithiumProgress);
 

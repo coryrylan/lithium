@@ -15,18 +15,16 @@
 
     <li-progress value="25" [circular]="true"></li-progress>
 
-    <li-progress size="sm" [circular]="true" [intermediate]="true"></li-progress>
-    <li-progress size="md" circular="true" intermediate="true"></li-progress>
-    <li-progress size="lg" circular="true" intermediate="true"></li-progress>
+    <br />
 
-    <li-code-example [code]="codeExampleImport" language="javascript" bp="margin-top--lg"></li-code-example>
-    <li-code-example [code]="codeExampleHtml" language="html"></li-code-example>
+    <li-progress size="sm" [circular]="true" [intermediate]="true"></li-progress>
+    <li-progress size="md" circular intermediate></li-progress>
+    <li-progress size="lg" circular intermediate></li-progress>
+
+    <app-component-example [code]="componentExample"></app-component-example>
   </li-tab>
   <li-tab>
     <h2>API</h2>
     <app-component-api element="li-progress"></app-component-api>
-  </li-tab>
-  <li-tab>
-    <h2>Theme</h2>
   </li-tab>
 </li-tabs>

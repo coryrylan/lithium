@@ -9,13 +9,12 @@
   margin-bottom: var(--li-common-spacing-margin-bottom);
 }
 
-input[type='text'],
+input,
 ::slotted(input),
 ::slotted(textarea),
 ::slotted(select) {
   -moz-appearance: none;
   -webkit-appearance: none;
-  display: block !important;
   box-sizing: border-box !important;
   color: var(--color) !important;
   background: var(--background) !important;
@@ -24,6 +23,14 @@ input[type='text'],
   padding: 0.625em 0.6875em !important;
   width: 100% !important;
   font-size: var(--li-common-font-size-px) !important;
+  display: block;
+}
+
+// duplicate to prevent overriding inputs within component template
+::slotted(input),
+::slotted(textarea),
+::slotted(select) {
+  display: block !important;
 }
 
 ::slotted(label) {

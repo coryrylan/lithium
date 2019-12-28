@@ -1,6 +1,6 @@
 import { html, property } from 'lit-element';
 import { BaseButton, baseStyles, registerElementSafely } from 'lithium-ui/common';
-import 'lithium-ui/loading-spinner';
+import 'lithium-ui/progress';
 import { styles } from './button.element.css';
 
 /**
@@ -32,8 +32,8 @@ export class LithiumButton extends BaseButton {
     return html`
       ${this.loading
         ? html`
-            <div class="li-loading-spinner-wrapper">
-              <li-loading-spinner size="sm"></li-loading-spinner>
+            <div class="li-progress-wrapper">
+              <li-progress circular intermediate></li-progress>
             </div>
           `
         : html`

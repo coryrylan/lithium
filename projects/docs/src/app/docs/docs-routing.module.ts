@@ -99,11 +99,6 @@ const routes: Routes = [
         loadChildren: () => import('./docs-textarea/docs-textarea.module').then(m => m.DocsTextareaModule)
       },
       {
-        path: 'loading-spinner',
-        data: { title: 'Lithium Loading Spinner Web Component - Documentation', layout: Layout.Docs },
-        loadChildren: () => import('./docs-loading-spinner/docs-loading-spinner.module').then(m => m.DocsLoadingSpinnerModule)
-      },
-      {
         path: 'message',
         data: { title: 'Lithium Message Web Component - Documentation', layout: Layout.Docs },
         loadChildren: () => import('./docs-message/docs-message.module').then(m => m.DocsMessageModule)

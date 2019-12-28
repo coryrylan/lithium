@@ -127,31 +127,32 @@
   --border-color: var(--li-common-color-red-100);
 }
 
-.li-loading-spinner-wrapper {
+.li-progress-wrapper {
   position: relative;
   width: 2em;
   height: 1.2em;
   margin: 0 auto;
 }
 
-li-loading-spinner {
+li-progress {
   position: absolute;
-  top: 1em;
+  top: 0.9em;
   left: 0;
+  width: 2.2em;
 }
 
 @-moz-document url-prefix() {
-  li-loading-spinner {
+  li-progress {
     top: -0.6em;
   }
 }
 
-:host([loading][size='sm']) li-loading-spinner {
+:host([loading][size='sm']) li-progress {
   top: -0.4em;
   left: -0.2em;
 }
 
-:host([loading][size='large']) li-loading-spinner {
+:host([loading][size='large']) li-progress {
   top: -0.2em;
   left: 0;
 }

@@ -12,7 +12,6 @@ import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsI18nComponent } from './docs-i18n/docs-i18n.component';
 import { DocsIconsComponent } from './docs-icons/docs-icons.component';
 import { DocsInputComponent } from './docs-input/docs-input.component';
-import { DocsLoadingSpinnerComponent } from './docs-loading-spinner/docs-loading-spinner.component';
 import { DocsMessageComponent } from './docs-message/docs-message.component';
 import { DocsModalComponent } from './docs-modal/docs-modal.component';
 import { DocsNavBarComponent } from './docs-nav-bar/docs-nav-bar.component';
@@ -44,7 +43,6 @@ import { DocsComponent } from './docs.component';
     DocsRadioComponent,
     DocsTabsComponent,
     DocsTextareaComponent,
-    DocsLoadingSpinnerComponent,
     DocsMessageComponent,
     DocsProgressBarComponent,
     DocsThemesComponent,

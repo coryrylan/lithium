@@ -11,7 +11,6 @@ import 'lithium-ui/datepicker';
 import 'lithium-ui/dropdown';
 import 'lithium-ui/form';
 import 'lithium-ui/input';
-import 'lithium-ui/loading-spinner';
 import 'lithium-ui/message';
 import 'lithium-ui/modal';
 import 'lithium-ui/nav-bar';
