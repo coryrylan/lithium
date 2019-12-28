@@ -4,16 +4,17 @@
   "scripts": {
     "ng": "ng",
     "start": "npm-run-all lib:sass && npm-run-all --parallel lib:sass:watch docs:build:watch",
-    "build": "npm-run-all clean lib:build docs:build:prod test:bundle lib:test clean:packages",
-    "build:ci": "npm-run-all clean lib:build docs:build:prod test:bundle lib:test:ci",
-    "test:bundle": "bundlesize --config bundlesize.json",
+    "build": "npm-run-all clean lib:build docs:build:prod lib:test clean:packages lib:test:bundle",
+    "build:ci": "npm-run-all clean lib:build docs:build:prod lib:test:ci",
     "all:format": "prettier --list-different './projects/**/*.{ts,scss,html}' --write",
     "clean": "rimraf ./dist",
     "clean:packages": "node packages.js",
+    "lib:clean": "node modules.js",
     "lib:build": "npm-run-all all:format lib:lint lib:sass && ng build lithium && npm run lib:api:editor && cpy README.md LICENSE.md dist/lithium && npm run clean:packages",
     "lib:test": "ng test lithium --watch=false",
     "lib:test:ci": "ng test lithium --watch=false --browsers=ChromeHeadlessCustom",
     "lib:test:watch": "ng test lithium --watch --code-coverage",
+    "lib:test:bundle": "webpack --config projects/lithium/test-bundles/webpack.config.js && bundlesize --config projects/lithium/test-bundles/bundlesize.json",
     "lib:sass": "sass-render --q --suffix '.css.ts' -t ./projects/lithium/sass-template.js './projects/lithium/**/*element.scss'",
     "lib:sass:watch": "sass-render --q --suffix '.css.ts' -t ./projects/lithium/sass-template.js './projects/lithium/**/*element.scss' -w",
     "lib:lint": "tslint -p . -c ./projects/lithium/tslint.json \"projects/lithium/**/*.ts\" && tslint -p . -c ./projects/docs/tslint.json \"projects/docs/**/*.ts\"",
@@ -31,8 +32,7 @@
     "docs:e2e": "ng e2e docs",
     "docs:deploy": "npm run build && firebase deploy",
     "bundle-sourcemaps": "source-map-explorer dist/docs/*.js",
-    "bundle-webpack": "webpack-bundle-analyzer dist/docs/stats-es2015.json",
-    "lib:clean": "node modules.js"
+    "bundle-webpack": "webpack-bundle-analyzer dist/docs/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
@@ -92,6 +92,7 @@
     "typescript": "~3.6.4",
     "wc-sass-render": "^1.2.1",
     "web-component-analyzer": "^0.1.18",
-    "webpack-bundle-analyzer": "^3.5.2"
+    "webpack-bundle-analyzer": "^3.5.2",
+    "webpack-cli": "^3.3.10"
   }
 }

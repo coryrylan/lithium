@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "path": "./dist/test-bundles/webpack.bundle.js",
+      "maxSize": "10 kB"
+    }
+  ]
+}
