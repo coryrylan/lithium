@@ -3,6 +3,7 @@
   --color: var(--li-common-color-white-100);
   --border-radius: var(--li-common-border-radius);
   --border-color: var(--li-common-color-blue-100);
+  --internal-color: var(--color);
   -webkit-appearance: none !important;
   background: var(--background);
   color: var(--color);
@@ -109,6 +110,10 @@
 
 :host([size='icon']) {
   padding: 0.8em 1em 1em 1em;
+}
+
+:host([size='icon']) ::slotted(li-icon) {
+  --color: var(--internal-color) !important;
 }
 
 /* color */

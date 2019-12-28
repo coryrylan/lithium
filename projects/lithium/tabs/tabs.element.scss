@@ -20,70 +20,47 @@ li-tab {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-}
+  overflow-x: auto;
+  overflow-y: visible;
+  white-space: nowrap;
 
-.li-tabs-nav::before,
-.li-tabs-nav::after {
-  content: ' ';
-  display: table;
-  clear: both;
-}
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
 
-.li-tabs-nav > button {
-  position: relative;
-  display: block;
-  background: var(--button-background);
-  width: 50%;
-  float: left;
-  margin-bottom: -1px;
-  cursor: pointer;
-  padding: 1em 0.6em;
-  line-height: 1.42857143;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s;
-  font-size: 1em;
-  font-family: inherit;
-  color: var(--color);
-}
-
-.li-tabs-nav > button.active,
-.li-tabs-nav > button.active:hover,
-.li-tabs-nav > button.active:focus {
-  cursor: default;
-  color: var(--color);
-}
-
-.li-tabs-nav > button:focus,
-.li-tabs-nav > button:hover {
-  color: var(--color);
-}
-
-@media (min-width: 300px) {
-  .li-tabs-nav > button {
+  button {
+    position: relative;
+    background: var(--button-background);
+    margin-bottom: -1px;
     margin-right: 0.2em;
+    cursor: pointer;
+    padding: 1em 0.6em;
+    line-height: 1.42857143;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: inherit;
+    display: inline-block;
+    min-width: 8em;
+    text-align: center;
+    color: var(--color);
     width: auto;
-    text-align: left;
     border: 1px solid transparent;
     border-bottom: 0.3em solid transparent;
-  }
 
-  .li-tabs-nav > button:nth-child(even) {
-    border-right: 0;
-  }
+    &:nth-child(even) {
+      border-right: 0;
+    }
 
-  .li-tabs-nav > button:nth-child(-n + 3) {
-    border-bottom: 0.3em solid transparent;
-  }
+    &:nth-child(-n + 3) {
+      border-bottom: 0.3em solid transparent;
+    }
 
-  .li-tabs-nav > button.active {
-    background: var(--button-active-background);
-    border-bottom: var(--button-active-border-bottom);
-  }
-}
-
-@media (min-width: 480px) {
-  .li-tabs-nav > button {
-    padding: 1em 1.5em;
+    &.active {
+      background: var(--button-active-background);
+      border-bottom: var(--button-active-border-bottom);
+    }
   }
 }
