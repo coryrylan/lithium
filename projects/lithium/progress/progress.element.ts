@@ -1,6 +1,6 @@
 import { html, LitElement, property } from 'lit-element';
 
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './progress.element.css';
 
 /**
@@ -16,13 +16,19 @@ import { styles } from './progress.element.css';
 // @dynamic
 export class LithiumProgress extends LitElement {
   /** Current progress value (out of 100) */
-  @property({ type: Number }) value = 0;
+  @property({ type: Number, reflect: true }) value = 0;
 
   /** Display value in progress */
-  @property({ type: Boolean }) showValue = true;
+  @property({ type: Boolean, reflect: true }) showValue = true;
 
   /** Display progress with a circular layout */
-  @property({ type: Boolean }) circular = false;
+  @property({ type: Boolean, reflect: true }) circular = false;
+
+  /** Display progress in a intermediate state */
+  @property({ type: Boolean, reflect: true }) intermediate = false;
+
+  /** Display different sizes when circular */
+  @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg';
 
   private radius = 54;
   private circumference = 2 * Math.PI * this.radius;
@@ -34,13 +40,24 @@ export class LithiumProgress extends LitElement {
 
   render() {
     return html`
+      ${this.intermediate
+        ? html`
+            <div aria-live="polite" class="li-sr-only">${IntlService.registry.loading}</div>
+          `
+        : ''}
       ${this.circular
         ? html`
-            <div class="progress-circular">
+            <div
+              class="progress-circular"
+              role="progressbar"
+              aria-valuenow="${this.intermediate ? '' : this.value}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
               <svg class="progress-circular__svg" width="120" height="120" viewBox="0 0 120 120">
                 <circle class="progress-circular__meter" cx="60" cy="60" r="${this.radius}" stroke-width="12" />
                 <circle
-                  class="progress-circular__value"
+                  class="progress-circular__value ${this.intermediate ? 'spin' : ''}"
                   style="stroke-dasharray:${this.circumference};stroke-dashoffset:${this.dashoffset};"
                   cx="60"
                   cy="60"
@@ -48,7 +65,15 @@ export class LithiumProgress extends LitElement {
                   stroke-width="12"
                 />
               </svg>
-              <div class="progress-circular__value-text">${this.value}%</div>
+              <div class="progress-circular__value-text">
+                ${this.showValue
+                  ? html`
+                      ${this.value}%
+                    `
+                  : html`
+                      <slot></slot>
+                    `}
+              </div>
             </div>
           `
         : html`
@@ -73,7 +98,6 @@ export class LithiumProgress extends LitElement {
 
   firstUpdated(props: Map<string, any>) {
     super.firstUpdated(props);
-    this.progress(this.value);
   }
 
   protected updated(props: Map<string, any>) {
@@ -82,10 +106,27 @@ export class LithiumProgress extends LitElement {
   }
 
   private progress(value: number) {
-    const progress = value / 100;
+    let progress = value / 100;
+
+    if (this.intermediate) {
+      progress = 0.25;
+      this.showValue = false;
+    }
+
     this.dashoffset = this.circumference * (1 - progress);
   }
 }
+
+// function step(timestamp) {
+//   if (!start) start = timestamp;
+//   var progress = timestamp - start;
+//   element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
+//   if (progress < 2000) {
+//     window.requestAnimationFrame(step);
+//   }
+// }
+
+// window.requestAnimationFrame(step);
 
 registerElementSafely('li-progress', LithiumProgress);
 

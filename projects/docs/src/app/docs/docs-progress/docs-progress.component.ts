@@ -11,5 +11,7 @@ export class DocsProgressBarComponent {
 
   codeExampleHtml = `
     <li-progress value="65"></li-progress>
+    <li-progress value="65" circular="true"></li-progress>
+    <li-progress size="sm" circular="true" intermediate="true"></li-progress>
   `;
 }

@@ -1,9 +1,3 @@
-// *,
-// *:before,
-// *:after {
-//   box-sizing: border-box;
-// }
-
 body {
   background-color: var(--global-background-color);
 }
@@ -11,6 +5,12 @@ body {
 .layout-page main {
   @media (min-width: $md-breakpoint) {
     padding: 5.8rem 3rem 6rem 3rem;
+  }
+}
+
+li-side-nav {
+  @media (min-width: $lg-breakpoint) {
+    --padding: 6rem 0 0 0;
   }
 }
 

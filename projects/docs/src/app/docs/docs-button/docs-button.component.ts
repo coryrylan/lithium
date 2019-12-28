@@ -112,19 +112,19 @@ export class DocsButtonComponent {
 
   componentExampleSize = {
     angular: `
-      <li-button size="small">small</li-button>
+      <li-button size="sm">small</li-button>
       <li-button>default</li-button>
-      <li-button size="large">large</li-button>
+      <li-button size="lg">large</li-button>
     `,
     vue: `
-      <li-button size="small">small</li-button>
+      <li-button size="sm">small</li-button>
       <li-button>default</li-button>
-      <li-button size="large">large</li-button>
+      <li-button size="lg">large</li-button>
     `,
     javascript: `
-      <li-button size="small">small</li-button>
+      <li-button size="sm">small</li-button>
       <li-button>default</li-button>
-      <li-button size="large">large</li-button>
+      <li-button size="lg">large</li-button>
     `
   };
 
@@ -154,7 +154,7 @@ export class DocsButtonComponent {
       <li-button size="icon" aria-label="CPU Usage High">
         <li-icon name="warning"></li-icon>
       </li-button>
-      <li-button size="tertiary" aria-label="Info">
+      <li-button action="tertiary" aria-label="Info">
         <li-icon name="info"></li-icon>
       </li-button>
     `,
@@ -162,7 +162,7 @@ export class DocsButtonComponent {
       <li-button size="icon" aria-label="CPU Usage High">
         <li-icon name="warning"></li-icon>
       </li-button>
-      <li-button size="tertiary" aria-label="Info">
+      <li-button action="tertiary" aria-label="Info">
         <li-icon name="info"></li-icon>
       </li-button>
     `,
@@ -170,7 +170,7 @@ export class DocsButtonComponent {
       <li-button size="icon" aria-label="CPU Usage High">
         <li-icon name="warning"></li-icon>
       </li-button>
-      <li-button size="tertiary" aria-label="Info">
+      <li-button action="tertiary" aria-label="Info">
         <li-icon name="info"></li-icon>
       </li-button>
     `
