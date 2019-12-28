@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 
 import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './nav-bar.element.css';
@@ -9,7 +9,6 @@ import { styles } from './nav-bar.element.css';
  * @noInheritDoc
  * @element li-nav-bar
  * @slot default - Content slot for nav bar
- * @attr {String} sticky - Make nav bar sticky and position to top of page
  * @attr {String} li-nav-bar-right - Align nav links to right
  * @cssprop --background
  * @cssprop --background-hover
@@ -18,6 +17,9 @@ import { styles } from './nav-bar.element.css';
  */
 // @dynamic
 export class LithiumNavBar extends LitElement {
+  /** Make nav bar sticky and position to top of page  */
+  @property({ type: Boolean, reflect: true }) sticky: boolean;
+
   static get styles() {
     return [baseStyles, styles];
   }

@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './button-group.element.css';
 
@@ -8,10 +8,12 @@ import { styles } from './button-group.element.css';
  * @noInheritDoc
  * @element li-button-group
  * @slot default - Content slot for modal body
- * @attr {String} secondary - Apply secondary style.
  */
 // @dynamic
 export class LithiumButtonGroup extends LitElement {
+  /** Display group as a group of secondary actions */
+  @property({ type: String, reflect: true }) action: 'secondary' | '';
+
   static get styles() {
     return [baseStyles, styles];
   }

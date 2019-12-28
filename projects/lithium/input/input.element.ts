@@ -9,10 +9,8 @@ let idCount = 0;
 /**
  * Input, standard text input with accessibility and error enhancements.
  *
- * @noInheritDoc
  * @element li-input
  * @slot default - Content slot for modal body
- * @attr {String} error - Set error styles
  * @cssprop --color
  * @cssprop --color-error
  * @cssprop --background
@@ -22,7 +20,8 @@ let idCount = 0;
  */
 // @dynamic
 export class LithiumInput extends LitElement {
-  @property({ type: Boolean, reflect: true }) error = false;
+  /** Set input in an error state */
+  @property({ type: Boolean, reflect: true }) error: boolean;
 
   get input() {
     return this.textInput ? this.textInput : this.textarea ? this.textarea : this.select;

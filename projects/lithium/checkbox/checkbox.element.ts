@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html, property } from 'lit-element';
 import { baseStyles, querySlot, registerElementSafely } from 'lithium-ui/common';
 import { IconService } from 'lithium-ui/icon';
 import { checkIcon } from 'lithium-ui/icon-shapes';
@@ -13,7 +13,6 @@ IconService.addIcons(checkIcon);
  * @noInheritDoc
  * @element li-checkbox
  * @slot default - Content slot for checkbox input
- * @attr {String} error - Set error styles
  * @cssprop --color
  * @cssprop --color-disabled
  * @cssprop --border-color
@@ -21,6 +20,9 @@ IconService.addIcons(checkIcon);
  */
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {
+  /** Set input in an error state */
+  @property({ type: Boolean, reflect: true }) error: boolean;
+
   static get styles() {
     return [baseStyles, styles];
   }

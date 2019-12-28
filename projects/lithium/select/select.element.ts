@@ -1,13 +1,12 @@
+import { property } from 'lit-element';
 import { registerElementSafely } from 'lithium-ui/common';
 import { LithiumInput } from 'lithium-ui/input';
 
 /**
  * Input, standard select input with accessibility and error enhancements.
  *
- * @noInheritDoc
  * @element li-select
  * @slot default - Content slot select input
- * @attr {String} error - Set error styles
  * @cssprop --color
  * @cssprop --color-error
  * @cssprop --background
@@ -16,7 +15,10 @@ import { LithiumInput } from 'lithium-ui/input';
  * @cssprop --border-radius
  */
 // @dynamic
-export class LithiumSelect extends LithiumInput {}
+export class LithiumSelect extends LithiumInput {
+  /** Set input in an error state */
+  @property({ type: Boolean, reflect: true }) error: boolean;
+}
 
 registerElementSafely('li-select', LithiumSelect);
 

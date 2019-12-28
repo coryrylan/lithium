@@ -14,7 +14,6 @@ IconService.addIcons(closeIcon);
  * @element li-side-nav
  * @slot default - Content slot for nav elements
  * @event openChange - Notify when the side nav has been opened or closed.
- * @attr {String} sticky - Set nav to remain open on left side
  * @cssprop --top
  * @cssprop --width
  * @cssprop --color
@@ -29,9 +28,16 @@ IconService.addIcons(closeIcon);
  */
 // @dynamic
 export class LithiumSideNav extends LitElement {
+  /** Trigger if nav should be open or closed */
   @property({ type: Boolean }) open = false;
+
+  /** Set nav to remain open on left side */
   @property({ type: Boolean, reflect: true }) sticky = false;
+
+  /** Set a pixel value for viewpoint width to set as sticky */
   @property({ type: Number }) stickyBreakpoint: number;
+
+  /** Auto close nav when inner elements are clicked */
   @property({ type: Boolean }) closeOnInnerClick = true;
 
   private resizeObserver: ResizeObserver;

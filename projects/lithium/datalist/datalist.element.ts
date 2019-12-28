@@ -1,3 +1,4 @@
+import { property } from 'lit-element';
 import { querySlot, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInput } from 'lithium-ui/input';
 
@@ -7,7 +8,6 @@ import { LithiumInput } from 'lithium-ui/input';
  * @noInheritDoc
  * @element li-datalist
  * @slot default - Content slot for modal body
- * @attr {String} error - Set error styles
  * @cssprop --color
  * @cssprop --color-error
  * @cssprop --background
@@ -17,6 +17,9 @@ import { LithiumInput } from 'lithium-ui/input';
  */
 // @dynamic
 export class LithiumDatalist extends LithiumInput {
+  /** Set input in an error state */
+  @property({ type: Boolean, reflect: true }) error: boolean;
+
   private listId = `${this.inputId}-list`;
 
   @querySlot('datalist') private datalist: HTMLDataListElement;

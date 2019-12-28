@@ -9,9 +9,6 @@ import { styles } from './button.element.css';
  * @noInheritDoc
  * @element li-button
  * @slot default - Content slot for button
- * @attr {String} action - [default|secondary|tertiary]
- * @attr {String} status - [default|success|warning|danger]
- * @attr {String} size - [sm|default|lg|icon]
  * @cssprop --background
  * @cssprop --color
  * @cssprop --border-radius
@@ -21,6 +18,16 @@ import { styles } from './button.element.css';
 export class LithiumButton extends BaseButton {
   /** Loading property to determine if loading spinner should be visible. */
   @property({ type: Boolean, reflect: true }) loading = false;
+
+  /** Set the action type of the button */
+  @property({ type: String, reflect: true }) action: 'default' | 'secondary' | 'tertiary';
+
+  /** Set the status color of the button */
+  @property({ type: String, reflect: true }) status: 'default' | 'success' | 'warning' | 'danger';
+
+  /** Set the size of the button */
+  @property({ type: String, reflect: true }) size: 'default' | 'sm' | 'lg' | 'icon';
+
   private initialWidth: number;
   private initialMinWidth: string;
 

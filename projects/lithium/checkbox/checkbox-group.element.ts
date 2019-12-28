@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit-element';
+import { html, LitElement, property } from 'lit-element';
 import { baseStyles, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './checkbox-group.element.css';
 
@@ -8,10 +8,12 @@ import { styles } from './checkbox-group.element.css';
  * @noInheritDoc
  * @element li-checkbox-group
  * @slot default - Content slot for checkbox inputs
- * @attr {String} inline - Display checkbox elements inline
  */
 // @dynamic
 export class LithiumCheckboxGroup extends LitElement {
+  /** Display checkbox elements inline */
+  @property({ type: Boolean, reflect: true }) inline: boolean;
+
   static get styles() {
     return [baseStyles, styles];
   }

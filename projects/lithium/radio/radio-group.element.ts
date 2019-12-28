@@ -9,13 +9,15 @@ import { LithiumRadio } from './radio.element';
  * @noInheritDoc
  * @element li-radio-group
  * @slot default - Content slot for radio input
- * @attr {String} inline - Display radio elements inline
  */
 // @dynamic
 export class LithiumRadioGroup extends LitElement {
   static get styles() {
     return [baseStyles, styles];
   }
+
+  /** Display radio elements inline */
+  @property({ type: Boolean, reflect: true }) inline: boolean;
 
   /** Name provides the name for each radio and will automatically associate all radios in element */
   @property({ type: String }) name = '';
