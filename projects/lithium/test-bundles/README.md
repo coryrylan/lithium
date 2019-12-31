@@ -14,8 +14,8 @@ More complex scenarios we want to also tree shake at the symbol level such as wh
 importing icons.
 
 ```javascript
-import { IconService } from 'lithium-ui/icon';
-import { closeIcon, menuIcon } from 'lithium-ui/icon-shapes';
+import 'lithium-ui/icon';
+import { IconService, closeIcon, menuIcon } from 'lithium-ui/icon-shapes';
 
 IconService.addIcons(closeIcon, menuIcon);
 ```

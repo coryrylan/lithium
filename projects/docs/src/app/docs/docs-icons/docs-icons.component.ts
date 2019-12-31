@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { IconService } from 'lithium-ui/icon';
-import { closeIcon, menuIcon } from 'lithium-ui/icon-shapes';
+import 'lithium-ui/icon';
+import { closeIcon, IconService, menuIcon } from 'lithium-ui/icon-shapes';
 IconService.addIcons(closeIcon, menuIcon);
 
 @Component({
@@ -10,8 +10,8 @@ IconService.addIcons(closeIcon, menuIcon);
 })
 export class DocsIconsComponent {
   codeExample = `
-    import { IconService } from 'lithium-ui/icon';
-    import { closeIcon, menuIcon } from 'lithium-ui/icon-shapes';
+    import 'lithium-ui/icon';
+    import { IconService, closeIcon, menuIcon } from 'lithium-ui/icon-shapes';
     IconService.addIcons(closeIcon, menuIcon);
   `;
 
@@ -21,13 +21,14 @@ export class DocsIconsComponent {
   `;
 
   codeExample3 = `
-    import { IconService } from 'lithium-ui/icon';
-    import { allIconsCollection } from 'lithium-ui/icon-shapes';
+    import 'lithium-ui/icon';
+    import { IconService, allIconsCollection } from 'lithium-ui/icon-shapes';
     IconService.addIconCollections(allIconsCollection);
   `;
 
   codeExample4 = `
-    import { IconService } from 'lithium-ui/icon';
+    import 'lithium-ui/icon';
+    import { IconService } from 'lithium-ui/icon-shapes';
 
     const customIcon = {
       name: 'circle',

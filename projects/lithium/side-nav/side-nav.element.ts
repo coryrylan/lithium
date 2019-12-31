@@ -2,8 +2,8 @@ import { html, LitElement, property } from 'lit-element';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
-import { IconService } from 'lithium-ui/icon';
-import { closeIcon } from 'lithium-ui/icon-shapes';
+import 'lithium-ui/icon';
+import { closeIcon, IconService } from 'lithium-ui/icon-shapes';
 import { styles } from './side-nav.element.css';
 IconService.addIcons(closeIcon);
 

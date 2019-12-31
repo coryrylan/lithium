@@ -1,6 +1,6 @@
-import { customElement, html, LitElement, property, query } from 'lit-element';
+import { html, LitElement, property, query } from 'lit-element';
 import { baseStyles } from 'lithium-ui/common';
-import { unknownIcon } from 'lithium-ui/icon-shapes';
+import { unknownIcon } from './svg';
 
 import { styles } from './icon.element.css';
 import { IconService } from './icon.service';
@@ -16,7 +16,6 @@ let iconId = 0;
  * @cssprop --width
  * @cssprop --height
  */
-@customElement('li-icon')
 export class LithiumIcon extends LitElement {
   /** Name of Icon to be displayed. */
   @property() name = 'unknown';
@@ -48,11 +47,5 @@ export class LithiumIcon extends LitElement {
       <div .innerHTML="${IconService.registry[this.name] ? IconService.registry[this.name] : IconService.registry[unknownIcon.name]}"></div>
       <span id=${'li-icon-id-' + iconId} class="li-sr-only">${this.title}</span>
     `;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'li-icon': LithiumIcon;
   }
 }

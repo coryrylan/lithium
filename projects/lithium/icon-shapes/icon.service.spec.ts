@@ -1,5 +1,5 @@
-import { IconService } from 'lithium-ui/icon';
-import { allIconsCollection } from 'lithium-ui/icon-shapes';
+import 'lithium-ui/icon';
+import { allIconsCollection, IconService } from 'lithium-ui/icon-shapes';
 IconService.addIconCollection(allIconsCollection);
 
 describe('IconService', () => {

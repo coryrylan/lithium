@@ -1,7 +1,7 @@
 import { html, property } from 'lit-element';
 import { baseStyles, querySlot, registerElementSafely } from 'lithium-ui/common';
-import { IconService } from 'lithium-ui/icon';
-import { checkIcon } from 'lithium-ui/icon-shapes';
+import 'lithium-ui/icon';
+import { checkIcon, IconService } from 'lithium-ui/icon-shapes';
 import { LithiumInput } from 'lithium-ui/input';
 import { styles } from './checkbox.element.css';
 

@@ -1,4 +1,4 @@
-import { SVGIcon, SVGIconCollection, unknownIcon } from 'lithium-ui/icon-shapes';
+import { SVGIcon, SVGIconCollection, unknownIcon } from './svg';
 
 const registryState = {
   [unknownIcon.name]: unknownIcon.svg

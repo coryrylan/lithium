@@ -1,6 +1,5 @@
 import 'lithium-ui/icon';
-import { IconService, LithiumIcon } from 'lithium-ui/icon';
-import { menuIcon } from 'lithium-ui/icon-shapes';
+import { IconService, LithiumIcon, menuIcon } from 'lithium-ui/icon-shapes';
 IconService.addIcons(menuIcon);
 import { componentIsStable, createTestElement, removeTestElement, waitForComponent } from 'lithium-ui/test/utils';
 

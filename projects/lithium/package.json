@@ -1,6 +1,6 @@
 {
   "name": "lithium-ui",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "dependencies": {
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
