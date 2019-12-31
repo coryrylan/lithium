@@ -27,7 +27,7 @@ export class LithiumCheckbox extends LithiumInput {
     return [baseStyles, styles];
   }
 
-  @querySlot('input') private checkbox: HTMLInputElement;
+  @querySlot('input') protected checkbox: HTMLInputElement;
   private observer: MutationObserver;
 
   render() {

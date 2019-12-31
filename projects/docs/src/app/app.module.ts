@@ -18,6 +18,7 @@ import 'lithium-ui/progress';
 import 'lithium-ui/radio';
 import 'lithium-ui/select';
 import 'lithium-ui/side-nav';
+import 'lithium-ui/switch';
 import 'lithium-ui/tabs';
 import 'lithium-ui/textarea';
 
