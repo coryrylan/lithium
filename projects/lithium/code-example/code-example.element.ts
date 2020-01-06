@@ -1,7 +1,7 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 import { highlight, languages } from 'prismjs';
 
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './code-example.element.css';
 
 /**

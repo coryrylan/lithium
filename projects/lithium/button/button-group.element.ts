@@ -1,5 +1,5 @@
-import { html, LitElement, property } from 'lit-element';
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { html, LitElement } from 'lit-element';
+import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './button-group.element.css';
 
 /**
@@ -12,7 +12,7 @@ import { styles } from './button-group.element.css';
 // @dynamic
 export class LithiumButtonGroup extends LitElement {
   /** Display group as a group of secondary actions */
-  @property({ type: String, reflect: true }) action: 'secondary' | '';
+  @property({ type: String }) action: 'secondary' | '';
 
   static get styles() {
     return [baseStyles, styles];

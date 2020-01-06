@@ -1,4 +1,5 @@
 export * from './decorators/query-slot';
+export * from './decorators/property';
 export * from './base/button.base';
 export * from './utils/register';
 export * from './utils/events';

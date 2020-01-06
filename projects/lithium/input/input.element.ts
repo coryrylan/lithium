@@ -1,5 +1,5 @@
-import { html, LitElement, property } from 'lit-element';
-import { querySlot, registerElementSafely } from 'lithium-ui/common';
+import { html, LitElement } from 'lit-element';
+import { property, querySlot, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError } from './input-error.element';
 import { LithiumInputMessage } from './input-message.element';
 import { styles } from './input.element.css';
@@ -21,7 +21,7 @@ let idCount = 0;
 // @dynamic
 export class LithiumInput extends LitElement {
   /** Set input in an error state */
-  @property({ type: Boolean, reflect: true }) error: boolean;
+  @property({ type: Boolean }) error: boolean;
 
   get input() {
     return this.textInput ? this.textInput : this.textarea ? this.textarea : this.select;

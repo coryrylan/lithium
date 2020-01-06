@@ -1,5 +1,5 @@
 import { addMonths, format, getDayOfYear, isAfter, isBefore, isToday, setDate, subMonths } from 'date-fns';
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
 import {
   daysInMonth,
@@ -13,7 +13,7 @@ import {
   weekDays
 } from './util';
 
-import { IntlService, registerElementSafely } from 'lithium-ui/common';
+import { IntlService, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './datepicker-inline.element.css';
 
 export class LithiumDatepickerInline extends LitElement {

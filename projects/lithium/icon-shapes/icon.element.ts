@@ -1,5 +1,5 @@
-import { html, LitElement, property, query } from 'lit-element';
-import { baseStyles } from 'lithium-ui/common';
+import { html, LitElement, query } from 'lit-element';
+import { baseStyles, property } from 'lithium-ui/common';
 import { unknownIcon } from './svg';
 
 import { styles } from './icon.element.css';

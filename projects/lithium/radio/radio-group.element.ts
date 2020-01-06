@@ -1,5 +1,5 @@
-import { html, LitElement, property } from 'lit-element';
-import { baseStyles, querySlotAll, registerElementSafely } from 'lithium-ui/common';
+import { html, LitElement } from 'lit-element';
+import { baseStyles, property, querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './radio-group.element.css';
 import { LithiumRadio } from './radio.element';
 
@@ -17,7 +17,7 @@ export class LithiumRadioGroup extends LitElement {
   }
 
   /** Display radio elements inline */
-  @property({ type: Boolean, reflect: true }) inline: boolean;
+  @property({ type: Boolean }) inline: boolean;
 
   /** Name provides the name for each radio and will automatically associate all radios in element */
   @property({ type: String }) name = '';

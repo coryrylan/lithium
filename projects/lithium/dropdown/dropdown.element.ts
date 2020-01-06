@@ -1,6 +1,6 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './dropdown.element.css';
 
 // test component, not for production

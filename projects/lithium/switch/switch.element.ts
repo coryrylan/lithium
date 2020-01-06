@@ -1,6 +1,6 @@
-import { html, property } from 'lit-element';
+import { html } from 'lit-element';
 import { LithiumCheckbox } from 'lithium-ui/checkbox';
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './switch.element.css';
 
 /**
@@ -17,7 +17,7 @@ import { styles } from './switch.element.css';
 // @dynamic
 export class LithiumSwitch extends LithiumCheckbox {
   /** Set input in an error state */
-  @property({ type: Boolean, reflect: true }) error: boolean;
+  @property({ type: Boolean }) error: boolean;
 
   static get styles() {
     return [baseStyles, styles];

@@ -1,18 +1,19 @@
-import { html, LitElement, property, query } from 'lit-element';
+import { html, LitElement, query } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
-import { querySlot } from '../decorators/query-slot';
+import { property } from './../decorators/property';
+import { querySlot } from './../decorators/query-slot';
 import { KeyCodes } from './../utils/enums';
 import { stopEvent } from './../utils/events';
 
 // @dynamic
 export class BaseButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) readonly = false;
-  @property({ type: String, reflect: true }) role = 'button';
-  @property({ type: String, reflect: true }) type: 'button' | 'submit';
-  @property({ type: String, reflect: true }) name = '';
-  @property({ type: String, reflect: true }) value = '';
-  @property({ type: Boolean, reflect: true }) disabled = false;
+  @property({ type: Boolean }) readonly = false;
+  @property({ type: String }) role = 'button';
+  @property({ type: String }) type: 'button' | 'submit';
+  @property({ type: String }) name = '';
+  @property({ type: String }) value = '';
+  @property({ type: Boolean }) disabled = false;
 
   @query('button') private templateButton: HTMLButtonElement;
   @querySlot('a') private anchor: HTMLAnchorElement;

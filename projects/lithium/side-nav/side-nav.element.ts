@@ -1,7 +1,7 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, IntlService, property, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/icon';
 import { closeIcon, IconService } from 'lithium-ui/icon-shapes';
 import { styles } from './side-nav.element.css';
@@ -32,7 +32,7 @@ export class LithiumSideNav extends LitElement {
   @property({ type: Boolean }) open = false;
 
   /** Set nav to remain open on left side */
-  @property({ type: Boolean, reflect: true }) sticky = false;
+  @property({ type: Boolean }) sticky = false;
 
   /** Set a pixel value for viewpoint width to set as sticky */
   @property({ type: Number }) stickyBreakpoint: number;

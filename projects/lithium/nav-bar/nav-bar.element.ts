@@ -1,6 +1,6 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './nav-bar.element.css';
 
 /**
@@ -18,7 +18,7 @@ import { styles } from './nav-bar.element.css';
 // @dynamic
 export class LithiumNavBar extends LitElement {
   /** Make nav bar sticky and position to top of page  */
-  @property({ type: Boolean, reflect: true }) sticky: boolean;
+  @property({ type: Boolean }) sticky: boolean;
 
   static get styles() {
     return [baseStyles, styles];

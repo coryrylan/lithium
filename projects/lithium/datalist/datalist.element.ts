@@ -1,5 +1,4 @@
-import { property } from 'lit-element';
-import { querySlot, registerElementSafely } from 'lithium-ui/common';
+import { property, querySlot, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInput } from 'lithium-ui/input';
 
 /**
@@ -18,7 +17,7 @@ import { LithiumInput } from 'lithium-ui/input';
 // @dynamic
 export class LithiumDatalist extends LithiumInput {
   /** Set input in an error state */
-  @property({ type: Boolean, reflect: true }) error: boolean;
+  @property({ type: Boolean }) error: boolean;
 
   private listId = `${this.inputId}-list`;
 

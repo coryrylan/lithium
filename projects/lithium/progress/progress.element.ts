@@ -1,6 +1,6 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
-import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, IntlService, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './progress.element.css';
 
 /**
@@ -16,19 +16,19 @@ import { styles } from './progress.element.css';
 // @dynamic
 export class LithiumProgress extends LitElement {
   /** Current progress value (out of 100) */
-  @property({ type: Number, reflect: true }) value = 0;
+  @property({ type: Number }) value = 0;
 
   /** Display value in progress */
-  @property({ type: Boolean, reflect: true }) showValue = true;
+  @property({ type: Boolean }) showValue = true;
 
   /** Display progress with a circular layout */
-  @property({ type: Boolean, reflect: true }) circular = false;
+  @property({ type: Boolean }) circular = false;
 
   /** Display progress in a intermediate state */
-  @property({ type: Boolean, reflect: true }) intermediate = false;
+  @property({ type: Boolean }) intermediate = false;
 
   /** Display different sizes when circular */
-  @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg';
+  @property({ type: String }) size: 'sm' | 'md' | 'lg';
 
   private radius = 54;
   private circumference = 2 * Math.PI * this.radius;

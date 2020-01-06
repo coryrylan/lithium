@@ -1,5 +1,5 @@
-import { html, LitElement, property } from 'lit-element';
-import { baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { html, LitElement } from 'lit-element';
+import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './checkbox-group.element.css';
 
 /**
@@ -12,7 +12,7 @@ import { styles } from './checkbox-group.element.css';
 // @dynamic
 export class LithiumCheckboxGroup extends LitElement {
   /** Display checkbox elements inline */
-  @property({ type: Boolean, reflect: true }) inline: boolean;
+  @property({ type: Boolean }) inline: boolean;
 
   static get styles() {
     return [baseStyles, styles];

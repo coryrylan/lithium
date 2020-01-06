@@ -1,6 +1,6 @@
 import { format, parse } from 'date-fns';
-import { html, LitElement, property, query } from 'lit-element';
-import { baseStyles, KeyCodes, querySlotAll, registerElementSafely } from 'lithium-ui/common';
+import { html, LitElement, query } from 'lit-element';
+import { baseStyles, KeyCodes, property, querySlotAll, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInputError, LithiumInputMessage } from 'lithium-ui/input';
 import { LithiumDatepickerInline } from './datepicker-inline.element';
 import { styles } from './datepicker.element.css';
@@ -38,7 +38,7 @@ let idCount = 0;
 // @dynamic
 export class LithiumDatepicker extends LitElement {
   /** display datepicker inline without a text input */
-  @property({ type: Boolean, reflect: true }) inline = false;
+  @property({ type: Boolean }) inline = false;
 
   /** set the minimum date that can be selected */
   @property({ type: String }) min: string;
@@ -57,7 +57,7 @@ export class LithiumDatepicker extends LitElement {
   protected errorMessageId = `li-datepicker-start-error-id-${idCount++}`;
 
   @property({ type: Boolean }) private showStartDatepicker = false;
-  @property({ type: Boolean, reflect: true }) private range = false;
+  @property({ type: Boolean }) private range = false;
   @query('input') private input: HTMLInputElement;
   private observer: MutationObserver;
 

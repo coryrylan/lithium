@@ -1,5 +1,5 @@
-import { html, property } from 'lit-element';
-import { BaseButton, baseStyles, registerElementSafely } from 'lithium-ui/common';
+import { html } from 'lit-element';
+import { BaseButton, baseStyles, property, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/progress';
 import { styles } from './button.element.css';
 
@@ -17,16 +17,16 @@ import { styles } from './button.element.css';
 // @dynamic
 export class LithiumButton extends BaseButton {
   /** Loading property to determine if loading spinner should be visible. */
-  @property({ type: Boolean, reflect: true }) loading = false;
+  @property({ type: Boolean }) loading = false;
 
   /** Set the action type of the button */
-  @property({ type: String, reflect: true }) action: 'default' | 'secondary' | 'tertiary';
+  @property({ type: String }) action: 'default' | 'secondary' | 'tertiary';
 
   /** Set the status color of the button */
-  @property({ type: String, reflect: true }) status: 'default' | 'success' | 'warning' | 'danger';
+  @property({ type: String }) status: 'default' | 'success' | 'warning' | 'danger';
 
   /** Set the size of the button */
-  @property({ type: String, reflect: true }) size: 'default' | 'sm' | 'lg' | 'icon';
+  @property({ type: String }) size: 'default' | 'sm' | 'lg' | 'icon';
 
   private initialWidth: number;
   private initialMinWidth: string;

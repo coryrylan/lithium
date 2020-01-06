@@ -1,5 +1,4 @@
-import { property } from 'lit-element';
-import { registerElementSafely } from 'lithium-ui/common';
+import { property, registerElementSafely } from 'lithium-ui/common';
 import { LithiumInput } from 'lithium-ui/input';
 
 /**
@@ -17,7 +16,7 @@ import { LithiumInput } from 'lithium-ui/input';
 // @dynamic
 export class LithiumSelect extends LithiumInput {
   /** Set input in an error state */
-  @property({ type: Boolean, reflect: true }) error: boolean;
+  @property({ type: Boolean }) error: boolean;
 }
 
 registerElementSafely('li-select', LithiumSelect);

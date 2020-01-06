@@ -1,6 +1,6 @@
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
-import { baseStyles, IntlService, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, IntlService, property, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/icon';
 import { checkIcon, closeIcon, errorIcon, IconService, infoIcon, warningIcon } from 'lithium-ui/icon-shapes';
 import { styles } from './message.element.css';
@@ -32,13 +32,13 @@ export enum LithiumMessageStatus {
 // @dynamic
 export class LithiumMessage extends LitElement {
   /** Set Message Status, see LithiumMessageType enum */
-  @property({ type: String, reflect: true }) status = LithiumMessageStatus.Default;
+  @property({ type: String }) status = LithiumMessageStatus.Default;
 
   /** Set if message can be closable */
-  @property({ type: Boolean, reflect: true }) closable = false;
+  @property({ type: Boolean }) closable = true;
 
   /** Set to close message programmatically */
-  @property({ type: Boolean, reflect: true }) close = false;
+  @property({ type: Boolean }) close = false;
 
   static get styles() {
     return [baseStyles, styles];

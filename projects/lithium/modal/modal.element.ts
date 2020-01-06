@@ -1,7 +1,7 @@
 import '@a11y/focus-trap';
-import { html, LitElement, property } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
-import { baseStyles, IntlService, KeyCodes, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, IntlService, KeyCodes, property, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/icon';
 import { closeIcon, IconService } from 'lithium-ui/icon-shapes';
 import { styles } from './modal.element.css';
@@ -54,7 +54,7 @@ export class LithiumModal extends LitElement {
   }
 
   /** Option to set the modal size */
-  @property({ type: String, reflect: true }) size: '' | 'lg';
+  @property({ type: String }) size: '' | 'lg';
 
   /** Option to set if modal can be closed by clicking the X or backdrop */
   @property({ type: Boolean }) closable = true;

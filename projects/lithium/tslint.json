@@ -2,6 +2,6 @@
   "extends": "../../tslint.json",
   "rules": {
     "no-barrel-imports": false,
-    "import-blacklist": [true, "rxjs", "rxjs/operators", "@angular", "@angular/common", "@angular/core"]
+    "import-blacklist": [true, {"lit-element": ["property"]}, "rxjs", "rxjs/operators", "@angular", "@angular/common", "@angular/core"]
   }
 }

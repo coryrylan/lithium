@@ -1,5 +1,5 @@
-import { html, property } from 'lit-element';
-import { baseStyles, querySlot, registerElementSafely } from 'lithium-ui/common';
+import { html } from 'lit-element';
+import { baseStyles, property, querySlot, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/icon';
 import { checkIcon, IconService } from 'lithium-ui/icon-shapes';
 import { LithiumInput } from 'lithium-ui/input';
@@ -21,7 +21,7 @@ IconService.addIcons(checkIcon);
 // @dynamic
 export class LithiumCheckbox extends LithiumInput {
   /** Set input in an error state */
-  @property({ type: Boolean, reflect: true }) error: boolean;
+  @property({ type: Boolean }) error: boolean;
 
   static get styles() {
     return [baseStyles, styles];
