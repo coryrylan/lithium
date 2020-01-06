@@ -29,8 +29,6 @@ describe('@property decorator defaults', () => {
   it('should parse dates from attributes', () => {
     const dateConverter: any = getDefaultOptions({ type: Date }).converter;
     const date: Date = dateConverter.fromAttribute('2020-01-02');
-    expect(date.getDate()).toBe(1);
-    expect(date.getMonth()).toBe(0);
-    expect(date.getFullYear()).toBe(2020);
+    expect(date.toISOString()).toBe('2020-01-02T00:00:00.000Z');
   });
 });
