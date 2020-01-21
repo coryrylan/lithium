@@ -13,10 +13,12 @@ import {
   weekDays
 } from './util';
 
-import { IntlService, property, registerElementSafely } from 'lithium-ui/common';
+import { event, EventEmitter, IntlService, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './datepicker-inline.element.css';
 
 export class LithiumDatepickerInline extends LitElement {
+  @event() private valueChange: EventEmitter<Date | [Date, Date]>;
+
   @property({ type: Boolean }) range = false;
   @property({ type: Date }) minDate: Date;
   @property({ type: Date }) maxDate: Date;
@@ -54,7 +56,7 @@ export class LithiumDatepickerInline extends LitElement {
     if (this._value !== val) {
       this._value = val;
       this.requestUpdate();
-      this.dispatchEvent(new CustomEvent('valueChange', { detail: this.value }));
+      this.valueChange.emit(this._value);
     }
   }
 

@@ -1,6 +1,6 @@
-// import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BookComponent } from './components/book/book.component';
 import { ComponentApiComponent } from './components/component-api/component-api.component';
@@ -11,8 +11,8 @@ const components = [ComponentApiComponent, ThemeAPIComponent, BookComponent, Com
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   declarations: [...components, ComponentApiComponent],
-  exports: [...components]
+  exports: [...components, ReactiveFormsModule]
 })
 export class SharedModule {}

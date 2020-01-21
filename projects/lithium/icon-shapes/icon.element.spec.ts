@@ -33,7 +33,8 @@ describe('icon element', () => {
     expect(component.shadowRoot.innerHTML).toContain('li-icon-menu');
   });
 
-  it('should associate the svg image to a label using aria-labelledby', async () => {
+  it('should associate the svg image to a label using aria-labelledbyif title is set', async () => {
+    component.title = 'test';
     await componentIsStable(component);
     const svg = component.shadowRoot.querySelector('svg');
     const labelId = component.shadowRoot.querySelector('.li-sr-only').getAttribute('id');

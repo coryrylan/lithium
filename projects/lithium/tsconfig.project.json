@@ -1,0 +1,32 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "outDir": "../../dist/lithium",
+    "rootDir": "./"
+  },
+  "include": ["./"],
+  "references": [
+    { "path": "./common/entrypoint.tsconfig.json" },
+    { "path": "./button/entrypoint.tsconfig.json" },
+    { "path": "./card/entrypoint.tsconfig.json" },
+    { "path": "./checkbox/entrypoint.tsconfig.json" },
+    { "path": "./code-example/entrypoint.tsconfig.json" },
+    { "path": "./datalist/entrypoint.tsconfig.json" },
+    { "path": "./datepicker/entrypoint.tsconfig.json" },
+    { "path": "./dropdown/entrypoint.tsconfig.json" },
+    { "path": "./form/entrypoint.tsconfig.json" },
+    { "path": "./icon/entrypoint.tsconfig.json" },
+    { "path": "./icon-shapes/entrypoint.tsconfig.json" },
+    { "path": "./input/entrypoint.tsconfig.json" },
+    { "path": "./message/entrypoint.tsconfig.json" },
+    { "path": "./modal/entrypoint.tsconfig.json" },
+    { "path": "./nav-bar/entrypoint.tsconfig.json" },
+    { "path": "./progress/entrypoint.tsconfig.json" },
+    { "path": "./radio/entrypoint.tsconfig.json" },
+    { "path": "./select/entrypoint.tsconfig.json" },
+    { "path": "./side-nav/entrypoint.tsconfig.json" },
+    { "path": "./switch/entrypoint.tsconfig.json" },
+    { "path": "./tabs/entrypoint.tsconfig.json" },
+    { "path": "./textarea/entrypoint.tsconfig.json" },
+  ]
+}

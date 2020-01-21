@@ -1,15 +1,5 @@
 {
   "extends": "./tsconfig.app.json",
-  "compilerOptions": {
-    "paths": {
-      "lithium-ui": [
-        "dist/lithium"
-      ],
-      "lithium-ui/*": [
-        "dist/lithium/*"
-      ]
-    }
-  },
   "files": [
     "src/main.ts",
     "src/polyfills.ts"

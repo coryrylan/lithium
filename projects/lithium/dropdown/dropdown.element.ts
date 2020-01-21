@@ -1,11 +1,13 @@
 import { html, LitElement } from 'lit-element';
 
-import { baseStyles, property, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, event, EventEmitter, property, registerElementSafely } from 'lithium-ui/common';
 import { styles } from './dropdown.element.css';
 
 // test component, not for production
 // @dynamic
 export class XDropdown extends LitElement {
+  @event() private openChange: EventEmitter<boolean>;
+
   private _open = false;
   get open() {
     return this._open;
@@ -17,7 +19,7 @@ export class XDropdown extends LitElement {
       const old = this._open;
       this._open = value;
       this.requestUpdate('open', old);
-      this.openChange();
+      this.openChange.emit(this._open);
     }
   }
 
@@ -45,10 +47,6 @@ export class XDropdown extends LitElement {
 
   toggle() {
     this.open = !this.open;
-  }
-
-  private openChange() {
-    this.dispatchEvent(new CustomEvent('openChange', { detail: this.open }));
   }
 }
 

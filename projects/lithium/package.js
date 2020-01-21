@@ -2,6 +2,7 @@
 
 const fs = require('fs-extra');
 const path = require('path');
+const del = require('del');
 
 // Temporary script needed for modern build tools that default that expect es2015 modules as the main entry point.
 // https://github.com/ng-packagr/ng-packagr/pull/1372
@@ -14,18 +15,10 @@ const read = (dir) => fs.readdirSync(dir).reduce((files, file) =>
     files.concat(path.join(dir, file)),
   []);
 
-if (fs.existsSync('./dist/lithium/esm2015')) {
-  fs.copySync('./dist/lithium/esm2015', './dist/lithium');
-  ['bundles','esm5', 'fesm5', 'esm2015', 'fesm2015'].forEach(f => fs.removeSync(`./dist/lithium/${f}`));
-}
+del.sync(['./dist/lithium/**/*.{tsbuildinfo,ngsummary.json}', './dist/lithium/*.{tsbuildinfo,ngsummary.json}']);
 
-read('./dist/lithium').filter(f => f.includes('lithium-ui') || f.includes('public-api')).forEach(f => fs.removeSync(f));
 read('./dist/lithium').filter(f => f.includes('package.json')).forEach(file => {
   const data = fs.readJsonSync(file);
-  data.typings = './index.d.ts';
-  data.module = './index.js';
-  data.main = './index.js';
-  data.type = 'module';
-  ['__processed_by_ivy_ngcc__', 'scripts', 'es2015', 'esm5', 'esm2015', 'fesm5', 'fesm2015'].forEach(p => delete data[p]);
+  ['__processed_by_ivy_ngcc__', 'scripts'].forEach(p => delete data[p]);
   fs.writeJsonSync(file, data, { spaces: 2 });
 });

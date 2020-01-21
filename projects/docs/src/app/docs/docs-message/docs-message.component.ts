@@ -18,4 +18,8 @@ export class DocsMessageComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  log(e: any) {
+    console.log(e);
+  }
 }

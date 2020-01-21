@@ -15,7 +15,7 @@
     <h2>Example</h2>
 
     <li-message closable="false">Default Message</li-message>
-    <li-message status="success">Success Message</li-message>
+    <li-message status="success" (closeChange)="log($event)">Success Message</li-message>
     <li-message status="warning">Warning Message</li-message>
     <li-message status="error">Error Message</li-message>
 

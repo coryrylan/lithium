@@ -19,11 +19,14 @@
       "dom"
     ],
     "paths": {
+      "lithium-ui/test/*": [
+        "projects/lithium/test/*"
+      ],
       "lithium-ui": [
-        "projects/lithium"
+        "dist/lithium"
       ],
       "lithium-ui/*": [
-        "projects/lithium/*"
+        "dist/lithium/*"
       ]
     },
     "alwaysStrict": true,

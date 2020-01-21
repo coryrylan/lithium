@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es2017", "dom"],
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "../../dist/lithium",
+    "declaration": true,
+    "inlineSources": true,
+    "types": ["jasmine"],
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictFunctionTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": false,
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "importHelpers": true,
+    "composite": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "paths": {
+      "lithium-ui/*": ["./*"]
+    }
+  },
+  "exclude": ["test.ts", "dist", "node_modules"],
+  "references": [{ "path": "./common/entrypoint.tsconfig.json" }]
+}

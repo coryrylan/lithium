@@ -1,7 +1,7 @@
 import '@a11y/focus-trap';
 import { html, LitElement } from 'lit-element';
 
-import { baseStyles, IntlService, KeyCodes, property, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, event, EventEmitter, IntlService, KeyCodes, property, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/icon';
 import { closeIcon, IconService } from 'lithium-ui/icon-shapes';
 import { styles } from './modal.element.css';
@@ -28,6 +28,8 @@ IconService.addIcons(closeIcon);
  */
 // @dynamic
 export class LithiumModal extends LitElement {
+  @event() private openChange: EventEmitter<boolean>;
+
   static get styles() {
     return [baseStyles, styles];
   }
@@ -43,7 +45,7 @@ export class LithiumModal extends LitElement {
       const old = this._open;
       this._open = value;
       this.requestUpdate('open', old);
-      this.openChange();
+      this.openChange.emit(this.open);
 
       if (this._open) {
         this.focusedElementBeforeOpen = document.activeElement as HTMLElement;
@@ -112,8 +114,8 @@ export class LithiumModal extends LitElement {
     `;
   }
 
-  private removeOnEscape = (event: KeyboardEvent) => {
-    if ((event.key === KeyCodes.Escape || event.key === 'Esc') && this.open) {
+  private removeOnEscape = (e: KeyboardEvent) => {
+    if ((e.key === KeyCodes.Escape || e.key === 'Esc') && this.open) {
       this.closeModal();
     }
     // tslint:disable-next-line: semicolon
@@ -127,10 +129,6 @@ export class LithiumModal extends LitElement {
 
   private closeModal() {
     this.open = false;
-  }
-
-  private openChange() {
-    this.dispatchEvent(new CustomEvent('openChange', { detail: this.open }));
   }
 }
 

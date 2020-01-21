@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit-element';
 
-import { baseStyles, IntlService, property, registerElementSafely } from 'lithium-ui/common';
+import { baseStyles, event, EventEmitter, IntlService, property, registerElementSafely } from 'lithium-ui/common';
 import 'lithium-ui/icon';
 import { checkIcon, closeIcon, errorIcon, IconService, infoIcon, warningIcon } from 'lithium-ui/icon-shapes';
 import { styles } from './message.element.css';
@@ -31,6 +31,8 @@ export enum LithiumMessageStatus {
  */
 // @dynamic
 export class LithiumMessage extends LitElement {
+  @event() private closeChange: EventEmitter<boolean>;
+
   /** Set Message Status, see LithiumMessageType enum */
   @property({ type: String }) status = LithiumMessageStatus.Default;
 
@@ -99,7 +101,7 @@ export class LithiumMessage extends LitElement {
 
   closeMessage() {
     this.close = true;
-    this.dispatchEvent(new CustomEvent('closeChange', { detail: this.close }));
+    this.closeChange.emit(this.close);
   }
 }
 

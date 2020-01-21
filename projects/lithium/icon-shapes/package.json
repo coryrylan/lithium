@@ -1,10 +1,8 @@
 {
-  "sideEffects": [
-    "./icon.element.js"
-  ],
-  "ngPackage": {
-    "lib": {
-      "entryFile": "index.ts"
-    }
-  }
+  "sideEffects": false,
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "name": "lithium-ui/icon-shapes",
+  "type": "module"
 }
