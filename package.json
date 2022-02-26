@@ -55,7 +55,7 @@
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
     "normalize.css": "^8.0.1",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.27.0",
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
