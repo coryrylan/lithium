@@ -62,7 +62,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.0-rc.4",
+    "@angular-devkit/build-angular": "~15.0.0",
     "@angular-devkit/build-ng-packagr": "~0.900.0-rc.4",
     "@angular/cli": "~9.0.0-rc.4",
     "@angular/compiler-cli": "~9.0.0-rc.4",
@@ -97,6 +97,6 @@
     "wc-sass-render": "^1.2.1",
     "web-component-analyzer": "^0.1.18",
     "webpack-bundle-analyzer": "^3.5.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   }
 }
